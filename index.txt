@@ -1,0 +1,30 @@
+api injection + admin dashboard api injection
+all web feture add
+proudct api injection
+firbase and rest api
+login page Authentication add
+mongodb add
+
+account -- checkout
+
+..
+
+
+redux, express, firebase, mongodb, mongose, jwt
+
+
+potita product er route kore vitor e qrcode barcode lagabu jeiane jeikane use kora jeiane
+tarpor contact page ew lagabu ,all product e amar name use kora
+tarpor checkout page qrcode , barcode use kora 
+sobjagai amar name use...
+
+net connection of on button jhok hobe 
+gemini diya kiso banner banabvu first slider er banner banabu
+login page thik korte hobe
+login page header and footer thakbe name
+location dilougebox select
+jkn internetconnection off thakbe tkn img bloank img dekhabe , 
+keenslider alada kore file create.
+footer all page update..
+
+all  product 150+ item set

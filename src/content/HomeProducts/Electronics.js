@@ -1,0 +1,468 @@
+export const Electronics = [
+  {
+    id: 1,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766138986/macbook-pro-16-inch-m2-max-chip_nz4vqq.jpg",
+    name: "MacBook Air M4 Chip 13-inch (10-core CPU, 8-core GPU)",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766138986/macbook-pro-16-inch-m2-max-chip_nz4vqq.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817744/macbook-air-m2-chip-01-228x228_iqwgiq.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817744/MacBook-Pro-14-inch-M3-Max-price-in-Bangladesh_mob8ty.webp"
+    ],
+    catetitle: "Laptop",
+    title: "MacBook Air M4 Chip 13-inch – Ultra-Slim Powerhouse with Incredible Performance",
+    oldprice: "$1599",
+    price: "$1399",
+    discountPercent: "13%",
+    ratestar: "⭐⭐⭐⭐⭐",
+    review: "Lightning fast and super lightweight — perfect for professionals, students, and creators seeking top performance on the go.",
+    ram: ["16","1TB"],
+    category: "Electronics",
+  },
+  {
+    id: 2,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766138986/macbook-air-13-inch-m4-chip-16gb-512gb-starlight-updated762_usidan.jpg",
+    name: "MacBook Pro 14 M4 Max Chip 36GB/1TB Silver (14C CPU 32C GPU)",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766138986/macbook-air-13-inch-m4-chip-16gb-512gb-starlight-updated762_usidan.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817732/MacBook-Air13-inch-M3-2024-Starlight-price-in-Bangladesh_hspjmk.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766138986/macbook-air-13-inch-m4-chip-16gb-256gb-sky-blue-updated341_a4bmzk.jpg"
+    ],
+    catetitle: "Laptop",
+    title: "MacBook Pro M4 Chip 14-inch – Powerful Performance & Stunning Liquid Retina XDR Display",
+    oldprice: "$2199",
+    price: "$1899",
+    discountPercent: "14%",
+    ratestar: "⭐⭐⭐⭐⭐",
+    review: "Incredible display and performance for professional creative work, video editing, and multitasking.",
+    ram: ["16","2TB"],
+    category: "Electronics",
+  },
+  {
+    id: 3,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766138986/macbook-air-13-inch-m4-chip-16gb-256gb-sky-blue-updated341_a4bmzk.jpg",
+    name: "MacBook Pro 16 M2 Max Chip 32/1TB Space Gray (12C CPU 38C GPU)",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766138986/macbook-air-13-inch-m4-chip-16gb-256gb-sky-blue-updated341_a4bmzk.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766138986/macbook-pro-16-inch-m2-max-chip_nz4vqq.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817732/macbook-air-13-m4-midnight-01-228x228_bhq5pt.webp"
+    ],
+    catetitle: "Laptop",
+    title: "MacBook Air M2 Chip 13.6-inch – Lightweight Laptop Ideal for Students & Professionals",
+    oldprice: "$1299",
+    price: "$1099",
+    discountPercent: "15%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "Sleek, fast, and perfect for daily tasks, schoolwork, and light creative projects.",
+    ram: ["16","1TB"],
+    category: "Electronics",
+  },
+  {
+    id: 4,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766139609/172266244787311_f4j0zh.jpg",
+    name: "JBL Quantum 200 Wired Over-Ear Gaming Headphone",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766139609/172266244787311_f4j0zh.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766139609/20200820_1597913230_249312_b2gewp.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766139609/20200820_1597913802_702805_wh819z.jpg"
+    ],
+    catetitle: "Headphone",
+    title: "JBL Quantum SOUND Signature,Stereo 3.5mm Audio Cable,50mm Dynamic drivers.",
+    oldprice: "$80",
+    price: "$75",
+    discountPercent: "17%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "Good balance between performance and price, suitable for office work, students, and casual users.",
+    category: "Electronics",
+  },
+  {
+    id: 5,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766139920/1710234591018324_xdsyyt.jpg",
+    name: "Razer DeathAdder V3 Pro Wireless Gaming Mouse",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766139920/1710234591018324_xdsyyt.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766139921/logitech-g304-lightspeed-wireless-gaming-mouse_mc0kx1.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766139921/logitech-g502-x-plus-lightspeed-rgb-wireless-gaming-mouse_o9xuxy.jpg"
+    ],
+    catetitle: "Mouse",
+    title: "Razer DeathAdder V3 Pro Wireless Gaming Mouse,USB Type A to USB Type C Charging Cable,Focus Pro 30K Optical Sensor,Optical Mouse Switches Gen-3",
+    oldprice: "$60",
+    price: "$55",
+    discountPercent: "14%",
+    ratestar: "⭐⭐⭐⭐⭐",
+    review: "Reliable and efficient for everyday use, office tasks, and light gaming.",
+    ram: ["8","1TB"],
+    category: "Electronics",
+  },
+  {
+    id: 6,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817394/555_rbjskj.webp",
+    name: "HP ProBook 440 G11 Core Ultra 5 14-inch FHD Laptop",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817394/555_rbjskj.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817598/hp-laptop-pavilion-14-ab102tu-core-i3-6th-gen-6100u-silver_ctriqm.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817597/HP-14-ep0204TU-Laptop_p6wroi.jpg"
+    ],
+    catetitle: "Laptop",
+    title: "HP ProBook 440 G11 – Business-Class Laptop with Enhanced Security & Premium Design",
+    oldprice: "$1399",
+    price: "$1189",
+    discountPercent: "15%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "Solid build quality and ideal for office professionals, business tasks, and frequent travel.",
+    ram: ["16","1TB"],
+    category: "Electronics",
+  },
+  {
+    id: 7,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140103/brio-500-hdr-webcam-graphite_rfqyjo.jpg",
+    name: "Logitech BRIO 500 Full HD 1080p Webcam",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140103/brio-500-hdr-webcam-graphite_rfqyjo.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140102/brio-500-hdr-webcam-off-white_r2zlw4.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140103/brio-500-hdr-webcam-graphite_rfqyjo.jpg"
+    ],
+    catetitle: "Logitech",
+    title: "Logitech BRIO 500 Full HD 1080p Webcam,4MP Megapixel,4x digital zoom,Stereo microphone,Up to 4 ft Mic range",
+    oldprice: "$105",
+    price: "$100",
+    discountPercent: "14%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "Smooth multitasking, excellent battery backup, and ideal for students and office users.",
+    category: "Electronics",
+  },
+  {
+    id: 8,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140295/meta-quest-3-vr-headset-512gb144_t8fouv.jpg",
+    name: "Meta Quest 3 All-in-One VR Headset 512GB",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140295/meta-quest-3-vr-headset-512gb144_t8fouv.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140294/meta-quest-3-vr-headset-512gb-1208_t6p552.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140295/meta-quest-3-vr-headset-512gb144_t8fouv.jpg"
+    ],
+    catetitle: "VR",
+    title: "Meta Quest 3 All-in-One VR Headset 512GB,Surround yourself in 3D sound,Dazzling graphics,Faster load times. Crisper details. Smoother play",
+    oldprice: "$400",
+    price: "$399",
+    discountPercent: "13%",
+    ratestar: "⭐⭐⭐⭐⭐",
+    review: "Great value for specs, highly recommended for work, study, and multimedia.",
+    category: "Electronics",
+  },
+  {
+    id: 9,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817603/ideapad-slim-3-15iru10-01-228x228_actvsn.webp",
+    name: "Lenovo IdeaPad Slim 3 15IRU10 Core 3 100U 15.3 WUXGA Laptop",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817603/ideapad-slim-3-15iru10-01-228x228_actvsn.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817603/ideapad-slim-3-15iru8-arctic-gray-01-228x228_xjpyw6.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817603/ideapad-slim-3-15iru10-01-228x228_1_yqv6dp.webp"
+    ],
+    catetitle: "Laptop",
+    title: "Lenovo IdeaPad Slim 3 15IRU10 – Durable Laptop with Backlit Keyboard & Military-Grade Design",
+    oldprice: "$1149",
+    price: "$979",
+    discountPercent: "15%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "Excellent screen quality and long battery life, ideal for work, study, and everyday tasks.",
+    ram: ["16","512"],
+    category: "Electronics",
+  },
+  {
+    id: 10,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765818058/vivobook-15-x1504va-01-228x228_mvklaq.webp",
+    name: "ASUS Vivobook 15 X1504VA Core i3 512GB SSD 15.6-inch FHD Laptop",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765818058/vivobook-15-x1504va-01-228x228_mvklaq.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817603/ideapad-slim-3-15iru8-arctic-gray-01-228x228_xjpyw6.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817603/ideapad-slim-3-15iru10-01-228x228_1_yqv6dp.webp"
+    ],
+    catetitle: "Laptop",
+    title: "ASUS Vivobook 15 X1504VA – Lightweight Laptop with Fast SSD & Modern Design",
+    oldprice: "$849",
+    price: "$729",
+    discountPercent: "14%",
+    ratestar: "⭐⭐⭐☆☆",
+    review: "Stylish, lightweight, and affordable for students, office tasks, and casual use.",
+    ram: ["8","512"],
+    category: "Electronics",
+  },
+  {
+    id: 11,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140596/20240114_1705233525_279310_uoarfu.jpg",
+    name: "Sony PlayStation 5 Slim Disc Console Edition (1TB)",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140596/20240114_1705233525_279310_uoarfu.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140594/20240114_1705233531_918675_mhwbgi.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766140596/20240114_1705233525_279310_uoarfu.jpg"
+    ],
+    catetitle: "Sony",
+    title: "Sony PlayStation 5 Slim Disc Console Edition (1TB) for Faster Performance & Smooth Multitasking",
+    oldprice: "$899",
+    price: "$779",
+    discountPercent: "13%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "Fast and responsive, perfect for students, professionals, and multitasking users.",
+    category: "Electronics",
+  },
+  {
+    id: 12,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766142768/tp-link-archer-ax73-dual-band-gigabit-router525_ytf58t.jpg",
+    name: "TP-Link Archer AX73 AX5400 Dual-Band Gigabit Wi-Fi Router",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766142768/tp-link-archer-ax73-dual-band-gigabit-router525_ytf58t.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766142767/tp-link-archer-ax73-dual-band-gigabit-router.jpg-2854_yeuqzc.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766142768/tp-link-archer-ax73-dual-band-gigabit-router525_ytf58t.jpg"
+    ],
+    catetitle: "Router",
+    title: "TP-Link Archer AX73 AX5400 Dual-Band Gigabit Wi-Fi Router,Est Range/SqF: Up to 3000 square feet,6x high-performance antennas,Wi-Fi Standard: Wi-Fi 6",
+    oldprice: "$120",
+    price: "$110",
+    discountPercent: "13%",
+    ratestar: "⭐⭐⭐⭐⭐",
+    review: "Smooth touch experience, versatile 2-in-1 design, and solid build for productivity and creativity.",
+    category: "Electronics",
+  },
+  {
+    id: 13,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766142955/belkin-economy-series-8-socket-power-strip74_dlca2a.jpg",
+    name: "Belkin Economy Series 8-Socket Surge Protector Power Strip",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766142955/belkin-economy-series-8-socket-power-strip74_dlca2a.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766142955/belkin-economy-series-8-socket-power-strip74_dlca2a.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766142955/belkin-economy-series-8-socket-power-strip74_dlca2a.jpg"
+    ],
+    catetitle: "Power Strip",
+    title: "Belkin Economy Series 8-Socket Surge Protector Power Strip,Maximum Spike Current: 19000 Amps,AC power with 3-line protection Delivers power through a 2-meterUniversal Socket",
+    oldprice: "$50",
+    price: "$45",
+    discountPercent: "15%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "Excellent speed, battery life, and durability, perfect for business and professional use.",
+    category: "Electronics",
+  },
+  {
+    id: 14,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143133/1712465888506174_qoazh0.jpg",
+    name: "Xiaomi WiFi Range Extender N300",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143133/1712465888506174_qoazh0.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143133/1712465888506174_qoazh0.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143133/1712465888506174_qoazh0.jpg"
+    ],
+    catetitle: "WiFi",
+    title: "Xiaomi WiFi Range Extender N300,Enhanced Coverage:2×2 External Antennas Boost Signal Strength Max. LAN Data Rate: 300Mbps",
+    oldprice: "$30",
+    price: "$25",
+    discountPercent: "14%",
+    ratestar: "⭐⭐⭐☆☆",
+    review: "Good choice for daily computing, work, study, and multimedia tasks.",
+    category: "Electronics",
+  },
+  {
+    id: 15,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143503/apple-tv-4k-3rd-gen-wifi-3599_z7sknk.jpg",
+    name: "Apple TV 4K (3rd Gen) WiFi (64GB)",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143503/apple-tv-4k-3rd-gen-wifi-3599_z7sknk.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143498/apple-tv-4k-3rd-gen-wifi362_dwtdot.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143503/apple-tv-4k-3rd-gen-wifi-3599_z7sknk.jpg"
+    ],
+    catetitle: "WiFi",
+    title: "Apple TV 4K (3rd Gen) WiFi (64GB) with Solid Durability & Efficient Performance",
+    oldprice: "$550",
+    price: "$499",
+    discountPercent: "16%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "Compact, fast, and ideal for business travel, office work, and professional tasks.",
+    category: "Electronics",
+  },
+   {
+    id: 16,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143493/20210910_1631266383_596872_gmvwgk.png",
+    name: "Spigen AirTag Case Valentinus",
+    catetitle: "AirTag",
+    category: "Electronics",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143493/20210910_1631266383_596872_gmvwgk.png",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143495/20210910_1631266173_711201_og28za.png",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766143493/20210910_1631266383_596872_gmvwgk.png"
+    ],
+    title: "Spigen AirTag Case Valentinus Lightning-Fast Performance with AirTag ",
+    oldprice: "$30",
+    price: "$20",
+    discountPercent: "10%",
+    ratestar: "⭐⭐⭐⭐⭐",
+    review: "Fast performance and large display, ideal for students and professionals. Perfect for multitasking, video editing, and creative work."
+  },
+  {
+    id: 17,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817631/ipad-pro-13-inch-m4-silver-01-228x228_i6t1j6.webp",
+    name: "iPad Pro M5 13-inch",
+    catetitle: "Mobile Phone",
+    category: "Electronics",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817631/ipad-pro-13-inch-m4-silver-01-228x228_i6t1j6.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817632/ipad-pro-m5-13-inch-space-black-228x228_mtqfxy.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817632/ipad-pro-13-inch-m4-space-black-01-228x228_h6usqw.webp"
+    ],
+    title: "iPad Pro M5 13-inch – Powerful Chip & Extended Battery Life",
+    oldprice: "$1590.91",
+    price: "$1440.91",
+    discountPercent: "10%",
+    ratestar: "⭐⭐⭐⭐☆",
+    ram: ["16","512"],
+    review: "The new M5 chip ensures smooth multitasking and heavy app usage. Long battery life and high performance for professionals."
+  },
+  {
+    id: 18,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817632/ipad-pro-13-inch-m4-space-black-01-228x228_h6usqw.webp",
+    name: "Black Shark Pad 7 Pro",
+    catetitle: "Mobile Phone",
+    category: "Electronics",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817632/ipad-pro-13-inch-m4-space-black-01-228x228_h6usqw.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817631/ipad-pro-13-inch-m4-silver-01-228x228_i6t1j6.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817632/ipad-pro-13-inch-m4-space-black-01-228x228_h6usqw.webp"
+    ],
+    title: "Black Shark Pad 7 Pro – High-Performance Gaming & Multimedia Tablet",
+    oldprice: "$863.64",
+    price: "$813.64",
+    discountPercent: "6%",
+    ratestar: "⭐⭐⭐☆☆",
+    ram: ["8","512"],
+    review: "Excellent for gaming and multimedia content. Stunning display with vibrant colors and fast processing."
+  },
+  {
+    id: 19,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144116/20200626_1593147967_717730_p6tw5m.jpg",
+    name: "Sandisk iXpand Flash Drive Go",
+    catetitle: "Drive",
+    category: "Electronics",
+   categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144116/20200626_1593147967_717730_p6tw5m.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144116/20200626_1593147967_717730_p6tw5m.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144116/20200626_1593147967_717730_p6tw5m.jpg"
+    ],
+    title: "Sandisk iXpand Flash Drive Go,USB-A Connector,USB 3.0 InterfacePassword-protect your files",
+    oldprice: "$110",
+    price: "$105",
+    discountPercent: "6%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "High-end smartphone with excellent camera quality, blazing-fast performance, and 5G connectivity. OLED display provides smooth visuals."
+  },
+  {
+    id: 20,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144113/20211211_1639206974_756769_loulmn.png",
+    name: "ZHIYUN Smooth Q3 Combo",
+    catetitle: "Gimbal",
+    category: "Electronics",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144113/20211211_1639206974_756769_loulmn.png",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144110/20211211_1639206974_337323_bqygt7.png",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144113/20211211_1639206974_756769_loulmn.png"
+    ],
+    title: "3-Axis Gimbal Stabilizer for Smartphone Foldable Phone Gimbal with Light Auto Inception Dolly-Zoom Time-Lapse Handheld Stabilizer, Gimbal Bag.",
+    oldprice: "$190",
+    price: "$185",
+    discountPercent: "7%",
+    ratestar: "⭐⭐⭐⭐⭐",
+    review: "Perfect for everyday use. Outstanding camera and display quality with fast performance and long battery life."
+  },
+  {
+    id: 21,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144108/20221011_1665476230_731672_kvph6j.jpg",
+    name: "EDIFIER R1080BT Active Speaker",
+    catetitle: "Speaker",
+    category: "Electronics",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144108/20221011_1665476230_731672_kvph6j.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144108/20221011_1665476230_731672_kvph6j.jpg",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766144108/20221011_1665476230_731672_kvph6j.jpg"
+    ],
+    title: "24W RMS total power output,Digital Signal Processing (DSP) technology",
+    oldprice: "$220",
+    price: "$205",
+    discountPercent: "7%",
+    ratestar: "⭐⭐⭐☆☆",
+    review: "Ideal for gaming and multimedia content. Long battery life with a sharp AMOLED display."
+  },
+  {
+    id: 22,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766145127/Whirlpool-Magicook-Pro-29L-31CES-Convection-Microwave-Air-Fryer-with-Baking-Plate-Rotisserie_1_vsgkqd.webp",
+    name: "Whirlpool Magicook Pro 29L 31CES Convection Microwave (Air-Fryer with Baking Plate & Rotisserie)",
+    catetitle: "Microwave",
+    category: "Electronics",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766145127/Whirlpool-Magicook-Pro-29L-31CES-Convection-Microwave-Air-Fryer-with-Baking-Plate-Rotisserie_1_vsgkqd.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766145127/Whirlpool-Magicook-Pro-29L-31CES-Convection-Microwave-Air-Fryer-with-Baking-Plate-Rotisserie_1_vsgkqd.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766145127/Whirlpool-Magicook-Pro-29L-31CES-Convection-Microwave-Air-Fryer-with-Baking-Plate-Rotisserie_1_vsgkqd.webp"
+    ],
+    title: "Capacity: 29 Litre,Air fryer,Sanitization,Zero waste & Immunity Booster menu",
+    oldprice: "$1045.45",
+    price: "$959.09",
+    discountPercent: "8%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "Fast performance and Warranty: 5 Years Magnetron, 1 Year Spare Parts & Service. Perfect for daily use in the mid-range category."
+  },
+  {
+    id: 23,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817481/c75-gold-001-228x228_hnonym.webp",
+    name: "Realme C75",
+    catetitle: "Mobile Phone",
+    category: "Electronics",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817481/c75-gold-001-228x228_hnonym.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765903906/pngimg.com_-_iphone17_PNG42_t0z0hv.png",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817650/iPhone-17-Pro-Max-deep-blue-7285_nadtgj.webp"
+    ],
+    title: "Realme C75 – Budget-Friendly Smartphone with HD+ Display",
+    oldprice: "$231.82",
+    price: "$208.18",
+    discountPercent: "10%",
+    ratestar: "⭐⭐⭐⭐⭐",
+    ram: ["6","128"],
+    review: "Great for daily tasks and media consumption. Affordable and reliable budget phone."
+  },
+  {
+    id: 24,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766297071/Hisense-BD-189OBLUV-Deep-Freezer-1_oluiff.webp",
+    name: "Hisense BD-240OBLUV Deep Freezer",
+    catetitle: "Freezer",
+    category: "Electronics",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766297071/Hisense-BD-189OBLUV-Deep-Freezer-1_oluiff.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766297070/Hisense-BD-189OBLUV-Deep-Freezer-2_hsr7sd.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766297070/Hisense-BD-189OBLUV-Deep-Freezer-2_hsr7sd.webp"
+    ],
+    title: "Capacity: 240 Litres,Colour: All,Lock: Yes,Inside Glass Door,Easy Installment Payment Facilities",
+    oldprice: "$750",
+    price: "$550",
+    discountPercent: "7%",
+    ratestar: "⭐⭐⭐⭐☆",
+    review: "Warranty: 12 Years Compressor, 2 Years Motherboard, 2 Years Spare Parts, 2 Years Service,Fast performance, good battery life, and excellent mid-range smartphone experience."
+  },
+  {
+    id: 25,
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766297280/Life-Up-Infrared-Cooker_uqtafc.webp",
+    name: "LifeUp Infrared Cooker Marble Blue",
+    catetitle: "Cooker",
+    category: "Electronics",
+    categoryImg: [
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766297280/Life-Up-Infrared-Cooker_uqtafc.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766297280/Life-Up-Infrared-Cooker_uqtafc.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1766297280/Life-Up-Infrared-Cooker_uqtafc.webp"
+    ],
+    title: "Touch Control,LED Digital Display,2000W power for Better and Faster Cooking,3 Pre-set Function – Fry, Barbeque, Hotpot.",
+    oldprice: "$120",
+    price: "$110",
+    discountPercent: "7%",
+    ratestar: "⭐⭐⭐☆☆",
+    ram: ["32","800"],
+    review: "Foldable Cooker with fast performance for high-end users.Super Large coil panel, High Thermal Efficiency,Self-Lubricating Fan, Disperse Heat Quickly."
+  },
+];
+
+
+
+
+
