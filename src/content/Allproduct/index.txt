@@ -1,0 +1,18 @@
+{
+  id: 23,
+  image: "",
+  name: "",
+   categoryImg: [
+    "", 
+    "", 
+    ""
+],
+  catetitle: "Women Bags",
+  title: "",
+  oldprice: "$100",
+  price: "$85",
+  discountPercent: "15%",
+  ratestar: "⭐⭐⭐⭐☆",
+  review: "Designed with modern women in mind, this bag offers elegance and everyday practicality. The roomy interior allows for easy storage of personal items, documents, and accessories. Lightweight construction ensures comfort during long days. Durable materials and reinforced stitching support long-term use. Its refined design enhances both professional and casual looks. Thoughtful compartment placement improves organization and convenience. This bag is a stylish and reliable choice for women who value comfort, organization, and timeless design.",
+  category: "Bags"
+},

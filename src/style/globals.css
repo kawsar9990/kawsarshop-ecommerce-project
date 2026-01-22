@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@source "../../.flowbite-react/class-list.json";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: tomato;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
