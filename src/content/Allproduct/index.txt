@@ -1,18 +1,56 @@
 {
-  id: 23,
+  id: 1,
   image: "",
   name: "",
-   categoryImg: [
+    categoryImg: [
     "", 
     "", 
     ""
 ],
-  catetitle: "Women Bags",
+  catetitle: "Jewellery",
   title: "",
-  oldprice: "$100",
-  price: "$85",
+  oldprice: "$8000",
+  price: "$5000",
   discountPercent: "15%",
   ratestar: "⭐⭐⭐⭐☆",
   review: "Designed with modern women in mind, this bag offers elegance and everyday practicality. The roomy interior allows for easy storage of personal items, documents, and accessories. Lightweight construction ensures comfort during long days. Durable materials and reinforced stitching support long-term use. Its refined design enhances both professional and casual looks. Thoughtful compartment placement improves organization and convenience. This bag is a stylish and reliable choice for women who value comfort, organization, and timeless design.",
-  category: "Bags"
+  category: "Jewellery"
 },
+
+
+aitai apni akta kaj kore diben aikane id banai diben 1-20 ta airokom kore banai diben jeikane sob thik thakbe 
+price hobe 3000-8000 er modde ar oi vabe oldprice hobe sathe discount hobe ar review hobe Jewellery niya 250 word er ar title hobe 150 word er Jewellery niya
+ar ratestar hobe mixed kore ⭐⭐⭐⭐☆, ⭐⭐⭐⭐⭐,⭐⭐⭐☆☆,⭐⭐☆☆☆, ⭐☆☆☆☆ aivvba e kore den sob
+are vai name, img ,categoryimg aigulo te "" empty hobe
+
+
+
+
+
+
+
+
+{
+  id: 1,
+  image: "",
+  name: "",
+    categoryImg: [
+    "", 
+    "", 
+    ""
+],
+  catetitle: "Groceries",
+  title: "",
+  oldprice: "$10", 
+  price: "$8.56", 
+  discountPercent: "15%",
+  ratestar: "⭐⭐⭐⭐☆",
+  review: "Designed with modern women in mind, this bag offers elegance and everyday practicality. The roomy interior allows for easy storage of personal items, documents, and accessories. Lightweight construction ensures comfort during long days. Durable materials and reinforced stitching support long-term use. Its refined design enhances both professional and casual looks. Thoughtful compartment placement improves organization and convenience. This bag is a stylish and reliable choice for women who value comfort, organization, and timeless design.",
+  category: "Groceries"
+},
+
+
+aitai apni akta kaj kore diben aikane id banai diben 1-3 ta airokom kore banai diben jeikane sob thik thakbe  
+price hobe 15-20 er modde ar oi vabe oldprice hobe sathe discount hobe ar review hobe Home & Cleaning niya 250 word er ar title hobe 150 word er Home & Cleaning niya 
+ar ratestar hobe mixed kore ⭐⭐⭐⭐☆, ⭐⭐⭐⭐⭐,⭐⭐⭐☆☆,⭐⭐☆☆☆, ⭐☆☆☆☆ aivvba e kore den sob
+are vai name, img ,categoryimg aigulo te "" empty hobe

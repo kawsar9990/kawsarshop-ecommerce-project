@@ -91,10 +91,10 @@ export const Fashion = [
   },
   {
     id: 6,
-    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817673/KAUS2241_9e4bd1c2-b8cd-4f1f-a37e-7deb3bb664f1_uo7gct.webp",
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769088950/rnp_pal_aw25_ljkt1759_coated_denim_jacket_2_202512070911225102_thumb_qkklrx.jpg",
     name: "Women's Jacket",
     categoryImg: [
-        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817673/KAUS2241_9e4bd1c2-b8cd-4f1f-a37e-7deb3bb664f1_uo7gct.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769088950/rnp_pal_aw25_ljkt1759_coated_denim_jacket_2_202512070911225102_thumb_qkklrx.jpg",
         "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817674/KAUS2663_gjtypb.webp",
         "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817698/KAUS8681_koto3j.webp"
     ],
@@ -109,10 +109,10 @@ export const Fashion = [
   },
   {
     id: 7,
-    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817672/KAUS2224_d4cadfb4-f66d-4795-8d57-9f948519dfd7_fdepxk.webp",
+    image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769088949/ca669e7f449b79d2685c1b7c0ca15592.jpg_400x400q75_gow116.avif",
     name: "Women's Bra Set",
     categoryImg: [
-        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817672/KAUS2224_d4cadfb4-f66d-4795-8d57-9f948519dfd7_fdepxk.webp",
+        "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769088949/ca669e7f449b79d2685c1b7c0ca15592.jpg_400x400q75_gow116.avif",
         "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817683/KAUS2757_vy3hkd.webp",
         "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765817662/KAUS1041_cc_ffnfjf.webp"
     ],
