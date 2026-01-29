@@ -613,15 +613,15 @@ export const Leptop = [
 },
 {
   id: 35,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/MacBook-Pro-M3-14inch-Silver-1368_h7oyzp.webp",
+  name: "MacBook Pro M5 14-Inch 16/512GB 10-Core CPU 10-Core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/MacBook-Pro-M3-14inch-Silver-1368_h7oyzp.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Apple-MacBook-Pro-M1-Pro-14-Inch-10-core-CPU-16-core-GPU-Price-in-bangladesh-silver_wkdp3w.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/MacBook-Pro-M3-14inch-Silver-1368_h7oyzp.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops combine portability, performance, and advanced technology to support work, learning, and entertainment efficiently.",
+  title: "MacBook Pro M5 14-Inch 16/512GB 10-Core CPU 10-Core GPU Laptops combine portability, performance, and advanced technology to support work, learning, and entertainment efficiently.",
   oldprice: "$2200",
   price: "$2100",
   discountPercent: "5%",
@@ -631,15 +631,15 @@ export const Leptop = [
 },
 {
   id: 36,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Apple-MacBook-Pro-M1-Pro-14-Inch-10-core-CPU-16-core-GPU-Price-in-bangladesh-silver_wkdp3w.webp",
+  name: "MacBook Air M2 13.6-inch 16/256GB 8 Core CPU 8 Core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Apple-MacBook-Pro-M1-Pro-14-Inch-10-core-CPU-16-core-GPU-Price-in-bangladesh-silver_wkdp3w.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/MacBook-Air-M3-13-Inch-Midnight-7621_t4t1vk.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Apple-MacBook-Pro-M1-Pro-14-Inch-10-core-CPU-16-core-GPU-Price-in-bangladesh-silver_wkdp3w.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate advanced processors, storage, and graphics with portability to deliver efficient computing for work and entertainment.",
+  title: "MacBook Air M2 13.6-inch 16/256GB 8 Core CPU 8 Core GPU Laptops integrate advanced processors, storage, and graphics with portability to deliver efficient computing for work and entertainment.",
   oldprice: "$2500",
   price: "$2300",
   discountPercent: "8%",
@@ -649,15 +649,15 @@ export const Leptop = [
 },
 {
   id: 37,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/MacBook-Air-M3-13-Inch-Midnight-7621_t4t1vk.webp",
+  name: "MacBook Pro M4 14-Inch 16/512GB 10 Core CPU 10 Core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/MacBook-Air-M3-13-Inch-Midnight-7621_t4t1vk.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_gcayld.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/MacBook-Air-M3-13-Inch-Midnight-7621_t4t1vk.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops provide portable computing with high-speed performance and advanced features for professional, educational, and entertainment use.",
+  title: "MacBook Pro M4 14-Inch 16/512GB 10 Core CPU 10 Core GPU Laptops provide portable computing with high-speed performance and advanced features for professional, educational, and entertainment use.",
   oldprice: "$1800",
   price: "$1700",
   discountPercent: "6%",
@@ -667,17 +667,17 @@ export const Leptop = [
 },
 {
   id: 38,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_gcayld.webp",
+  name: "MacBook Pro M4 Pro 14-Inch 24/512GB 12 Core CPU 16 Core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_gcayld.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Macbook-Air-M4-Midnight-2969_zcuckm.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_gcayld.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate sleek design, portability, and advanced technology to deliver reliable computing for work, learning, and entertainment.",
+  title: "MacBook Pro M4 Pro 14-Inch 24/512GB 12 Core CPU 16 Core GPU Laptops integrate sleek design, portability, and advanced technology to deliver reliable computing for work, learning, and entertainment.",
   oldprice: "$2000",
-  price: "$1900",
+  price: "$2500",
   discountPercent: "5%",
   ratestar: "⭐⭐⭐☆☆",
   review: "Modern laptops provide portability, high-speed performance, and advanced features. They support professional work, study, content creation, and entertainment efficiently. Connectivity options like Wi-Fi, Bluetooth, and USB ports allow seamless integration with external devices. Security measures such as biometric authentication and encryption safeguard data. Sleek, lightweight designs with long-lasting batteries enhance portability and usability. Choosing the right laptop requires evaluating performance, specifications, features, and price to meet professional, educational, and personal needs effectively.",
@@ -685,15 +685,15 @@ export const Leptop = [
 },
 {
   id: 39,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Macbook-Air-M4-Midnight-2969_zcuckm.webp",
+  name: "MacBook Pro M4 Pro 14-Inch 24GB/1TB 14 Core CPU 20 Core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Macbook-Air-M4-Midnight-2969_zcuckm.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_1_ptitrk.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Macbook-Air-M4-Midnight-2969_zcuckm.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops offer portable computing, advanced features, and high-speed performance to support professional, educational, and entertainment needs.",
+  title: "MacBook Pro M4 Pro 14-Inch 24GB/1TB 14 Core CPU 20 Core GPU Laptops offer portable computing, advanced features, and high-speed performance to support professional, educational, and entertainment needs.",
   oldprice: "$2400",
   price: "$225000",
   discountPercent: "6%",
@@ -703,15 +703,15 @@ export const Leptop = [
 },
 {
   id: 40,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_1_ptitrk.webp",
+  name: "MacBook Air M4 13-Inch",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_1_ptitrk.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Macbook-Air-M4-Sky-blue-6065_wx8tcb.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_1_ptitrk.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops combine performance, portability, and advanced technology to provide efficient computing for work, study, and entertainment.",
+  title: "MacBook Air M4 13-Inch Laptops combine performance, portability, and advanced technology to provide efficient computing for work, study, and entertainment.",
   oldprice: "$2700",
   price: "$2500",
   discountPercent: "7%",
@@ -721,33 +721,33 @@ export const Leptop = [
 },
 {
   id: 41,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Macbook-Air-M4-Sky-blue-6065_wx8tcb.webp",
+  name: "MacBook Air M4 15-Inch",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Macbook-Air-M4-Sky-blue-6065_wx8tcb.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Air-M2-Midnight-8137_ttnbvf.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678222/Macbook-Air-M4-Sky-blue-6065_wx8tcb.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate portability, performance, and advanced features to provide efficient computing for work, study, and entertainment.",
+  title: "MacBook Air M4 15-Inch Laptops integrate portability, performance, and advanced features to provide efficient computing for work, study, and entertainment.",
   oldprice: "$2000",
-  price: "$185000",
-  discountPercent: "7%",
+  price: "$2000",
+  discountPercent: "0%",
   ratestar: "⭐⭐⭐⭐☆",
   review: "Modern laptops offer powerful processors, ample storage, and high-quality graphics to support professional work, study, and entertainment efficiently. Users can run multiple applications, access the internet, and create multimedia content seamlessly. Connectivity options including Wi-Fi, Bluetooth, and USB ports allow easy integration with peripherals and networks. Security features like biometric authentication and encryption safeguard sensitive information. Sleek, lightweight designs and long-lasting batteries enhance portability and usability. Selecting the right laptop requires evaluating performance, features, and price to meet professional, educational, and personal needs effectively.",
   category: "Electronics"
 },
 {
   id: 42,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Air-M2-Midnight-8137_ttnbvf.webp",
+  name: "MacBook Air M3 13-Inch 8/512GB 8 Core CPU 10 Core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Air-M2-Midnight-8137_ttnbvf.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_uk3mbx.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Air-M2-Midnight-8137_ttnbvf.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops provide portable computing, high-speed performance, and advanced features to support professional, educational, and entertainment needs.",
+  title: "MacBook Air M3 13-Inch 8/512GB 8 Core CPU 10 Core GPU Laptops provide portable computing, high-speed performance, and advanced features to support professional, educational, and entertainment needs.",
   oldprice: "$2200",
   price: "$2100",
   discountPercent: "5%",
@@ -757,15 +757,15 @@ export const Leptop = [
 },
 {
   id: 43,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_uk3mbx.webp",
+  name: "MacBook Pro M4 14-Inch 24GB/1TB 10 Core CPU 10 Core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_uk3mbx.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_2_hbgma9.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_uk3mbx.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate advanced technology, sleek design, and portability to deliver efficient computing for work, study, and entertainment.",
+  title: "MacBook Pro M4 14-Inch 24GB/1TB 10 Core CPU 10 Core GPU Laptops integrate advanced technology, sleek design, and portability to deliver efficient computing for work, study, and entertainment.",
   oldprice: "$2500",
   price: "$2300",
   discountPercent: "8%",
@@ -775,15 +775,15 @@ export const Leptop = [
 },
 {
   id: 44,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_2_hbgma9.webp",
+  name: "MacBook Pro M5 14-Inch 16GB/1TB 10-Core CPU 10-Core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_2_hbgma9.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Pro-M4-Max-16-inch-1480E291core-GPU-Price-in-bangladesh-space-bla_vus2gg.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/MacBook-Pro-M3-16inch-Space-Black-9948_2_hbgma9.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops provide high-performance computing, portability, and advanced features to support professional, educational, and entertainment tasks efficiently.",
+  title: "MacBook Pro M5 14-Inch 16GB/1TB 10-Core CPU 10-Core GPU Laptops provide high-performance computing, portability, and advanced features to support professional, educational, and entertainment tasks efficiently.",
   oldprice: "$2700",
   price: "$2500",
   discountPercent: "7%",
@@ -793,17 +793,17 @@ export const Leptop = [
 },
 {
   id: 45,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Pro-M4-Max-16-inch-1480E291core-GPU-Price-in-bangladesh-space-bla_vus2gg.webp",
+  name: "MacBook Pro M4 14-Inch 16GB/1TB 10 Core CPU 10 Core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Pro-M4-Max-16-inch-1480E291core-GPU-Price-in-bangladesh-space-bla_vus2gg.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_2_athdx3.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Pro-M4-Max-16-inch-1480E291core-GPU-Price-in-bangladesh-space-bla_vus2gg.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate portable computing, advanced hardware, and sleek design to provide reliable computing for professional and personal use.",
+  title: "MacBook Pro M4 14-Inch 16GB/1TB 10 Core CPU 10 Core GPU Laptops integrate portable computing, advanced hardware, and sleek design to provide reliable computing for professional and personal use.",
   oldprice: "$1800",
-  price: "$1700",
+  price: "$2700",
   discountPercent: "6%",
   ratestar: "⭐☆☆☆☆",
   review: "High-performance laptops offer speed, storage, and graphics for seamless computing. They support multitasking, professional work, study, and entertainment efficiently. Connectivity options like Wi-Fi, Bluetooth, and USB ports allow integration with external devices. Security features such as biometric authentication protect sensitive information. Sleek, durable designs with long-lasting batteries enhance portability and usability. Selecting the right laptop involves assessing performance, specifications, features, and price to meet professional, educational, and personal needs effectively.",
@@ -811,17 +811,17 @@ export const Leptop = [
 },
 {
   id: 46,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_2_athdx3.webp",
+  name: "Apple MacBook Air M3 13 Inch 8 Core CPU 8 Core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_2_athdx3.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Pro-M1-13-Inch-8-core-CPU-14-core-GPU-Price-in-bangladesh-silver_xesgf2.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_2_athdx3.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops combine portability, performance, and advanced technology to deliver efficient computing for work, learning, and entertainment.",
+  title: "Apple MacBook Air M3 13 Inch 8 Core CPU 8 Core GPU Laptops combine portability, performance, and advanced technology to deliver efficient computing for work, learning, and entertainment.",
   oldprice: "$2000",
-  price: "$185000",
+  price: "$2500",
   discountPercent: "8%",
   ratestar: "⭐⭐⭐⭐☆",
   review: "Modern laptops integrate processors, storage, and graphics to provide smooth computing for professional, educational, and entertainment tasks. Connectivity features like Wi-Fi, Bluetooth, and USB ports allow seamless integration with external devices. Security features including biometric authentication and encryption protect sensitive data. Sleek, lightweight designs and long-lasting batteries improve portability and usability. Choosing the right laptop involves evaluating performance, specifications, features, and price to meet professional, educational, and personal needs efficiently.",
@@ -829,15 +829,15 @@ export const Leptop = [
 },
 {
   id: 47,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Pro-M1-13-Inch-8-core-CPU-14-core-GPU-Price-in-bangladesh-silver_xesgf2.webp",
+  name: "Apple MacBook Pro M4 Max 14 inch 14‑core CPU and 32‑core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Pro-M1-13-Inch-8-core-CPU-14-core-GPU-Price-in-bangladesh-silver_xesgf2.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/Apple-MacBook-Air-M3-13-Inch-8-Core-CPU-8-Core-GPU-Price-in-Bangladesh-Space-Gray---Copy_ls6ast.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Pro-M1-13-Inch-8-core-CPU-14-core-GPU-Price-in-bangladesh-silver_xesgf2.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops provide reliable, high-speed performance, portability, and advanced features for professional, educational, and entertainment tasks.",
+  title: "Apple MacBook Pro M4 Max 14 inch 14‑core CPU and 32‑core GPU Laptops provide reliable, high-speed performance, portability, and advanced features for professional, educational, and entertainment tasks.",
   oldprice: "$2200",
   price: "$2100",
   discountPercent: "5%",
@@ -847,15 +847,15 @@ export const Leptop = [
 },
 {
   id: 48,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/Apple-MacBook-Air-M3-13-Inch-8-Core-CPU-8-Core-GPU-Price-in-Bangladesh-Space-Gray---Copy_ls6ast.webp",
+  name: "Apple MacBook Pro M1 Pro 14 Inch 10 core CPU and 16 core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/Apple-MacBook-Air-M3-13-Inch-8-Core-CPU-8-Core-GPU-Price-in-Bangladesh-Space-Gray---Copy_ls6ast.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Air-M3-13-Inch-8-Core-CPU-8-Core-GPU-Price-in-Bangladesh-Starlight_pkinjt.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678221/Apple-MacBook-Air-M3-13-Inch-8-Core-CPU-8-Core-GPU-Price-in-Bangladesh-Space-Gray---Copy_ls6ast.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate advanced processors, storage, and graphics with portability and sleek design for efficient computing.",
+  title: "Apple MacBook Pro M1 Pro 14 Inch 10 core CPU and 16 core GPU Laptops integrate advanced processors, storage, and graphics with portability and sleek design for efficient computing.",
   oldprice: "$2500",
   price: "$2300",
   discountPercent: "8%",
@@ -865,15 +865,15 @@ export const Leptop = [
 },
 {
   id: 49,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Air-M3-13-Inch-8-Core-CPU-8-Core-GPU-Price-in-Bangladesh-Starlight_pkinjt.webp",
+  name: "Apple MacBook Pro M1 13 Inch 8 core CPU and 14 core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Air-M3-13-Inch-8-Core-CPU-8-Core-GPU-Price-in-Bangladesh-Starlight_pkinjt.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_1_ixes0d.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Air-M3-13-Inch-8-Core-CPU-8-Core-GPU-Price-in-Bangladesh-Starlight_pkinjt.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops offer high-performance computing, portability, and advanced features for professional, educational, and entertainment needs.",
+  title: "Apple MacBook Pro M1 13 Inch 8 core CPU and 14 core GPU Laptops offer high-performance computing, portability, and advanced features for professional, educational, and entertainment needs.",
   oldprice: "$2700",
   price: "$2500",
   discountPercent: "7%",
@@ -883,17 +883,17 @@ export const Leptop = [
 },
 {
   id: 50,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_1_ixes0d.webp",
+  name: "Apple MacBook Pro M4 Max 16 inch 16‑core CPU and 40‑core GPU",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_1_ixes0d.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/Apple-MacBook-Pro-M1-13-Inch-8-core-CPU-14-core-GPU-Price-in-bangladesh-silver_xesgf2.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769678220/MacBook-Pro-M3-16inch---Silver-3587_1_ixes0d.webp"
 ],
   catetitle: "Laptop",
   title: "Laptops provide portable computing, advanced technology, and high-speed performance to support professional, educational, and entertainment tasks.",
   oldprice: "$3000",
-  price: "$2800",
+  price: "$6500",
   discountPercent: "7%",
   ratestar: "⭐☆☆☆☆",
   review: "Modern laptops offer high-speed performance, ample storage, and advanced graphics to support work, study, and entertainment. Users can run multiple applications, access the internet, and create multimedia content efficiently. Connectivity features such as Wi-Fi, Bluetooth, and USB ports allow smooth integration with external devices. Security measures including biometric authentication and encryption protect sensitive data. Sleek, lightweight designs and long-lasting batteries improve portability and usability. Choosing the right laptop involves evaluating performance, features, and price to meet professional, educational, and personal needs effectively.",
@@ -901,15 +901,15 @@ export const Leptop = [
 },
 {
   id: 51,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679410/swift_go_14_7_-200x200_pqg8qc.webp",
+  name: "Acer Swift Go SFG 14-73 Ultra 5 125H 14 Inch WQXGA+ Laptop",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679410/swift_go_14_7_-200x200_pqg8qc.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679409/aspire-3-a315-59-50j9-500x500-200x200_gwjdye.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679410/swift_go_14_7_-200x200_pqg8qc.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate high-speed processors, ample storage, and portability to support professional, educational, and entertainment tasks.",
+  title: "Acer Swift Go SFG 14-73 Ultra 5 125H 14 Inch WQXGA+ Laptop Laptops integrate high-speed processors, ample storage, and portability to support professional, educational, and entertainment tasks.",
   oldprice: "$1700",
   price: "$1600",
   discountPercent: "6%",
@@ -919,15 +919,15 @@ export const Leptop = [
 },
 {
   id: 52,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679409/aspire-3-a315-59-50j9-500x500-200x200_gwjdye.webp",
+  name: "Acer Aspire 3 A315-59-50J9 Core i5 12th Gen 15.6 FHD Laptop",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679409/aspire-3-a315-59-50j9-500x500-200x200_gwjdye.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679408/a715-76g-500x500-200x200_f4wbs2.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679409/aspire-3-a315-59-50j9-500x500-200x200_gwjdye.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops combine portable design, high-speed performance, and advanced features to deliver reliable computing for work and entertainment.",
+  title: "Acer Aspire 3 A315-59-50J9 Core i5 12th Gen 15.6 FHD Laptop Laptops combine portable design, high-speed performance, and advanced features to deliver reliable computing for work and entertainment.",
   oldprice: "$1900",
   price: "$1800",
   discountPercent: "5%",
@@ -937,15 +937,15 @@ export const Leptop = [
 },
 {
   id: 53,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679408/a715-76g-500x500-200x200_f4wbs2.webp",
+  name: "Acer Aspire 7 A715-76G Core i5 12th Gen RTX 3050 4GB Graphics IPS 144Hz 15.6",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679408/a715-76g-500x500-200x200_f4wbs2.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679407/nitro-v-15-02-500x500-200x200_ynio8l.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679408/a715-76g-500x500-200x200_f4wbs2.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops provide portable computing with advanced hardware, sleek design, and reliable performance for professional and personal use.",
+  title: "Acer Aspire 7 A715-76G Core i5 12th Gen RTX 3050 4GB Graphics IPS 144Hz 15.6 Laptops provide portable computing with advanced hardware, sleek design, and reliable performance for professional and personal use.",
   oldprice: "$2000",
   price: "$1900",
   discountPercent: "5%",
@@ -955,15 +955,15 @@ export const Leptop = [
 },
 {
   id: 54,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679407/nitro-v-15-02-500x500-200x200_ynio8l.webp",
+  name: "Acer Nitro V 15 ANV15-51 Core i7 13th Gen RTX 4050 6GB GDDR6 15.6",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679407/nitro-v-15-02-500x500-200x200_ynio8l.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679406/acer-extensa-15-ex215-23-r2jd-amd-ryzen-3-7320u-11708403973-200x200_nsaz45.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679407/nitro-v-15-02-500x500-200x200_ynio8l.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops offer high-performance computing, portability, and advanced features to handle professional, educational, and entertainment tasks efficiently.",
+  title: "Acer Nitro V 15 ANV15-51 Core i7 13th Gen RTX 4050 6GB GDDR6 15.6 Laptops offer high-performance computing, portability, and advanced features to handle professional, educational, and entertainment tasks efficiently.",
   oldprice: "$2100",
   price: "$2000",
   discountPercent: "5%",
@@ -973,17 +973,17 @@ export const Leptop = [
 },
 {
   id: 55,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679406/acer-extensa-15-ex215-23-r2jd-amd-ryzen-3-7320u-11708403973-200x200_nsaz45.webp",
+  name: "Acer Extensa 15 EX215-23-R2JD 15.6 Inch FHD Display Laptop",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679406/acer-extensa-15-ex215-23-r2jd-amd-ryzen-3-7320u-11708403973-200x200_nsaz45.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679405/Acer-Nitro-Lite-16-i5-1_w87gnu.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679406/acer-extensa-15-ex215-23-r2jd-amd-ryzen-3-7320u-11708403973-200x200_nsaz45.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops combine portability, performance, and advanced technology to deliver efficient computing for work, learning, and entertainment.",
+  title: "Acer Extensa 15 EX215-23-R2JD 15.6 Inch FHD Display Laptop Laptops combine portability, performance, and advanced technology to deliver efficient computing for work, learning, and entertainment.",
   oldprice: "$2300",
-  price: "$2200",
+  price: "$1700",
   discountPercent: "5%",
   ratestar: "⭐☆☆☆☆",
   review: "High-performance laptops offer speed, storage, and graphics for efficient computing. They support multitasking, professional work, study, and entertainment. Connectivity options like Wi-Fi, Bluetooth, and USB ports allow integration with external devices. Security measures including biometric authentication and encryption safeguard sensitive data. Sleek, durable designs and long-lasting batteries enhance portability and usability. Selecting the right laptop involves evaluating performance, specifications, features, and price to meet professional, educational, and personal needs.",
@@ -991,17 +991,17 @@ export const Leptop = [
 },
 {
   id: 56,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679405/Acer-Nitro-Lite-16-i5-1_w87gnu.webp",
+  name: "Acer Nitro Lite 16 | 2025 Model | 16″ WUXGA 165Hz | Core i5-13420H | 16GB DDR5 | 512GB SSD | RTX 4050 6GB",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679405/Acer-Nitro-Lite-16-i5-1_w87gnu.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679403/Acer-Predator-Helios-Neo-16-Gaming-Laptop-3-1-1_g5cgjx.jpg", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679405/Acer-Nitro-Lite-16-i5-1_w87gnu.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate high-performance processors, storage, and graphics with portability to provide smooth computing for modern users.",
+  title: "Acer Nitro Lite 16 | 2025 Model | 16″ WUXGA 165Hz | Core i5-13420H | 16GB DDR5 | 512GB SSD | RTX 4050 6GB Laptops integrate high-performance processors, storage, and graphics with portability to provide smooth computing for modern users.",
   oldprice: "$2500",
-  price: "$235000",
+  price: "$2300",
   discountPercent: "6%",
   ratestar: "⭐⭐⭐⭐☆",
   review: "Modern laptops provide performance, portability, and versatility. High-speed processors, ample storage, and advanced graphics allow smooth multitasking, professional work, learning, and entertainment. Connectivity features such as Wi-Fi, Bluetooth, and USB ports allow seamless integration with external devices. Security features including biometric authentication and encryption protect sensitive data. Sleek, lightweight designs and long-lasting batteries improve portability and usability. Choosing the right laptop involves evaluating performance, features, and price to meet professional, educational, and personal needs.",
@@ -1009,15 +1009,15 @@ export const Leptop = [
 },
 {
   id: 57,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679403/Acer-Predator-Helios-Neo-16-Gaming-Laptop-3-1-1_g5cgjx.jpg",
+  name: "Acer Predator Helios Neo 16 | 2023 Model | 16″ 165Hz WUXGA | i7-13650HX | 16GB DDR5 RAM | 512GB SSD | RTX 4060 8GB | W11",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679403/Acer-Predator-Helios-Neo-16-Gaming-Laptop-3-1-1_g5cgjx.jpg",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679401/ASUS-TUF-F16-2026-1-300x300_isxqcq.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679403/Acer-Predator-Helios-Neo-16-Gaming-Laptop-3-1-1_g5cgjx.jpg"
 ],
   catetitle: "Laptop",
-  title: "Laptops provide portable computing with advanced technology, sleek design, and high-speed performance for work and entertainment.",
+  title: "Acer Predator Helios Neo 16 | 2023 Model | 16″ 165Hz WUXGA | i7-13650HX | 16GB DDR5 RAM | 512GB SSD | RTX 4060 8GB | W11 Laptops provide portable computing with advanced technology, sleek design, and high-speed performance for work and entertainment.",
   oldprice: "$1800",
   price: "$1700",
   discountPercent: "6%",
@@ -1027,15 +1027,15 @@ export const Leptop = [
 },
 {
   id: 58,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679401/ASUS-TUF-F16-2026-1-300x300_isxqcq.webp",
+  name: "ASUS V16 V3607VH | 2025 Model | 16-inch WUXGA 144Hz Gaming Laptop | Core 5 210H | 16GB RAM | 512GB SSD | RTX 5050 8GB | W11",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679401/ASUS-TUF-F16-2026-1-300x300_isxqcq.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679402/ASUS-V16-1-300x300_srdzfl.jpg", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679401/ASUS-TUF-F16-2026-1-300x300_isxqcq.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops combine portable design, advanced hardware, and high-speed performance to provide reliable computing for professional and personal tasks.",
+  title: "ASUS V16 V3607VH | 2025 Model | 16-inch WUXGA 144Hz Gaming Laptop | Core 5 210H | 16GB RAM | 512GB SSD | RTX 5050 8GB | W11 Laptops combine portable design, advanced hardware, and high-speed performance to provide reliable computing for professional and personal tasks.",
   oldprice: "$2000",
   price: "$1900",
   discountPercent: "5%",
@@ -1045,15 +1045,15 @@ export const Leptop = [
 },
 {
   id: 59,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679402/ASUS-V16-1-300x300_srdzfl.jpg",
+  name: "ASUS TUF Gaming F16 FX608JMR | 2026 Model | 16-inch WUXGA 165Hz | Core i5-14650HX | 32GB RAM | 1TB SSD | RTX 5060 8GB | W11",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679402/ASUS-V16-1-300x300_srdzfl.jpg",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679401/Sebastian6U_15_FFPlus_FFPlusPlus_TurboSilver_NT_HDcam_FPR_Catalog_Win11_WhiteBG_FrontLeft_M1546849_djkmsm.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679402/ASUS-V16-1-300x300_srdzfl.jpg"
 ],
   catetitle: "Laptop",
-  title: "Laptops provide efficient, portable computing with advanced features for work, learning, and entertainment.",
+  title: "ASUS TUF Gaming F16 FX608JMR | 2026 Model | 16-inch WUXGA 165Hz | Core i5-14650HX | 32GB RAM | 1TB SSD | RTX 5060 8GB | W11 Laptops provide efficient, portable computing with advanced features for work, learning, and entertainment.",
   oldprice: "$2200",
   price: "$2100",
   discountPercent: "5%",
@@ -1063,15 +1063,15 @@ export const Leptop = [
 },
 {
   id: 60,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679401/Sebastian6U_15_FFPlus_FFPlusPlus_TurboSilver_NT_HDcam_FPR_Catalog_Win11_WhiteBG_FrontLeft_M1546849_djkmsm.webp",
+  name: "HP 250 G10 | Core i5 13th Gen | 16GB RAM | 512GB SSD | 15.6",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679401/Sebastian6U_15_FFPlus_FFPlusPlus_TurboSilver_NT_HDcam_FPR_Catalog_Win11_WhiteBG_FrontLeft_M1546849_djkmsm.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679399/120954a853a7743e_b954d7c3-c4d3-4e6d-9d5a-b77c1609b103_zhvqcq.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679401/Sebastian6U_15_FFPlus_FFPlusPlus_TurboSilver_NT_HDcam_FPR_Catalog_Win11_WhiteBG_FrontLeft_M1546849_djkmsm.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate advanced technology, portability, and performance to deliver reliable computing for work, study, and entertainment.",
+  title: "HP 250 G10 | Core i5 13th Gen | 16GB RAM | 512GB SSD | 15.6 Laptops integrate advanced technology, portability, and performance to deliver reliable computing for work, study, and entertainment.",
   oldprice: "$2500",
   price: "$2400",
   discountPercent: "4%",
@@ -1081,15 +1081,15 @@ export const Leptop = [
 },
 {
   id: 61,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679399/120954a853a7743e_b954d7c3-c4d3-4e6d-9d5a-b77c1609b103_zhvqcq.webp",
+  name: "HP 250 G10 Core i7 13th Gen 8GB RAM 512GB SSD 15.6 Inch FHD Display Laptop",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679399/120954a853a7743e_b954d7c3-c4d3-4e6d-9d5a-b77c1609b103_zhvqcq.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679398/15-fd0203tu-02-500x500_c587f1f3-7320-40e2-9ce0-370e5f6c579c_vq9fq3.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679399/120954a853a7743e_b954d7c3-c4d3-4e6d-9d5a-b77c1609b103_zhvqcq.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate high-speed processors, ample storage, and portable design to deliver reliable computing for professional, educational, and entertainment needs.",
+  title: "HP 250 G10 Core i7 13th Gen 8GB RAM 512GB SSD 15.6 Inch FHD Display Laptop Laptops integrate high-speed processors, ample storage, and portable design to deliver reliable computing for professional, educational, and entertainment needs.",
   oldprice: "$1800",
   price: "$1700",
   discountPercent: "5%",
@@ -1099,15 +1099,15 @@ export const Leptop = [
 },
 {
   id: 62,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679398/15-fd0203tu-02-500x500_c587f1f3-7320-40e2-9ce0-370e5f6c579c_vq9fq3.webp",
+  name: "HP Victus Gaming 15-fa1249TX Core i5 13th Gen RTX 2050 4GB Graphics 15.6 FHD Gaming Laptop",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679398/15-fd0203tu-02-500x500_c587f1f3-7320-40e2-9ce0-370e5f6c579c_vq9fq3.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679396/Microsoft-Surface-Pro-4-Intel-Core-i5-6th-Gen-8GB-RAM-256GB-SSD-12.3-Inch-PixelSense-Touchscreen-Display-1_nee2yt.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679398/15-fd0203tu-02-500x500_c587f1f3-7320-40e2-9ce0-370e5f6c579c_vq9fq3.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops provide portable computing with advanced technology, high-speed performance, and sleek design for modern users.",
+  title: "HP Victus Gaming 15-fa1249TX Core i5 13th Gen RTX 2050 4GB Graphics 15.6 FHD Gaming Laptop Laptops provide portable computing with advanced technology, high-speed performance, and sleek design for modern users.",
   oldprice: "$2000",
   price: "$1900",
   discountPercent: "5%",
@@ -1117,15 +1117,15 @@ export const Leptop = [
 },
 {
   id: 63,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679396/Microsoft-Surface-Pro-4-Intel-Core-i5-6th-Gen-8GB-RAM-256GB-SSD-12.3-Inch-PixelSense-Touchscreen-Display-1_nee2yt.webp",
+  name: "HP ProBook 450 G10 Intel Core i5 1335U 8GB RAM, 512GB SSD 15.6 Inch FHD Display Laptop",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679396/Microsoft-Surface-Pro-4-Intel-Core-i5-6th-Gen-8GB-RAM-256GB-SSD-12.3-Inch-PixelSense-Touchscreen-Display-1_nee2yt.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679397/probook-450-g10-03-500x500_jhlvex.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679396/Microsoft-Surface-Pro-4-Intel-Core-i5-6th-Gen-8GB-RAM-256GB-SSD-12.3-Inch-PixelSense-Touchscreen-Display-1_nee2yt.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops combine performance, portability, and advanced hardware to provide efficient computing for work, study, and entertainment.",
+  title: "HP ProBook 450 G10 Intel Core i5 1335U 8GB RAM, 512GB SSD 15.6 Inch FHD Display Laptop Laptops combine performance, portability, and advanced hardware to provide efficient computing for work, study, and entertainment.",
   oldprice: "$2100",
   price: "$2000",
   discountPercent: "5%",
@@ -1135,17 +1135,17 @@ export const Leptop = [
 },
 {
   id: 64,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679397/probook-450-g10-03-500x500_jhlvex.webp",
+  name: "Microsoft Surface Pro 4 Intel Core i5 6th Gen 8GB RAM 256GB SSD 12.3",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679397/probook-450-g10-03-500x500_jhlvex.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679396/Asus-ROG-Zephyrus-G16-GU603VV-8364_iozo3g.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679397/probook-450-g10-03-500x500_jhlvex.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops offer high-speed performance, portability, and advanced features to support professional, educational, and entertainment tasks efficiently.",
+  title: "Microsoft Surface Pro 4 Intel Core i5 6th Gen 8GB RAM 256GB SSD 12.3 Laptops offer high-speed performance, portability, and advanced features to support professional, educational, and entertainment tasks efficiently.",
   oldprice: "$2300",
-  price: "$2200",
+  price: "$1300",
   discountPercent: "5%",
   ratestar: "⭐⭐☆☆☆",
   review: "Laptops integrate powerful processors, storage, and graphics to provide smooth computing for professional, educational, and entertainment purposes. Connectivity options like Wi-Fi, Bluetooth, and USB ports allow integration with peripherals and networks. Security features including biometric authentication and encryption protect sensitive data. Sleek, lightweight designs with long-lasting batteries enhance portability and usability. Selecting the right laptop requires evaluating performance, specifications, features, and price to meet professional, educational, and personal requirements efficiently.",
@@ -1153,15 +1153,15 @@ export const Leptop = [
 },
 {
   id: 65,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679396/Asus-ROG-Zephyrus-G16-GU603VV-8364_iozo3g.webp",
+  name: "Asus ROG Zephyrus G16 GU603VV 13th Gen Intel Core i7-13620H RTX 4060 8GB Graphics 16",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679396/Asus-ROG-Zephyrus-G16-GU603VV-8364_iozo3g.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679393/HP-Victus-15-fa1091nia-a-1735_kiwpsp.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679396/Asus-ROG-Zephyrus-G16-GU603VV-8364_iozo3g.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops combine portable design, advanced technology, and high-speed performance to deliver efficient computing for work and entertainment.",
+  title: "Asus ROG Zephyrus G16 GU603VV 13th Gen Intel Core i7-13620H RTX 4060 8GB Graphics 16 Laptops combine portable design, advanced technology, and high-speed performance to deliver efficient computing for work and entertainment.",
   oldprice: "$2500",
   price: "$2400",
   discountPercent: "4%",
@@ -1171,15 +1171,15 @@ export const Leptop = [
 },
 {
   id: 66,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679393/HP-Victus-15-fa1091nia-a-1735_kiwpsp.webp",
+  name: "HP Victus 15-fa1091nia 13th Gen Intel Core i5 13420H NVIDIA GeForce RTX 2050 4GB Graphics 15.6",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679393/HP-Victus-15-fa1091nia-a-1735_kiwpsp.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679393/ASUS-TUF-Gaming-A15-FA507U-e-5393_ow6ay5.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679393/HP-Victus-15-fa1091nia-a-1735_kiwpsp.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops integrate high-speed processors, storage, and advanced graphics with portable design to provide smooth computing for professional and personal tasks.",
+  title: "HP Victus 15-fa1091nia 13th Gen Intel Core i5 13420H NVIDIA GeForce RTX 2050 4GB Graphics 15.6 Laptops integrate high-speed processors, storage, and advanced graphics with portable design to provide smooth computing for professional and personal tasks.",
   oldprice: "$1800",
   price: "$1700",
   discountPercent: "6%",
@@ -1189,15 +1189,15 @@ export const Leptop = [
 },
 {
   id: 67,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679393/ASUS-TUF-Gaming-A15-FA507U-e-5393_ow6ay5.webp",
+  name: "Asus TUF F15 FX507VI Intel Core i7-13620H 13th Gen GeForce RTX 4070 8GB Graphics 15.6",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679393/ASUS-TUF-Gaming-A15-FA507U-e-5393_ow6ay5.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/ASUS-TUF-A15-FA506Nfr-9310_isy2v6.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679393/ASUS-TUF-Gaming-A15-FA507U-e-5393_ow6ay5.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops provide portable computing with advanced hardware, sleek design, and high-speed performance for work, study, and entertainment.",
+  title: "Asus TUF F15 FX507VI Intel Core i7-13620H 13th Gen GeForce RTX 4070 8GB Graphics 15.6 Laptops provide portable computing with advanced hardware, sleek design, and high-speed performance for work, study, and entertainment.",
   oldprice: "$2000",
   price: "$1900",
   discountPercent: "5%",
@@ -1207,15 +1207,15 @@ export const Leptop = [
 },
 {
   id: 68,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/ASUS-TUF-A15-FA506Nfr-9310_isy2v6.webp",
+  name: "ASUS TUF A15 FA506Nfr AMD Ryzen 7 7435HS NVIDIA GeForce RTX 2050 With 4GB Graphic 15.6",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/ASUS-TUF-A15-FA506Nfr-9310_isy2v6.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/Acer-Nitro-5-AN515-Intel-Core-i7-12650H-NVIDIA-GeForce-RTX-3050-4GB-Graphics-5666_zruin5.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/ASUS-TUF-A15-FA506Nfr-9310_isy2v6.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops combine portability, advanced technology, and performance to provide efficient computing for professional and personal tasks.",
+  title: "ASUS TUF A15 FA506Nfr AMD Ryzen 7 7435HS NVIDIA GeForce RTX 2050 With 4GB Graphic 15.6 Laptops combine portability, advanced technology, and performance to provide efficient computing for professional and personal tasks.",
   oldprice: "$2100",
   price: "$2000",
   discountPercent: "5%",
@@ -1225,15 +1225,15 @@ export const Leptop = [
 },
 {
   id: 69,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/Acer-Nitro-5-AN515-Intel-Core-i7-12650H-NVIDIA-GeForce-RTX-3050-4GB-Graphics-5666_zruin5.webp",
+  name: "Acer Nitro 5 AN515 Intel Core i5-12500H NVIDIA RTX 4050 6GB Graphics 15.6",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/Acer-Nitro-5-AN515-Intel-Core-i7-12650H-NVIDIA-GeForce-RTX-3050-4GB-Graphics-5666_zruin5.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/1111111-7354_cszk52.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/Acer-Nitro-5-AN515-Intel-Core-i7-12650H-NVIDIA-GeForce-RTX-3050-4GB-Graphics-5666_zruin5.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops offer high-performance computing, portability, and advanced features for work, study, and entertainment efficiently.",
+  title: "Acer Nitro 5 AN515 Intel Core i5-12500H NVIDIA RTX 4050 6GB Graphics 15.6 Laptops offer high-performance computing, portability, and advanced features for work, study, and entertainment efficiently.",
   oldprice: "$2300",
   price: "$2200",
   discountPercent: "5%",
@@ -1243,15 +1243,15 @@ export const Leptop = [
 },
 {
   id: 70,
-  image: "",
-  name: "",
+  image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/1111111-7354_cszk52.webp",
+  name: "HP VICTUS 15-FB1000ca AMD Ryzen 5 7535HS APU RTX 2050 4GB Graphics 15.6",
   categoryImg: [
-    "",
-    "", 
-    ""
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/1111111-7354_cszk52.webp",
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/Acer-Nitro-5-AN515-Intel-Core-i7-12650H-NVIDIA-GeForce-RTX-3050-4GB-Graphics-5666_zruin5.webp", 
+    "https://res.cloudinary.com/dkmzakgx2/image/upload/v1769679392/1111111-7354_cszk52.webp"
 ],
   catetitle: "Laptop",
-  title: "Laptops combine performance, portability, and advanced technology to provide efficient computing for professional, educational, and entertainment tasks.",
+  title: "HP VICTUS 15-FB1000ca AMD Ryzen 5 7535HS APU RTX 2050 4GB Graphics 15.6 Laptops combine performance, portability, and advanced technology to provide efficient computing for professional, educational, and entertainment tasks.",
   oldprice: "$2500",
   price: "$2400",
   discountPercent: "4%",
