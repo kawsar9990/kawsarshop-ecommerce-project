@@ -22,13 +22,13 @@ export default function RootLayout({ children }) {
       <link rel="shortcut icon" href="/icon/titleicon.png" type="image/x-icon" />
      
     <body className={`antialiased`} cz-shortcut-listen="true" style={{fontFamily: THEME.FONT_FAMILY}}>
-     {!hideHeaderFooter && <Header /> }
-      <LoaderProvider>
-        <MainProduct>
+     <MainProduct>
+      {!hideHeaderFooter && <Header /> }
+      <LoaderProvider>      
          {children}
-        </MainProduct>
       </LoaderProvider>
      {!hideHeaderFooter && <Footer /> }
+     </MainProduct>
       </body>
     </html>
   );

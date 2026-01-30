@@ -9,11 +9,13 @@ library.add(faBarsStaggered,faChevronDown,faBars,faXmark,faHouse,faMagnifyingGla
 import Sidebar from "./Sidebar"
 import SearchBar from "./Searchbox"
 import { useState, useRef , useEffect} from "react"
-
+import { useMainProduct } from "../../context/ProductRender"
 
 
 
 export default function Header(){
+
+   const {setCategory} = useMainProduct();
 
 
    const [sidebarcl, setsidebarcl] = useState(false)
@@ -192,7 +194,7 @@ onMouseEnter={()=> {
 onMouseLeave={()=> {
 fashionTimer.current = setTimeout(()=> setFashionOpen(false), 100)
 }}>
-   <Link href={`/productpage`} onClick={()=> setCategory("Fashion") } className=" hover:text-red-500 cursor-pointer"> Fashion</Link>
+   <Link href={`/productpage`} onClick={()=> setCategory("Fashion") } className=" hover:text-red-500 cursor-pointer">Fashion</Link>
    
 {FashionOpen && (
    <ul 
