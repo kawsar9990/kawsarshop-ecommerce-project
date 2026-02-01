@@ -1,7 +1,10 @@
+import { Suspense } from "react";
+import Searchresult from "./searchresult";
+
 export default function page(){
     return(
-        <div>
-            
-        </div>
+        <Suspense fallback={<div>loading...</div>}>
+            <Searchresult />
+        </Suspense>
     )
 }

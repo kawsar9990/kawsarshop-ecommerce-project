@@ -34,8 +34,6 @@ const RatingStar = [
   "⭐☆☆☆☆",
 ];
 
-
-
 const handleratingfillter = (rat) => {
 setRating((prev) => 
 prev.includes(rat)
@@ -50,7 +48,7 @@ const handlePrice = (e, newValue) => {
 
  
 return(
-<div className="hidden lg:block w-1/4 h-screen sticky top-40 p-5 border-r">
+<div className="hidden lg:block w-1/4 h-screen sticky top-45 mt-5 p-5  border-r">
 <div className="flex flex-col gap-5">
 
 {/* Category Filter */} 

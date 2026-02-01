@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import img1 from '../../../public/img/download.jpeg'
@@ -127,45 +127,41 @@ export default function FaqPage(){
   </h2>
   <div className="grid gap-8 md:grid-cols-2">
     {faqItems.map((item, idx) => (
-      <motion.div
+      <div
         key={idx}
-        whileHover={{ y: -5 }}
-        transition={{ type: "spring", stiffness: 300 }}
         className="text-black p-6 rounded-xl shadow hover:shadow-lg transition"
       >
-        <h3 className="text-xl font-bold mb-2">❓ {item.q}</h3>
+        <h3 className="text-xl font-bold text-[#155] mb-2">❓ {item.q}</h3>
         <p className="text-black">{item.a}</p>
-      </motion.div>
+      </div>
     ))}
   </div>
 </section>
 
 
     
-     <section className="py-16 px-6 text-black">
-        <h2 className="text-3xl md:text-5xl font-black text-center mb-10">
-          Customer Reviews
-        </h2>
-        <div ref={sliderRef} className="keen-slider">
-          {reviews.map((r, idx) => (
-            <div key={idx} className="keen-slider__slide p-6">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 200 }}
-                className=" p-6 rounded-xl h-80 cursor-pointer shadow-lg flex flex-col items-center"
-              >
-                <img
-                  src={r.img}
-                  alt={r.name}
-                  className="w-24 h-24 rounded-full mb-4 object-cover"
-                />
-                <h3 className="text-xl font-bold">{r.name}</h3>
-                <p className="text-black text-sm mb-4">{r.designation}</p>
-                <p className="text-black text-center">{r.text}</p>
-              </motion.div>
-            </div>
-          ))}
-        </div>
+   <section className="py-16 px-6 text-black">
+   <h2 className="text-3xl md:text-5xl font-black text-center mb-10">
+     Customer Reviews
+   </h2>
+  <div ref={sliderRef} className="keen-slider">
+  {reviews.map((r, idx) => (
+    <div key={idx} className="keen-slider__slide p-6">
+      <div
+        className=" p-6 rounded-xl h-80 cursor-pointer shadow-lg flex flex-col items-center"
+      >
+        <img
+          src={r.img}
+          alt={r.name}
+          className="w-24 h-24 rounded-full mb-4 object-cover"
+        />
+        <h3 className="text-xl font-bold">{r.name}</h3>
+        <p className="text-black text-sm mb-4">{r.designation}</p>
+        <p className="text-black text-center">{r.text}</p>
+      </div>
+    </div>
+  ))}
+</div>
       </section>
 
  </div>

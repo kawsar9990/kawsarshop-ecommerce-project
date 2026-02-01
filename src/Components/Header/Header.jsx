@@ -46,21 +46,27 @@ export default function Header(){
 
 
 
+
  const [showSmall, setShowSmall] = useState(true);
  const lastScroll = useRef(0);
  useEffect(()=> {
  const handleScroll = () => {
    const current = window.scrollY;
-   if(current > lastScroll.current && current > 50){
-      setShowSmall(false);
-   } else {
-   setShowSmall(true);
+   if(current === 0){
+      setShowSmall(true);
+   }
+  else if(current > lastScroll.current){
+   setShowSmall(false);
+ }
+ else if(current <= lastScroll.current){
+  setShowSmall(false)
  }
  lastScroll.current = current;   
  }
   window.addEventListener("scroll",handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 },[])
+
 
 
 
@@ -87,7 +93,7 @@ setsidebarcl={setsidebarcl}
 sideDropdown={sideDropdown}
 setsideDropdown={setsideDropdown}
 toggleDropdown={toggleDropdown}
-// setCategory={setCategory} // 
+setCategory={setCategory} 
  />
 </div>
 {/* sidebar xl  */}
@@ -95,14 +101,14 @@ toggleDropdown={toggleDropdown}
 
 
 {/* small header  */}
-<div className={`fixed hidden xl:block top-0 left-0 w-full h-10 bg-white border-b border-b-gray-300  px-5 transition-transform duration-300 z-[999] ${
+<div className={`fixed hidden items-center xl:block top-0 left-0 w-full h-10 bg-white border-b border-b-gray-300  px-5 transition-transform duration-300 z-[999] ${
     showSmall ? "translate-y-0" : "-translate-y-full"
  }`}>
           
- <div className="flex justify-between p-2">
- <div className="flex flex-row">
-<a href={``} className="flex"><p><FontAwesomeIcon icon={faPhone} /></p><p>+8801602084187</p></a>
-<a href={``} className="flex"><p><FontAwesomeIcon icon={faInbox} /></p><p>kawsar158464@gmail.com</p></a>
+ <div className="flex pt-3 justify-between uppercase p-2 text-[12px] flex-row items-center">
+ <div className="flex flex-row gap-3 items-center">
+<a href={``} className="flex text-[#155] gap-1"><p><FontAwesomeIcon icon={faPhone} /></p><p>+8801602084187</p></a>
+<a href={``} className="flex text-[#155] gap-1 lowercase"><p><FontAwesomeIcon icon={faInbox} /></p><p>kawsar158464@gmail.com</p></a>
 <div>
   <div className="flex">
     <p><FontAwesomeIcon icon={faTruck} /></p>
@@ -110,12 +116,9 @@ toggleDropdown={toggleDropdown}
   </div>
 </div>
 </div>
-<div className="flex items-center">
-<Link href={``}>Get App Details</Link>
-<div>
-  lan
-</div>
-<Link href={``}>Help Center</Link>
+<div className="flex items-center gap-2">
+<Link href={``}  className="hover:text-[#118]">Get App Details</Link>
+<Link href={`/helpcenter`} className="hover:text-[#118]">Help Center</Link>
 <Link href={``}>Order Tracking</Link>
 </div>
 </div>
@@ -215,14 +218,14 @@ onMouseEnter={()=> {
 onMouseLeave={()=> {
 ElectronicsTimer.current = setTimeout(()=> setElecOpen(false), 100)
 }}>
-   <Link  href={`/productpage`} onClick={()=> setCategory("Electronics")} className=" hover:text-red-500 cursor-pointer"> Electronics</Link>
+   <Link  href={`/productpage`} onClick={()=> setCategory("Electronics")} className=" hover:text-red-500 cursor-pointer">Electronics</Link>
    
 {ElecOpen && (
    <ul 
      className="absolute top-full left-0 min-w-[180px] bg-white shadow-lg rounded-lg flex flex-col items-start gap-2 py-3 pl-3 mt-1 z-50">
         <Link href={`/productpage`} onClick={()=> setCategory("Mobile")} className=" hover:text-red-500 cursor-pointer">Mobile</Link>
-        <Link href={`/productpage`} onClick={()=> setCategory("Laptops")}  className=" hover:text-red-500 cursor-pointer">Leptops</Link>
-        <Link  href={`/productpage`} onClick={()=> setCategory("TV")} className=" hover:text-red-500 cursor-pointer">Smart Watch</Link>
+        <Link href={`/productpage`} onClick={()=> setCategory("leptop")}  className=" hover:text-red-500 cursor-pointer">Leptop</Link>
+        <Link  href={`/productpage`} onClick={()=> setCategory("OthersElectronics")} className=" hover:text-red-500 cursor-pointer">Gadegt</Link>
     </ul>
 )}
 
@@ -267,7 +270,7 @@ FootwearTimer.current = setTimeout(()=> setfootOpen(false), 100)
      <ul 
     className="absolute top-full left-0 min-w-[180px] bg-white shadow-lg rounded-lg flex flex-col items-start gap-2 py-3 pl-3 mt-1 z-50">
         <Link  href={`/productpage`} onClick={()=> setCategory("FootwearMen")} className=" hover:text-red-500 cursor-pointer">Men Footwear</Link>
-        <Link  href={`/productpage`} onClick={()=> setCategory("WomensFootwear")} className=" hover:text-red-500 cursor-pointer">Women Footwear</Link>
+        <Link  href={`/productpage`} onClick={()=> setCategory("FootwearWomen")} className=" hover:text-red-500 cursor-pointer">Women Footwear</Link>
 </ul>
 )}
 </div>
@@ -351,12 +354,12 @@ Jewellery
 {/* sidebar xl  */}
 <div className="xl:hidden">
 <Sidebar 
+setCategory={setCategory}
 sidebarcl={sidebarcl}
 setsidebarcl={setsidebarcl}
 sideDropdown={sideDropdown}
 setsideDropdown={setsideDropdown}
 toggleDropdown={toggleDropdown}
-// setCategory={setCategory}
 />
 </div>
 {/* sidebar xl  */}

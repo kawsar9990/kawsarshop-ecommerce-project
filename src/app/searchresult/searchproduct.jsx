@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export default function Products({handleLoading,data,filterData,titlestyle}){
   
-const products = filterData;
+const products = filterData; 
 if(!products) return <p>No Products Found</p>;
 
 
