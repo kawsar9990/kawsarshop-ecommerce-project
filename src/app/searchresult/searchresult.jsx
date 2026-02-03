@@ -1,5 +1,8 @@
 'use client'
 
+
+import ReactPaginate from "react-paginate"
+
 import { useState, useEffect } from "react"
 import { useLoader } from "../../context/ItemLoaderContext"
 import { useSearchParams } from "next/navigation"
@@ -67,11 +70,25 @@ const [price, setPrice] = useState([2, 5000])
 
 
 // loading 
-const handleLoading = (id) => {
+const handleLoading = (item,callback) => {
     showLoader()
-    setTimeout(() => hideLoader(), 300);
+    setTimeout(() =>{
+        hideLoader();
+        if(callback) callback()
+    }, 300);
 };
 
+
+
+const PER_PAGE = 30;
+const [currentpage, setcurrentpage] = useState(0)
+const Offset = currentpage * PER_PAGE;
+const currentproducts = filterData.slice(Offset, Offset + PER_PAGE);
+const pageCount = Math.ceil(filterData.length / PER_PAGE);
+const handlePageClick = (event) => {
+setcurrentpage(event.selected)
+window.scrollTo({ top: 0, behavior: "smooth"})
+};
 
 
 
@@ -158,7 +175,36 @@ categoryFilter={categoryFilter} setCategoryFilter={setCategoryFilter}/>
 
 <div className="w-full lg:w-3/4 flex flex-col p-2">
 <Header filterData={filterData} selected={selected} setSelected={setSelected} titlestyle={titlestyle} setTitleStyle={setTitleStyle} list={list} setList={setList}/>
-<Products  handleLoading={handleLoading} data={data} filterData={filterData} titlestyle={titlestyle}/>
+<Products  handleLoading={handleLoading} data={data} filterData={currentproducts} titlestyle={titlestyle}/>
+
+
+{
+pageCount > 1 && (
+<ReactPaginate 
+breakLabel="..."
+previousLabel="< Prev"
+nextLabel="Next >"
+onPageChange={handlePageClick}
+pageRangeDisplayed={3}
+pageCount={pageCount}
+renderOnZeroPageCount={null}
+marginPagesDisplayed={1}
+containerClassName="flex justify-center gap-2 mt-10 text-[10px] lg:text-[15px]"
+pageClassName="border rounded border-gray-200"
+pageLinkClassName="px-3 py-1 block text-blue-400 hover:text-black cursor-pointer hover:bg-gray-100"
+activeClassName="bg-blue-400 border-blue-400"
+activeLinkClassName="text-white pointer-events-none"
+previousClassName="border rounded border-gray-200"
+previousLinkClassName="px-3 py-1 block hover:bg-gray-100"
+nextClassName="border rounded border-gray-200"
+nextLinkClassName="px-3 py-1 block hover:bg-gray-100"
+disabledClassName="opacity-40"
+disabledLinkClassName="pointer-events-none"
+/>
+    )
+}
+
+
 </div>
 </div>    
 </div>

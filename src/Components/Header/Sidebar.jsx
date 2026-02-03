@@ -27,7 +27,7 @@ return(
             setsideDropdown(null)
           }
         }}
-        className=" fixed inset-0  transition-opacity duration-300" style={{zIndex: "9999"}}>
+        className=" fixed inset-0  transition-opacity duration-300" style={{zIndex: "999999"}}>
             <div className={`flex flex-col fixed left-0 top-0 h-full bg-white w-56 md:w-80
                 transform transition-transform duration-300 ${sidebarcl ? "translate-x-0" : "-translate-x-full"} `}>
                 <p className="md:text-[20px] p-2 font-black text-[20px]">KAWSARSHOP</p>

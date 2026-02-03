@@ -1,8 +1,6 @@
 "use client"
 
-// import { useMainProduct } from '../../../context/MainProduct'
-
-
+import { useMainProduct } from "../../../context/ProductRender"
 
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
@@ -10,6 +8,8 @@ import Link from 'next/link'
 
 export default function Sliderbox(){
   
+const {setCategory} = useMainProduct()
+
  const [sliderRef] = useKeenSlider({
     loop: false,
    mode: "free-snap",
@@ -45,7 +45,6 @@ export default function Sliderbox(){
 
   })
     
-//   const {setCategory} = useMainProduct()
    
   
     return(

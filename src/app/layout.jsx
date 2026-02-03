@@ -12,7 +12,7 @@ import Footer from "../Components/Footer/Footer";
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  const hideHeaderFooter = pathname === "/not-found" || pathname === "/searchpage" || pathname === "/login" || pathname === "/register"
+  const hideHeaderFooter = pathname === "/not-found" || pathname === "/searchpage" || pathname === "/login" || pathname === "/register" || pathname === "/ordertracking"
  
   return (
     <html lang="en">

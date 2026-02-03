@@ -12,10 +12,14 @@ import { useState, useRef , useEffect} from "react"
 import { useMainProduct } from "../../context/ProductRender"
 
 
+import Getapp from "./Getapp"
+
 
 export default function Header(){
 
    const {setCategory} = useMainProduct();
+
+   const [getapp,setGetapp] = useState(false)
 
 
    const [sidebarcl, setsidebarcl] = useState(false)
@@ -101,25 +105,27 @@ setCategory={setCategory}
 
 
 {/* small header  */}
-<div className={`fixed hidden items-center xl:block top-0 left-0 w-full h-10 bg-white border-b border-b-gray-300  px-5 transition-transform duration-300 z-[999] ${
+<div className={`fixed hidden items-center xl:block top-0 left-0 w-full h-10 bg-white border-b border-b-gray-300  px-5 transition-transform duration-300 ${
     showSmall ? "translate-y-0" : "-translate-y-full"
- }`}>
+ }`} style={{zIndex: "99999"}}>
           
  <div className="flex pt-3 justify-between uppercase p-2 text-[12px] flex-row items-center">
  <div className="flex flex-row gap-3 items-center">
 <a href={``} className="flex text-[#155] gap-1"><p><FontAwesomeIcon icon={faPhone} /></p><p>+8801602084187</p></a>
 <a href={``} className="flex text-[#155] gap-1 lowercase"><p><FontAwesomeIcon icon={faInbox} /></p><p>kawsar158464@gmail.com</p></a>
-<div>
-  <div className="flex">
-    <p><FontAwesomeIcon icon={faTruck} /></p>
-    <p>Select Your Dekivery Location</p>
-  </div>
-</div>
 </div>
 <div className="flex items-center gap-2">
-<Link href={``}  className="hover:text-[#118]">Get App Details</Link>
-<Link href={`/helpcenter`} className="hover:text-[#118]">Help Center</Link>
-<Link href={``}>Order Tracking</Link>
+
+<div className={`hover:text-blue-800 cursor-pointer ${getapp ? "text-blue-800" : "text-black"}`}
+onClick={()=> setGetapp(!getapp)}
+>Get App Details</div>
+{
+    getapp && <Getapp />
+}
+
+
+<Link href={`/helpcenter`} className="hover:text-blue-800">Help Center</Link>
+<Link href={`/ordertracking`} className="hover:text-blue-800">Order Tracking</Link>
 </div>
 </div>
 </div>
@@ -129,7 +135,7 @@ setCategory={setCategory}
 
 {/* dekstop  header   */}
   <div className={`fixed w-full xl:flex-col bg-white shadow-md hidden xl:block px-5 transition-transform duration-300 z-[999] ${
-          showSmall ? "translate-y-10" : "translate-y-0"}`}>
+          showSmall ? "translate-y-10" : "translate-y-0"}`} style={{zIndex: "99998"}}>
 
 {/* dekstop searbarnav */}
 <div className={`w-full transition-all duration-300  bg-white`}>

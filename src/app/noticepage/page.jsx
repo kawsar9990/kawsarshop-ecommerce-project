@@ -1,6 +1,4 @@
-'use client';
 
-import { motion } from 'framer-motion';
 import {Building2,Mail,User,ShieldCheck,Scale,Gavel,RefreshCcw,} from 'lucide-react';
 import Link from 'next/link';
 
@@ -9,7 +7,7 @@ export default function page() {
  
   return (
     <div className="pt-40 xl:pt-20 min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200 px-6 py-24">
-      <motion.div
+      <div
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8 }}
@@ -82,7 +80,6 @@ export default function page() {
 </Section>
 
  <Section icon={<RefreshCcw />} title="Policy References">
-   <p><Link href="/privacypolicy" className="text-blue-600 hover:underline">Privacy Policy</Link></p>
    <p><Link href="/termspage" className="text-blue-600 hover:underline">Terms & Conditions</Link></p>
    <p><Link href="/helpcenter" className="text-blue-600 hover:underline">Help Center</Link></p>
  </Section>
@@ -92,7 +89,7 @@ export default function page() {
    <p>KawsarShop reserves the right to update or modify this Legal Notice at any time without prior notice.</p>
  </div>
 
-  </motion.div>
+  </div>
 </div>
   );
 }
@@ -101,17 +98,13 @@ export default function page() {
 
 function Section({ icon, title, children }) {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
+    <div
       className="bg-white rounded-2xl shadow-lg p-8 mb-8 border border-gray-200"
     >
       <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-gray-800">
         {icon} {title}
       </h2>
       <div className="text-gray-700 space-y-2 text-sm leading-relaxed">{children}</div>
-    </motion.section>
+    </div>
   );
 }
