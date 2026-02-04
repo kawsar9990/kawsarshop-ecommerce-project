@@ -25,7 +25,7 @@ const handleSelect = (value) => {
 
 
 return(
-   <div className="sticky top-28 lg:top-35 w-full lg:mt-3 z-20 bg-gray-200  text-black rounded-lg shadow-md p-3 mb-3">
+   <div className="sticky top-28 xl:top-35 w-full lg:mt-3 z-20 bg-gray-200  text-black rounded-lg shadow-md p-3 mb-3">
 <div className="flex justify-between items-center">
 
 <div className="flex gap-2 items-center ">

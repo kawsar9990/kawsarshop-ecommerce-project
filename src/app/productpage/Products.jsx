@@ -60,7 +60,7 @@ className="absolute top-0 right-0 h-full w-1/3 z-20 lg:hidden"
 
 
 <div className={`absolute top-2 right-3 transition-all duration-500 opacity-0 group-hover:opacity-100`}>
-<div className="flex flex-col gap-1">
+<div className="hidden xl:flex flex-col gap-1">
 
   <div className="bg-white rounded-full hover:text-white hover:bg-red-600 font-black p-1 flex justify-center items-center">
     <button className="cursor-pointer"
@@ -152,7 +152,7 @@ className="absolute top-0 right-0 h-full w-1/3 z-20 lg:hidden"
 
 
 <div className="absolute top-2 right-3 transition-all duration-500 opacity-0 group-hover:opacity-100">
-<div className="flex flex-col gap-1">
+<div className="hidden xl:flex flex-col gap-1">
 
   <div className="bg-white rounded-full hover:text-white hover:bg-red-600 font-black p-1 flex justify-center items-center">
     <button className="cursor-pointer"

@@ -16,7 +16,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These premium leather sneakers combine elegance and comfort for the modern man. Designed with soft, durable leather and cushioned insoles, they provide all-day comfort whether walking through city streets or casual gatherings. Breathable interior prevents moisture buildup while keeping feet fresh. Stylish laces and reinforced stitching ensure durability and long-term wear. Ideal for pairing with jeans, chinos, or casual suits. The versatile color options allow seamless integration into any wardrobe. Perfect for everyday activities, work, or weekend outings, offering a refined and classic look. Easy to maintain, they remain a staple piece in men’s footwear, combining fashion with practicality.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -36,7 +36,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "Engineered for casual joggers and serious runners, these running shoes provide unmatched support and comfort. Lightweight design reduces fatigue during long runs, cushioned midsoles absorb impact and protect joints. Breathable mesh ensures ventilation and keeps feet fresh. Sturdy outsole offers grip and stability on multiple surfaces. Ergonomic construction aligns feet properly, reducing injury risk. Modern design and color options provide stylish looks for everyday wear. Durable materials guarantee long-lasting performance on track, treadmill, or city streets. These running shoes perfectly blend technology, comfort, and style for fitness enthusiasts.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -56,7 +56,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These casual slip-on shoes offer effortless style and comfort for everyday use. The soft, flexible upper allows for easy wear, while cushioned insoles provide long-lasting comfort. Breathable materials prevent overheating, keeping feet dry. Durable rubber outsole offers traction and stability on various surfaces. Minimalist design ensures versatility for pairing with jeans, chinos, or casual pants. Lightweight construction reduces fatigue, making them ideal for work, travel, or social outings. The reinforced stitching and quality materials guarantee durability. Combining convenience, style, and comfort, these shoes are a reliable choice for men seeking casual elegance. They are easy to maintain and remain fashionable across seasons.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 4,
@@ -75,7 +75,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These durable leather boots are designed for men who value both style and functionality. The high-quality leather upper ensures long-lasting wear while providing support for daily activities. Cushioned insoles offer comfort during long walks or outdoor adventures. Breathable lining keeps feet dry and comfortable, while reinforced stitching adds durability. The rugged outsole provides excellent grip on multiple surfaces. Perfect for casual wear, city strolls, or outdoor trips. The timeless design complements jeans, chinos, or casual pants, offering a versatile addition to any wardrobe. Lightweight construction reduces fatigue, making them suitable for all-day use. These boots blend practicality, durability, and fashion effortlessly, making them a staple for men seeking dependable footwear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 5,
@@ -94,7 +94,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "Elegant dress shoes designed for formal occasions, combining classic style with exceptional comfort. Soft leather upper conforms to the foot, while cushioned insoles provide support for long hours of wear. Polished finish enhances sophistication, making them ideal for office, weddings, or business meetings. The durable sole offers grip and stability, ensuring confident steps on various surfaces. Attention to detail in stitching and design ensures a refined appearance. Comfortable yet stylish, these shoes pair perfectly with suits, dress pants, or formal attire. Breathable interior prevents moisture buildup, maintaining freshness. They are easy to maintain and built to last, making them an excellent investment for men seeking fashionable and practical formal footwear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 6,
@@ -113,7 +113,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These lightweight sneakers provide exceptional comfort and flexibility for everyday wear. Soft, breathable materials keep feet fresh, while cushioned insoles reduce fatigue. Durable outsole ensures traction and stability on various surfaces. Modern design and color options make them versatile for pairing with casual outfits. Ideal for work, leisure, or social outings. Reinforced stitching enhances longevity, while easy slip-on design simplifies wearing. Perfect for men who need stylish, reliable footwear that balances comfort and practicality. The sneakers’ ergonomic construction reduces foot strain, making them suitable for long days of walking or standing. They combine fashion-forward design with everyday convenience, ensuring satisfaction for the modern wearer.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 7,
@@ -132,7 +132,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These comfortable slip-on shoes are perfect for men seeking style and convenience. Easy to wear and remove, they suit casual or semi-formal occasions. Cushioned insoles provide long-lasting comfort, while breathable upper materials prevent overheating. The durable outsole offers traction and stability on various surfaces. Minimalist design complements jeans, chinos, or dress pants. Lightweight construction ensures fatigue-free wear throughout the day. Reinforced stitching adds durability, and the sleek aesthetic enhances overall appearance. Perfect for everyday use, work, or casual outings. These slip-ons combine practicality, comfort, and style, making them a versatile addition to any wardrobe.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 8,
@@ -151,7 +151,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These modern athletic shoes are designed for men who are active and value performance. Lightweight materials reduce fatigue, while cushioned midsoles absorb impact and protect joints. Breathable mesh enhances airflow, keeping feet dry during workouts. Ergonomic design supports proper foot alignment, minimizing injury risk. Durable outsole provides grip on multiple surfaces, whether in the gym, on the track, or urban streets. Sleek design and stylish colors offer a contemporary look for both fitness and casual wear. Comfortable yet resilient, these shoes provide long-lasting performance and versatility for men seeking reliable athletic footwear. Ideal for running, gym workouts, or daily exercise.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 9,
@@ -170,7 +170,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These versatile canvas sneakers provide the perfect balance of comfort and classic style. Lightweight and breathable, they keep feet fresh during long hours of wear. Cushioned insoles reduce strain, while durable rubber outsole ensures grip and stability. Timeless design pairs well with jeans, shorts, or casual pants, making them ideal for daily use. Reinforced stitching adds durability, ensuring long-lasting wear. Comfortable and stylish, these sneakers are perfect for work, school, or casual outings. Easy to maintain and flexible, they offer a reliable footwear solution for men seeking a combination of style, comfort, and practicality. Ideal for everyday wear, these canvas shoes remain a staple in men’s casual wardrobe.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 10,
@@ -189,7 +189,7 @@ export const Footwear = [
   ratestar: "⭐☆☆☆☆",
   review: "These stylish moccasins offer a blend of casual elegance and comfort. Soft, flexible construction allows for ease of movement, while cushioned insoles provide long-lasting support. Breathable interior prevents discomfort during prolonged wear. The durable outsole ensures traction and stability on different surfaces. Minimalist design and subtle details make them versatile for pairing with jeans, chinos, or casual slacks. Lightweight build reduces fatigue, making them ideal for long hours of walking or social outings. Reinforced stitching guarantees durability, while the modern silhouette enhances style. These moccasins are perfect for men who want fashionable, practical footwear for everyday use, combining comfort with effortless sophistication.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 11,
@@ -208,7 +208,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These premium leather loafers combine classic style with modern comfort. Soft leather upper molds to the foot, while cushioned insoles provide long-lasting support. Polished finish adds elegance for formal or smart casual occasions. Durable outsole ensures grip and stability on various surfaces. Sleek design complements suits, dress pants, or casual attire. Breathable lining maintains foot freshness, preventing moisture buildup. Reinforced stitching enhances durability. Ideal for office, meetings, or social events, these loafers offer versatile wear. Lightweight construction reduces fatigue, making them suitable for all-day use. Combining elegance, comfort, and practicality, they are an excellent choice for men seeking dependable footwear that remains stylish across seasons.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 12,
@@ -227,7 +227,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These rugged hiking shoes are built for men who love outdoor adventures. Sturdy construction and durable materials provide long-lasting support and protection on uneven terrains. Cushioned midsoles absorb impact during long hikes, reducing foot fatigue. Breathable lining ensures comfort and prevents moisture buildup. Reinforced stitching and solid outsole design enhance durability and grip. Lightweight design reduces strain, allowing for longer walks or climbs. Modern design ensures they look stylish both on trails and casual outings. These hiking shoes perfectly combine practicality, comfort, and resilience. Ideal for hiking, trekking, or camping trips, they provide dependable performance in all conditions while maintaining a sleek, versatile look.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 13,
@@ -246,7 +246,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These flexible athletic sneakers are crafted for men seeking a combination of comfort, performance, and style. Lightweight design reduces fatigue during running or sports activities. Cushioned midsoles absorb impact and protect joints. Breathable upper materials maintain airflow, keeping feet dry. Ergonomic construction ensures proper foot alignment, reducing the risk of injury. Durable outsole provides excellent grip and traction on multiple surfaces. Sleek colors and modern design allow for casual wear in addition to athletic use. Reinforced stitching enhances durability, making these sneakers a long-lasting addition to any wardrobe. Perfect for gym, track, or casual outings, they combine functionality and contemporary style.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 14,
@@ -265,7 +265,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These classic canvas slip-on shoes are perfect for men who value comfort and convenience. Easy to wear and remove, they provide a snug fit while ensuring flexibility. Cushioned insoles reduce strain during prolonged walking. Breathable canvas upper keeps feet dry and comfortable. Durable rubber outsole provides traction on various surfaces. Minimalist design complements jeans, shorts, or casual trousers. Lightweight construction ensures all-day comfort, making them ideal for work, school, or social outings. Reinforced stitching enhances durability, ensuring long-lasting wear. Combining classic style, practicality, and comfort, these slip-ons are a versatile addition to any casual wardrobe, offering timeless appeal for everyday use.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 15,
@@ -284,7 +284,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These elegant monk strap shoes combine sophistication and comfort for men attending formal and business occasions. Soft leather upper provides a polished, professional appearance. Cushioned insoles ensure all-day comfort. Durable outsole offers stability and grip on various surfaces. Attention to detail in design and stitching guarantees long-lasting wear. Stylish buckle straps enhance appearance while allowing for adjustable fit. Perfect for pairing with suits, dress pants, or formal attire. Lightweight construction reduces foot fatigue. Breathable lining prevents moisture buildup. Combining elegance, practicality, and reliability, these shoes are an ideal choice for men who want classic, professional footwear that remains comfortable and durable throughout the day.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 16,
@@ -303,7 +303,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These modern running sneakers are perfect for men with active lifestyles. Lightweight materials reduce fatigue during running or gym sessions. Cushioned midsoles absorb impact, protecting feet and joints. Breathable mesh ensures airflow, keeping feet cool. Durable outsole provides traction and stability on multiple surfaces. Stylish design allows for casual wear in addition to athletic performance. Ergonomic construction supports proper foot alignment, reducing injury risk. Reinforced stitching adds longevity. Ideal for running, workouts, or casual outings. These sneakers combine performance, comfort, and style, offering versatile footwear suitable for modern men.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 17,
@@ -322,7 +322,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These casual loafers provide a comfortable, stylish option for men seeking practical everyday footwear. Soft upper materials offer flexibility and ease of movement. Cushioned insoles ensure long-lasting comfort. Breathable interior prevents moisture and overheating. Durable outsole provides grip and stability for various activities. Easy slip-on design enhances convenience. Versatile style pairs well with casual or semi-formal outfits. Reinforced stitching ensures longevity. Lightweight design reduces fatigue during all-day wear. These loafers balance comfort, style, and practicality, making them an ideal choice for men wanting reliable, fashionable footwear for everyday use.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 18,
@@ -341,7 +341,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These athletic cross-training shoes are designed to support men during various activities including gym workouts, sports, and casual outings. Lightweight construction reduces strain, while cushioned midsoles absorb shock. Breathable mesh keeps feet cool and dry. Durable outsole offers excellent grip and stability. Ergonomic design ensures proper foot alignment, minimizing risk of injuries. Sleek modern look allows pairing with casual outfits. Reinforced stitching enhances longevity. Comfortable for extended wear, these shoes provide a perfect blend of performance, versatility, and style. Ideal for active men seeking reliable, stylish, and functional footwear for multiple purposes.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 19,
@@ -360,7 +360,7 @@ export const Footwear = [
   ratestar: "⭐☆☆☆☆",
   review: "These classic desert boots are designed for men seeking stylish yet durable casual footwear. High-quality leather upper ensures long-lasting wear while providing comfort. Cushioned insoles reduce foot fatigue during extended use. Breathable lining keeps feet fresh. Durable outsole offers traction and stability on multiple surfaces. Minimalist design makes them versatile for pairing with jeans, chinos, or casual pants. Reinforced stitching adds longevity, while lightweight construction enhances all-day comfort. Perfect for daily wear, outings, or casual events. These desert boots combine timeless style, practicality, and comfort, making them a reliable addition to any man’s casual wardrobe.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 20,
@@ -379,7 +379,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These stylish casual sneakers provide the perfect mix of comfort, durability, and contemporary style. Soft upper materials allow flexibility, while cushioned insoles ensure long-lasting comfort. Breathable interior keeps feet dry and comfortable. Durable rubber outsole provides grip and stability on various surfaces. Modern design complements jeans, shorts, or casual trousers, making them ideal for daily wear. Reinforced stitching ensures longevity. Lightweight construction reduces fatigue, perfect for all-day use. These sneakers are suitable for work, leisure, or social outings, providing reliable and fashionable footwear for men seeking practical and stylish everyday shoes.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 21,
@@ -398,7 +398,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These lightweight training sneakers are crafted for men who want comfort and support during gym workouts or active daily routines. Cushioned insoles reduce impact and provide all-day comfort. Breathable mesh upper keeps feet cool and dry during intense activities. Durable outsole ensures traction and stability on multiple surfaces. Sleek modern design makes them suitable for casual wear as well. Reinforced stitching enhances durability for long-term use. Ergonomic construction supports proper foot alignment, minimizing the risk of injuries. Perfect for running, cross-training, or gym exercises. Lightweight and stylish, these sneakers combine functionality with contemporary aesthetics, making them ideal for active men who value both performance and style.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -418,7 +418,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These classic leather oxford shoes are designed for men who seek timeless elegance and reliable comfort. The high-quality leather upper provides durability while maintaining a polished, sophisticated appearance. Cushioned insoles ensure all-day comfort, making them ideal for office, business meetings, or formal events. Durable outsole provides stability and grip on various surfaces. Reinforced stitching adds longevity, while sleek laces enhance adjustability and style. Perfect for pairing with suits, dress pants, or formal attire. Breathable interior keeps feet fresh, preventing discomfort. Combining classic design with modern craftsmanship, these oxford shoes offer men a dependable, stylish option for formal footwear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -438,7 +438,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These casual slip-on shoes provide the perfect combination of comfort and convenience for men with busy lifestyles. Soft upper materials ensure flexibility, while cushioned insoles deliver lasting comfort during long hours of wear. Breathable lining keeps feet fresh and dry. Durable outsole provides stability and grip on multiple surfaces. Lightweight design reduces fatigue, making them ideal for work, commuting, or casual outings. Minimalist aesthetic pairs well with jeans, chinos, or casual pants. Reinforced stitching ensures long-term durability. Practical and stylish, these slip-ons are perfect for everyday use, offering ease of wear without compromising on fashion.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -458,7 +458,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These rugged hiking boots are crafted for men who enjoy outdoor adventures. High-quality leather and durable materials provide long-lasting support and protection on challenging terrains. Cushioned midsoles absorb shock and reduce fatigue during long hikes. Breathable lining ensures comfort and prevents moisture buildup. Reinforced stitching and sturdy outsoles enhance durability and grip. Lightweight design allows for extended use without strain. Stylish design ensures they look good for casual wear as well. Ideal for trekking, camping, or urban exploration, these boots combine practicality, durability, and style. They offer dependable performance while maintaining a classic rugged aesthetic, making them a must-have for outdoor enthusiasts.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -478,7 +478,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These modern casual sneakers offer men the perfect combination of comfort, durability, and contemporary style. Soft, flexible upper materials allow for all-day wear without discomfort. Cushioned insoles reduce impact and provide lasting support. Breathable interior keeps feet dry and comfortable. Durable rubber outsole ensures grip and stability across various surfaces. Minimalist design and versatile colors pair well with jeans, shorts, or casual pants. Reinforced stitching enhances durability, while lightweight construction minimizes fatigue. Suitable for work, social outings, or leisure activities, these sneakers are ideal for men seeking practical, stylish, and reliable everyday footwear. They combine performance with fashion seamlessly.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -498,7 +498,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These elegant leather loafers are designed for men who want stylish, comfortable footwear for formal occasions. The soft leather upper provides a polished, professional look, while cushioned insoles ensure all-day comfort. Durable outsole offers stability and traction. Reinforced stitching ensures long-term use. Minimalist design pairs perfectly with dress pants, suits, or semi-formal attire. Breathable interior prevents discomfort during extended wear. Lightweight construction reduces fatigue, making them suitable for office, meetings, or social events. Combining elegance, durability, and functionality, these loafers are a versatile addition to any man’s wardrobe, providing comfort and style in one package.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -518,7 +518,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These versatile canvas sneakers are perfect for men looking for lightweight and breathable footwear for daily activities. Soft canvas upper ensures flexibility, while cushioned insoles provide long-lasting comfort. Durable rubber outsole offers stability and traction on multiple surfaces. Minimalist and timeless design pairs well with jeans, shorts, or casual trousers. Lightweight construction reduces fatigue for all-day wear. Reinforced stitching enhances durability and maintains structure. Breathable materials keep feet fresh throughout the day. Ideal for commuting, social outings, or leisure activities. These sneakers combine casual style, comfort, and practicality, making them a reliable choice for everyday footwear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -538,7 +538,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These comfortable slip-on loafers are designed for men who value ease of wear and casual elegance. Soft upper materials allow flexibility and a snug fit, while cushioned insoles provide long-lasting comfort. Breathable lining prevents moisture buildup, keeping feet fresh. Durable outsole ensures traction and stability on various surfaces. Minimalist design pairs well with jeans, chinos, or casual trousers. Reinforced stitching increases durability. Lightweight construction reduces fatigue during all-day wear. Perfect for commuting, casual outings, or office wear. These loafers offer a stylish, practical, and comfortable footwear option for men seeking effortless everyday elegance.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -558,7 +558,7 @@ export const Footwear = [
   ratestar: "⭐☆☆☆☆",
   review: "These athletic cross-training shoes are designed to support men during a wide range of sports and active pursuits. Cushioned midsoles absorb impact, reducing fatigue and protecting joints. Lightweight construction ensures freedom of movement during workouts or casual activities. Breathable mesh upper keeps feet cool and dry. Durable rubber outsole provides grip and stability on different surfaces. Ergonomic design ensures proper foot alignment, reducing the risk of injury. Sleek modern style makes them suitable for casual wear as well. Reinforced stitching enhances durability, ensuring long-term use. Perfect for gym, running, or leisure activities, these shoes provide comfort, performance, and style for active men.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -578,7 +578,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These classic desert boots provide men with durable, comfortable, and stylish casual footwear. Soft leather upper ensures flexibility and support, while cushioned insoles offer all-day comfort. Breathable lining keeps feet dry and fresh. Sturdy outsole provides grip and stability on multiple surfaces. Minimalist design allows pairing with jeans, chinos, or casual trousers. Reinforced stitching enhances longevity. Lightweight construction reduces fatigue during extended wear. Ideal for daily use, work, or social outings. These desert boots combine timeless design, practicality, and comfort, making them a versatile addition to any man’s casual footwear collection.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -598,7 +598,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These lightweight casual sneakers are crafted for men who want comfort and style in their everyday footwear. Soft upper materials allow flexibility and ease of movement, while cushioned insoles provide long-lasting comfort. Breathable lining keeps feet fresh and dry. Durable rubber outsole offers stability and traction on multiple surfaces. Minimalist design pairs well with jeans, chinos, or casual pants. Reinforced stitching ensures durability for prolonged use. Lightweight construction reduces fatigue during all-day wear. Perfect for work, leisure, or casual outings. Combining modern aesthetics with practical design, these sneakers are a reliable addition to any man’s wardrobe, providing style, comfort, and versatility in one shoe.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -618,7 +618,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These elegant leather dress shoes are perfect for men attending formal events or professional meetings. Crafted with high-quality leather, they offer durability and a polished appearance. Cushioned insoles provide comfort for long hours of wear, while durable outsole ensures stability and traction on various surfaces. Reinforced stitching enhances longevity. Classic design complements suits, dress pants, or formal attire. Breathable lining prevents moisture buildup, keeping feet fresh throughout the day. Lightweight construction minimizes fatigue. Perfect for office, weddings, or business gatherings. These dress shoes blend timeless elegance, practicality, and long-lasting comfort, making them an essential addition to any man’s formal wardrobe.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -638,7 +638,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These casual slip-on shoes are designed for men who value convenience, comfort, and style. Soft upper materials ensure flexibility and a snug fit. Cushioned insoles provide all-day comfort, reducing fatigue during extended wear. Breathable lining keeps feet dry and comfortable. Durable outsole ensures traction and stability on various surfaces. Lightweight construction makes them ideal for work, commuting, or social outings. Minimalist design allows easy pairing with jeans, chinos, or casual pants. Reinforced stitching enhances durability, making them long-lasting. Practical, stylish, and comfortable, these slip-on shoes are an excellent everyday choice for men seeking effortless casual footwear that combines style and functionality.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -658,7 +658,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These rugged outdoor boots are perfect for men who enjoy hiking and adventure activities. Constructed with high-quality leather and durable materials, they provide excellent support and long-lasting durability. Cushioned midsoles absorb impact, reducing foot fatigue during long treks. Breathable lining keeps feet fresh and dry. Reinforced stitching and sturdy outsoles provide grip and stability on uneven terrains. Lightweight construction allows for comfortable, extended wear. Classic design pairs well with casual outfits. Ideal for hiking, trekking, or outdoor exploration. These boots combine style, functionality, and comfort, offering reliable performance and a timeless rugged look for adventurous men.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -678,7 +678,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These modern running shoes are designed for men who enjoy an active lifestyle. Lightweight construction reduces fatigue, while cushioned midsoles absorb impact and protect joints. Breathable mesh upper keeps feet cool and dry during intense activities. Durable outsole provides grip and stability on multiple surfaces. Ergonomic design ensures proper foot alignment, reducing risk of injury. Stylish and versatile, these shoes can also be worn for casual outings. Reinforced stitching adds durability. Comfortable, functional, and contemporary, they are ideal for running, gym workouts, or everyday activities, combining performance and style for active men.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -698,7 +698,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These comfortable leather loafers are ideal for men who need stylish yet practical footwear for daily use. Soft leather upper allows flexibility and a refined appearance. Cushioned insoles provide long-lasting comfort, while durable outsole ensures stability and grip. Reinforced stitching enhances longevity. Breathable lining prevents discomfort during extended wear. Lightweight construction reduces fatigue, making them suitable for office, social events, or casual outings. Minimalist and elegant design allows pairing with jeans, chinos, or dress pants. Combining comfort, practicality, and timeless style, these loafers are a dependable addition to any man’s wardrobe, offering both sophistication and versatility.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -718,7 +718,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These casual canvas sneakers provide men with lightweight, comfortable, and breathable footwear for daily activities. Soft canvas upper ensures flexibility and comfort. Cushioned insoles reduce strain during long hours of wear. Durable rubber outsole provides traction and stability on various surfaces. Minimalist design pairs well with jeans, shorts, or casual pants. Reinforced stitching enhances longevity. Breathable materials keep feet fresh throughout the day. Lightweight construction reduces fatigue for all-day wear. Ideal for casual outings, work, or leisure activities. These sneakers combine practicality, style, and comfort, making them a reliable choice for everyday footwear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -738,7 +738,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These stylish slip-on loafers are perfect for men who value comfort and convenience. Soft upper materials provide flexibility and a snug fit. Cushioned insoles ensure all-day comfort, reducing fatigue. Breathable interior prevents moisture buildup. Durable outsole offers stability and grip on various surfaces. Lightweight construction makes them ideal for commuting, work, or casual outings. Minimalist design pairs well with jeans, chinos, or casual trousers. Reinforced stitching enhances durability. Practical, comfortable, and stylish, these loafers are an excellent addition to any man’s wardrobe, offering effortless elegance for everyday wear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -758,7 +758,7 @@ export const Footwear = [
   ratestar: "⭐☆☆☆☆",
   review: "These athletic cross-training shoes are crafted for men with active lifestyles. Cushioned midsoles absorb impact, protecting feet and joints during exercise. Lightweight construction allows freedom of movement. Breathable mesh upper keeps feet cool and dry. Durable outsole provides grip and stability on different surfaces. Ergonomic design ensures proper foot alignment, reducing risk of injury. Modern design allows casual wear in addition to sports. Reinforced stitching increases durability. Perfect for gym, running, or leisure activities. These shoes combine performance, comfort, and style, offering versatile footwear for active men seeking reliable, functional, and fashionable options.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -778,7 +778,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These classic desert boots provide men with durable, comfortable, and stylish casual footwear. Soft leather upper ensures flexibility and support. Cushioned insoles provide long-lasting comfort. Breathable lining keeps feet fresh. Durable outsole offers stability and grip on multiple surfaces. Minimalist design allows pairing with jeans, chinos, or casual pants. Reinforced stitching enhances durability. Lightweight construction reduces fatigue for all-day wear. Perfect for daily use, work, or social outings. Combining practicality, comfort, and timeless style, these desert boots are a versatile addition to any man’s casual wardrobe.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -798,7 +798,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These lightweight casual sneakers are crafted for men who want stylish and comfortable footwear for daily wear. Soft upper materials provide flexibility and comfort, while cushioned insoles reduce fatigue and offer all-day support. Breathable lining keeps feet cool and dry. Durable rubber outsole ensures traction and stability across various surfaces. Minimalist and versatile design pairs with jeans, shorts, or casual pants. Reinforced stitching enhances durability. Lightweight construction allows long hours of comfortable wear. Suitable for work, leisure, or casual outings. These sneakers perfectly combine practicality, fashion, and comfort, making them ideal for everyday use.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -818,7 +818,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These elegant leather oxford shoes are perfect for men attending professional or formal occasions. Made with high-quality leather, they provide durability and a polished look. Cushioned insoles ensure comfort for long hours of wear. Durable outsole offers stability and grip on various surfaces. Reinforced stitching guarantees longevity. Classic design pairs perfectly with suits, dress pants, or formal attire. Breathable lining keeps feet fresh. Lightweight construction reduces fatigue. Perfect for office, weddings, or business meetings. These oxford shoes combine elegance, functionality, and comfort, making them a must-have for any man’s formal wardrobe.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -838,7 +838,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These casual slip-on shoes are designed for men seeking convenience, comfort, and style. Soft upper materials provide flexibility and snug fit. Cushioned insoles offer all-day comfort and reduce fatigue. Breathable lining keeps feet dry and fresh. Durable outsole ensures traction and stability on multiple surfaces. Lightweight construction makes them suitable for commuting, work, or casual outings. Minimalist design pairs well with jeans, chinos, or casual trousers. Reinforced stitching enhances longevity. Practical and stylish, these slip-on shoes provide effortless casual elegance for everyday use, combining comfort with fashion.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -858,7 +858,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These rugged outdoor boots are perfect for men who enjoy hiking and adventure. Made with high-quality leather and durable materials, they provide excellent support and protection on rough terrains. Cushioned midsoles absorb shock and reduce fatigue during long hikes. Breathable lining ensures comfort. Reinforced stitching and sturdy outsoles provide grip and stability. Lightweight construction allows for long periods of comfortable wear. Stylish design can be worn for casual outings as well. Ideal for trekking, camping, or urban exploration. These boots combine practicality, durability, and style, offering reliable performance and a timeless rugged look for adventurous men.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -878,7 +878,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These modern running sneakers provide men with comfort, performance, and style. Lightweight construction reduces fatigue. Cushioned midsoles absorb impact and protect joints. Breathable mesh keeps feet cool during workouts. Durable outsole ensures traction on multiple surfaces. Ergonomic design supports proper foot alignment, reducing risk of injury. Stylish and versatile, suitable for casual wear. Reinforced stitching adds durability. Ideal for running, gym sessions, or daily activities. Combining performance, comfort, and fashion, these sneakers are perfect for active men seeking reliable and stylish footwear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -898,7 +898,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These comfortable leather loafers are crafted for men seeking elegant, practical footwear. Soft leather upper ensures flexibility and refined appearance. Cushioned insoles provide long-lasting comfort. Durable outsole guarantees stability and traction. Reinforced stitching enhances longevity. Breathable lining keeps feet fresh. Lightweight construction reduces fatigue, suitable for office, social events, or casual outings. Minimalist, elegant design pairs with jeans, chinos, or dress pants. Combining comfort, practicality, and timeless style, these loafers are a reliable addition to any wardrobe, offering sophistication and versatility for daily wear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -918,7 +918,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These versatile canvas sneakers are designed for men who need lightweight and breathable footwear for everyday use. Soft canvas upper provides flexibility. Cushioned insoles ensure comfort during long hours of wear. Durable rubber outsole offers traction and stability on various surfaces. Minimalist design allows easy pairing with jeans, shorts, or casual trousers. Reinforced stitching enhances durability. Breathable construction keeps feet fresh. Lightweight design reduces fatigue for all-day wear. Perfect for commuting, social outings, or leisure activities. These sneakers combine casual style, practicality, and comfort, making them a reliable choice for men’s footwear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -938,7 +938,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These stylish slip-on loafers provide men with effortless casual elegance and comfort. Soft upper materials allow flexibility and a snug fit. Cushioned insoles deliver long-lasting comfort. Breathable interior prevents moisture buildup. Durable outsole offers traction and stability. Lightweight design is perfect for commuting, work, or casual outings. Minimalist design pairs well with jeans, chinos, or casual pants. Reinforced stitching ensures durability. Practical, comfortable, and fashionable, these loafers are an excellent addition to any man’s wardrobe, offering convenience and style for daily wear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -958,7 +958,7 @@ export const Footwear = [
   ratestar: "⭐☆☆☆☆",
   review: "These athletic cross-training shoes are ideal for men with active lifestyles. Cushioned midsoles absorb impact, reducing fatigue and protecting joints. Lightweight design allows freedom of movement. Breathable mesh upper maintains airflow, keeping feet cool. Durable rubber outsole provides traction and stability on different surfaces. Ergonomic design supports proper foot alignment, minimizing injury risk. Modern style allows casual wear. Reinforced stitching enhances durability. Perfect for gym, running, or leisure activities. Combining performance, comfort, and style, these shoes provide versatile, reliable, and functional footwear for active men.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -978,7 +978,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These classic desert boots provide men with durable, comfortable, and stylish casual footwear. Soft leather upper ensures flexibility and support. Cushioned insoles deliver all-day comfort. Breathable lining keeps feet fresh. Sturdy outsole provides grip and stability on multiple surfaces. Minimalist design allows pairing with jeans, chinos, or casual pants. Reinforced stitching enhances longevity. Lightweight construction reduces fatigue for all-day wear. Ideal for daily use, work, or leisure activities. Combining timeless style, practicality, and comfort, these desert boots are a versatile and reliable addition to any man’s casual footwear collection.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 51,
@@ -997,7 +997,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These lightweight casual sneakers are perfect for men seeking comfort and style for everyday wear. Soft and flexible upper materials allow natural movement. Cushioned insoles provide lasting support throughout the day. Breathable interior keeps feet cool and dry. Durable rubber outsole ensures traction and stability on multiple surfaces. Minimalist design complements jeans, chinos, or casual trousers. Reinforced stitching guarantees durability. Lightweight construction reduces fatigue during long wear. Perfect for commuting, social outings, or leisure activities. Combining modern style with practical comfort, these sneakers are a versatile addition to any man’s casual footwear collection.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1017,7 +1017,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These elegant leather oxford shoes are designed for men attending formal events or professional settings. High-quality leather ensures durability and polished appearance. Cushioned insoles provide all-day comfort, while durable outsole offers stability and grip on various surfaces. Reinforced stitching guarantees longevity. Classic design pairs perfectly with suits, dress pants, or formal attire. Breathable interior prevents moisture buildup. Lightweight construction minimizes fatigue. Ideal for weddings, office meetings, or business gatherings. Combining sophistication, comfort, and practicality, these oxford shoes are a reliable and stylish addition to any formal wardrobe.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1037,7 +1037,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These casual slip-on shoes offer men a perfect combination of comfort, ease, and style for everyday use. Soft upper materials allow flexibility and a secure fit. Cushioned insoles provide all-day comfort. Breathable lining keeps feet dry and fresh. Durable outsole ensures traction and stability on multiple surfaces. Lightweight design makes them ideal for work, commuting, or casual outings. Minimalist design pairs well with jeans, chinos, or casual pants. Reinforced stitching enhances longevity. Practical, stylish, and comfortable, these slip-on shoes are a dependable choice for men seeking effortless casual footwear with reliable durability.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1057,7 +1057,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These rugged hiking boots are designed for men who enjoy outdoor activities. High-quality leather and durable construction ensure long-lasting performance. Cushioned midsoles absorb impact and reduce fatigue during long hikes. Breathable lining maintains comfort and keeps feet dry. Reinforced stitching and sturdy outsoles provide grip and stability on uneven terrains. Lightweight design allows extended wear without strain. Stylish design pairs well with casual outfits. Ideal for trekking, camping, or outdoor exploration. These boots combine comfort, durability, and practicality, offering reliable performance and a classic rugged look for outdoor enthusiasts.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1077,7 +1077,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These modern running sneakers are crafted for men who lead an active lifestyle. Lightweight construction reduces fatigue. Cushioned midsoles absorb impact, protecting feet and joints. Breathable mesh upper keeps feet cool and dry. Durable rubber outsole provides traction and stability on various surfaces. Ergonomic design ensures proper foot alignment, reducing risk of injury. Stylish appearance allows casual wear as well. Reinforced stitching enhances durability. Ideal for running, gym workouts, or daily activities. Combining performance, comfort, and contemporary style, these sneakers are a versatile and reliable choice for active men.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1097,7 +1097,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These comfortable leather loafers are ideal for men who want stylish yet practical footwear. Soft leather upper provides flexibility and a refined look. Cushioned insoles offer long-lasting comfort. Durable outsole ensures stability and traction. Reinforced stitching enhances durability. Breathable lining keeps feet fresh during extended wear. Lightweight construction reduces fatigue. Minimalist design pairs well with jeans, chinos, or dress pants. Combining elegance, comfort, and practicality, these loafers are a reliable addition to any wardrobe, offering versatility and sophistication for daily wear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1117,7 +1117,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These casual canvas sneakers offer men lightweight and breathable footwear for daily activities. Soft canvas upper ensures comfort and flexibility. Cushioned insoles reduce fatigue during long wear. Durable rubber outsole provides stability and traction on various surfaces. Minimalist design pairs easily with jeans, shorts, or casual trousers. Reinforced stitching enhances durability. Breathable construction keeps feet cool. Lightweight design minimizes fatigue for all-day comfort. Ideal for commuting, leisure activities, or casual outings. These sneakers combine style, practicality, and comfort, making them a reliable choice for everyday wear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1137,7 +1137,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These stylish slip-on loafers provide men with casual elegance and comfort. Soft upper materials allow flexibility and a snug fit. Cushioned insoles provide long-lasting comfort. Breathable interior prevents moisture buildup. Durable outsole ensures traction and stability. Lightweight design is perfect for commuting, work, or casual outings. Minimalist design pairs well with jeans, chinos, or casual pants. Reinforced stitching enhances durability. Practical, stylish, and comfortable, these loafers are a versatile addition to any man’s wardrobe, offering convenience and effortless everyday style.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1157,7 +1157,7 @@ export const Footwear = [
   ratestar: "⭐☆☆☆☆",
   review: "These athletic cross-training shoes are designed for men with active lifestyles. Cushioned midsoles absorb impact, reducing fatigue and protecting joints. Lightweight construction allows freedom of movement. Breathable mesh upper keeps feet cool and dry. Durable outsole provides grip and stability on multiple surfaces. Ergonomic design supports proper foot alignment, reducing injury risk. Modern style allows casual wear. Reinforced stitching enhances durability. Perfect for gym sessions, running, or leisure activities. These shoes combine performance, comfort, and style, offering versatile and reliable footwear for active men.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1177,7 +1177,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These classic desert boots provide men with durable, comfortable, and stylish casual footwear. Soft leather upper ensures flexibility and support. Cushioned insoles deliver all-day comfort. Breathable lining keeps feet fresh. Sturdy outsole provides grip and stability on multiple surfaces. Minimalist design pairs well with jeans, chinos, or casual pants. Reinforced stitching enhances longevity. Lightweight construction reduces fatigue for all-day wear. Ideal for daily use, commuting, or leisure activities. Combining practicality, comfort, and timeless style, these desert boots are a reliable addition to any man’s casual footwear collection.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1197,7 +1197,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These lightweight casual sneakers are designed for men seeking style and comfort for everyday wear. Soft upper materials allow flexibility and natural movement. Cushioned insoles provide all-day support and comfort. Breathable lining maintains freshness and reduces moisture. Durable rubber outsole ensures stability and traction on various surfaces. Minimalist design pairs easily with jeans, chinos, or casual trousers. Reinforced stitching enhances durability. Lightweight construction allows extended wear without discomfort. Perfect for commuting, leisure, or casual outings. These sneakers combine practicality, fashion, and comfort, making them a versatile choice for daily footwear.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1217,7 +1217,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These elegant leather oxford shoes are perfect for men attending professional or formal occasions. Crafted from high-quality leather, they offer durability and a polished look. Cushioned insoles ensure all-day comfort. Durable outsole provides grip and stability. Reinforced stitching enhances longevity. Classic design pairs well with suits, dress pants, or formal attire. Breathable interior maintains freshness. Lightweight construction reduces fatigue. Ideal for weddings, office meetings, or special events. Combining sophistication, practicality, and comfort, these oxford shoes are a dependable addition to any man’s formal wardrobe.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1237,7 +1237,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These casual slip-on shoes provide men with comfort, convenience, and style. Soft upper materials allow flexibility and a snug fit. Cushioned insoles ensure all-day comfort. Breathable lining keeps feet dry and fresh. Durable outsole provides traction and stability. Lightweight design is ideal for commuting, casual outings, or work. Minimalist design pairs with jeans, chinos, or casual pants. Reinforced stitching guarantees durability. Practical, stylish, and comfortable, these slip-ons are perfect for everyday wear, offering effortless casual elegance and reliable performance.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1257,7 +1257,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These rugged outdoor boots are designed for men who enjoy hiking, trekking, and outdoor adventures. High-quality leather and durable materials ensure long-lasting performance. Cushioned midsoles absorb impact and reduce fatigue during long walks. Breathable lining maintains comfort and prevents moisture buildup. Reinforced stitching and sturdy outsoles offer stability and grip on rough terrains. Lightweight construction allows extended wear. Stylish design pairs well with casual outfits. Ideal for trekking, camping, or urban exploration. Combining functionality, comfort, and classic rugged style, these boots are reliable and practical for outdoor enthusiasts.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1277,7 +1277,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These modern running sneakers are crafted for men who lead active lifestyles. Lightweight design reduces fatigue. Cushioned midsoles absorb shock and provide comfort. Breathable mesh upper keeps feet cool and dry. Durable rubber outsole ensures grip and stability on various surfaces. Ergonomic construction supports proper foot alignment. Stylish design allows casual wear in addition to running and workouts. Reinforced stitching enhances durability. Ideal for gym, running, or daily activities. These sneakers combine performance, comfort, and contemporary style, making them versatile and reliable footwear for active men.",
   category: "Footwear",
-    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+    size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 
 {
@@ -1297,7 +1297,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes are built with comfort and practicality as the main focus. The cushioned sole absorbs shock effectively, reducing strain during long periods of walking or standing. Soft inner lining ensures a smooth feel against the skin, preventing irritation and fatigue. Breathable materials allow proper airflow, keeping feet fresh throughout the day. The durable outsole provides reliable grip on different surfaces, enhancing stability and confidence. Designed to suit modern lifestyles, these shoes transition effortlessly from casual to semi-formal settings. Reinforced stitching adds durability, ensuring long-term use without compromising comfort. Their elegant yet simple design makes them suitable for women of all ages. Overall, these women shoes offer a dependable combination of comfort, durability, and everyday style.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 67,
@@ -1316,7 +1316,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes provide a reliable blend of comfort, durability, and modern design. The cushioned insole helps absorb impact, reducing stress on the feet during extended use. Breathable upper materials improve airflow and keep feet fresh. The outsole delivers stable grip on various surfaces, ensuring confident steps. Their versatile look fits well with both casual and semi-formal wear. Designed for daily lifestyles, these shoes support long hours of movement while maintaining a refined and feminine appearance.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 68,
@@ -1335,7 +1335,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "Comfort-driven construction defines these women shoes. The soft footbed provides gentle cushioning, reducing fatigue during walking or standing. Lightweight materials ensure ease of movement, while breathable fabric keeps feet comfortable throughout the day. The durable sole offers dependable traction, making these shoes suitable for regular use. Their simple appearance allows easy matching with casual outfits.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 69,
@@ -1354,7 +1354,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes offer consistent comfort and a stable walking experience. The cushioned sole reduces pressure on the feet, while breathable materials enhance airflow. Durable construction ensures long-term use. Their balanced design suits both casual and work environments, making them a dependable daily footwear option.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 70,
@@ -1373,7 +1373,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "Designed with comfort in mind, these women shoes feature a soft inner lining and flexible sole. Lightweight materials reduce strain during daily use. The simple design allows easy pairing with casual outfits, making them a practical choice for everyday activities.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 71,
@@ -1392,7 +1392,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes are built to deliver long-lasting comfort and support. The padded insole reduces impact, while breathable materials keep feet fresh. The outsole offers strong grip, ensuring safe movement. Ideal for women seeking dependable footwear with a polished look.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 72,
@@ -1411,7 +1411,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These women shoes offer basic comfort and flexibility for everyday tasks. The soft sole supports casual walking, while breathable materials enhance comfort. Suitable for light daily use and relaxed environments.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 73,
@@ -1430,7 +1430,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes feature a cushioned footbed that enhances comfort during extended wear. The supportive sole improves stability, while the elegant design adds confidence. Suitable for versatile daily use.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 74,
@@ -1449,7 +1449,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes provide excellent cushioning and stability. Breathable materials help maintain comfort, while durable construction ensures long-term use. Ideal for women with active daily routines.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 75,
@@ -1468,7 +1468,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These women shoes focus on basic comfort and lightweight movement. Flexible soles support casual walking, making them suitable for everyday tasks.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 76,
@@ -1487,7 +1487,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes are designed for comfort and durability. The cushioned insole reduces fatigue, while the supportive outsole improves balance. Ideal for daily wear.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 77,
@@ -1506,7 +1506,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These women shoes provide lightweight comfort with a breathable design. Suitable for casual daily use and relaxed environments.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 78,
@@ -1525,7 +1525,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes deliver excellent support and cushioning. Durable materials and breathable construction ensure comfort throughout the day.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 79,
@@ -1544,7 +1544,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "Designed for daily routines, these women shoes offer a cushioned feel and stable walking experience. Ideal for casual and work use.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 80,
@@ -1563,7 +1563,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These women shoes provide basic comfort and flexibility. Designed for light use and simple daily activities.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 81,
@@ -1582,7 +1582,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes feature advanced cushioning and durable construction. Ideal for women seeking premium comfort and long-term performance.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 82,
@@ -1601,7 +1601,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These women shoes provide a balanced combination of comfort and durability. Suitable for daily routines and casual outings.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 83,
@@ -1620,7 +1620,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes offer excellent support, breathable comfort, and a refined appearance. Ideal for daily and semi-formal wear.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 84,
@@ -1639,7 +1639,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "Designed for comfort and durability, these women shoes provide stable support and lightweight wear. Ideal for busy daily schedules.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 85,
@@ -1658,7 +1658,7 @@ export const Footwear = [
   ratestar: "⭐☆☆☆☆",
   review: "These women shoes are suitable for light daily use. The basic design focuses on comfort and flexibility, making them ideal for casual wear.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 86,
@@ -1677,7 +1677,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes focus on delivering reliable comfort and long-lasting performance for daily use.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 87,
@@ -1696,7 +1696,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes are engineered to provide enhanced comfort and dependable support.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 88,
@@ -1715,7 +1715,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "Engineered for women who prioritize comfort and style, these shoes offer exceptional support for daily activities. The cushioned insole absorbs shocks and reduces foot fatigue during prolonged walking or standing. Flexible soles adapt to natural foot movement, enhancing balance and minimizing joint stress. Soft inner lining ensures a friction-free experience, preventing blisters or discomfort. Breathable upper materials improve ventilation, keeping feet dry and fresh throughout the day. Durable construction, reinforced stitching, and high-quality materials ensure long-lasting performance, making them ideal for work, errands, travel, and casual outings. Their versatile design pairs effortlessly with dresses, skirts, trousers, and jeans, providing both style and practicality. Women who value reliability, fashion, and everyday comfort will find these shoes an indispensable addition to their footwear collection.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 89,
@@ -1734,7 +1734,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes are built with a focus on comfort, durability, and style. The cushioned insoles provide excellent support and shock absorption, minimizing strain during long periods of standing or walking. Flexible yet sturdy soles allow for natural movement while maintaining balance and reducing joint stress. Breathable uppers help keep feet cool and dry, preventing discomfort from heat and moisture. Reinforced stitching and high-quality materials guarantee long-lasting wear, making them suitable for daily routines, work, travel, and casual outings. The versatile, elegant design easily complements a range of outfits, from casual jeans to professional attire. Women seeking footwear that seamlessly combines comfort, durability, and style will find these shoes a dependable and stylish choice for everyday use.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 90,
@@ -1753,7 +1753,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "Crafted with attention to every detail, these shoes deliver unmatched comfort for everyday wear. The cushioned footbed absorbs shocks effectively, reducing foot fatigue during prolonged standing or walking. Flexible and supportive soles promote natural foot movement and balance, minimizing stress on joints. Soft inner lining prevents irritation, ensuring comfortable wear for long hours. Breathable upper materials maintain ventilation, keeping feet fresh and dry throughout the day. The durable construction, reinforced stitching, and high-quality materials guarantee long-lasting performance, making them ideal for commuting, errands, office work, or casual outings. Their elegant, versatile design allows them to pair effortlessly with dresses, pants, and skirts. Women looking for reliable, stylish, and comfortable footwear will appreciate these shoes as a practical addition to their wardrobe.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 91,
@@ -1772,7 +1772,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These premium women shoes combine style, comfort, and functionality for the modern woman. Cushioned insoles provide excellent shock absorption and reduce fatigue during long periods of standing or walking. Flexible yet durable soles allow natural movement while maintaining balance and minimizing joint stress. Soft inner lining prevents friction, ensuring irritation-free wear throughout the day. Breathable uppers enhance airflow, keeping feet dry and comfortable. Reinforced stitching and high-quality materials guarantee long-lasting performance, making them ideal for commuting, work, errands, travel, and casual outings. Their versatile design pairs effortlessly with a range of outfits, from professional attire to casual wear, offering a polished and elegant look. Women who seek reliable, stylish, and comfortable footwear will find these shoes an essential addition to their wardrobe.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 92,
@@ -1791,7 +1791,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These women shoes provide consistent comfort, stability, and style for everyday activities. Cushioned footbeds absorb impact and reduce strain during long periods of walking or standing. Flexible soles allow natural foot movement while maintaining balance and minimizing joint stress. Breathable uppers promote airflow, keeping feet cool and dry. Reinforced stitching and durable materials ensure long-lasting performance, suitable for commuting, work, errands, travel, or casual outings. The versatile design pairs with skirts, dresses, trousers, and jeans, delivering a polished, stylish appearance. Perfect for women who want dependable comfort without compromising fashion, these shoes are ideal for all-day wear, supporting an active lifestyle while maintaining elegance and practicality.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 93,
@@ -1810,7 +1810,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "Designed with meticulous attention to detail, these women shoes deliver all-day comfort and style. The cushioned insoles reduce impact and fatigue during long walking or standing sessions. Flexible yet supportive soles promote natural foot movement while maintaining balance and reducing joint stress. Soft inner lining prevents irritation and enhances comfort. Breathable uppers keep feet cool and dry, ensuring freshness throughout the day. Reinforced stitching and high-quality materials guarantee durability and reliable performance. Their versatile, elegant design pairs effortlessly with casual, professional, and semi-formal attire. Suitable for commuting, errands, work, or social events, these shoes combine practicality, fashion, and comfort, making them a perfect choice for modern women who prioritize style and daily functionality.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 94,
@@ -1829,7 +1829,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes are designed to offer exceptional daily comfort and style. Cushioned insoles provide shock absorption and minimize fatigue during long walking or standing sessions. Flexible, supportive soles maintain natural foot movement and balance, reducing stress on joints. Soft inner lining prevents friction and irritation. Breathable upper materials improve airflow, keeping feet dry and fresh. Durable construction with reinforced stitching ensures long-lasting performance. The versatile, elegant design pairs effortlessly with a variety of outfits, including dresses, skirts, trousers, and casual wear. Perfect for commuting, work, errands, and social gatherings, these shoes combine practicality, comfort, and fashion for modern women. They deliver a polished, stylish appearance while supporting active lifestyles and daily routines.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 95,
@@ -1848,7 +1848,7 @@ export const Footwear = [
   ratestar: "⭐☆☆☆☆",
   review: "These women shoes focus on providing consistent comfort and functionality for daily wear. Cushioned insoles absorb impact, reducing strain during long periods of walking or standing. Flexible yet supportive soles allow natural foot movement, ensuring balance and minimizing stress on joints. Soft inner lining prevents friction and irritation, enhancing all-day comfort. Breathable upper materials maintain airflow, keeping feet cool and dry. Durable construction and reinforced stitching guarantee long-lasting use. Their versatile, elegant design pairs with skirts, dresses, pants, and casual outfits. Suitable for commuting, work, errands, travel, or social gatherings, these shoes offer a practical, stylish, and comfortable solution for everyday footwear. Ideal for women who value reliability, fashion, and daily performance.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 96,
@@ -1867,7 +1867,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "Engineered for all-day comfort, these women shoes feature cushioned insoles that absorb impact and reduce foot fatigue during extended periods of walking or standing. Flexible yet supportive soles allow natural foot movement while maintaining balance and minimizing stress on joints. Soft inner lining prevents irritation, ensuring comfort during prolonged wear. Breathable upper materials enhance airflow, keeping feet dry and fresh. Durable construction with reinforced stitching ensures long-lasting performance. Their versatile, elegant design pairs effortlessly with dresses, skirts, trousers, and casual outfits. Perfect for work, commuting, errands, and social gatherings, these shoes provide practical, stylish, and comfortable footwear suitable for modern women's daily activities. Women seeking dependable, fashionable, and supportive shoes will find these an ideal choice.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 97,
@@ -1886,7 +1886,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes offer premium comfort and durability for everyday use. Cushioned insoles absorb shocks, reducing foot fatigue during long periods of standing or walking. Flexible, supportive soles allow natural movement while maintaining balance and reducing joint stress. Soft inner lining ensures irritation-free wear, while breathable materials improve airflow, keeping feet fresh and dry. Reinforced stitching and high-quality materials guarantee long-lasting performance. Their elegant, versatile design pairs seamlessly with casual, professional, and semi-formal outfits. Suitable for commuting, errands, work, travel, or social gatherings, these shoes combine style, comfort, and practicality. Women seeking reliable, fashionable, and comfortable footwear will find these shoes a perfect addition to their collection.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 98,
@@ -1905,7 +1905,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These women shoes prioritize comfort and practicality for everyday activities. The cushioned footbed absorbs impact, reducing fatigue during long walking or standing sessions. Flexible yet supportive soles allow natural foot movement while maintaining balance and minimizing joint stress. Breathable materials promote airflow, keeping feet fresh and comfortable. Soft inner lining prevents irritation, ensuring long-lasting wearability. Durable construction with reinforced stitching ensures reliability. Their versatile, elegant design pairs effortlessly with dresses, skirts, trousers, and casual outfits. Suitable for work, commuting, errands, and social outings, these shoes provide dependable support, style, and comfort. Women seeking lightweight, flexible, and stylish shoes for daily wear will find these shoes ideal for their needs.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 99,
@@ -1924,7 +1924,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes are designed to deliver long-lasting comfort, support, and style. Cushioned insoles absorb shocks, minimizing fatigue during walking or standing. Flexible soles promote natural foot movement while providing stability and balance. Breathable upper materials maintain airflow, keeping feet dry and fresh. Soft inner lining prevents irritation and discomfort during extended wear. Reinforced stitching and durable materials ensure long-lasting performance. The elegant, versatile design pairs with dresses, skirts, trousers, and casual outfits. Suitable for commuting, errands, office work, and social gatherings, these shoes offer a perfect combination of practicality, comfort, and sophistication. Women seeking stylish, dependable daily footwear will appreciate the quality and versatility of these shoes.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 100,
@@ -1943,7 +1943,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These women shoes provide basic yet dependable comfort for daily activities. Cushioned insoles reduce impact, alleviating fatigue during extended standing or walking. Flexible, supportive soles allow natural foot movement while maintaining balance. Breathable upper materials promote airflow, keeping feet fresh and dry. Soft inner lining ensures irritation-free wear. Durable construction with reinforced stitching guarantees long-lasting use. Their versatile and elegant design pairs effortlessly with skirts, dresses, trousers, and casual outfits. Suitable for commuting, errands, work, or social events, these shoes offer practical, comfortable, and stylish footwear for everyday wear. Women seeking reliable, simple, and comfortable shoes will find these ideal for their daily routines.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 101,
@@ -1962,7 +1962,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These premium women shoes are engineered to provide optimal comfort, support, and durability for everyday use. Cushioned insoles absorb shocks effectively, minimizing fatigue during prolonged walking or standing. Flexible yet supportive soles allow natural foot movement while maintaining balance and reducing joint stress. Breathable uppers enhance airflow, keeping feet dry and fresh. Soft inner lining ensures irritation-free wear. Reinforced stitching and high-quality materials guarantee long-lasting performance. Their versatile, stylish design pairs effortlessly with casual, office, and semi-formal attire. Suitable for commuting, errands, work, travel, or social gatherings, these shoes combine functionality, elegance, and comfort. Women seeking premium, reliable, and fashionable daily footwear will find these shoes a perfect addition to their wardrobe.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 102,
@@ -1981,7 +1981,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐☆☆",
   review: "These women shoes are built for daily comfort, offering lightweight construction, cushioned insoles, and flexible yet supportive soles. The soft inner lining prevents irritation, while breathable materials maintain airflow and freshness. Durable construction ensures long-lasting performance. Their versatile design pairs with skirts, dresses, trousers, and casual wear. Ideal for commuting, errands, work, or social activities, these shoes provide reliable, stylish, and comfortable footwear for modern women. They balance practicality with elegance, making them suitable for daily routines while ensuring comfort and style throughout the day.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 103,
@@ -2000,7 +2000,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes are designed to deliver reliable comfort and style for everyday use. Cushioned insoles absorb shocks, reducing fatigue during long walks or standing periods. Flexible, supportive soles allow natural movement while maintaining balance and minimizing stress on joints. Breathable upper materials enhance airflow, keeping feet cool and dry. Soft inner lining prevents friction, ensuring irritation-free wear. Reinforced stitching and durable materials provide long-lasting performance. Their elegant, versatile design pairs with skirts, dresses, trousers, and casual outfits. Suitable for commuting, errands, work, or social gatherings, these shoes combine practicality, comfort, and style for modern women seeking reliable daily footwear.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 104,
@@ -2019,7 +2019,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes combine style, comfort, and reliability for everyday wear. Cushioned insoles absorb shocks, reducing foot fatigue during extended walking or standing. Flexible, supportive soles allow natural movement while maintaining balance and minimizing joint stress. Breathable materials keep feet cool and dry. Soft inner lining prevents friction, ensuring irritation-free comfort. Durable construction with reinforced stitching ensures long-lasting performance. Their versatile, elegant design pairs effortlessly with skirts, dresses, trousers, and casual outfits. Suitable for commuting, errands, work, or social gatherings, these shoes provide dependable, stylish, and comfortable footwear for modern women seeking reliable daily shoes.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 105,
@@ -2038,7 +2038,7 @@ export const Footwear = [
   ratestar: "⭐☆☆☆☆",
   review: "Designed for light daily use, these women shoes focus on comfort, flexibility, and practicality. Cushioned insoles absorb impact and reduce fatigue during walking or standing. Flexible yet supportive soles allow natural movement and maintain balance. Breathable materials improve airflow, keeping feet fresh and dry. Soft inner lining prevents friction and irritation. Durable construction with reinforced stitching ensures long-lasting wear. Their minimalist, versatile design pairs effortlessly with skirts, dresses, trousers, and casual outfits. Ideal for commuting, errands, work, or social outings, these shoes provide a simple, comfortable, and stylish solution for everyday footwear needs.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 106,
@@ -2057,7 +2057,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes offer reliable comfort, support, and style for daily activities. Cushioned insoles absorb impact, reducing fatigue during long periods of walking or standing. Flexible soles allow natural movement while maintaining balance and minimizing joint stress. Soft inner lining prevents irritation, while breathable upper materials keep feet dry and fresh. Durable construction with reinforced stitching ensures long-lasting performance. Their elegant, versatile design pairs effortlessly with skirts, dresses, trousers, and casual outfits. Suitable for commuting, errands, work, or social gatherings, these shoes provide practical, stylish, and comfortable footwear for modern women who value reliable daily shoes.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 107,
@@ -2076,7 +2076,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes are built for consistent daily comfort and style. Cushioned insoles absorb impact, reducing foot fatigue during long walks or standing. Flexible, supportive soles promote natural foot movement while maintaining balance and minimizing joint stress. Soft inner lining prevents friction and irritation. Breathable materials improve airflow, keeping feet fresh. Durable construction and reinforced stitching ensure long-lasting performance. Their versatile, elegant design pairs seamlessly with skirts, dresses, trousers, and casual outfits. Suitable for commuting, errands, work, or social activities, these shoes provide dependable, stylish, and comfortable footwear for modern women seeking practical daily shoes.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 108,
@@ -2095,7 +2095,7 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐☆",
   review: "These women shoes combine comfort, practicality, and style for everyday wear. Cushioned insoles absorb shocks, minimizing fatigue during long periods of walking or standing. Flexible, supportive soles allow natural movement while maintaining balance and reducing stress on joints. Breathable materials promote airflow, keeping feet cool and dry. Soft inner lining prevents irritation, ensuring long-lasting comfort. Durable construction with reinforced stitching guarantees reliability. Their elegant, versatile design pairs effortlessly with skirts, dresses, trousers, and casual wear. Suitable for commuting, errands, work, or social outings, these shoes provide practical, stylish, and comfortable footwear for modern women.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 109,
@@ -2114,7 +2114,7 @@ export const Footwear = [
   ratestar: "⭐⭐☆☆☆",
   review: "These women shoes offer dependable comfort and style for everyday wear. Cushioned insoles absorb impact, reducing fatigue during prolonged walking or standing. Flexible, supportive soles allow natural foot movement and maintain balance, minimizing joint stress. Breathable materials keep feet dry and fresh. Soft inner lining prevents irritation and discomfort. Durable construction with reinforced stitching ensures long-lasting performance. Their versatile design pairs effortlessly with skirts, dresses, trousers, and casual outfits. Suitable for commuting, errands, work, or social gatherings, these shoes provide practical, comfortable, and stylish daily footwear for modern women.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 },
 {
   id: 110,
@@ -2133,6 +2133,6 @@ export const Footwear = [
   ratestar: "⭐⭐⭐⭐⭐",
   review: "These women shoes are crafted to deliver exceptional comfort, style, and reliability for daily wear. Cushioned insoles absorb impact, minimizing foot fatigue during extended walking or standing periods. Flexible, supportive soles allow natural foot movement while maintaining balance and reducing stress on joints. Breathable materials enhance airflow, keeping feet fresh and dry. Soft inner lining prevents irritation and discomfort. Durable construction with reinforced stitching ensures long-lasting performance. Their elegant, versatile design pairs with skirts, dresses, trousers, and casual outfits. Suitable for commuting, errands, work, or social gatherings, these shoes combine practicality, comfort, and fashion for modern women seeking dependable, stylish daily footwear.",
   category: "Footwear",
-  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","34","39","50","35"]
+  size: ["6","7","8","9","10","11","12","13","14","15","16","34","35","24","25","26","27","28","29","30","31","32","33","39","50"]
 }
 ]
