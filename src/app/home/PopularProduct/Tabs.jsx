@@ -14,7 +14,7 @@ const {activeTab, setActiveTab} = useCategory();
 const categories = [
     "Fashion",
     "Electronics",
-    "Bag",
+    "Bags",
     "Footwear",
     "Groceries",
     "Beauty",

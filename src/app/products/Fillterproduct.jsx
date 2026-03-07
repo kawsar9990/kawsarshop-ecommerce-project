@@ -27,11 +27,11 @@ prev.includes(cat)
 
 
 const RatingStar = [
-  "⭐⭐⭐⭐⭐",
-  "⭐⭐⭐⭐✰",
-  "⭐⭐⭐✰✰",
-  "⭐⭐✰✰✰",
-  "⭐✰✰✰✰",
+  {label: "⭐⭐⭐⭐⭐", value: 5},
+  {label: "⭐⭐⭐⭐ ✰", value: 4},
+  {label: "⭐⭐⭐✰ ✰", value: 3},
+  {label: "⭐⭐ ✰ ✰ ✰", value: 2},
+  {label: "⭐ ✰ ✰ ✰ ✰", value: 1},
 ];
 
 
@@ -50,7 +50,7 @@ const handlePrice = (e, newValue) => {
 
  
 return(
-<div className="hidden lg:block w-1/4 h-screen sticky top-42 p-5 border-r">
+<div className="hidden lg:block w-1/4 h-screen sticky top-42 p-5  border-r">
 <div className="flex flex-col gap-5">
 
 {/* Category Filter */} 
@@ -108,8 +108,9 @@ return(
     <label key={index} className="flex items-center gap-3 cursor-pointer">
       <input type="checkbox"
       className="w-4 h-4 accent-orange-500" 
-      onChange={()=> handleratingfillter(item)}/>
-      <span>{item}</span>
+      checked={rating.includes(item.value)}
+      onChange={()=> handleratingfillter(item.value)}/>
+      <span>{item.label}</span>
     </label>
     ))}
   </div>

@@ -27,12 +27,14 @@ prev.includes(cat)
 
 
 const RatingStar = [
-  "⭐⭐⭐⭐⭐",
-  "⭐⭐⭐⭐✰",
-  "⭐⭐⭐✰✰",
-  "⭐⭐✰✰✰",
-  "⭐✰✰✰✰",
+  {label: "⭐⭐⭐⭐⭐", value: 5},
+  {label: "⭐⭐⭐⭐ ✰", value: 4},
+  {label: "⭐⭐⭐✰ ✰", value: 3},
+  {label: "⭐⭐ ✰ ✰ ✰", value: 2},
+  {label: "⭐ ✰ ✰ ✰ ✰", value: 1},
 ];
+
+
 
 const handleratingfillter = (rat) => {
 setRating((prev) => 
@@ -106,8 +108,9 @@ return(
     <label key={index} className="flex items-center gap-3 cursor-pointer">
       <input type="checkbox"
       className="w-4 h-4 accent-orange-500" 
-      onChange={()=> handleratingfillter(item)}/>
-      <span>{item}</span>
+      checked={rating.includes(item.value)}
+      onChange={()=> handleratingfillter(item.value)}/>
+      <span>{item.label}</span>
     </label>
     ))}
   </div>

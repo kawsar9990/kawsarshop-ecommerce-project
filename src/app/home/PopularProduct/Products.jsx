@@ -1,81 +1,80 @@
 'use client'
 
-import Image from "next/image.js";
-import {useState } from "react";
+import { useState, useEffect } from "react";
+import Rating from '@mui/material/Rating';
+import StarIcon from '@mui/icons-material/Star';
 import { useCategory } from "../../../context/CategoryContext.js";
-import { useLoader } from "../../../context/ItemLoaderContext.js";
-import useProductSlider from "../../../hooks/useProductSlider.js";
-
-import { PopularFashion } from "../../../content/Popularproduct/Fashion.js";
-import { PopularElectronics } from "../../../content/Popularproduct/Electronics.js";
-import { PopularBag } from "../../../content/Popularproduct/Bags.js";
-import { PopularFootwear } from "../../../content/Popularproduct/Footwear.js";
-import { PopularBeauty } from "../../../content/Popularproduct/Beauty.js";
-import { PopularGroceries } from "../../../content/Popularproduct/Groceries.js";
-import { PopularWellness } from "../../../content/Popularproduct/Welness.js";
-import { PopularJewellery } from "../../../content/Popularproduct/Jewellery.js";
-
+import { usePopularProducts } from "../../../hooks/usePopularProducts.js";
+import PopularSkeleton from "../../../Components/ui/Skeletons/PopularSkeleton.jsx";
+import { useLoader } from "../../../context/ItemLoaderContext";
+import usePropularSlider from "../../../Components/ui/Slider/usePopularSlider.js";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping ,faCodeCompare} from "@fortawesome/free-solid-svg-icons";
-import Link from 'next/link'
-import ProductQuickView from "../../../Components/Product/ProductQuickView.jsx";
-
+import Link from "next/link";
+import Quickview from "../../../Components/Product/ProductQuickView";
 
 export default function ItemConnect(){
-    const {showLoader,hideLoader} = useLoader()
-    const {activeTab} = useCategory();
-    const sliderRef = useProductSlider()
-    const [quickProduct, setQuickProduct] = useState(null);
+const {activeTab} = useCategory();
+const { products, dataloading } = usePopularProducts(activeTab);
+const {showLoader, hideLoader} = useLoader()
+const [quickProduct, setQuickProduct] = useState(null);
 
 
-    const handleLoading = (item, callback) => {
+const [isMounting, setIsMounting] = useState(true);
+const sliderRef = usePropularSlider(products)
+useEffect(() => {
+    setIsMounting(true);
+    const timer = setTimeout(() => {
+      setIsMounting(false);
+    }, 800);
+    return () => clearTimeout(timer);
+}, [activeTab, products.length]);
+
+const handleLoading = () => {
     showLoader()
     setTimeout(() => {
       hideLoader();
-      if(callback) callback();
     }, 300);
   };
- 
-
-
-const categoriesData = {
-  Fashion: PopularFashion,
-  Electronics: PopularElectronics,
-  Bag: PopularBag,
-  Footwear: PopularFootwear,
-  Groceries: PopularGroceries,
-  Beauty: PopularBeauty,
-  Wellness: PopularWellness,
-  Jewellery: PopularJewellery,
-};
    
-return(
-        <div className="relative">
+  const handleQuickView  = (item) => {
+   showLoader();
+   setQuickProduct(item);
+   setTimeout(() => {
+    hideLoader();
+   }, 300);
+}
+
+
+    return(
+    <div className="relative">
 
 {quickProduct && (
-  <ProductQuickView 
+  <Quickview 
 product={quickProduct}
 onClose={()=> setQuickProduct(null)}
-
 />
 )}
 
-
-
-
- <div key={activeTab} ref={sliderRef} className="keen-slider">
-{categoriesData[activeTab].map(item => (
- <div
-  key={item.id}
-  className="keen-slider__slide bg-white group mb-5 rounded-lg cursor-pointer shadow-lg flex flex-col justify-between"
+{dataloading || isMounting ? (
+ <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-4">
+   <PopularSkeleton/>
+ </div>
+) : (
+<div ref={sliderRef} key={activeTab} className="keen-slider">
+{products && products.length > 0 ? (
+  products.map((item) => (
+<div
+  key={item._id}
+  className="keen-slider__slide group bg-white mb-5 rounded-lg cursor-pointer shadow-lg flex flex-col justify-between"
 >
   <div>
-    <div className="overflow-hidden relative group">
+    <div className="overflow-hidden relative">
 
 
-<Link href={`/product/${item.id}`}
-scroll={false}
-onClick={()=> handleLoading(item.id)}
+<Link href={`/product/${item._id}`}
+onClick={()=> handleLoading(item._id)}
 >
   <Image
   src={item.image}
@@ -86,12 +85,9 @@ onClick={()=> handleLoading(item.id)}
 />
 </Link>
 
-
-
    <div className="absolute text-white top-1 left-1 rounded-lg font-bold p-1 bg-red-600">
      {item.discountPercent}
    </div>
-
 
 
 <div className={`absolute top-2 right-3 transition-all duration-500 opacity-0 group-hover:opacity-100`}>
@@ -99,16 +95,12 @@ onClick={()=> handleLoading(item.id)}
 
   <div className="bg-white rounded-full hover:text-white hover:bg-red-600 font-black p-1 flex justify-center items-center">
     <button className="cursor-pointer"
-    onClick={()=>{
-       handleLoading(item, () =>   
-       setQuickProduct(item))   
-    }}>
+    onClick={()=> handleQuickView(item)}>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
 </svg>
     </button>
   </div>
-
 
 
 <div className="bg-white hover:text-white hover:bg-red-600 rounded-full font-black p-1 flex justify-center items-center">
@@ -129,22 +121,31 @@ onClick={()=> handleLoading(item.id)}
 </div>
 </div>
 
-
-
     </div>
 
 
 
-<Link href={`/product/${item.id}`}
-scroll={false}
-onClick={()=> handleLoading(item.id)}
+<Link href={`/product/${item._id}`}
+onClick={()=> handleLoading(item._id)}
 >
     <div className="p-2 flex flex-col gap-1 flex-grow">
       <div className="text-gray-400 text-[10px]">{item.catetitle}</div>
       <div className="text-gray-900 font-semibold md:text-base line-clamp-2 h-[32px] truncate">
         {item.name}
       </div>
-      <div className="text-[13px]">{item.ratestar}</div>
+
+      <div className="flex flex-row gap-3">
+       <Rating
+          name="product-rating"
+          value={parseFloat(item.ratestar) || 0}
+          readOnly
+          precision={0.5}
+          emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+          sx={{fontSize: "16px"}}
+        />
+        <p className="text-[13px] text-gray-500">({item.ratestar}.0)</p>
+      </div>
+
       <div className="flex items-center justify-between">
         <p className="line-through text-gray-400">${item.oldprice}</p>
         <p className="text-[#E2136E] font-semibold">${item.price}</p>
@@ -156,9 +157,8 @@ onClick={()=> handleLoading(item.id)}
 
 
 
-<Link href={`/product/${item.id}`}
-scroll={false}
-onClick={()=> handleLoading(item.id)}
+<Link href={`/product/${item._id}`}
+onClick={()=> handleLoading(item._id)}
 >
   <div className="p-2 mb-2">
     <button className="bg-transparent hover:bg-black hover:text-white hover:outline-0 outline-2 text-center rounded-md text-[#E2136E] cursor-pointer outline-red-600  p-1 w-full">
@@ -172,9 +172,14 @@ onClick={()=> handleLoading(item.id)}
   </div>
 </Link>
 </div>
-))}
+  ))
+): (
+<p className="text-center w-full py-10">No products found.</p>
+)}
+</div>  
+)}
 
- </div>
-        </div>
+
+</div>
     )
 }

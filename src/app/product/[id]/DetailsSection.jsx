@@ -1,7 +1,8 @@
 'use client'
 
 import Link from "next/link"
-
+import Rating from '@mui/material/Rating';
+import StarIcon from '@mui/icons-material/Star';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faArrowRightArrowLeft, faBasketShopping, faCartShopping, faPhone, faShareNodes } from "@fortawesome/free-solid-svg-icons"
@@ -32,7 +33,18 @@ export default function PageDetails({product}){
 
 <div className="flex flex-row justify-between w-full">
 <div className="flex items-center w-full gap-7 text-[13px] lg:text-[17px]">
-<div>{product.ratestar}</div>
+ <div className="flex flex-row gap-3">
+ <Rating
+    name="product-rating"
+    value={parseFloat(product.ratestar) || 0}
+    readOnly
+    precision={0.5}
+    emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+    sx={{fontSize: "16px"}}
+  />
+  <p className="text-[13px] text-gray-500">({product.ratestar}.0)</p>
+</div>
+
 <div className="font-semibold">0 Reviews</div>
 <p>|</p>
 <div className="font-semibold">{product.catetitle}</div>

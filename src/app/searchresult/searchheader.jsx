@@ -25,7 +25,7 @@ const handleSelect = (value) => {
 
 
 return(
-   <div className="sticky top-28 xl:top-35 w-full lg:mt-3 z-20 bg-gray-200  text-black rounded-lg shadow-md p-3 mb-3">
+   <div className="sticky top-28 xl:top-32 w-full lg:mt-3 z-20 bg-gray-200  text-black rounded-lg shadow-md p-3 mb-3">
 <div className="flex justify-between items-center">
 
 <div className="flex gap-2 items-center ">
@@ -46,17 +46,18 @@ return(
     </p> 
 </div>
 
+
 <div className="flex gap-2 items-center ">
     <p>Sort By </p>
     <div>
     <div className="relative inline-block text-black">
-<div className="px-3 py-2 w-38 bg-white font-semibold text-[13px] rounded-md cursor-pointer shadow"
+<div className="px-3 py-2 w-40 bg-white font-semibold text-[13px] rounded-md cursor-pointer shadow"
 onClick={()=> setOpen(!open)}>
 <p>{selected}</p>
 </div>
 
 {open && (
-<div className="absolute w-30 mt-1 text-[11px] bg-white  rounded-md shadow-lg z-20">
+<div className="absolute w-35 mt-1 text-[11px] bg-white  rounded-md shadow-lg z-20">
 {sizeoption.map((i)=> (
   <p
 key={i}

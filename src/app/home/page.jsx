@@ -1,8 +1,5 @@
 'use client';
 
-import usePageScroll from "../../hooks/usePageScroll"
-
-
 import FirstSlider from "./Home/firstslider"
 import Sliderbox from "./Home/sliderbox"
 import HomePopularProduct from "./PopularProduct/page"
@@ -22,9 +19,6 @@ import Blog from "./Blog/page"
 
 
 export default function HomePage(){
-  const mounted = usePageScroll("home-scroll")
-  if (!mounted) return null
-
 
     return(
         <div className="xl:pt-0 bg-[#FFF2F8]">

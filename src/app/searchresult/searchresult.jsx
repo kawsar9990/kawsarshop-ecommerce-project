@@ -1,61 +1,22 @@
 'use client'
 
-
-
 import { useState, useEffect } from "react"
-import { useLoader } from "../../context/ItemLoaderContext"
+import  ProductSkeleton from "../../Components/ui/Skeletons/ProductSkeleton"
 import { useSearchParams } from "next/navigation"
+import { useLoader } from "../../context/ItemLoaderContext"
+import { useSearchProduct } from "../../hooks/useSearchProducts"
 
 import FillterProduct from "./searchfilter"
 import Header from "./searchheader"
 import Products from "./searchproduct"
 
-import { Fashion } from "../../content/Allproduct/Fashion";
-import { FashionMan } from "../../content/Allproduct/FashionMen";
-import { FashionWomen } from "../../content/Allproduct/FashionWomen";
-import { Electronics } from "../../content/Allproduct/Electronics";
-import { Mobile } from "../../content/Allproduct/Mobile";
-import { Leptop } from "../../content/Allproduct/leptop"
-import { OthersElectronics } from "../../content/Allproduct/OtherElectronics";
-import { Bags } from "../../content/Allproduct/Bags";
-import { BagMen } from "../../content/Allproduct/BagsMen";
-import { WomenBags } from "../../content/Allproduct/BagsWomen";
-import { Footwear } from "../../content/Allproduct/Footwear";
-import { FootwearMen } from "../../content/Allproduct/FootwearMen";
-import { FootwearWomen } from "../../content/Allproduct/FootwearWomen"
-import { Groceries } from "../../content/Allproduct/Groceries";
-import { Beauty } from "../../content/Allproduct/Beauty";
-import { Wellness } from "../../content/Allproduct/Wellness";
-import { Jewellery } from "../../content/Allproduct/Jewellery"
-import { Latest } from "../../content/Latestproduct/LatestProduct"
+
 
 export default function Searchresult(){
-    
 
+const { products, dataloading } = useSearchProduct();
 const searchparams = useSearchParams();
 const searchQueary = searchparams.get("search")?.toLowerCase() || "";
-
-const Allproduct = [
-    ...Fashion,
-    ...FashionMan,
-    ...FashionWomen,
-    ...Bags,
-    ...BagMen,
-    ...Beauty,
-    ...Electronics,
-    ...Footwear,
-    ...FootwearMen,
-    ...FootwearWomen,
-    ...Groceries,
-    ...Jewellery,
-    ...Leptop,
-    ...Mobile,
-    ...OthersElectronics,
-    ...Wellness,
-    ...WomenBags,
-    ...Latest
-]
-
 
 
 const {showLoader,hideLoader} = useLoader()
@@ -64,18 +25,17 @@ const [categoryFilter, setCategoryFilter] = useState([]);
 const [titlestyle, setTitleStyle] = useState(true)
 const [list, setList] = useState(false)
 const [rating, setRating] = useState([])
-const [data, setData] = useState([])
-const [filterData, setFilterData] = useState(Allproduct)
+const [filterData, setFilterData] = useState([])
 const [price, setPrice] = useState([2, 5000])
 
 
-const handleLoading = (item,callback) => {
+const handleLoading = () => {
     showLoader()
     setTimeout(() =>{
         hideLoader();
-        if(callback) callback()
     }, 300);
 };
+ 
 
 
 useEffect(()=> {
@@ -92,42 +52,35 @@ if(view === "title"){
 },[])
 
 
-
 useEffect(()=> {
-let temp = [...Allproduct];
 
-
-if(categoryFilter.length > 0){
-    let allData = [];
-    categoryFilter.forEach(cat => {
- switch(cat){
-          case "Fashion": allData.push(...Fashion); break;
-          case "Electronics": allData.push(...Electronics); break;
-          case "Bags": allData.push(...Bags); break;
-          case "Footwear": allData.push(...Footwear); break;
-          case "Groceries": allData.push(...Groceries); break;
-          case "Beauty": allData.push(...Beauty); break;
-          case "Wellness": allData.push(...Wellness); break;
-          case "Jewellery": allData.push(...Jewellery); break;
-        }       
-    })
-   temp = allData
-}
-else{
-    temp = [...Allproduct]
+if (!products || products.length === 0) {
+    setFilterData([]);
+    return;
 }
 
 
+let temp = [...products];
 
-if(searchQueary){
-    temp = temp.filter(
-        item => 
-            item.name?.toLowerCase().includes(searchQueary) ||
-            item.category?.toLowerCase().includes(searchQueary) ||
-            item.catetitle?.toLowerCase().includes(searchQueary)
-        
-    )
+
+if (categoryFilter.length > 0) {
+  temp = temp.filter(item => 
+    categoryFilter.includes(item.category) || 
+    categoryFilter.includes(item.subCategory)
+  );
 }
+
+
+if (searchQueary) {
+     temp = temp.filter(item =>
+     item.name?.toLowerCase().includes(searchQueary) ||
+     item.category?.toLowerCase().includes(searchQueary) ||
+     item.subCategory?.toLowerCase().includes(searchQueary) ||
+     item.catetitle?.toLowerCase().includes(searchQueary) ||
+     item.title?.toLowerCase().includes(searchQueary)
+);
+}
+
 
 
 temp = temp.filter(i => {
@@ -139,7 +92,7 @@ temp = temp.filter(i => {
 
 
 if(rating.length > 0){
-    temp = temp.filter(i => rating.includes(i.ratestar))
+    temp = temp.filter(i => rating.includes(Math.floor(Number(i.ratestar))))
 }
 
 
@@ -150,14 +103,14 @@ if(selected === "Name, Z To A")
     temp.sort((a,b) => b.name.localeCompare(a.name));
 
 if(selected === "Price, Low To High") 
-    temp.sort((a,b) => Number(a.price.replace(/[^0-9.-]+/g,"")) - Number(b.price.replace(/[^0-9.-]+/g,"")));
+    temp.sort((a,b) => Number(a.price) - Number(b.price));
 
 if(selected === "Price, High To Low") 
-    temp.sort((a,b) => Number(b.price.replace(/[^0-9.-]+/g,"")) - Number(a.price.replace(/[^0-9.-]+/,"")));
+    temp.sort((a,b) => Number(b.price) - Number(a.price));
 
 
 setFilterData(temp)
-},[selected,price,data,rating,categoryFilter,searchQueary])
+},[selected,price,rating,products,categoryFilter,searchQueary])
 
 
 
@@ -169,8 +122,22 @@ categoryFilter={categoryFilter} setCategoryFilter={setCategoryFilter}/>
 
 <div className="w-full lg:w-3/4 flex flex-col p-2">
 <Header filterData={filterData} selected={selected} setSelected={setSelected} titlestyle={titlestyle} setTitleStyle={setTitleStyle} list={list} setList={setList}/>
-<Products  handleLoading={handleLoading} data={data} filterData={filterData} titlestyle={titlestyle}/>
 
+{dataloading ? (
+<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-2">
+  <ProductSkeleton count={8}/> 
+</div>
+) : (
+<div>
+{filterData.length > 0 ?(
+<Products  handleLoading={handleLoading} data={products} filterData={filterData} titlestyle={titlestyle}/>
+): (
+  <div className="text-center text-2xl text-red-600 font-black flex justify-center items-center pt-20">
+  <p>Product Not Found!</p>
+  </div>
+)} 
+</div>
+)}
 
 </div>
 </div>    

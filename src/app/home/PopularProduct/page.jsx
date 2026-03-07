@@ -21,7 +21,7 @@ export default function HomePopularProduct(){
    </div> 
  </div>
 
-      <div className="w-full pt-10">
+      <div className="w-full pt-6">
       <ItemConnect />
       </div>
 </div>

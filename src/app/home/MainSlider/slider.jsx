@@ -1,19 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Link from 'next/link';
 import { useMainProduct } from '../../../context/ProductRender';
 import { motion } from "framer-motion";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { useLoader } from '../../../context/ItemLoaderContext'
+import FirstBannerSkeleton from "../../../Components/ui/Skeletons/FirstBannerSkeleton";
 
 
 export default function Slider(){
 
-const {setCategory} = useMainProduct()
+const [loading, setLoading] = useState(true);
+useEffect(()=> {
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 3000);
+  return () => clearTimeout(timer);
+},[])
 
-   const product = [
+
+
+const {setCategory} = useMainProduct()
+const product = [
     {
       id: 1,
       image: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1765904332/d3_e7xsgf.png",
@@ -39,7 +49,7 @@ const {setCategory} = useMainProduct()
   
 
 const {showLoader, hideLoader} = useLoader()
- const handleLoading  = (id) => {
+ const handleLoading  = () => {
      showLoader();
      setTimeout(() => {
         hideLoader()  
@@ -47,8 +57,7 @@ const {showLoader, hideLoader} = useLoader()
    }
 
 
-
-
+   
 const [currentSlide, setCurrentSlide] = useState(0);
 const [sliderRef] = useKeenSlider({
     loop: true,
@@ -56,7 +65,6 @@ const [sliderRef] = useKeenSlider({
     slides: { 
       perView: 1
     },
-
     slideChanged(slider){
       setCurrentSlide(slider.track.details.rel)
     },
@@ -76,11 +84,17 @@ return(
 <div className='overflow-hidden'>
 
 
-{/* box  */}
-<div className='w-full grid grid-cols-1 lg:grid-cols-2 gap-4 md:items-center  items-start'>
 
-{/* MAIN BOX */}
-<div className=''>
+<div>
+
+{loading ? (
+  <div>
+    <FirstBannerSkeleton/>
+  </div>
+) : (
+ <>
+ <div className='w-full grid grid-cols-1 lg:grid-cols-2 gap-4 md:items-center items-start'>
+  <div className=''>
 <div ref={sliderRef} className='keen-slider'>
 {product.map(i => (
   <div key={i.id} className="keen-slider__slide p-5">
@@ -104,9 +118,9 @@ initial={{ opacity: 0, x: 50 }}
 animate={{ opacity: 1, x: 0 }}
 transition={{ duration: 0.5 }}
 >
-   <h2 className="font-bold text-black">{i.name}</h2>
+  <h2 className="font-bold text-black">{i.name}</h2>
  <p className="text-white font-bold pb-5">Price:  ${i.price}</p>
-<Link href={`/products`} scroll={false} onClick={()=>{ setCategory("Fashion"), handleLoading(i.id)}} className="bg-white text-black  px-5 py-2 rounded-lg font-bold">
+<Link href={`/products`} onClick={()=>{ setCategory("Fashion"), handleLoading(i.id)}} className="bg-white text-black  px-5 py-2 rounded-lg font-bold">
  Buy Now
 </Link>
 </motion.div>
@@ -115,12 +129,10 @@ transition={{ duration: 0.5 }}
 ))}
  </div>
 </div>
-{/* MAIN BOX */}
 
 
-{/* second full box */}
 <div className='p-3 flex flex-col md:flex-row lg:flex-col justify-around xl:justify-between md:gap-3'>
-{/* second box */}
+
 <div className='bg-[#CFE9F6] rounded-lg mb-5 md:mb-0'>
 <div className='p-3'>
 <div className='flex w-full justify-between items-center'>
@@ -131,17 +143,15 @@ transition={{ duration: 0.5 }}
   <div className='w-1/2'>
     <div className='text-black font-semibold'>By The Men Smart England Watch</div>
     <div className='font-bold text-orange-600'>$5000</div>
-    <Link href={`/products`} scroll={false} onClick={()=>{ setCategory("Fashion"), handleLoading(i.id)}}  onClick={handleLoading}
+    <Link href={`/products`} onClick={()=>{ setCategory("Fashion"), handleLoading(i.id)}} 
     className='uppercase font-bold hover:text-orange-600' style={{textDecoration: "underline"}}>Shop now</Link>
   </div>
 </div>
 </div>
 </div>
-{/* second box */}
 
 
 
-{/* third box */}
 <div className='bg-[#DCDDF2] rounded-lg '>
 <div className='p-3'>
 <div className='flex w-full justify-between items-center'>
@@ -152,22 +162,24 @@ transition={{ duration: 0.5 }}
   <div className='w-1/2'>
     <div className='text-black font-semibold'>By The Men Smart England Watch</div>
     <div className='font-bold text-orange-600'>$5000</div>
-    <Link href={`/products`} scroll={false} onClick={()=>{ setCategory("Fashion"), handleLoading(i.id)}}
+    <Link href={`/products`} onClick={()=>{ setCategory("Fashion"), handleLoading(i.id)}}
     className='cursor-pointer uppercase font-bold hover:text-orange-600' style={{textDecoration: "underline"}}>Shop now</Link>
   </div>
 </div>
 </div>
 </div>
-{/* third box */}
 
 </div>
-{/* second full box */}
+ </div>
+ </>
+)}
+
 
 
 
 
 </div>
-{/* box  */}
+
 
 
 </div>

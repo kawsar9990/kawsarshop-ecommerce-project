@@ -1,6 +1,7 @@
 "use client"
 
-import {useEffect} from "react";
+import {useEffect,useState} from "react";
+import BannerSkeleton from "../../../Components/ui/Skeletons/BannerSkeleton";
 import img1 from '../../../../public/img/Kawsar.shop.jpg'
 import img2 from '../../../../public/img/1759938751802_30744.jpg'
 import img3 from '../../../../public/img/1751685130717_NewProject(8).jpg'
@@ -12,27 +13,47 @@ import "keen-slider/keen-slider.min.css"
 
 
 export default function FirstSlider(){
-  
+
+const [loading , setloading] = useState(true);
+useEffect(()=> {
+  const timer = setTimeout(() => {
+    setloading(false);
+  }, 1000);
+  return () => clearTimeout(timer);
+},[])
+
+
 const [sliderRef,  instance] = useKeenSlider({
     loop: true,
     mode: "free-snap",
+    renderMode: "precision",
     slides: {
       perView: 1,
       spacing: 10,
+    },
+    created(){
+        setloading(false)
     }
   })
 
 
 useEffect(()=> {
+  if(!loading && instance.current) {
     const interval = setInterval(()=> {
       instance.current.next()
     },2500)
-    return ()=> clearInterval(interval)
-},[instance])
+     return ()=> clearInterval(interval)
+  }
+},[instance, loading])
   
     return(
         <div className="z-0 p-2 rounded-xl cursor-pointer">
-            <div ref={sliderRef} className="keen-slider z-0 w-full xl:h-100">
+
+
+{loading ? (
+   <BannerSkeleton />
+):(
+<div ref={sliderRef} className="keen-slider z-0 w-full xl:h-100">
 
  <div className="keen-slider__slide number-slide1 rounded-md">
     <img src={img5.src} alt="" className="w-full h-full object-cover" />
@@ -68,6 +89,8 @@ useEffect(()=> {
       </div>
 
     </div>
+
+)}
 
         </div>
     )

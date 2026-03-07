@@ -1,53 +1,71 @@
 'use client'
 
 import {useState } from "react";
-import { HomeJewellery } from "../../../content/HomeProducts/Jewellery";
+import Rating from '@mui/material/Rating';
+import StarIcon from '@mui/icons-material/Star';
+import { useHomeProducts } from "../../../hooks/useHomeProducts";
+import SliderSkeleton from "../../../Components/ui/Skeletons/SliderSkeleton";
 import { useLoader } from "../../../context/ItemLoaderContext";
-import useProductSlider from "../../../hooks/useProductSlider";
+import useProductSlider from "../../../Components/ui/Slider/useProductSlider";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping ,faCodeCompare} from "@fortawesome/free-solid-svg-icons";
-import Link from 'next/link'
-import ProductQuickView from "../../../Components/Product/ProductQuickView";
+import Link from "next/link";
+import Quickview from "../../../Components/Product/ProductQuickView";
 
 export default function JewelleryProduct(){
+const { products, dataloading } = useHomeProducts('Jewellery');
+const sliderRef = useProductSlider(products)
 const {showLoader, hideLoader} = useLoader()
-const sliderRef = useProductSlider()
 const [quickProduct, setQuickProduct] = useState(null);
 
-const handleLoading = (item, callback) => {
+
+const handleLoading = () => {
     showLoader()
     setTimeout(() => {
       hideLoader();
-      if(callback) callback();
     }, 300);
   };
-  
+   
+
+  const handleQuickView  = (item) => {
+   showLoader();
+   setQuickProduct(item);
+   setTimeout(() => {
+    hideLoader();
+   }, 300);
+}
+
+
     return(
-       <div className="relative p-5">
+    <div className="relative p-5">
 
 {quickProduct && (
-  <ProductQuickView 
+  <Quickview 
 product={quickProduct}
 onClose={()=> setQuickProduct(null)}
-
 />
 )}
 
 
- <div ref={sliderRef} className="keen-slider ">
-{HomeJewellery.map(item => (
+{dataloading ? (
+ <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-4">
+   <SliderSkeleton/>
+ </div>
+) : (
+ <div ref={sliderRef} key={products.length} className="keen-slider">
+ {
+products.map( (item) => (
  <div
-  key={item.id}
-  className="keen-slider__slide bg-white group mb-5 rounded-lg cursor-pointer shadow-lg flex flex-col justify-between"
+  key={item._id}
+  className="keen-slider__slide group bg-white mb-5 rounded-lg cursor-pointer shadow-lg flex flex-col justify-between"
 >
   <div>
     <div className="overflow-hidden relative">
 
 
-<Link href={`/product/${item.id}`}
-scroll={false}
-onClick={()=> handleLoading(item.id)}
+<Link href={`/product/${item._id}`}
+onClick={()=> handleLoading(item._id)}
 >
   <Image
   src={item.image}
@@ -68,16 +86,12 @@ onClick={()=> handleLoading(item.id)}
 
   <div className="bg-white rounded-full hover:text-white hover:bg-red-600 font-black p-1 flex justify-center items-center">
     <button className="cursor-pointer"
-    onClick={()=>{
-       handleLoading(item, () =>   
-       setQuickProduct(item))   
-    }}>
+    onClick={()=> handleQuickView(item)}>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
 </svg>
     </button>
   </div>
-
 
 
 <div className="bg-white hover:text-white hover:bg-red-600 rounded-full font-black p-1 flex justify-center items-center">
@@ -100,16 +114,29 @@ onClick={()=> handleLoading(item.id)}
 
     </div>
 
-<Link href={`/product/${item.id}`}
-scroll={false}
-onClick={()=> handleLoading(item.id)}
+
+
+<Link href={`/product/${item._id}`}
+onClick={()=> handleLoading(item._id)}
 >
     <div className="p-2 flex flex-col gap-1 flex-grow">
       <div className="text-gray-400 text-[10px]">{item.catetitle}</div>
       <div className="text-gray-900 font-semibold md:text-base line-clamp-2 h-[32px] truncate">
         {item.name}
       </div>
-      <div className="text-[13px]">{item.ratestar}</div>
+
+      <div className="flex flex-row gap-3">
+       <Rating
+          name="product-rating"
+          value={parseFloat(item.ratestar) || 0}
+          readOnly
+          precision={0.5}
+          emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+          sx={{fontSize: "16px"}}
+        />
+        <p className="text-[13px] text-gray-500">({item.ratestar}.0)</p>
+      </div>
+
       <div className="flex items-center justify-between">
         <p className="line-through text-gray-400">${item.oldprice}</p>
         <p className="text-[#E2136E] font-semibold">${item.price}</p>
@@ -121,9 +148,8 @@ onClick={()=> handleLoading(item.id)}
 
 
 
-<Link href={`/product/${item.id}`}
-scroll={false}
-onClick={()=> handleLoading(item.id)}
+<Link href={`/product/${item._id}`}
+onClick={()=> handleLoading(item._id)}
 >
   <div className="p-2 mb-2">
     <button className="bg-transparent hover:bg-black hover:text-white hover:outline-0 outline-2 text-center rounded-md text-[#E2136E] cursor-pointer outline-red-600  p-1 w-full">
@@ -137,9 +163,12 @@ onClick={()=> handleLoading(item.id)}
   </div>
 </Link>
 </div>
-))}
+))  
+ } 
+  </div>
+)}
 
- </div>
-        </div>
+
+</div>
     )
 }

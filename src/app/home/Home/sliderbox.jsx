@@ -1,32 +1,44 @@
 "use client"
 
+import { useState,useEffect } from "react"
 import { useMainProduct } from "../../../context/ProductRender"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import Link from 'next/link'
 import { useLoader } from "../../../context/ItemLoaderContext"
+import CategorySkeleton from "../../../Components/ui/Skeletons/CategoryBoxSkeleton"
 
 export default function Sliderbox(){
-  
+
+const [loading, setLoading] = useState(true);
+useEffect(()=> {
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 1000);
+  return () => clearTimeout(timer);
+},[])
+
+
 const {setCategory} = useMainProduct()
 const {showLoader, hideLoader} = useLoader()
-   const handleLoading = (item, callback) => {
+   const handleLoading = () => {
     showLoader()
     setTimeout(() => {
       hideLoader();
-      if(callback) callback();
     }, 300);
   }
 
 const [sliderRef] = useKeenSlider({
-    loop: false,
+   loop: false,
    mode: "free-snap",
     slides: {
       perView: 8,
       spacing: 15,
     },
+    created(){
+        setLoading(false)
+    },
     breakpoints: {
-
     "(max-width: 1280px)": {
         slides: {
             perView: 8,
@@ -46,15 +58,16 @@ const [sliderRef] = useKeenSlider({
         }
  }}})
   
-    return(
+return(
 <div className="z-0 p-5 rounded-xl cursor-pointer">
 
-     <div ref={sliderRef} className="keen-slider z-0 w-full ">
+{loading ? (
+    <CategorySkeleton />
+) : (
+<div ref={sliderRef} className="keen-slider z-0 w-full ">
      
-
-
       <div className="keen-slider__slide number-slide1  w-full shadow-2xs  bg-white rounded-xl p-5 justify-between flex flex-col">
-        <Link href={`/products`} scroll={true} 
+        <Link href={`/products`}
         onClick={()=> {handleLoading();
         setCategory("Electronics")}}>
         <div className='flex flex-col gap-2 text-center justify-center items-center p-2'>
@@ -67,7 +80,7 @@ const [sliderRef] = useKeenSlider({
 
 
       <div className="keen-slider__slide number-slide2  w-full shadow-2xs bg-white rounded-xl p-5 justify-between flex flex-col">
-         <Link href={`/products`} scroll={true} 
+         <Link href={`/products`} 
          onClick={()=> {handleLoading();
          setCategory("Bags")}}>
         <div className='flex flex-col gap-2 text-center justify-center items-center p-2'>
@@ -80,7 +93,7 @@ const [sliderRef] = useKeenSlider({
 
 
       <div className="keen-slider__slide number-slide3  w-full shadow-2xs bg-white rounded-xl p-5 justify-between flex flex-col">
-     <Link href={`/products`} scroll={false} 
+     <Link href={`/products`}
          onClick={()=> {handleLoading();
          setCategory("Footwear")}}>
         <div className='flex flex-col gap-2 text-center justify-center items-center p-2'>
@@ -94,7 +107,7 @@ const [sliderRef] = useKeenSlider({
 
 
       <div className="keen-slider__slide number-slide4  w-full shadow-2xs bg-white rounded-xl p-5 justify-between flex flex-col">
-    <Link href={`/products`} scroll={true}
+    <Link href={`/products`}
          onClick={()=> {handleLoading();
          setCategory("Groceries")}}>
         <div className='flex flex-col gap-2 text-center justify-center items-center p-2'>
@@ -109,7 +122,7 @@ const [sliderRef] = useKeenSlider({
 
 
       <div className="keen-slider__slide number-slide5  w-full shadow-2xs bg-white rounded-xl p-5 justify-between flex flex-col">
-         <Link href={`/products`} scroll={true} 
+         <Link href={`/products`}
          onClick={()=> {handleLoading();
          setCategory("Jewellery")}}>
         <div className='flex flex-col gap-2 text-center justify-center items-center p-2'>
@@ -122,7 +135,7 @@ const [sliderRef] = useKeenSlider({
 
 
       <div className="keen-slider__slide number-slide6  w-full shadow-2xs bg-white rounded-xl p-5 justify-between flex flex-col">
-         <Link href={`/products`} scroll={true}  
+         <Link href={`/products`}
          onClick={()=> {handleLoading();
          setCategory("Fashion")}}>
         <div className='flex flex-col gap-2 text-center justify-center items-center p-2'>
@@ -135,7 +148,7 @@ const [sliderRef] = useKeenSlider({
 
 
       <div className="keen-slider__slide number-slide7  w-full shadow-2xs bg-white rounded-xl p-5 justify-between flex flex-col">
-         <Link href={`/products`} scroll={true} 
+         <Link href={`/products`}
          onClick={()=> {handleLoading();
          setCategory("Beauty")}}>
         <div className='flex flex-col gap-2 text-center justify-center items-center p-2'>
@@ -147,7 +160,7 @@ const [sliderRef] = useKeenSlider({
 
 
       <div className="keen-slider__slide number-slide8  w-full shadow-2xs bg-white rounded-xl p-5 justify-between flex flex-col">
-         <Link href={`/products`} scroll={true} 
+         <Link href={`/products`}
          onClick={()=> {handleLoading();
          setCategory("Wellness")}}>
         <div className='flex flex-col gap-2 text-center justify-center items-center p-2'>
@@ -160,7 +173,7 @@ const [sliderRef] = useKeenSlider({
    
    
     </div>
-
+)}
 </div>
     )
 }

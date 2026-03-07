@@ -1,11 +1,22 @@
 "use client";
 
+import { useState,useEffect } from 'react';
 import { useLoader } from '../../../context/ItemLoaderContext'
 import { useRouter } from "next/navigation";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import ShopBoxSkeleton from '../../../Components/ui/Skeletons/ShopBoxSkeleton';
 
 export default function ShopBox(){
+ 
+ const [loading, setLoading] = useState(true);
+ useEffect(()=> {
+   const timer = setTimeout(() => {
+     setLoading(false);
+   }, 3000);
+   return () => clearTimeout(timer);
+ },[])
+ 
   const router = useRouter();
 
   const product = [
@@ -55,13 +66,17 @@ const [sliderRef] = useKeenSlider({
 
 
   const {showLoader, hideLoader} = useLoader()
-  const handleLoading = (id) => {
+  const handleLoading = () => {
     showLoader()
     setTimeout(() => {
       hideLoader()
       router.push(`/products`);
     }, 300);
   };
+
+
+if(loading) return <ShopBoxSkeleton />
+
 
   return (
     <div className="pt-10 xl:pt-2">

@@ -87,7 +87,7 @@ const {showLoader,hideLoader} = useLoader()
 <div className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
 {item.map(item => (
          <div key={item.id} className="group overflow-hidden bg-white shadow-lg w-full rounded-md">
-<Link href={``} scroll={false} onClick={()=> handleLoading(item.id)}>
+<Link href={``} onClick={()=> handleLoading(item.id)}>
 <div className='relative overflow-hidden'>
      <img src={item.image.src} alt="" className='w-full lg:h-70 h-50 transition-all duration-500 group-hover:scale-110 rounded-md'/>
      <h2 className='absolute bottom-0 bg-orange-500 p-2 text-white font-bold w-20 text-center cursor-pointer'>{item.category}</h2>

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-
+import { useEffect } from "react"
 import LatestProduct from "./Product"
 import { useMainProduct } from "../../../context/ProductRender"
 import { useLoader } from "../../../context/ItemLoaderContext"
@@ -11,20 +11,35 @@ import { useLoader } from "../../../context/ItemLoaderContext"
 export default function LatestPage(){
 const {setCategory} = useMainProduct()
 const {showLoader, hideLoader} = useLoader()
-   const handleLoading = (item, callback) => {
+   const handleLoading = () => {
+    sessionStorage.setItem("homeScrollY", window.scrollY);
+    sessionStorage.removeItem("productsScrollY");
+    sessionStorage.setItem("fromViewAll", "true");
     showLoader()
     setTimeout(() => {
       hideLoader();
-      if(callback) callback();
-    }, 300);
+    }, 500);
 }
+
+useEffect(() => {
+  const savedScroll = sessionStorage.getItem("homeScrollY");
+  if (savedScroll) {
+    const timeoutId = setTimeout(() => {
+      window.scrollTo({
+        top: Number(savedScroll),
+        behavior: "instant" 
+      });
+    }, 500);
+    return () => clearTimeout(timeoutId);
+  }
+}, []);
 
 
 
 return(
         <div className="bg-[#FFF2F8]">
 
-<div className="flex flex-col">
+<div className="flex flex-col pt-5">
 
 <div className="p-5 flex justify-between">
     <p className="font-semibold text-lg md:text-xl">Latest Products</p>

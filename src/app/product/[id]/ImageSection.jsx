@@ -18,7 +18,7 @@ return(
 <div key={i} className="relative cursor-pointer ">
 <Image
   src={cat}           
-  alt={`Category ${i+1}`}
+  alt={product.name}
   width={100}
   height={100}
   className="rounded-lg shadow object-cover cursor-pointer"
@@ -59,7 +59,7 @@ return(
 <div key={i} className="relative cursor-pointer justify-between">
 <Image
   src={cat}           
-  alt={`Category ${i+1}`}
+  alt={product.name}
   width={145}
   height={100}
   className="rounded-lg w-full h-[100px] shadow object-cover cursor-pointer"

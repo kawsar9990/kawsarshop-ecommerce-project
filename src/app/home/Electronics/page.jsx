@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-
+import { useEffect } from "react"
 import ElectronicsProduct from "./Products"
 import { useMainProduct } from "../../../context/ProductRender"
 import { useLoader } from "../../../context/ItemLoaderContext"
@@ -10,13 +10,30 @@ export default function ElectronicsPage(){
 
 const {setCategory} = useMainProduct()
 const {showLoader, hideLoader} = useLoader()
-   const handleLoading = (item, callback) => {
+     const handleLoading = () => {
+    sessionStorage.setItem("homeScrollY", window.scrollY);
+    sessionStorage.removeItem("productsScrollY");
+    sessionStorage.setItem("fromViewAll", "true");
     showLoader()
     setTimeout(() => {
       hideLoader();
-      if(callback) callback();
-    }, 300);
+    }, 700);
 }
+
+useEffect(() => {
+  const savedScroll = sessionStorage.getItem("homeScrollY");
+  if (savedScroll) {
+    const timeoutId = setTimeout(() => {
+      window.scrollTo({
+        top: Number(savedScroll),
+        behavior: "instant" 
+      });
+    }, 700);
+    return () => clearTimeout(timeoutId);
+  }
+}, []);
+
+
 
 
 return(
@@ -26,10 +43,9 @@ return(
 
 <div className="p-5 flex justify-between">
     <p className="font-semibold text-lg md:text-xl">Electronics Products</p>
-    <Link href={`/products`} scroll={false} 
+    <Link href={`/products`}
     onClick={()=> {
     handleLoading();
-    sessionStorage.setItem("fromViewAll", "true");
     setCategory("Electronics")}}
     className="bg-gray-100 font-bold p-2 rounded-lg ">
    <div className="flex gap-2">

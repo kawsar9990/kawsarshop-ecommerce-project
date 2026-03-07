@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from "react";
+import Rating from '@mui/material/Rating';
+import StarIcon from '@mui/icons-material/Star';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping ,faCodeCompare} from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link'
@@ -35,7 +37,7 @@ onClose={()=> setQuickProduct(null)}
   <div>
     <div className="overflow-hidden relative">
    
-<Link href={`/product/${item.id}`}
+<Link href={`/product/${item._id}`}
 scroll={false}
 onClick={()=> handleLoading(item.id)}
 className="h-full"
@@ -91,16 +93,28 @@ className="h-full"
 
 <hr className="text-gray-200"/> 
 
-<Link href={`/product/${item.id}`}
+<Link href={`/product/${item._id}`}
 scroll={false}
-onClick={()=> handleLoading(item.id)}
+onClick={()=> handleLoading(item._id)}
 >
     <div className="p-2 flex flex-col gap-1 flex-grow">
       <div className="text-gray-400 text-[10px]">{item.catetitle}</div>
       <div className="text-gray-900 font-semibold md:text-base line-clamp-2 h-[32px] truncate">
         {item.name}
       </div>
-      <div className="text-[13px]">{item.ratestar}</div>
+
+        <div className="flex flex-row gap-3">
+       <Rating
+          name="product-rating"
+          value={parseFloat(item.ratestar) || 0}
+          readOnly
+          precision={0.5}
+          emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+          sx={{fontSize: "16px"}}
+        />
+        <p className="text-[13px] text-gray-500">({item.ratestar}.0)</p>
+      </div>
+
       <div className="flex items-center justify-between">
         <p className="line-through text-gray-400">${item.oldprice}</p>
         <p className="text-[#E2136E] font-semibold">${item.price}</p>
@@ -112,9 +126,9 @@ onClick={()=> handleLoading(item.id)}
 
 
 
-<Link href={`/product/${item.id}`}
+<Link href={`/product/${item._id}`}
 scroll={false}
-onClick={()=> handleLoading(item.id)}
+onClick={()=> handleLoading(item._id)}
 >
   <div className="p-2 mb-2">
     <button className="bg-transparent hover:bg-black hover:text-white hover:outline-0 outline-2 text-center rounded-md text-[#E2136E] cursor-pointer outline-red-600  p-1 w-full">
@@ -143,9 +157,9 @@ onClick={()=> handleLoading(item.id)}
 <div className="relative w-full lg:w-[250px] shrink-0 overflow-hidden bg-gray-100 rounded">
 <div className="relative aspect-square w-full h-[200px] lg:h-[250px]">
 <Link 
-  href={`/product/${item.id}`} 
+  href={`/product/${item._id}`} 
   scroll={false} 
-  onClick={() => handleLoading(item.id)}
+  onClick={() => handleLoading(item._id)}
 >
   <img 
     src={item.image} 
@@ -195,9 +209,9 @@ onClick={()=> handleLoading(item.id)}
 </div>
 
 
-<Link href={`/product/${item.id}`}
+<Link href={`/product/${item._id}`}
 scroll={false}
-onClick={()=> handleLoading(item.id)}
+onClick={()=> handleLoading(item._id)}
 className="w-full"
 >
  <div className="flex flex-col items-start justify-between lg:justify-center p-3 w-full">
@@ -205,7 +219,19 @@ className="w-full"
         <div className="text-gray-400 text-[15px]">{item.catetitle}</div>
         <div className="text-black text-[17px] line-clamp-2 font-semibold">{item.name}</div>
          <div className="text-gray-500 line-clamp-2 leading-tight text-[15px] ">{item.title}</div>
-          <div className="text-[13px]">{item.ratestar}</div>
+         
+        <div className="flex flex-row gap-3">
+       <Rating
+          name="product-rating"
+          value={parseFloat(item.ratestar) || 0}
+          readOnly
+          precision={0.5}
+          emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+          sx={{fontSize: "16px"}}
+        />
+        <p className="text-[13px] text-gray-500">({item.ratestar}.0)</p>
+      </div>
+
         <div className="flex items-center gap-5 font-bold">
           <p className="line-through text-gray-400">${item.oldprice}</p>
           <p className="text-[#E2136E] font-bold">${item.price}</p>

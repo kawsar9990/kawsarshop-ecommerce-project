@@ -2,9 +2,7 @@
 
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { library } from "@fortawesome/fontawesome-svg-core"
 import { faBagShopping, faBars, faBarsStaggered, faChevronDown, faHeart, faHouse, faInbox, faMagnifyingGlass, faPhone, faTruck, faUser, faXmark } from "@fortawesome/free-solid-svg-icons"
-library.add(faBarsStaggered,faChevronDown,faBars,faXmark,faHouse,faMagnifyingGlass,faBagShopping,faUser, faHeart,faInbox,faPhone,faTruck)
 
 import Sidebar from "./Sidebar"
 import SearchBar from "./Searchbox"
@@ -34,7 +32,7 @@ export default function Header(){
 
     const [footOpen, setfootOpen] = useState(false);
     const FootwearTimer = useRef(null);
-
+    
 
   const toggleDropdown = (menu) => {
     if (sideDropdown === menu) {
@@ -69,7 +67,7 @@ export default function Header(){
 
 
 return(
-   <div className={`antialiased  xl:pb-40 ${!showSmall ? "xl:pb-0" : ""}`} style={{userSelect: "none", zIndex: "99999"}}>
+   <div className={`antialiased  xl:pb-37 ${!showSmall ? "xl:pb-0" : ""}`} style={{userSelect: "none", zIndex: "99999"}}>
 
 {/* main box  */}
 <div>
@@ -97,7 +95,7 @@ setCategory={setCategory}
 
 
 {/* small header  */}
-<div className={`fixed hidden items-center xl:block top-0 left-0 w-full h-10 bg-[#E2136E] border-b border-b-gray-300  px-5 transition-transform duration-300 ${
+<div className={`fixed hidden items-center xl:block top-0 left-0 w-full h-10 bg-[#E2136E] border-b border-b-white/25  px-5 transition-transform duration-300 ${
     showSmall ? "translate-y-0" : "-translate-y-full"
  }`} style={{zIndex: "99999"}}>
           
@@ -130,8 +128,8 @@ onClick={()=> setGetapp(!getapp)}
           showSmall ? "translate-y-10" : "translate-y-0"}`} style={{zIndex: "99998"}}>
 
 {/* dekstop searbarnav */}
-<div className={`w-full transition-all duration-300 bg-[#BC105C]`}>
-<div className="flex p-3 w-full text-white bg-[#BC105C] justify-between items-center">
+<div className={` p-2 w-full transition-all duration-300 bg-[#BC105C]`}>
+<div className="flex w-full text-white bg-[#BC105C] justify-between items-center">
 
     <div>
         <p className="font-black text-2xl">
@@ -161,7 +159,7 @@ onClick={()=> setGetapp(!getapp)}
 
 </div>
 </div>
-<hr className="text-gray-300"/>
+<hr className="border-t border-white/10" />
 {/* dekstop searbarnav */}
 
 {/* dekstop main header  */}
@@ -200,8 +198,8 @@ fashionTimer.current = setTimeout(()=> setFashionOpen(false), 100)
 {FashionOpen && (
    <ul 
     className="absolute top-full left-0 min-w-[180px] bg-white shadow-lg rounded-lg flex flex-col items-start gap-2 py-3 pl-3 mt-1 z-50">
-        <Link href={`/products`} onClick={()=> setCategory("FashionWomen")} className="text-black hover:text-[#E2136E] cursor-pointer">Women</Link>
-        <Link href={`/products`} onClick={()=> setCategory("FashionMan")} className="text-black hover:text-[#E2136E] cursor-pointer">Men</Link>
+        <Link href={`/products`} onClick={()=> setCategory("Women")} className="text-black hover:text-[#E2136E] cursor-pointer">Women</Link>
+        <Link href={`/products`} onClick={()=> setCategory("Men")} className="text-black hover:text-[#E2136E] cursor-pointer">Men</Link>
     </ul>
 )}
 
@@ -222,8 +220,8 @@ ElectronicsTimer.current = setTimeout(()=> setElecOpen(false), 100)
    <ul 
      className="absolute top-full left-0 min-w-[180px] bg-white shadow-lg rounded-lg flex flex-col items-start gap-2 py-3 pl-3 mt-1 z-50">
         <Link href={`/products`} onClick={()=> setCategory("Mobile")} className=" text-black hover:text-[#E2136E] cursor-pointer">Mobile</Link>
-        <Link href={`/products`} onClick={()=> setCategory("leptop")}  className=" text-black hover:text-[#E2136E] cursor-pointer">Leptop</Link>
-        <Link  href={`/products`} onClick={()=> setCategory("OthersElectronics")} className="text-black hover:text-[#E2136E] cursor-pointer">Gadegt</Link>
+        <Link href={`/products`} onClick={()=> setCategory("Laptop")}  className=" text-black hover:text-[#E2136E] cursor-pointer">Laptop</Link>
+        <Link  href={`/products`} onClick={()=> setCategory("OtherElectronics")} className="text-black hover:text-[#E2136E] cursor-pointer">Gadegt</Link>
     </ul>
 )}
 
@@ -246,7 +244,7 @@ BagsTimer.current = setTimeout(()=> setBagOpen(false), 400)
     <ul 
      className="absolute top-full left-0 min-w-[180px] bg-white shadow-lg rounded-lg flex flex-col items-start gap-2 py-3 pl-3 mt-1 z-50">
         <Link  href={`/products`} onClick={()=> setCategory("BagMen")} className="text-black hover:text-[#E2136E] cursor-pointer">Men Bags</Link>
-        <Link  href={`/products`} onClick={()=> setCategory("WomenBags")} className="text-black hover:text-[#E2136E] cursor-pointer">Women Bags</Link>
+        <Link  href={`/products`} onClick={()=> setCategory("BagWomen")} className="text-black hover:text-[#E2136E] cursor-pointer">Women Bags</Link>
 </ul>
 )}
 
@@ -267,8 +265,8 @@ FootwearTimer.current = setTimeout(()=> setfootOpen(false), 100)
 {footOpen && (
      <ul 
     className="absolute top-full left-0 min-w-[180px] bg-white shadow-lg rounded-lg flex flex-col items-start gap-2 py-3 pl-3 mt-1 z-50">
-        <Link  href={`/products`} onClick={()=> setCategory("FootwearMen")} className="text-black hover:text-[#E2136E] cursor-pointer">Men Footwear</Link>
-        <Link  href={`/products`} onClick={()=> setCategory("FootwearWomen")} className="text-black hover:text-[#E2136E] cursor-pointer">Women Footwear</Link>
+        <Link  href={`/products`} onClick={()=> setCategory("ShoesMen")} className="text-black hover:text-[#E2136E] cursor-pointer">Men Footwear</Link>
+        <Link  href={`/products`} onClick={()=> setCategory("ShoesWomen")} className="text-black hover:text-[#E2136E] cursor-pointer">Women Footwear</Link>
 </ul>
 )}
 </div>
@@ -331,7 +329,7 @@ Jewellery
     </div>
 </div>
 
-<hr className="text-gray-300"/>
+<hr className="text-gray-200 opacity-20"/>
 
 
 <div className="w-full overflow-x-auto scrollbar-hide" style={{userSelect: "text"}}>
@@ -339,7 +337,7 @@ Jewellery
      <Link href={`/`} className="cursor-pointer">Home</Link>
      <Link href={`/products`} onClick={()=> setCategory("Fashion")} className="cursor-pointer">Fashion</Link>
      <Link href={`/products`} onClick={()=> setCategory("Electronics")} className="cursor-pointer">Electronics</Link>
-     <Link href={`/products`} onClick={()=> setCategory("Bag")} className="cursor-pointer">Bags</Link>
+     <Link href={`/products`} onClick={()=> setCategory("Bags")} className="cursor-pointer">Bags</Link>
      <Link href={`/products`} onClick={()=> setCategory("Footwear")} className="cursor-pointer">Footwear</Link>
       <Link href={`/products`} onClick={()=> setCategory("Groceries")} className="cursor-pointer">Groceries</Link>
       <Link href={`/products`} onClick={()=> setCategory("Beauty")} className="cursor-pointer">Beauty</Link>

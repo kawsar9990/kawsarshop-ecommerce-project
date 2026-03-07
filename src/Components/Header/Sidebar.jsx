@@ -58,8 +58,8 @@ return(
 
  {sideDropdown === "fashion" && (
           <div className="flex flex-col pl-5 pt-2">
-            <Link href={`/products`} onClick={()=> setCategory("FashionWomen")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Women</Link>
-            <Link href={`/products`} onClick={()=> setCategory("FashionMan")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Men</Link>
+            <Link href={`/products`} onClick={()=> setCategory("Women")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Women</Link>
+            <Link href={`/products`} onClick={()=> setCategory("Men")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Men</Link>
           </div>
         )}
 
@@ -83,8 +83,8 @@ return(
  {sideDropdown === "electro" && (
           <div className="flex flex-col pl-5 pt-2">
             <Link href={`/products`} onClick={()=> setCategory("Mobile")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Mobile</Link>
-            <Link href={`/products`} onClick={()=> setCategory("leptop")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Leptop</Link>
-            <Link href={`/products`} onClick={()=> setCategory("OthersElectronics")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Gadegt</Link>
+            <Link href={`/products`} onClick={()=> setCategory("Laptop")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Leptop</Link>
+            <Link href={`/products`} onClick={()=> setCategory("OtherElectronics")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Gadegt</Link>
           </div>
         )}
 
@@ -108,7 +108,7 @@ return(
  {sideDropdown === "bag" && (
           <div className="flex flex-col pl-5 pt-2">
             <Link href={`/products`} onClick={()=> setCategory("BagMen")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Men Bags</Link>
-            <Link href={`/products`} onClick={()=> setCategory("WomenBags")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Women Bags</Link>
+            <Link href={`/products`} onClick={()=> setCategory("BagWomen")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Women Bags</Link>
           </div>
         )}
 
@@ -131,8 +131,8 @@ return(
 
  {sideDropdown === "footw" && (
           <div className="flex flex-col pl-5 pt-2">
-            <Link href={`/products`} onClick={()=> setCategory("FootwearMen")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Men Footwear</Link>
-            <Link href={`/products`} onClick={()=> setCategory("FootwearWomen")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Women Footwear</Link>
+            <Link href={`/products`} onClick={()=> setCategory("ShoesMen")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Men Footwear</Link>
+            <Link href={`/products`} onClick={()=> setCategory("ShoesWomen")} className="p-2 hover:bg-blue-50 hover:rounded-lg transition-all duration-300">Women Footwear</Link>
           </div>
         )}
 

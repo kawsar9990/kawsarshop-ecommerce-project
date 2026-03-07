@@ -1,131 +1,93 @@
 'use client'
 
 import ReactPaginate from "react-paginate"
-
 import { useState, useEffect } from "react"
+import ProductSkeleton from "../../Components/ui/Skeletons/ProductSkeleton"
 import { useMainProduct } from "../../context/ProductRender"
 import { useLoader } from "../../context/ItemLoaderContext"
+import { useAllProducts } from "../../hooks/useAllProducts"
 
 import Header from "./Header"
 import FillterProduct from "./Fillterproduct"
 import Products from "./Products"
 
-import { Fashion } from "../../content/Allproduct/Fashion";
-import { FashionMan } from "../../content/Allproduct/FashionMen";
-import { FashionWomen } from "../../content/Allproduct/FashionWomen";
-import { Electronics } from "../../content/Allproduct/Electronics";
-import { Mobile } from "../../content/Allproduct/Mobile";
-import { Leptop } from "../../content/Allproduct/leptop"
-import { OthersElectronics } from "../../content/Allproduct/OtherElectronics";
-import { Bags } from "../../content/Allproduct/Bags";
-import { BagMen } from "../../content/Allproduct/BagsMen";
-import { WomenBags } from "../../content/Allproduct/BagsWomen";
-import { Footwear } from "../../content/Allproduct/Footwear";
-import { FootwearMen } from "../../content/Allproduct/FootwearMen";
-import { FootwearWomen } from "../../content/Allproduct/FootwearWomen"
-import { Groceries } from "../../content/Allproduct/Groceries";
-import { Beauty } from "../../content/Allproduct/Beauty";
-import { Wellness } from "../../content/Allproduct/Wellness";
-import { Jewellery } from "../../content/Allproduct/Jewellery"
 
 
 export default function page(){
     
-const {category} = useMainProduct();
+const {category,setCategory} = useMainProduct();
 const {showLoader,hideLoader} = useLoader()
+const { products, dataloading } = useAllProducts(category);
+const [data, setData] = useState([])
 const [selected, setSelected] = useState("Deafult")
 const [categoryFilter, setCategoryFilter] = useState([]);
 const [titlestyle, setTitleStyle] = useState(true)
 const [list, setList] = useState(false)
 const [rating, setRating] = useState([])
-const [data, setData] = useState([])
 const [filterData, setFilterData] = useState([])
 const [price, setPrice] = useState([2, 5000])
 
+useEffect(()=> {
+if(products){
+  setData(products)
+}
+},[products])
 
-const handleLoading = (item, callback) => {
+
+useEffect(() => {
+    const savedCat = sessionStorage.getItem("active_category");
+    if (savedCat) {
+        setCategory(savedCat);
+    }
+}, []);
+useEffect(() => {
+    if (category) {
+        sessionStorage.setItem("active_category", category);
+    }
+}, [category]);
+
+
+
+
+const handleLoading = () => {
     showLoader()
     setTimeout(() =>{
         hideLoader();
-        if(callback) callback();
-    }, 300);
+    }, 400);
 };
  
 
 
 const [currentpage, setcurrentpage] = useState(0)
-useEffect(()=> {
-    const savedPage = sessionStorage.getItem("current_pagination_page")
-    if (savedPage) {
+
+useEffect(() => {
+  const savedPage = sessionStorage.getItem("current_pagination_page");
+  const prevCategory = sessionStorage.getItem("prevCategory");
+  if (prevCategory === category && savedPage) {
     setcurrentpage(Number(savedPage));
+  } else {
+    setcurrentpage(0);
+    sessionStorage.setItem("current_pagination_page", 0);
   }
-},[])
+  sessionStorage.setItem("prevCategory", category);
+  
+  if (category) setCategoryFilter([category]);
+}, [category]); 
+
 const PER_PAGE = 32;
 const Offset = currentpage * PER_PAGE;
 const currentproducts = filterData.slice(Offset, Offset + PER_PAGE);
 const pageCount = Math.ceil(filterData.length / PER_PAGE);
 const handlePageClick = (event) => {
-let selectedPage = event.selected;
-setcurrentpage(selectedPage)
-
-if(selectedPage === 0){
-sessionStorage.removeItem("current_pagination_page")
-}
-else{
-sessionStorage.setItem("current_pagination_page", selectedPage)
-}
-
+setcurrentpage(event.selected)
+sessionStorage.setItem("current_pagination_page", event.selected);
 window.scrollTo({ top: 0, behavior: "smooth"})
 };
 
 
-
-
-useEffect(()=>{
-  if(!category) return;
-
-  const prevCategory = sessionStorage.getItem("prevCategory")
-  if(prevCategory && prevCategory !== category){
-    sessionStorage.removeItem("current_pagination_page")
-    sessionStorage.removeItem("productsScrollY")
-    setcurrentpage(0);
-  }
-  sessionStorage.setItem("prevCategory", category)
-
-  switch(category){
-    case "Fashion": setData(Fashion); break;
-    case "FashionWomen": setData(FashionWomen); break;
-    case "FashionMan": setData(FashionMan); break;
-    case "Electronics": setData(Electronics); break;
-    case "Mobile": setData(Mobile); break;
-    case "leptop": setData(Leptop); break;
-    case "OthersElectronics": setData(OthersElectronics); break;
-    case "Bags": setData(Bags); break;
-    case "BagMen": setData(BagMen); break;
-    case "WomenBags": setData(WomenBags); break;
-    case "Footwear": setData(Footwear); break;
-    case "FootwearMen": setData(FootwearMen); break;
-    case "FootwearWomen": setData(FootwearWomen); break;
-    case "Groceries": setData(Groceries); break;
-    case "Beauty": setData(Beauty); break;
-    case "Wellness": setData(Wellness); break;
-    case "Jewellery": setData(Jewellery); break;
-    default: setData([]);
-  }
-},[category]);
-
- 
-
-useEffect(()=> {
-const catetitleckbox =
-["Fashion","Electronics","Bags","Footwear","Groceries","Beauty","Wellness",
-"Jewellery","leptop","FashionWomen","FashionMan","OthersElectronics","Mobile",
-"BagMen","WomenBags","FootwearWomen","FootwearMen"];
-if(catetitleckbox.includes(category)){
-     setCategoryFilter([category])
-}
-},[category])
-
+useEffect(() => {
+  if (category) setCategoryFilter([category]);
+}, [category]);
 
 
 useEffect(()=> {
@@ -143,39 +105,14 @@ if(view === "title"){
 
 
 useEffect(()=> {
-let temp = [...data];
+let temp = [...products];
 
-
-if(categoryFilter.length > 0){
-    let allData = [];
-    categoryFilter.forEach(cat => {
- switch(cat){
-        case "Fashion": allData = [...allData,...Fashion]; break;
-        case "FashionWomen": allData = [...allData,...FashionWomen]; break;
-        case "FashionMan": allData = [...allData,...FashionMan]; break;
-        case "Electronics": allData = [...allData,...Electronics]; break;
-        case "Mobile": allData = [...allData,...Mobile]; break;
-        case "leptop": allData = [...allData,...Leptop]; break;
-        case "OthersElectronics": allData = [...allData,...OthersElectronics]; break;
-        case "Bags": allData = [...allData,...Bags]; break;
-        case "BagMen": allData = [...allData,...BagMen]; break;
-        case "WomenBags": allData = [...allData,...WomenBags]; break;
-        case "Footwear": allData = [...allData,...Footwear]; break;
-        case "FootwearMen": allData = [...allData,...FootwearMen]; break;
-        case "FootwearWomen": allData = [...allData,...FootwearWomen]; break;
-        case "Groceries": allData = [...allData,...Groceries]; break;
-        case "Beauty": allData = [...allData,...Beauty]; break;
-        case "Wellness": allData = [...allData,...Wellness]; break;
-        case "Jewellery": allData = [...allData,...Jewellery]; break;
-        }       
-    })
-    temp = Array.from(new Set(allData))
+if (categoryFilter.length > 0) {
+  temp = temp.filter(item => 
+    categoryFilter.includes(item.category) || 
+    categoryFilter.includes(item.subCategory)
+  );
 }
-else{
-    temp = [...data]
-}
-
-
 
 temp = temp.filter(i => {
     if(price[1] === 5000){
@@ -186,7 +123,7 @@ temp = temp.filter(i => {
 
 
 if(rating.length > 0){
-    temp = temp.filter(i => rating.includes(i.ratestar))
+    temp = temp.filter(i => rating.includes(Math.floor(Number(i.ratestar))))
 }
 
 
@@ -197,14 +134,14 @@ if(selected === "Name, Z To A")
     temp.sort((a,b) => b.name.localeCompare(a.name));
 
 if(selected === "Price, Low To High") 
-    temp.sort((a,b) => Number(a.price.replace(/[^0-9.-]+/g,"")) - Number(b.price.replace(/[^0-9.-]+/g,"")));
+    temp.sort((a,b) => Number(a.price) - Number(b.price));
 
 if(selected === "Price, High To Low") 
-    temp.sort((a,b) => Number(b.price.replace(/[^0-9.-]+/g,"")) - Number(a.price.replace(/[^0-9.-]+/,"")));
+    temp.sort((a,b) => Number(b.price) - Number(a.price));
 
 
 setFilterData(temp)
-},[selected,price,data,rating,categoryFilter])
+},[selected,price,rating,products,categoryFilter])
 
 
 
@@ -227,9 +164,10 @@ useEffect(() => {
   sessionStorage.setItem("prevCategory", category)
 
   if(savedScroll && filterData.length > 0){
-    setTimeout(()=>{
+    const timeoutId = setTimeout(()=>{
       window.scrollTo(0, Number(savedScroll));
-    },50);
+    },100);
+    return () => clearTimeout(timeoutId)
   }
 
 }, [filterData,category]);
@@ -245,10 +183,17 @@ categoryFilter={categoryFilter} setCategoryFilter={setCategoryFilter}/>
 
 <div className="w-full lg:w-3/4 flex flex-col p-2">
 <Header filterData={filterData} selected={selected} setSelected={setSelected} titlestyle={titlestyle} setTitleStyle={setTitleStyle} list={list} setList={setList}/>
-<Products  handleLoading={handleLoading} data={data} filterData={currentproducts} titlestyle={titlestyle}/>
 
-{
-pageCount > 1 && (
+{dataloading ? (
+<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-2">
+  <ProductSkeleton count={12}/> 
+</div>
+) : (
+<div>
+<Products  handleLoading={handleLoading} showLoader={showLoader} hideLoader={hideLoader} data={products} filterData={currentproducts} titlestyle={titlestyle}/>
+</div>
+)}
+{!dataloading && pageCount > 1 && (
 <ReactPaginate 
 breakLabel="..."
 previousLabel="< Prev"
