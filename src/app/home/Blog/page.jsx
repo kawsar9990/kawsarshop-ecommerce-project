@@ -28,7 +28,7 @@ const {showLoader,hideLoader} = useLoader()
      setTimeout(() => {
        hideLoader() 
         navigate.push(`/home/Blog/${id}`)
-     }, 300);
+     }, 1000);
    }
 
 

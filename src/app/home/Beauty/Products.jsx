@@ -13,20 +13,13 @@ import { faCartShopping ,faCodeCompare} from "@fortawesome/free-solid-svg-icons"
 import Link from "next/link";
 import Quickview from "../../../Components/Product/ProductQuickView";
 
-export default function BeautyProduct(){
+export default function BeautyProduct({onProductClick}){
 const { products, dataloading } = useHomeProducts('Beauty');
 const sliderRef = useProductSlider(products)
 const {showLoader, hideLoader} = useLoader()
 const [quickProduct, setQuickProduct] = useState(null);
 
 
-const handleLoading = () => {
-    showLoader()
-    setTimeout(() => {
-      hideLoader();
-    }, 300);
-  };
-   
 const handleQuickView  = (item) => {
    showLoader();
    setQuickProduct(item);
@@ -64,7 +57,7 @@ products.map( (item) => (
 
 
 <Link href={`/product/${item._id}`}
-onClick={()=> handleLoading(item._id)}
+onClick={onProductClick}
 >
   <Image
   src={item.image}
@@ -116,7 +109,7 @@ onClick={()=> handleLoading(item._id)}
 
 
 <Link href={`/product/${item._id}`}
-onClick={()=> handleLoading(item._id)}
+onClick={onProductClick}
 >
     <div className="p-2 flex flex-col gap-1 flex-grow">
       <div className="text-gray-400 text-[10px]">{item.catetitle}</div>
@@ -148,7 +141,7 @@ onClick={()=> handleLoading(item._id)}
 
 
 <Link href={`/product/${item._id}`}
-onClick={()=> handleLoading(item._id)}
+onClick={onProductClick}
 >
   <div className="p-2 mb-2">
     <button className="bg-transparent hover:bg-black hover:text-white hover:outline-0 outline-2 text-center rounded-md text-[#E2136E] cursor-pointer outline-red-600  p-1 w-full">

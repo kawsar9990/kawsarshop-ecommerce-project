@@ -1,8 +1,12 @@
 'use client'
 
 import Image from "next/image";
+import Rating from '@mui/material/Rating';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { styled } from '@mui/material/styles';
 import Link from "next/link";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +15,22 @@ import { faFacebook, faTelegram, faWhatsapp } from "@fortawesome/free-brands-svg
 export default function Quickview({product, onClose}){
  
 const [selectedSize, setSelectedSize] = useState(null);  
+useEffect(() => {
+    if (product) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+}, [product]);
+
+const HeartRating = styled(Rating)({
+  '& .MuiRating-iconFilled': {
+    color: '#ff3d47',
+  },
+});
+
+
 if (!product) return null;
 
 return(
@@ -31,8 +51,6 @@ return(
 </div>
 <hr className="text-gray-400 mt-2"/>
 </div>
-
-
 
 
 
@@ -75,11 +93,18 @@ className="cursor-zoom-in w-full h-[500px] object-cover rounded-md transition-al
 
 <div className="flex justify-between">
   <div className="flex gap-2">Brands : <p className="font-semibold text-[#BB105C]">{product.category}</p></div>
-    <button className="cursor-pointer">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-</svg>
+    
+
+  <button className="cursor-pointer">
+<HeartRating
+      name="customized-heart"
+      defaultValue={1}
+      max={1}
+      icon={<FavoriteIcon fontSize="inherit" />}
+      emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+    />
     </button>
+
 </div>
 
 <hr className="text-gray-400 mt-2"/>
@@ -105,7 +130,7 @@ className="cursor-zoom-in w-full h-[500px] object-cover rounded-md transition-al
   
   <div className="flex gap-2">
     <p className="text-gray-400 font-semibold">SKU/Style :</p>
-    <p>N/A</p>
+    <p className="text-[#E2136E]">{product.sku}</p>
   </div>
 
   <div className="flex gap-2">
@@ -160,7 +185,7 @@ className={`px-6 py-2 rounded-md font-semibold border cursor-pointer transition
 
 <div className="flex gap-3">
   <p className="text-gray-400 font-semibold">In Stock : </p>
-  <p>N/A</p>
+  <p className="text-[#E2136E]">{product.stock}</p>
 </div>
 
 
@@ -185,8 +210,8 @@ className={`px-6 py-2 rounded-md font-semibold border cursor-pointer transition
    
 <div className="flex justify-between">
   <div className="flex gap-3">
-    <p className="text-gray-400 font-semibold">Seller Product SKU :</p>
-    <p>N/A</p>
+    <p className="text-gray-400 font-semibold">Seller :</p>
+    <p className="text-[#E2136E]">Kawsar Ahmed</p>
   </div>
   <div>
     <p className="text-[#E2136E] font-semibold cursor-pointer">Share With Social Media</p>

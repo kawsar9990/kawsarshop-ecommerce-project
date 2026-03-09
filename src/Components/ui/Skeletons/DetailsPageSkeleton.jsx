@@ -14,7 +14,7 @@ export default function DetailsPageSkeleton() {
         <div className="hidden lg:flex flex-row gap-3">
         
           <div className="flex flex-col gap-3">
-            {[...Array(4)].map((_, i) => (
+            {[...Array(3)].map((_, i) => (
               <Skeleton key={i} width={100} height={100} borderRadius={8} />
             ))}
           </div>

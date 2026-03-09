@@ -1,51 +1,25 @@
 'use client'
 
 import Link from "next/link"
-import { useEffect } from "react"
 import FootwearProduct from "./Products"
 import { useMainProduct } from "../../../context/ProductRender"
-import { useLoader } from "../../../context/ItemLoaderContext"
+import { useScrollRestoration } from "../../../hooks/useScrollRestoration"
 
 
 export default function FootwearPage(){
 const {setCategory} = useMainProduct()
-const {showLoader, hideLoader} = useLoader()
-   const handleLoading = () => {
-    sessionStorage.setItem("homeScrollY", window.scrollY);
-    sessionStorage.removeItem("productsScrollY");
-    sessionStorage.setItem("fromViewAll", "true");
-    showLoader()
-    setTimeout(() => {
-      hideLoader();
-    }, 700);
-}
-
-useEffect(() => {
-  const savedScroll = sessionStorage.getItem("homeScrollY");
-  if (savedScroll) {
-    const timeoutId = setTimeout(() => {
-      window.scrollTo({
-        top: Number(savedScroll),
-        behavior: "instant" 
-      });
-    }, 700);
-    return () => clearTimeout(timeoutId);
-  }
-}, []);
-
+const { saveScrollPos } = useScrollRestoration()
 
 
 return(
-        <div className="bg-[#FFF2F8]">
+<div className="bg-[#FFF2F8]">
 
 <div className="flex flex-col">
 
 <div className="p-5 flex justify-between">
     <p className="font-semibold text-lg md:text-xl">Footwear Products</p>
     <Link href={`/products`}
-    onClick={()=> { 
-    handleLoading();
-    setCategory("Footwear")}}
+    onClick={()=> saveScrollPos(() => setCategory("Footwear"))} 
     className="bg-gray-100 font-bold p-2 rounded-lg">
    <div className="flex gap-2">
      <p>View All</p>
@@ -58,7 +32,7 @@ return(
 </div>
 
 <div>
-<FootwearProduct />
+<FootwearProduct onProductClick={() => saveScrollPos()}/>
 </div>
 
 

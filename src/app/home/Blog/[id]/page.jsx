@@ -151,7 +151,7 @@ export default function BlogRoute(){
 
     return(
          <div className='bg-white'>
-<div className='pt-20 xl:pt-0 pb-10'>
+<div className='pt-10 xl:pt-5 pb-10'>
 
 <div className='grid grid-cols-1 gap-5 xl:gap-1 xl:grid-cols-[2fr_1fr] p-2'>
 <div className='pt-20 xl:pt-2' id='top'>

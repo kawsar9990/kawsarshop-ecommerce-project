@@ -1,71 +1,40 @@
 'use client'
 
 import Link from "next/link"
-import { useEffect } from "react"
 import BagsProduct from "./Products"
 import { useMainProduct } from "../../../context/ProductRender"
-import { useLoader } from "../../../context/ItemLoaderContext"
+import { useScrollRestoration } from "../../../hooks/useScrollRestoration"
 
 
-
-export default function BagsPage(){
-const {setCategory} = useMainProduct()
-const {showLoader, hideLoader} = useLoader()
-   const handleLoading = () => {
-    sessionStorage.setItem("homeScrollY", window.scrollY);
-    sessionStorage.removeItem("productsScrollY");
-    sessionStorage.setItem("fromViewAll", "true");
-    showLoader()
-    setTimeout(() => {
-      hideLoader();
-    }, 700);
-}
-
-useEffect(() => {
-  const savedScroll = sessionStorage.getItem("homeScrollY");
-  if (savedScroll) {
-    const timeoutId = setTimeout(() => {
-      window.scrollTo({
-        top: Number(savedScroll),
-        behavior: "instant" 
-      });
-    }, 700);
-    return () => clearTimeout(timeoutId);
-  }
-}, []);
+export default function BagsPage() {
+  const { setCategory } = useMainProduct()
+  const { saveScrollPos } = useScrollRestoration()
 
 
-
-return(
-        <div className="bg-[#FFF2F8]">
-
-<div className="flex flex-col">
-
-<div className="p-5 flex justify-between">
-    <p className="font-semibold text-lg md:text-xl">Bag Products</p>
-    <Link href={`/products`} 
-    onClick={()=> { 
-    handleLoading()
-    setCategory("Bags")}}
-    className="bg-gray-100 font-bold p-2 rounded-lg">
-   <div className="flex gap-2">
-     <p>View All</p>
-    <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-</svg>
-</p>
-   </div>
-    </Link>
-</div>
-
-<div>
-<BagsProduct />
-</div>
-
-
-</div>
-
-
+  return (
+    <div className="bg-[#FFF2F8]">
+      <div className="flex flex-col">
+        <div className="p-5 flex justify-between">
+          <p className="font-semibold text-lg md:text-xl">Bag Products</p>
+          <Link 
+            href={`/products`} 
+            onClick={()=> saveScrollPos(() => setCategory("Bags"))} 
+            className="bg-gray-100 font-bold p-2 rounded-lg"
+          >
+            <div className="flex gap-2">
+              <p>View All</p>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+              </svg>
+            </div>
+          </Link>
         </div>
-    )
+
+        <div>
+          <BagsProduct onProductClick={() => saveScrollPos()}/>
+        </div>
+        
+      </div>
+    </div>
+  )
 }

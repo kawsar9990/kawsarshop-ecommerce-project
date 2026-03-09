@@ -108,7 +108,10 @@ className="h-full"
 <hr className="text-gray-200"/>
 
 <Link href={`/product/${item._id}`}
-onClick={()=> handleLoading(item._id)}
+  onClick={()=> {
+  handleLoading(item._id)
+  saveScrollPosition();
+}}
 >
     <div className="p-2 flex flex-col gap-1 flex-grow">
       <div className="text-gray-400 text-[10px]">{item.catetitle}</div>
@@ -139,7 +142,10 @@ onClick={()=> handleLoading(item._id)}
 
 
 <Link href={`/product/${item._id}`}
-onClick={()=> handleLoading(item._id)}
+  onClick={()=> {
+  handleLoading(item._id)
+  saveScrollPosition();
+}}
 >
   <div className="p-2 mb-2">
     <button className="bg-transparent hover:bg-black hover:text-white hover:outline-0 outline-2 text-center rounded-md text-[#E2136E] cursor-pointer outline-red-600  p-1 w-full">
@@ -169,8 +175,10 @@ onClick={()=> handleLoading(item._id)}
 <div className="relative aspect-square w-full h-[200px] lg:h-[250px]">
 <Link 
   href={`/product/${item._id}`} 
-  scroll={false} 
-  onClick={() => handleLoading(item._id)}
+  onClick={()=> {
+  handleLoading(item._id)
+  saveScrollPosition();
+}}
 >
   <img 
     src={item.image} 
@@ -218,8 +226,10 @@ onClick={()=> handleLoading(item._id)}
 
 
 <Link href={`/product/${item._id}`}
-scroll={false}
-onClick={()=> handleLoading(item._id)}
+  onClick={()=> {
+  handleLoading(item._id)
+  saveScrollPosition();
+}}
 className="w-full"
 >
  <div className="flex flex-col items-start justify-between lg:justify-center p-3 w-full">

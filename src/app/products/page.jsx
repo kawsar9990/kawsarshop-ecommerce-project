@@ -27,24 +27,36 @@ const [rating, setRating] = useState([])
 const [filterData, setFilterData] = useState([])
 const [price, setPrice] = useState([2, 5000])
 
-useEffect(()=> {
-if(products){
-  setData(products)
-}
-},[products])
-
 
 useEffect(() => {
     const savedCat = sessionStorage.getItem("active_category");
     if (savedCat) {
-        setCategory(savedCat);
+      setCategory(savedCat);
     }
-}, []);
+  }, []);
+
+
 useEffect(() => {
+    const prevCategory = sessionStorage.getItem("active_category");
+
+    if (prevCategory && prevCategory !== category) {
+      sessionStorage.removeItem("productsScrollY");
+      sessionStorage.setItem("current_pagination_page", 0);
+      setcurrentpage(0);
+      window.scrollTo(0, 0);
+    }
     if (category) {
-        sessionStorage.setItem("active_category", category);
+      sessionStorage.setItem("active_category", category);
+      setCategoryFilter([category]);
     }
 }, [category]);
+
+useEffect(() => {
+ if (products) {
+      setData(products)
+}
+}, [products])
+
 
 
 
@@ -145,33 +157,23 @@ setFilterData(temp)
 
 
 
-
 useEffect(() => {
-  const fromViewAll = sessionStorage.getItem("fromViewAll");
-  const savedScroll = sessionStorage.getItem("productsScrollY");
+    const savedScroll = sessionStorage.getItem("productsScrollY");
+    const fromViewAll = sessionStorage.getItem("fromViewAll");
+    const activeCat = sessionStorage.getItem("active_category");
 
-  if(fromViewAll){
-    window.scrollTo(0,0);
-    sessionStorage.removeItem("fromViewAll");
-    return;
-  }
-
-  const prevCategory = sessionStorage.getItem("prevCategory");
-  if(prevCategory && prevCategory !== category){
-    window.scrollTo(0,0);
-    sessionStorage.removeItem("productsScrollY");
-  }
-  sessionStorage.setItem("prevCategory", category)
-
-  if(savedScroll && filterData.length > 0){
-    const timeoutId = setTimeout(()=>{
-      window.scrollTo(0, Number(savedScroll));
-    },100);
-    return () => clearTimeout(timeoutId)
-  }
-
-}, [filterData,category]);
-
+    if (fromViewAll) {
+      window.scrollTo(0, 0);
+      sessionStorage.removeItem("fromViewAll");
+      return;
+    }
+    if (activeCat === category && savedScroll && filterData.length > 0) {
+      const timeoutId = setTimeout(() => {
+        window.scrollTo(0, Number(savedScroll));
+      }, 150);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [filterData, category]);
 
 
 
@@ -186,7 +188,7 @@ categoryFilter={categoryFilter} setCategoryFilter={setCategoryFilter}/>
 
 {dataloading ? (
 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-2">
-  <ProductSkeleton count={12}/> 
+  <ProductSkeleton count={18}/> 
 </div>
 ) : (
 <div>

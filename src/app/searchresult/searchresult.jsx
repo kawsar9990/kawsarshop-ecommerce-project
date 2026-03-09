@@ -125,7 +125,7 @@ categoryFilter={categoryFilter} setCategoryFilter={setCategoryFilter}/>
 
 {dataloading ? (
 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-2">
-  <ProductSkeleton count={8}/> 
+  <ProductSkeleton count={18}/> 
 </div>
 ) : (
 <div>

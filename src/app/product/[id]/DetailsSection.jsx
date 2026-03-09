@@ -1,18 +1,50 @@
 'use client'
 
+import { useState,useEffect } from "react";
+import { Copy } from "lucide-react";
 import Link from "next/link"
 import Rating from '@mui/material/Rating';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { styled } from '@mui/material/styles';
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 import StarIcon from '@mui/icons-material/Star';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faArrowRightArrowLeft, faBasketShopping, faCartShopping, faPhone, faShareNodes } from "@fortawesome/free-solid-svg-icons"
+import { faFacebook, faTelegram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faShareNodes,faCartShopping,faBasketShopping,faPhone,faArrowRightArrowLeft)
+library.add(faShareNodes,faCartShopping,faBasketShopping,faPhone,faArrowRightArrowLeft,faFacebook,faWhatsapp,faTelegram)
 
 
 
 export default function PageDetails({product}){
-    return(
+
+const [isShareOpen, setIsShareOpen] = useState(false);
+const [showAlert, setShowAlert] = useState(false);
+
+useEffect(() => {
+  if (isShareOpen) {
+    document.body.style.overflow = 'hidden'; 
+  } else {
+    document.body.style.overflow = 'auto'; 
+  }
+  return () => {
+    document.body.style.overflow = 'auto';
+  };
+}, [isShareOpen]);
+
+
+const HeartRating = styled(Rating)({
+  '& .MuiRating-iconFilled': {
+    color: '#ff3d47',
+  },
+});
+ 
+
+ 
+ return(
 <div className="flex flex-col gap-5">
 
 <div className="font-bold lg:text-3xl capitalize">
@@ -24,11 +56,75 @@ export default function PageDetails({product}){
 <div className="text-gray-500 font-semibold flex">Category: </div>
 <Link href={`/products`} className="font-semibold">{product.category}</Link>
 </div>
+
 <div className="cursor-pointer text-[20px] hover:text-[#E2136E]">
-   <button className="cursor-pointer">
+   <button onClick={() => setIsShareOpen(true)} className="cursor-pointer">
     <FontAwesomeIcon icon={faShareNodes} />
    </button>
 </div>
+
+{isShareOpen && (
+  <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/50 backdrop-blur-sm overflow-hidden"> 
+  <div className="relative bg-white p-8 rounded-2xl shadow-2xl flex gap-8 items-center max-w-sm w-full mx-4 animate-in fade-in zoom-in duration-300">
+      <button 
+        onClick={() => setIsShareOpen(false)}
+        className="absolute cursor-pointer top-3 right-3 text-gray-400 hover:text-red-500 transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div 
+        onClick={() => {
+          navigator.clipboard.writeText(window.location.href);
+          setShowAlert(true);
+          setTimeout(() => setShowAlert(false), 3000);
+        }}
+        className="cursor-pointer hover:scale-110 transition-transform flex flex-col items-center gap-1"
+      >
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center">
+           <span className="font-bold text-[17px]"><Copy /></span>
+        </div>
+      </div>
+
+ {showAlert && (
+         <div className="fixed bottom-5 right-5 z-[100000] min-w-[300px] font-black animate-in fade-in slide-in-from-right-10 duration-500">
+            <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+              URL copied to clipboard!
+           </Alert>
+          </div>
+        )}
+
+      <Link 
+        href={`https://www.facebook.com/profile.php?id=61576560495361`} 
+        target="_blank"
+        className="cursor-pointer hover:scale-110 transition-transform"
+      >
+ <div className="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center text-white text-xl font-bold">
+  <FontAwesomeIcon icon={faFacebook} />
+ </div>
+      </Link>
+      <Link 
+        href={`https://wa.me/8801602084187`}
+        target="_blank"
+        className="cursor-pointer hover:scale-110 transition-transform"
+      >
+        <div className="w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center text-white text-xl font-bold">
+          <FontAwesomeIcon icon={faWhatsapp} />
+        </div>
+      </Link>
+      <Link 
+        href={`https://t.me/8801602084187`}
+        target="_blank"
+        className="cursor-pointer hover:scale-110 transition-transform">
+        <div className="w-12 h-12 bg-[#0088cc] rounded-full flex items-center justify-center text-white text-xl font-bold">
+          <FontAwesomeIcon icon={faTelegram} />
+        </div>
+      </Link>
+    </div>
+  </div>
+)}
+
 </div>
 
 <div className="flex flex-row justify-between w-full">
@@ -55,10 +151,10 @@ export default function PageDetails({product}){
 <div className="flex flex-row text-[13px] lg:text-[17px]">
 <div className="flex gap-2 font-semibold">
 <div>Stock</div>
-<div className="text-[#E2136E] font-bold">N/A</div>
+<div className="text-[#E2136E] font-bold">{product.stock}</div>
 <p>|</p>
 <div>SKU</div>
-<div className="text-[#E2136E] font-bold">N/A</div>
+<div className="text-[#E2136E] font-bold">{product.sku}</div>
 <p>|</p>
 <div>Seller</div>
 <div className="text-[#E2136E] font-bold">Kawsar Ahmed</div>
@@ -93,11 +189,17 @@ export default function PageDetails({product}){
         <div><FontAwesomeIcon icon={faCartShopping} /></div>
         <p>Add to Cart</p>
     </button>
-    <button className="flex gap-2 font-semibold text-[#E4297B] hover:text-white bg-[#FFDEEE] hover:bg-[#E4297B] hover:scale-105 transition-transform duration-300 rounded-lg justify-center items-center p-2 cursor-pointer">
-       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-</svg>
+
+    <button className="flex gap-2 bg-[#f3dfe8] font-semibold hover:scale-105 transition-transform duration-300 rounded-lg justify-center items-center p-2 cursor-pointer">
+  <HeartRating
+      name="customized-heart"
+      defaultValue={1}
+      max={1}          
+      icon={<FavoriteIcon fontSize="inherit" />}
+      emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+    />
  </button>
+
 </div>
 
 
@@ -157,7 +259,7 @@ export default function PageDetails({product}){
 </div>
 
 <div className="shadow-lg bg-white p-3 rounded-md w-40 h-20">
-<Link href={``} className="flex gap-2 flex-col">
+<Link href={`/products?category=${product.category}`} className="flex gap-2 flex-col">
 <div className="flex items-center gap-2 font-bold text-[#E2136E]">
 <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />

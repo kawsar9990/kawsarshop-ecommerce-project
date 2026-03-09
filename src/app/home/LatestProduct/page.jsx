@@ -1,40 +1,15 @@
 'use client'
 
 import Link from "next/link"
-import { useEffect } from "react"
 import LatestProduct from "./Product"
 import { useMainProduct } from "../../../context/ProductRender"
-import { useLoader } from "../../../context/ItemLoaderContext"
+import { useScrollRestoration } from "../../../hooks/useScrollRestoration"
 
 
 
 export default function LatestPage(){
 const {setCategory} = useMainProduct()
-const {showLoader, hideLoader} = useLoader()
-   const handleLoading = () => {
-    sessionStorage.setItem("homeScrollY", window.scrollY);
-    sessionStorage.removeItem("productsScrollY");
-    sessionStorage.setItem("fromViewAll", "true");
-    showLoader()
-    setTimeout(() => {
-      hideLoader();
-    }, 500);
-}
-
-useEffect(() => {
-  const savedScroll = sessionStorage.getItem("homeScrollY");
-  if (savedScroll) {
-    const timeoutId = setTimeout(() => {
-      window.scrollTo({
-        top: Number(savedScroll),
-        behavior: "instant" 
-      });
-    }, 500);
-    return () => clearTimeout(timeoutId);
-  }
-}, []);
-
-
+const { saveScrollPos } = useScrollRestoration()
 
 return(
         <div className="bg-[#FFF2F8]">
@@ -43,11 +18,8 @@ return(
 
 <div className="p-5 flex justify-between">
     <p className="font-semibold text-lg md:text-xl">Latest Products</p>
-    <Link href={`/products`} scroll={false} 
-    onClick={()=> { 
-    handleLoading();
-    sessionStorage.setItem("fromViewAll", "true");
-    setCategory("Fashion")}}
+    <Link href={`/products`}
+   onClick={()=> saveScrollPos(() => setCategory("Fashion"))} 
     className="bg-gray-100 font-bold p-2 rounded-lg">
    <div className="flex gap-2">
      <p>View All</p>
@@ -60,7 +32,7 @@ return(
 </div>
 
 <div>
-<LatestProduct />
+<LatestProduct onProductClick={() => saveScrollPos()}/>
 </div>
 
 

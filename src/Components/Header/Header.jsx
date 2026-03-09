@@ -2,7 +2,8 @@
 
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBagShopping, faBars, faBarsStaggered, faChevronDown, faHeart, faHouse, faInbox, faMagnifyingGlass, faPhone, faTruck, faUser, faXmark } from "@fortawesome/free-solid-svg-icons"
+import { faBagShopping, faBars, faBarsStaggered, faChevronDown, faHouse, faInbox, faMagnifyingGlass, faPhone, faTruck, faUser, faXmark } from "@fortawesome/free-solid-svg-icons"
+import { faHeart } from "@fortawesome/free-regular-svg-icons"
 
 import Sidebar from "./Sidebar"
 import SearchBar from "./Searchbox"
@@ -369,37 +370,33 @@ toggleDropdown={toggleDropdown}
 
 <ul className="flex justify-between items-center px-3 py-2">
 
-<Link href={``} className="flex  flex-col items-center active:text-red-600">
-<FontAwesomeIcon icon={faHouse} />
-<p>Home</p>
+<Link href={``} className="flex flex-col items-center active:text-red-600">
+<FontAwesomeIcon icon={faHouse} className="text-[15px]"/>
+<p className="text-[12px]">Home</p>
 </Link>
 
 
 <Link href={`/searchpage`} className="flex flex-col items-center active:text-red-600">
 <FontAwesomeIcon icon={faMagnifyingGlass} />
-<p>Search</p>
+<p className="text-[12px]">Search</p>
 </Link>
 
 
 <Link href={``} className="flex flex-col items-center active:text-red-600">
-<button className="cursor-pointer">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-</svg>
-</button>
-<p>Wishlist</p>
+<FontAwesomeIcon icon={faHeart} />
+<p className="text-[12px]">Wishlist</p>
 </Link>
 
 
 <Link href={``} className="flex flex-col items-center active:text-red-600">
 <FontAwesomeIcon icon={faBagShopping} />
-<p>Orders</p>
+<p className="text-[12px]">Orders</p>
 </Link>
 
 
 <Link href={`/login`} className="flex flex-col items-center active:text-red-600">
 <FontAwesomeIcon icon={faUser} />
-<p>Account</p>
+<p className="text-[12px]">Account</p>
 </Link>
 
 </ul>

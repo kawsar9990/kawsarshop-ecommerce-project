@@ -37,17 +37,21 @@ const [sliderRef,  instance] = useKeenSlider({
   })
 
 
-useEffect(()=> {
-  if(!loading && instance.current) {
-    const interval = setInterval(()=> {
-      instance.current.next()
-    },2500)
-     return ()=> clearInterval(interval)
-  }
-},[instance, loading])
-  
-    return(
-        <div className="z-0 p-2 rounded-xl cursor-pointer">
+  useEffect(() => {
+    let interval;
+    if (!loading && instance.current) {
+      interval = setInterval(() => {
+        instance.current?.next();
+      }, 2500);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [loading, instance]);
+    
+
+ return(
+  <div className="z-0 p-2 rounded-xl cursor-pointer">
 
 
 {loading ? (
