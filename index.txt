@@ -1,0 +1,41 @@
+api injection + admin dashboard api injection
+all web feture add
+proudct api injection
+firbase and rest api
+login page Authentication add
+mongodb add
+account -- checkout
+redux, express, firebase, mongodb, mongose, jwt
+spin,messagebox, aigula sobpage ei side e add kora hobe
+tarpor checkout page qrcode , barcode use kora 
+sobjagai amar name use...
+net connection of on button jhok hobe 
+location dilougebox select 
+all footer page thik korte hobe 
+reservation,delivery,checkoutpage
+login-signup theke - profile asbe ----/
+product all database theke load hobe 
+
+
+Mision - redux file - card button - sidebar - cartpage - product update ..
+
+
+
+
+
+
+
+///////login auth /////////
+routes page - sign in, sign up 2 tai 
+popup page o 2tai hobe 
+2ta page ei setting change hobe all popup page e cross button add hobe 
+
+sign in - login - phone or email address, Password, ckbox add - remember me , forgot password,,
+password e hide button on ,,, google option on and facebook option on ....
+
+
+signup - register - email address, password google and fb option
+
+forgot password - number,email
+google - 
+facebook -
