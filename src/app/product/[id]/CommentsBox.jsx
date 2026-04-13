@@ -33,22 +33,22 @@ return(
     <p className='text-[15px]'>Your Rating Of This Product :</p>
     <div  className='flex flex-row items-center'>
 
-<div className=''>
+<div>
 <Rating
-          name="hover-feedback"
-          value={value}
-          precision={1}
-          sx={{ fontSize: "3rem" }}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-          onChangeActive={(event, newHover) => {
-            setHover(newHover);
-          }}
-        />
+name="hover-feedback"
+value={value}
+precision={1}
+sx={{ fontSize: "2rem" }}
+onChange={(event, newValue) => {
+setValue(newValue);
+}}
+onChangeActive={(event, newHover) => {
+setHover(newHover);
+}}
+/>
 </div>
 
-<div className='text-[17px]'>
+<div className='text-[12px] lg:text-[17px]'>
 {value !== null && (
 <Box sx={{ ml: 2, fontWeight: 'bold', color: 'text-gray-500' }}>
     {labels[hover !== -1 ? hover : value]}

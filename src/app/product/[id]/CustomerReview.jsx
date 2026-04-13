@@ -19,13 +19,13 @@ const ratinglabel =
     ratingtowords.find(r => r.ratestar === product.ratestar).label
 
 return(
-<div className='p-3 flex flex-col'>
+<div className='px-1 flex flex-col'>
  
 <div className='flex gap-2 items-center'>
 <p className='text-6xl font-black text-[#e1166e]'>{product.ratestar}.0</p>   
 <div className='flex flex-col gap-1'>
 <p className='text-[12px]'>{ratinglabel}</p>
-<div className='flex items-center gap-2'>
+<div className='flex md:items-center flex-col md:gap-2'>
     <div>
         <Rating
           name="product-rating"
@@ -51,7 +51,7 @@ return(
 
 <div className='flex gap-2 mt-2 items-center'>
 <p className='text-3xl text-blue-700 font-bold'>99.99%</p>
-<div className='flex gap-2 text-[14px]'>
+<div className='flex gap-2 text-[12px] md:text-[14px]'>
     <p>Recommended</p>
     <p className='text-gray-400'>(2 of 3)</p>
 </div>

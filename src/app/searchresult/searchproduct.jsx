@@ -7,16 +7,58 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping} from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link'
 import ProductQuickView from "../../Components/Product/ProductQuickView";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleWishlistAction } from "@/src/redux/slices/wishlistSlice";
+import { useLoader } from "@/src/context/ItemLoaderContext";
+import notify from "@/src/utils/toast";
+import { useAuth } from "@/src/context/AuthContext";
+import LoginPopup from "@/src/features/auth/Login";
+
 
 export default function Products({handleLoading,filterData,titlestyle}){
-  
+const dispatch = useDispatch();
+const { user } = useAuth();
+const { wishlistItems } = useSelector((state) => state.wishlist);
+const [openLogin, setOpenLogin] = useState(false);
 const [quickProduct, setQuickProduct] = useState(null); 
+const {showLoader, hideLoader} = useLoader()
 const products = filterData; 
 if(!products) return <p>No Products Found</p>;
 
 
-  return(
-    <div>
+const handleWishlistToggle = async (item) => {
+if (!user) {
+    setOpenLogin(true);
+    return;
+} 
+const currentUserId = user.id || user._id;
+if(!currentUserId){
+  notify.error("User ID missing. Please login again.");
+  return;
+}
+const isLiked = wishlistItems.some((w) => w._id === item._id);
+showLoader();
+try{
+ await dispatch(toggleWishlistAction({
+  userId: currentUserId,
+  product: item 
+})).unwrap();
+  if(!isLiked){
+    notify.success(`Item added to wishlist!`);
+  } else{
+    notify.error(`Item removed from wishlist!`);
+  }
+} catch(error){
+  notify.error("Something went wrong!");
+}finally{
+  hideLoader();
+}
+};
+
+
+return(
+<div>
+<LoginPopup open={openLogin} setOpen={setOpenLogin} />
 
 {quickProduct && (
   <ProductQuickView 
@@ -69,13 +111,24 @@ className="h-full"
     </button>
   </div>
 
-  <div className="bg-white hover:text-white hover:bg-red-600 rounded-full font-black p-1 flex justify-center items-center">
-    <button className="cursor-pointer">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+
+<div className="bg-white hover:text-white hover:bg-red-600 rounded-full font-black p-1 flex justify-center items-center">
+<button 
+  className="cursor-pointer"
+  onClick={() => handleWishlistToggle(item)}
+>
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  fill={wishlistItems.some((w) => w._id === item._id) ? "#ef4444" : "none"}
+  viewBox="0 0 24 24" 
+  strokeWidth={1.5} 
+  stroke={wishlistItems.some((w) => w._id === item._id) ? "#ef4444" : "currentColor"} 
+  className="size-4"
+>
+<path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
 </svg>
-    </button>
-  </div>
+</button>
+</div>
 
 </div>
 </div>
@@ -182,13 +235,23 @@ onClick={()=> handleLoading(item._id)}
 
   
 
-  <div className="bg-white hover:text-white hover:bg-red-600 rounded-full font-black p-1 flex justify-center items-center">
-    <button className="cursor-pointer">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+<div className="bg-white hover:text-white hover:bg-red-600 rounded-full font-black p-1 flex justify-center items-center">
+<button 
+  className="cursor-pointer"
+  onClick={() => handleWishlistToggle(item)}
+>
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  fill={wishlistItems.some((w) => w._id === item._id) ? "#ef4444" : "none"}
+  viewBox="0 0 24 24" 
+  strokeWidth={1.5} 
+  stroke={wishlistItems.some((w) => w._id === item._id) ? "#ef4444" : "currentColor"} 
+  className="size-4"
+>
+<path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
 </svg>
-    </button>
-  </div>
+</button>
+</div>
 
 </div>
 </div>

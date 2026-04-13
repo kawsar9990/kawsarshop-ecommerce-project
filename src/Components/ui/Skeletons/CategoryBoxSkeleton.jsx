@@ -3,7 +3,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function CategorySkeleton({ count = 8 }) {
   return (
-    <div className="flex gap-4 p-5 overflow-hidden">
+    <div className="flex gap-2 overflow-hidden">
       {[...Array(count)].map((_, index) => (
         <div 
           key={index} 

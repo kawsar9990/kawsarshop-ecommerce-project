@@ -2,11 +2,14 @@
 
 import { Suspense } from 'react';
 import { usePathname } from 'next/navigation';
+import { useDynamicTitle } from '../hooks/useDynamicTitle';
 import '../style/globals.css'
 import { ScrollRestorer } from 'next-scroll-restorer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { SessionProvider } from "next-auth/react";
+import { ReduxProvider } from '../redux/Providers';
+import FloatingCart from '../Components/Cart/FloatingCartBtn';
 
 import { AuthProvider } from '../context/AuthContext';
 import { LoaderProvider } from '../context/ItemLoaderContext';
@@ -18,17 +21,20 @@ import Footer from "../Components/Footer/Footer";
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const hideHeaderFooter = pathname === "/searchpage"
+
+  useDynamicTitle();
  
   return (
    <html lang="en">
-      <title>KAWSAR || SHOPING COMPLEX</title>
+      <title>KawsarShop: Online Shopping Site</title>
       <meta name="description" content="Best online shopping site in Bangladesh" />
       <meta name="keywords" content="https://www.kawsarshop.com/bd" />
       <link rel="shortcut icon" href="/icon/titleicon.png" type="image/x-icon" />
      
     <body className={`antialiased`} cz-shortcut-listen="true">
      <SessionProvider>
-     <AuthProvider>
+     <ReduxProvider>
+       <AuthProvider>
      <MainProduct>
       <LoaderProvider>  
       {!hideHeaderFooter && <Header /> }
@@ -39,6 +45,8 @@ export default function RootLayout({ children }) {
       </Suspense>
       
          {children}
+
+          <FloatingCart />
 
          <ToastContainer
             position="top-right"
@@ -59,6 +67,7 @@ export default function RootLayout({ children }) {
        </LoaderProvider>
      </MainProduct>
      </AuthProvider>
+     </ReduxProvider>
      </SessionProvider>
       </body>
     </html>

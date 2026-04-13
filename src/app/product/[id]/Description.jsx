@@ -2,7 +2,7 @@
 
 export default function Description({description,review}){
     return(
-        <div className="p-2 flex flex-col gap-3">
+        <div className="xl:p-2 flex flex-col gap-3">
             {description && (
                 <div>
                     <p className="font-semibold">{description}</p>

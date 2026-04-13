@@ -153,7 +153,7 @@ onClick={()=> handleloading(item._id)}
 >
   <div className="p-2 mb-2">
     <button className="bg-transparent hover:bg-black hover:text-white hover:outline-0 outline-2 text-center rounded-md text-[#E2136E] cursor-pointer outline-red-600  p-1 w-full">
-      <div className="flex flex-row gap-3 justify-center">
+      <div className="flex flex-row gap-3 justify-center text-[13px]">
         <p>
           <FontAwesomeIcon icon={faCartShopping} />
         </p>

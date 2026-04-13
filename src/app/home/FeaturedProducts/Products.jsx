@@ -79,10 +79,10 @@ products.map( (item) => (
   <div className="p-2 mb-2">
     <button className="bg-transparent text-gray-400 outline-2 text-center rounded-md cursor-not-allowed p-1 w-full">
       <div className="flex flex-row gap-3 justify-center items-center">
-        <p>
+        <p className="text-[10px]">
           <FontAwesomeIcon icon={faAlarmClock} />
         </p>
-        <p className='text-[13px]'>Comming Soon</p>
+        <p className="text-[10px] sm:text-[13px]">Comming Soon</p>
       </div>
     </button>
   </div>

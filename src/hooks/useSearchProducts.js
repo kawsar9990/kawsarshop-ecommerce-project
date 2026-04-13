@@ -14,7 +14,7 @@ export const useSearchProduct = (category) => {
                 const data = await getProducts(category, false, false, false, false, true)
                 setProducts(data)
             }catch (error) {
-                console.error("Error fetching home products:", error);
+                throw(error)
             }finally{
                 setDataLoading(false)
             }

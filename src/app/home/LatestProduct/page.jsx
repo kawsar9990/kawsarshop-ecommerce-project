@@ -16,7 +16,7 @@ return(
 
 <div className="flex flex-col pt-5">
 
-<div className="p-5 flex justify-between">
+<div className="p-5 flex justify-between items-center">
     <p className="font-semibold text-lg md:text-xl">Latest Products</p>
     <Link href={`/products`}
    onClick={()=> saveScrollPos(() => setCategory("Fashion"))} 

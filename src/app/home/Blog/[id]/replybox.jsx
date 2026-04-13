@@ -6,9 +6,13 @@ import img from "../../../../../public/icon/5.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faReply } from "@fortawesome/free-solid-svg-icons"
 import { useState, useEffect } from "react"
+import { useAuth } from "@/src/context/AuthContext"
+import LoginPopup from "@/src/features/auth/Login"
 
 export default function BlogReply(){
 
+ const { user } = useAuth();
+ const [openLogin, setOpenLogin] = useState(false);
  const [review, setreview] = useState([])
  const [newrivew, setnewrivew] = useState({
     comment: "",
@@ -39,6 +43,11 @@ export default function BlogReply(){
 
    const handlesubmited  = (parentIndex = null) => {
     
+    if (!user) {
+       setOpenLogin(true);
+       return;
+      }
+
      if (
       !newrivew.name ||
       !newrivew.email ||
@@ -359,8 +368,8 @@ export default function BlogReply(){
 
 
 
-
 </div>
-    </div>
+<LoginPopup open={openLogin} setOpen={setOpenLogin} />
+</div>
     )
 }

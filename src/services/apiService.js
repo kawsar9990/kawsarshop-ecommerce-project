@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: 'https://kawsarshop-ecommerce-backend.onrender.com/api',
+  // baseURL: 'http://localhost:5000/api',
   withCredentials: true,
 })
 
@@ -125,5 +126,18 @@ export const updateProfileNewsletter = async (userId, newsletter) => {
     return response.data;
   } catch (err) {
     throw new Error(err.response.data.message || "Update failed!");
+  }
+}
+
+
+
+export const deleteUserAccount = async (userId) => {
+  try {
+    const response = await api.post('/auth/delete-account', {
+      userId: userId,
+    });
+    return response.data;
+  } catch (err) {
+    throw new Error(err.response.data.message || "Deletion failed!");
   }
 }

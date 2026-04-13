@@ -28,27 +28,27 @@ return () => window.removeEventListener("resize", updateCount);
 return(
     <>
     {[...Array(skeletonCount)].map((_, index) => (
-   <div key={index} className="bg-white p-5 rounded-lg shadow-md border border-gray-100 mb-5" style={{userSelect: "none"}}>
+   <div key={index} className="bg-white p-3 sm:p-4 rounded-lg shadow-md border border-gray-100 mb-5" style={{userSelect: "none"}}>
 
  <div className="relative overflow-hidden">
-    <Skeleton height={180} borderRadius={8} />
-</div>
-
-<div className="mt-3">
- <Skeleton width="30%" height={10} style={{ marginBottom: '8px' }} />   
- <Skeleton height={20} width="90%" style={{ marginBottom: '10px' }} />
-
-<div className="flex justify-between items-center mt-4">
-    <Skeleton width={60} height={15} />
-    <Skeleton width={50} height={20} />
-</div>
-
-
-<div className="mt-4">
-   <Skeleton height={35} borderRadius={6} />
-</div>
-
-</div>
+      <Skeleton height={180} borderRadius={8} />
+  </div>
+  
+  <div className="mt-3">
+   <Skeleton width="30%" height={10} style={{ marginBottom: '8px' }} />   
+   <Skeleton height={20} width="90%" style={{ marginBottom: '10px' }} />
+  
+  <div className="flex justify-between items-center mt-4">
+      <Skeleton width={60} height={15} />
+      <Skeleton width={50} height={20} />
+  </div>
+  
+  
+  <div className="mt-4">
+     <Skeleton height={35} borderRadius={6} />
+  </div>
+  
+  </div>
 
    </div>     
     ))}

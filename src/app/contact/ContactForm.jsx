@@ -4,8 +4,13 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { sendalert } from '../../lib/sweetAlert/requestAlert';
 import { errorAlert } from '../../lib/sweetAlert/errorAlert';
+import LoginPopup from '@/src/features/auth/Login';
+import { useAuth } from '@/src/context/AuthContext';
 
 export default function ContactFrom(){
+
+const { user } = useAuth();
+const [openLogin, setOpenLogin] = useState(false);
 
 const [from,setfrom] = useState({
  name:'',
@@ -25,6 +30,11 @@ const handleChange = (e) => {
 
 const handleSubmit = async (e) => {
  e.preventDefault();
+
+if (!user) {
+    setOpenLogin(true);
+    return;
+ }
 
  try {
  await emailjs.send(
@@ -102,6 +112,12 @@ return(
           </button>    
      </form>
 </div>
+
+<LoginPopup
+  open={openLogin}
+  setOpen={setOpenLogin}
+/>
+
 </div>
     )
 }

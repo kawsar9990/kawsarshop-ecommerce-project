@@ -14,7 +14,7 @@ export default function BagsPage() {
   return (
     <div className="bg-[#FFF2F8]">
       <div className="flex flex-col">
-        <div className="p-5 flex justify-between">
+        <div className="p-5 flex justify-between items-center">
           <p className="font-semibold text-lg md:text-xl">Bag Products</p>
           <Link 
             href={`/products`} 

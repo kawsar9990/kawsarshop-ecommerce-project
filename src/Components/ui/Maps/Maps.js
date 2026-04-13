@@ -21,7 +21,7 @@ export default function Maps(){
 center={[24.105098690537357, 90.10544295514084]}
 zoom={10}
 scrollWheelZoom={false}
-className="h-full w-full"
+className="h-full w-full z-0"
 >
 <TileLayer
 attribution='&copy; OpenStreetMap'

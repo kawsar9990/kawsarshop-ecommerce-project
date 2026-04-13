@@ -3,54 +3,87 @@
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import Link from "next/link"
+import { useState } from "react"
+import notify from "@/src/utils/toast";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCreditCard, faTruckFast, faGift, faHeadphones, faMessage } from "@fortawesome/free-solid-svg-icons"
 import { faFacebookF, faFacebookMessenger, faWhatsapp, faTelegram, faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons"
 import { useAuth } from "../../context/AuthContext";
+import { useLoader } from "@/src/context/ItemLoaderContext"
+import LoginPopup from "@/src/features/auth/Login"
 
 export default function Footer(){
   
   const { user } = useAuth();
+  const [emailInput, setEmailInput] = useState("");
+  const [isAgreed, setIsAgreed] = useState(false);
+  const { showLoader, hideLoader } = useLoader();
+  const [openLogin, setOpenLogin] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
-  const [sliderRef] = useKeenSlider({
-  slides: {
-    perView: 6,
-    spacing: 30,
-  },
-  breakpoints: {
-    "(max-width: 1535px)": {
-      slides: { perView: 5, spacing: 25 },
-    },
-    "(max-width: 1280px)": {
-      slides: { perView: 5, spacing: 20 },
-    },
-    "(max-width: 1024px)": {
-      slides: { perView: 4, spacing: 15 },
-    },
-    "(max-width: 768px)": {
-      slides: { perView: 3, spacing: 12 },
-    },
-    "(max-width: 640px)": {
-      slides: { perView: 2, spacing: 10 },
-    },
-    "(max-width: 480px)": {
-      slides: { perView: 1.5, spacing: 8 },
-    },
-  },
+  const handleSubscribe = async () => {
+    if(!user){
+      setOpenLogin(true);
+      return;
+    }
+    if (!isAgreed) {
+        notify.warning("You must agree to the promotional emails.");
+        return;
+      };
+
+      if (emailInput.trim().toLowerCase() !== user.email.toLowerCase()) {
+        notify.error(`Please use your registered email: ${user.email}`);
+        return;
+      }
+
+      try{
+        showLoader();
+
+        setTimeout(() => {
+          hideLoader();
+          notify.success("Thank you! You've subscribed to our newsletter.");
+          setEmailInput("");
+          setIsAgreed(false);
+        }, 1500);
+
+      }catch(err){
+        hideLoader();
+        notify.error("Something went wrong. Please try again later.");
+      }
+  }
+
+const [sliderRef] = useKeenSlider({
+        slides: { perView: 6, spacing: 30 },
+        created() {
+        setLoaded(true);
+         },
+        breakpoints: {
+            "(max-width: 1535px)": { slides: { perView: 5, spacing: 25 } },
+            "(max-width: 1280px)": { slides: { perView: 5, spacing: 20 } },
+            "(max-width: 1024px)": { slides: { perView: 4, spacing: 15 } },
+            "(max-width: 768px)": { slides: { perView: 3, spacing: 12 } },
+            "(max-width: 640px)": { slides: { perView: 2, spacing: 10 } },
+            "(max-width: 480px)": { slides: { perView: 1.5, spacing: 8 } },
+        },
 });
+
   
     return(
  <div>
        
-       <div  className="bg-[#FAFAFA] xl:pb-0 pb-20">
-        <div className="p-5">
+<LoginPopup open={openLogin} setOpen={setOpenLogin} />
+
+<div  className="bg-[#FAFAFA] xl:pb-0 pb-20">
+<div className="p-5">
 
 
 
 {/* slider  */}
 <div className="flex items-center xl:justify-center pb-5">
-  <div ref={sliderRef} className="keen-slider p-2 flex items-center xl:justify-center">
+  <div ref={sliderRef} className={`keen-slider flex items-center xl:justify-center transition-opacity duration-500 ${
+    loaded ? "opacity-100" : "opacity-0 h-20"
+  }`}>
 
 
       <div className="keen-slider__slide number-slide1 group">
@@ -140,10 +173,10 @@ export default function Footer(){
 <div className="flex justify-between gap-5 pr-10">
 
   <div className="flex flex-col justify-start gap-1">
-    <h1 className="font-semibold text-[20px]">Products</h1>
+    <h1 className="font-semibold text-[20px]">Account</h1>
     <Link href={`/products`} className="text-gray-500 hover:text-red-500">Shop</Link>
-    <Link href={``} className="text-gray-500 hover:text-red-500">Delivery</Link>
-    <Link href={`/contact`} className="text-gray-500 hover:text-red-500">Contact us</Link>
+    <Link href={`/cart`} className="text-gray-500 hover:text-red-500">Cart</Link>
+    <Link href={`/wishlist`} className="text-gray-500 hover:text-red-500">Wishlist</Link>
     <Link href={``} className="text-gray-500 hover:text-red-500">Checkout</Link>
     <Link href={`/returnorder`} className="text-gray-500 hover:text-red-500">Return</Link>
 
@@ -156,8 +189,9 @@ export default function Footer(){
   </div>
 
     <div className="flex flex-col justify-start gap-1">
-      <h1 className="font-semibold text-[20px]">Our company</h1>
+      <h1 className="font-semibold text-[20px]">Customer Care</h1>
        <Link href={`/about`} className="text-gray-500 hover:text-red-500">About Us</Link>
+       <Link href={`/contact`} className="text-gray-500 hover:text-red-500">Contact us</Link>
        <Link href={`/faq`} className="text-gray-500 hover:text-red-500">Faq</Link>
        <Link href={`/privacy-policy`} className="text-gray-500 hover:text-red-500">Privacy Policy</Link>
        <Link href={`/termspage`} className="text-gray-500 hover:text-red-500">Terms & Condition</Link>
@@ -175,29 +209,31 @@ export default function Footer(){
   <p className="pt-2 pb-2 text-gray-500">Subscribe to our latest newsletter to get news about special discounts.</p>
 
     <div>
-      <input
+    <input
     type="email"
+    value={emailInput}
+    onChange={(e) => setEmailInput(e.target.value)}
     placeholder="Enter your email"
     className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
   />
-
-
-  <button
-    className="mt-4  w-50 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 rounded-xl transition-all duration-300">
-    Subscribe
-  </button>
-
 
 <div className="flex items-center mt-2 text-gray-500 gap-3">
     <input
       id="subscribe"
       type="checkbox"
+      checked={isAgreed}
+      onChange={(e) => setIsAgreed(e.target.checked)}
       className="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
     />
     <label htmlFor="subscribe" className="cursor-pointer">
       I agree to receive promotional emails.
     </label>
   </div>
+
+  <button onClick={handleSubscribe}
+    className="mt-4 cursor-pointer w-50 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 rounded-xl transition-all duration-300">
+    Subscribe
+  </button>
 
 
     </div>

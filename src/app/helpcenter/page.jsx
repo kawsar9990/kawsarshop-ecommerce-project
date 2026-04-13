@@ -53,19 +53,6 @@ export default function HelpCenterPage() {
   return (
     <div className="min-h-screen pt-40 xl:pt-10 bg-[#FFF2F8] text-gray-900 p-5 relative capitalize">
 
-
-      <div className="bg-[#FFF2F8] p-4 rounded-xl mb-8 flex items-center justify-center gap-3">
-        <Info className="text-[#155] w-6 h-6"/>
-        <p className="text-sm md:text-base text-gray-700">
-          Need help? Visit our{" "}
-          <Link href={`/supportportal`} className="text-[#E2136E] font-semibold cursor-pointer hover:underline">
-            KawsarShop Support Portal
-          </Link>{" "}
-          or wait — our assistant may ask you!
-        </p>
-      </div>
-
-
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900">KawsarShop Help Center</h1>
       </div>
@@ -114,7 +101,7 @@ className="bg-gray-300 text-gray-800 cursor-pointer px-4 py-2 rounded-full flex 
     
 
 {showHelpBox && (
- <div className="fixed bottom-20 right-6 bg-white border border-gray-300 rounded-xl p-5 shadow-xl w-72 z-50">
+ <div className="fixed bottom-20 right-6 bg-white border border-gray-300 rounded-xl p-5 shadow-xl w-72 z-100">
  <h4 className="text-lg font-semibold mb-2 flex items-center gap-2 text-gray-900">
    <HelpCircle className="text-[#155] w-5 h-5" /> Need KawsarShop Help?
  </h4>

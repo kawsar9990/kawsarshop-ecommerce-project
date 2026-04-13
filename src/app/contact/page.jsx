@@ -23,7 +23,7 @@ const [toggler1, setToggler1] = useState(false);
 const lightbox = ["/img/2.jpeg"]
 
 return(
-<div className='bg-[#FFF2F8]'>
+<div className='bg-[#FFF2F8] z-0'>
 
 <div className='pt-40 xl:pt-20'>
 
