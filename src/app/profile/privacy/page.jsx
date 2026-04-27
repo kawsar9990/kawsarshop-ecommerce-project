@@ -7,11 +7,16 @@ import notify from "@/src/utils/toast";
 import { useAuth } from "@/src/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useLoader } from "@/src/context/ItemLoaderContext";
+import { signOut } from 'next-auth/react';
+import { useDispatch } from 'react-redux';
+import { clearCart } from "@/src/redux/slices/cartSlice";
+import { clearWishlist } from "@/src/redux/slices/wishlistSlice";
 
 
 export default function page() {
 
-const {user, setUser, } = useAuth()
+const {user, setUser } = useAuth()
+const dispatch = useDispatch();
 const [isAnonymiseChecked, setIsAnonymiseChecked] = useState(false);
 const [isAnonymiseProcessed, setIsAnonymiseProcessed] = useState(false);
 const [isDeleteChecked, setIsDeleteChecked] = useState(false);
@@ -30,6 +35,15 @@ const handleProceed = () => {
 }
 
 const handleDeleteRequest = async () => {
+
+   if (!user) return notify.error("User not found!");
+
+   const userIdForDelete = user._id || user.id;
+
+
+   if (!userIdForDelete) {
+        return notify.error("User ID is missing in state!");
+    }
 
     if (!isAnonymiseChecked || !isAnonymiseProcessed){
       notify.warning("Please anonymize personal data before proceeding");
@@ -50,7 +64,7 @@ const handleDeleteRequest = async () => {
      showLoader();
 
      const emailParams = {
-      name: user.username || "Customer",  
+      name: user.username || "Customer",
       email: user.email || "No Email",
       message: comment,
       title: "Account Deletion Request"
@@ -63,10 +77,14 @@ const handleDeleteRequest = async () => {
         { publicKey: "Ir1GMI9nwV_yOLoGG" }
      );
 
-     await deleteUserAccount(user._id);
-     notify.success("Account deletion request submitted!");
+     await deleteUserAccount(userIdForDelete);
 
+     dispatch(clearCart());
+     dispatch(clearWishlist());
+     localStorage.clear();
      setUser(null);
+     await signOut({ redirect: false });
+     notify.success("Account Deleted!");
      router.push('/')
     }catch(err){
        notify.error(err.message || "Failed to delete account!");

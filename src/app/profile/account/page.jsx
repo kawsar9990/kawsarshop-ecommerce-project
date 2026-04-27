@@ -1,16 +1,41 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../../../context/AuthContext"
 import { Loader2,CheckCircle2 } from 'lucide-react';
 import Image from "next/image";
 import Link from 'next/link';
+import { getAddressesAPI } from "@/src/services/addressService";
 
 export default function page(){
 
 const { user, loading } = useAuth();
 const [orders, setOrders] = useState([]);
+const [defaultAddress, setDefaultAddress] = useState(null);
+const [addressLoading, setAddressLoading] = useState(true);
 const defaultAvatar = "https://res.cloudinary.com/dkmzakgx2/image/upload/v1773324319/5_d3ytz1.jpg";
+
+
+useEffect(()=> {
+const fetchAddress = async () => {
+const userId = user?.id || user?._id;
+if (userId){
+try{
+const res = await getAddressesAPI(userId);
+if (res.success && res.data.length > 0){
+const def = res.data.find(addr => addr.isDefault) || res.data[0];
+setDefaultAddress(def);
+}
+}
+catch(error){
+throw error
+}
+finally{
+setAddressLoading(false);
+}}};
+fetchAddress()
+},[user])
+
 
 if (loading) {
     return (
@@ -147,9 +172,22 @@ View All Orders →
 <div className="xl:col-span-4 space-y-4">
   <h1 className="font-bold pt-3">Default Address</h1>
   <div className="bg-white rounded-md shadow-lg p-3">
-{user?.address ? (
-    <div>
-        <p>Address</p>
+{defaultAddress ? (
+<div className="space-y-2 text-gray-800">
+<h3 className="font-bold text-[15px]">{defaultAddress.addressType}</h3>
+<p className="text-[13px] text-gray-600 font-medium">{defaultAddress.fullName}</p>
+<div className="text-[13px] text-gray-500 leading-relaxed">
+    <p>{defaultAddress.houseNo} {defaultAddress.street}</p>
+    <p>{defaultAddress.city}, {defaultAddress.state}, {defaultAddress.zip}, {defaultAddress.country}</p>
+</div>
+<p className="text-[13px] font-semibold text-gray-700 pt-1">{defaultAddress.phone}</p>
+<div className="pt-3">
+<Link 
+href={`/profile/address/edit/${defaultAddress._id}`}
+className="text-[13px] font-bold text-black border-b border-black hover:text-[#BC105C] hover:border-[#BC105C] transition-all">
+Edit Address
+</Link>
+</div>
     </div>
 ): (
 <div className="flex flex-col items-center gap-2">

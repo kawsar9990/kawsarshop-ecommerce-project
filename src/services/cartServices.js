@@ -17,14 +17,21 @@ throw error.response.data || { message: "Error fetching cart" };
 }
 
 
-export const syncCartAPI = async (userId, cartItems) => {
+export const syncCartAPI = async (userId, cartItems, appliedVoucher, voucherValue) => {
 try{
-const response = await api.post('/cart/sync', { userId, cartItems });
+const response = await api.post('/cart/sync', { 
+  userId, 
+  cartItems,
+  appliedVoucher, 
+  voucherValue
+});
 return response.data;
 }catch(error){
  throw error.response.data || { message: "Error syncing cart" };   
 }
 }
+
+
 
 export const addToCartAPI = async (userId, product) => {
 try{

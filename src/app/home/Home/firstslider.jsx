@@ -51,7 +51,7 @@ const [sliderRef,  instance] = useKeenSlider({
     
 
  return(
-  <div className="z-0 p-2 rounded-xl cursor-pointer mt-2 lg:mt-0">
+  <div className="z-0 p-2 rounded-xl cursor-pointer mt-2 xl:mt-0">
 
 
 {loading ? (

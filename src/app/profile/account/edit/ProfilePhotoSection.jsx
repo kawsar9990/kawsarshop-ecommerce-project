@@ -119,7 +119,7 @@ className="object-cover rounded-full"
 <div className="flex flex-col md:flex-row justify-center items-center gap-3">
 {user.profilePic && (
 <button onClick={handleRemovePhoto}
-className="bg-gray-300 p-3 rounded-md hover:bg-gray-400 cursor-pointer shadow-md font-bold justify-center items-center w-15 xl:w-20 text-[8px] lg:text-[13px]">Remove</button>
+className="bg-gray-300 p-3 rounded-md hover:bg-gray-400 cursor-pointer shadow-md font-bold justify-center items-center text-[8px] lg:text-[13px]">Remove</button>
 )}
 
 <button onClick={()=> fileInputRef.current.click()}

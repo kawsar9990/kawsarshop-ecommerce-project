@@ -72,7 +72,7 @@ const login = (userData) => {
 const logout = async () => {
   try {
     await signOut({ redirect: false });
-    localStorage.removeItem("kawsarshop_auth");
+    localStorage.clear();
     setUser(null);
     window.location.href = "/";
   } catch (err) {

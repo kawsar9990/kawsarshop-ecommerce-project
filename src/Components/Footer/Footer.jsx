@@ -5,17 +5,17 @@ import "keen-slider/keen-slider.min.css"
 import Link from "next/link"
 import { useState } from "react"
 import notify from "@/src/utils/toast";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCreditCard, faTruckFast, faGift, faHeadphones, faMessage } from "@fortawesome/free-solid-svg-icons"
 import { faFacebookF, faFacebookMessenger, faWhatsapp, faTelegram, faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons"
 import { useAuth } from "../../context/AuthContext";
 import { useLoader } from "@/src/context/ItemLoaderContext"
 import LoginPopup from "@/src/features/auth/Login"
+import { updateProfileNewsletter } from "@/src/services/apiService"
 
 export default function Footer(){
   
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
   const [emailInput, setEmailInput] = useState("");
   const [isAgreed, setIsAgreed] = useState(false);
   const { showLoader, hideLoader } = useLoader();
@@ -40,16 +40,20 @@ export default function Footer(){
       try{
         showLoader();
 
-        setTimeout(() => {
-          hideLoader();
+        const response = await updateProfileNewsletter(user._id || user.id, true);
+
+        if (response){
+          const updatedUser = { ...user, newsletter: true };
+          setUser(updatedUser);
+          localStorage.setItem("kawsarshop_auth", JSON.stringify(updatedUser));
           notify.success("Thank you! You've subscribed to our newsletter.");
           setEmailInput("");
           setIsAgreed(false);
-        }, 1500);
-
+        }
       }catch(err){
-        hideLoader();
-        notify.error("Something went wrong. Please try again later.");
+         notify.error("Something went wrong. Please try again later.");
+      } finally{
+         hideLoader();
       }
   }
 
@@ -143,9 +147,6 @@ const [sliderRef] = useKeenSlider({
 
 
 
-
-
-
 <div className="pt-10">
 
 <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
@@ -177,9 +178,9 @@ const [sliderRef] = useKeenSlider({
     <Link href={`/products`} className="text-gray-500 hover:text-red-500">Shop</Link>
     <Link href={`/cart`} className="text-gray-500 hover:text-red-500">Cart</Link>
     <Link href={`/wishlist`} className="text-gray-500 hover:text-red-500">Wishlist</Link>
-    <Link href={``} className="text-gray-500 hover:text-red-500">Checkout</Link>
+    <Link href={`/checkout`} className="text-gray-500 hover:text-red-500">Checkout</Link>
     <Link href={`/returnorder`} className="text-gray-500 hover:text-red-500">Return</Link>
-
+     <Link href={`/ordertracking`} className="text-gray-500 hover:text-red-500">Order Tracking</Link>
     {user ? (
       <Link href={`/profile`} className="text-gray-500 hover:text-red-500">Profile</Link>
     ): (
@@ -196,7 +197,6 @@ const [sliderRef] = useKeenSlider({
        <Link href={`/privacy-policy`} className="text-gray-500 hover:text-red-500">Privacy Policy</Link>
        <Link href={`/termspage`} className="text-gray-500 hover:text-red-500">Terms & Condition</Link>
        <Link href={`/helpcenter`} className="text-gray-500 hover:text-red-500">Help Center</Link>
-       <Link href={`/ordertracking`} className="text-gray-500 hover:text-red-500">Order Tracking</Link>
     </div>
 
 </div>

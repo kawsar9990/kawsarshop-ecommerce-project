@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getCartAPI, syncCartAPI } from '@/src/services/cartServices';
+import { getCartAPI } from '@/src/services/cartServices';
 
 
 export const fetchCartFromServer = createAsyncThunk(
@@ -7,7 +7,7 @@ export const fetchCartFromServer = createAsyncThunk(
   async (userId, {rejectWithValue}) => {
     try{
       const data = await getCartAPI(userId);
-      return data.items;  
+      return data;  
     }catch(error){
       return rejectWithValue(error.message);
     }
@@ -81,10 +81,7 @@ reducers: {
      
        if (voucher) {
          state.appliedVoucher = voucher.code;
-         state.voucherDetails = { 
-           value: voucher.value, 
-           type: voucher.type 
-         };
+         state.voucherDetails = { value: voucher.value, type: voucher.type };
        }
        cartSlice.caseReducers.calculateTotals(state);
      },
@@ -171,21 +168,39 @@ reducers: {
         state.voucherDetails = null;
       }
 
-      state.totalAmount = sub - state.discount - state.cashback;
+      if (state.appliedVoucher){
+        state.cashback = 0;
+      }else{
+        state.cashback = applicableRule ? applicableRule.reward : 0;
+      }
 
-      localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
+      state.totalAmount = sub - state.discount - state.cashback;
     },
 },
 
 extraReducers: (builder) => {
   builder
-  .addCase(fetchCartFromServer.pending, (state) => {
-    state.loading = true;
-  })
   .addCase(fetchCartFromServer.fulfilled, (state, action) => {
     state.loading = false;
-    state.cartItems = action.payload || [];
+    
+    const payloadData = action.payload || {};
+    state.cartItems = Array.isArray(payloadData) ? payloadData : (payloadData.items || []);
+
+    if (payloadData.appliedVoucher){
+      state.appliedVoucher = payloadData.appliedVoucher;
+      state.voucherDetails = {
+        value: payloadData.voucherValue || 0,
+        type: payloadData.voucherType || "percentage",
+      };
+    }else{
+      state.appliedVoucher = null;
+      state.voucherDetails = null;
+      state.discount = 0;
+    }
     cartSlice.caseReducers.calculateTotals(state);
+  })
+  .addCase(fetchCartFromServer.pending, (state) => {
+    state.loading = true;
   })
   .addCase(fetchCartFromServer.rejected, (state) => {
     state.loading = false;

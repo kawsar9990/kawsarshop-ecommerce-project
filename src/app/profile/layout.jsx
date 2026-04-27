@@ -1,30 +1,55 @@
 'use client'
 
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Link from 'next/link';
+import { getAddressesAPI } from '@/src/services/addressService';
 import { usePathname } from 'next/navigation';
 import { useAuth } from "../../context/AuthContext"
 import { 
-LayoutDashboard,User,Heart,NotebookTabs,FolderKanban,Cuboid,MessageSquareDot,Bell,Coins,
-HatGlasses,Notebook,ChevronDown,HelpCircle,LogOut,Bot,Gift,Undo2,RefreshCwOff
+LayoutDashboard,User,NotebookTabs,FolderKanban,Cuboid,MessageSquareDot,Bell,Coins,
+HatGlasses,Notebook,ChevronDown,HelpCircle,LogOut,Bot,Gift
 } from 'lucide-react';
+
 
 export default function ProfileLayout({children}){
 const pathname = usePathname();
 const [isOpen, setIsOpen] = useState(false);
-const { logout } = useAuth();
+const { logout, user } = useAuth();
+const [hasAddress, setHasAddress] = useState(false);
+
+
+useEffect(() => {
+const checkAddress = async () => {
+const userId = user?.id || user?._id;
+if(userId){
+try{
+const res = await getAddressesAPI(userId);
+if (res.success && res.data.length > 0) {
+    setHasAddress(true);
+} else {
+    setHasAddress(false);
+}
+}catch(error){
+throw error
+}
+}
+};
+checkAddress();
+},[user])
+
 
 const menuItems = [
 { name: "Account Dashboard", path: "/profile/account", icon: <LayoutDashboard size={15} className="text-yellow-500"/> },    
 { name: "Contact Us", path: "/contact", icon: <Bot size={15} className="text-yellow-500"/> },
 { name: "Account Information", path: "/profile/account/edit", icon: <User size={15} className="text-yellow-500"/> },
-{ name: "My Wishlist", path: "/profile/kawsarwishlist", icon: <Heart size={15} className="text-yellow-500"/> },
 { name: "Speacial Offer", path: "/profile/speacial-offer", icon: <Gift size={15} className="text-yellow-500"/> },
-{ name: "Address Book", path: "/profile/address/new", icon: <NotebookTabs size={15} className="text-yellow-500"/> },
+
+{ name: "Address Book", 
+path: hasAddress ? "/profile/address" : "/profile/address/new",
+icon: <NotebookTabs size={15} className="text-yellow-500"/> },
+
 { name: "My Product Review", path: "/profile/review", icon: <FolderKanban size={15} className="text-yellow-500"/> },
 { name: "My Orders", path: "/profile/order", icon: <Cuboid size={15} className="text-yellow-500"/> },
-{ name: "My Orders Return", path: "/profile/order-return", icon: <Undo2 size={15} className="text-yellow-500"/> },
-{ name: "My Orders Cancellation", path: "/profile/order-cancellation", icon: <RefreshCwOff size={15} className="text-yellow-500"/> },
 { name: "Newsletter Subscription", path: "/profile/newsletter", icon: <MessageSquareDot size={15} className="text-yellow-500"/> },
 { name: "Manage Notification", path: "/profile/manage-notification", icon: <Bell size={15} className="text-yellow-500"/> },
 { name: "Payment Method", path: "/profile/payment-method", icon: <Coins size={15} className="text-yellow-500"/> },
@@ -50,7 +75,7 @@ className="w-full flex items-center gap-2 cursor-pointer justify-between bg-[#BC
 </button>
 {isOpen && (
 <div className="absolute top-full w-70 left-1/2 -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+<div className="flex flex-col">
 {menuItems.map((item) => (
 <Link 
   key={item.path}

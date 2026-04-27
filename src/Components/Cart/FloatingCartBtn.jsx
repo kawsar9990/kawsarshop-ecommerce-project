@@ -45,7 +45,7 @@ setCartSidebar={setCartSidebar}
 {/* CartSidebar xl  */}
 
 
-<div onClick={handleCartOpen} className="fixed hidden lg:flex right-0 top-1/2 -translate-y-1/2 z-[99]">
+<div onClick={handleCartOpen} className="fixed hidden md:flex right-0 md:top-[40%] xl:top-1/2 -translate-y-1/2 z-[99]">
 
 <div className="bg-orange-600 cursor-pointer hover:bg-orange-700 transition-all duration-300 rounded-lg shadow-2xl flex flex-col items-stretch overflow-hidden border border-orange-500/50 group w-24">
 

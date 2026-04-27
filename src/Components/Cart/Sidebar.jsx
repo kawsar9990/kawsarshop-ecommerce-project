@@ -1,17 +1,26 @@
 'use client'
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { X, ShoppingBag } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity, removeFromCart} from "@/src/redux/slices/cartSlice";
 import Link from "next/link";
 import { Trash2, Minus, Plus, ArrowRight} from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useLoader } from "@/src/context/ItemLoaderContext";
+import { syncCartAPI } from "@/src/services/cartServices";
+import { useAuth } from "@/src/context/AuthContext";
+
 
 export default function CartSidebar({ cartSidebar, setCartSidebar }) {
 
+const { user } = useAuth();
 const dispatch = useDispatch();
 const { totalQuantity, cartItems, totalSavings, totalAmount} = useSelector((state) => state.cart);
-
+let router = useRouter();
+const {showLoader, hideLoader} = useLoader();
+const [changedItems, setChangedItems] = useState({});
+const [loading, setLoading] = useState(false);
 
 useEffect(() => {
   if (cartSidebar) {
@@ -23,6 +32,43 @@ useEffect(() => {
     document.body.style.overflow = "auto";
   };
 }, [cartSidebar]);
+
+
+const handleQuantityChange = (itemId, action) => {
+ if (action === 'increment') {
+     dispatch(incrementQuantity(itemId));
+ } else {
+     dispatch(decrementQuantity(itemId));
+ }
+ setChangedItems(prev => ({ ...prev, [itemId]: true }));
+};
+
+
+const handleUpdateItem = async (itemId) => {
+const userId = user?._id || user?.id;
+if (!userId) {
+    setChangedItems(prev => ({ ...prev, [itemId]: false }));
+    return;
+}
+try {
+    setLoading(true);
+    await syncCartAPI(userId, cartItems);
+    setChangedItems(prev => ({ ...prev, [itemId]: false }));
+} catch (err) {
+    throw err
+} finally {
+    setLoading(false);
+}
+};
+
+
+
+const handlecheckout = () => {
+  showLoader();
+  setCartSidebar(false);
+  router.push("/checkout");
+  hideLoader()
+}
 
 
 return(
@@ -107,20 +153,29 @@ className="w-full h-full object-contain rounded-lg cursor-pointer"
 <div className="flex items-center justify-between mt-2">
 <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden h-8">
 <button
-onClick={() => dispatch(decrementQuantity(item._id))}
+onClick={() => handleQuantityChange(item._id, 'decrement')}
 className="h-full px-3 bg-gray-50 cursor-pointer hover:bg-[#E2136E] hover:text-white transition-all flex items-center justify-center">
 <Minus size={12} />
 </button>
 <span className="px-3 font-bold text-sm">{item.quantity}</span>
-<button onClick={() => dispatch(incrementQuantity(item._id))}
+<button onClick={() => handleQuantityChange(item._id, 'increment')}
 className="h-full px-3 bg-gray-50 cursor-pointer hover:bg-[#E2136E] hover:text-white transition-all flex items-center justify-center">
  <Plus size={12} /> 
 </button>
 </div>
+
+{changedItems[item._id] ? (
+<button onClick={() => handleUpdateItem(item._id)} disabled={loading}
+className="flex items-center cursor-pointer gap-1 bg-orange-400 text-white px-2 py-2 rounded-md font-semibold text-xs md:text-[12px]">
+ <span>{loading ? "Updating..." : "Update"}</span> 
+</button>
+): (
 <button onClick={() => dispatch(removeFromCart(item._id))}
 className="text-red-500 cursor-pointer hover:scale-110 transition-transform p-1">
  <Trash2 size={18} /> 
 </button>
+)}
+
 </div>
 </div>
 </div> 
@@ -141,10 +196,11 @@ className="text-red-500 cursor-pointer hover:scale-110 transition-transform p-1"
   <span className="text-xl font-bold flex-shrink-0">Total</span>
   <span className="text-2xl font-black text-[#E2136E] truncate max-w-[200px]" title={`$${totalAmount}`}>${totalAmount}</span>
 </div>
-<button className="w-full cursor-pointer bg-[#E2136E] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#ac0c51] transition-all">
+<button onClick={handlecheckout} className="w-full cursor-pointer bg-[#E2136E] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#ac0c51] transition-all">
   Proceed to Checkout
   <ArrowRight size={20} />
 </button>
+
 <Link href={`/products`} onClick={()=> setCartSidebar(false)}
 className="w-full py-2 cursor-pointer flex justify-center text-center text-gray-500 font-semibold text-sm hover:text-orange-500">
 Continue Shopping

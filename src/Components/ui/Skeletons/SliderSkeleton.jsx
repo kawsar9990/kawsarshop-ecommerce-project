@@ -15,7 +15,7 @@ const updateCount = () => {
     }
    const width = window.innerWidth;
    if (width >= 1280) setSkeletonCount(6); 
-   else if (width >= 1024) setSkeletonCount(4);
+   else if (width >= 1024) setSkeletonCount(6);
    else if (width >= 768) setSkeletonCount(4);
    else if (width >= 640) setSkeletonCount(3);
    else setSkeletonCount(2);
