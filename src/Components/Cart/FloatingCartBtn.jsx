@@ -63,7 +63,7 @@ setCartSidebar={setCartSidebar}
 <div className="bg-black px-2 py-2 flex items-center justify-center">
 <span className="text-white font-medium text-xs flex items-center gap-0.5 truncate max-w-full">
   <span>$</span>
-  <span className="truncate">{totalAmount}</span>
+  <span className="truncate">{totalAmount.toLocaleString()}</span>
 </span>
 </div>
 

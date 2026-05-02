@@ -41,6 +41,7 @@ if (response.ok) {
   const data = await response.json();
   user._id = data.user.id || data.user._id; 
   user.backendData = data.user;
+  user.backendToken = data.token;
   return true;
 }
 return false;
@@ -54,6 +55,7 @@ async jwt({ token, user }) {
   if (user) {
     token.user = user.backendData || user;
     token.sub = user._id || user.id;
+    token.backendToken = user.backendToken || "";
 }
 return token;
 },
@@ -61,6 +63,7 @@ async session({ session, token }) {
   if (token.user) {
     session.user = token.user;
     session.user._id = token.sub;
+    session.user.token = token.backendToken;
  }
 return session;
 }

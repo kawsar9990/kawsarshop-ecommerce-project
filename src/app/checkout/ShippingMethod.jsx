@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, Info } from "lucide-react";
 
-export default function ShippingMethod(){
+export default function ShippingMethod({ onMethodChange }){
 
 const [isOpen, setIsOpen] = useState(true);
 const [selectedMethod, setSelectedMethod] = useState("standard");
@@ -14,18 +14,27 @@ const [selectedMethod, setSelectedMethod] = useState("standard");
       title: "Express Shipping",
       days: "(3-6 Business days)",
       note: "Customs delay might occur",
-      price: "13.00",
-      oldPrice: "15.00",
+      price: 16.00,
+      oldPrice: 19.00,
     },
     {
       id: "standard",
       title: "Standard Shipping",
       days: "(5-9 Business days)",
       note: "Customs delay might occur",
-      price: "13.00",
+      price: 13.00,
       oldPrice: null,
     },
   ];
+
+
+  useEffect(()=> {
+    const currentMethod = methods.find(m => m.id === selectedMethod)
+    if(onMethodChange){
+      onMethodChange(currentMethod)
+    }
+  },[selectedMethod])
+
 
 return(
 <div>
@@ -67,9 +76,9 @@ return(
 
   <div className="text-right">
     <div className="flex items-center gap-2 justify-end">
-      <span className="font-semibold text-slate-900">${method.price}</span>
+      <span className="font-semibold text-slate-900">${method.price.toFixed(2)}</span>
       {method.oldPrice && (
-        <span className="text-sm text-slate-400 line-through">{method.oldPrice}</span>
+        <span className="text-sm text-slate-400 line-through">{method.oldPrice.toFixed(2)}</span>
       )}
     </div>
   </div>

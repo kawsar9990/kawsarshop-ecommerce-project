@@ -38,11 +38,11 @@ if (dataloading) {
     )
 }
 
-if (!product) return 
-<div className="text-center text-2xl text-red-600 font-black flex justify-center items-center pt-20">
-  <p>Product Not Found!</p>
-</div>
-
+if (!product) return (
+  <div className="text-center text-2xl text-red-600 font-black flex justify-center items-center pt-20">
+    <p>Product Not Found!</p>
+  </div>
+)
 
 return ( 
 <div className="pt-40 xl:pt-5 bg-[#FFF2F8]">

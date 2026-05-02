@@ -112,7 +112,7 @@ if (product.size && Array.isArray(product.size) && product.size.length > 0) {
     }
 }
 
-  const isExist = cartItems?.find((item) => item._id === product._id);
+  const isExist = cartItems.find((item) => item._id === product._id);
   if (isExist) {
     notify.error("Already added to cart!");
     return;
@@ -125,19 +125,59 @@ if (product.size && Array.isArray(product.size) && product.size.length > 0) {
   };
 
   dispatch(addToCart(newItem));
+  notify.success("Item Added To Your Cart");
   const userId = user?.id || user?._id;
   if (userId) {
     try {
       const updatedCart = [...cartItems, newItem];
       await syncCartAPI(userId, updatedCart);
+      setLocalQty(1);
     } catch (err) {
-      throw err
+     notify.error("Cart sync failed. Please try again.");
+    }
+  }else{
+  notify.success("Item Added To Your Cart");
+  setLocalQty(1);
+  }
+};
+
+
+const handleBuyNow = async () => {
+if (!product) return;
+
+if (product.size && Array.isArray(product.size) && product.size.length > 0) {
+    if (!selectedSize) {
+      notify.error("Please select a size first!");
+      return;
+    }
+}
+
+const isExist = cartItems.find((item) => item._id === product._id);
+
+if (!isExist) {
+    const newItem = {
+      ...product,
+      quantity: localQty,
+      selectedSize: selectedSize || null
+    };
+
+    dispatch(addToCart(newItem));
+    
+    const userId = user?.id || user?._id;
+    if (userId) {
+      try {
+        const updatedCart = [...cartItems, newItem];
+        await syncCartAPI(userId, updatedCart);
+      } catch (err) {
+        console.error("Sync failed", err);
+      }
     }
   }
 
-  notify.success("Item Added To Your Cart");
-  setLocalQty(1);
-};
+  showLoader();
+  router.push('/checkout');
+  hideLoader();
+}
 
 
 return(
@@ -306,7 +346,7 @@ ${selectedSize === size
 </div>
 
 <div className="flex w-full gap-3">
-    <button onClick={() => handleAction(() => router.push('/'))}
+    <button onClick={() => handleAction(handleBuyNow)}
     className="flex gap-2 w-full font-semibold text-white bg-[#f18e37] hover:bg-[#cd772c] hover:scale-105 transition-transform duration-300 rounded-lg justify-center items-center p-2 cursor-pointer">
         <div className="text-[12px] md:text-[15px]"><FontAwesomeIcon icon={faBasketShopping} /></div>
         <p className="text-[12px] md:text-[15px]">Buy Now</p>

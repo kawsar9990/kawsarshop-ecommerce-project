@@ -2,11 +2,9 @@
 
 import {useEffect,useState} from "react";
 import BannerSkeleton from "../../../Components/ui/Skeletons/BannerSkeleton";
-import img1 from '../../../../public/img/Kawsar.shop.jpg'
 import img2 from '../../../../public/img/1759938751802_30744.jpg'
 import img3 from '../../../../public/img/1751685130717_NewProject(8).jpg'
 import img4 from '../../../../public/img/1748955932914_NewProject(1).jpg'
-import img5 from '../../../../public/img/Engineers Kawsar ahmed.jpg'
 
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
@@ -58,15 +56,6 @@ const [sliderRef,  instance] = useKeenSlider({
    <BannerSkeleton />
 ):(
 <div ref={sliderRef} className="keen-slider z-0 w-full xl:h-100">
-
- <div className="keen-slider__slide number-slide1 rounded-md">
-    <img src={img5.src} alt="" className="w-full h-full object-cover" />
-      </div>
-
-
-     <div className="keen-slider__slide number-slide2 w-full rounded-md">
-    <img src={img1.src} alt=""  className="w-full rounded-xl shadow-xl h-full object-cover" />
-      </div>
 
       <div className="keen-slider__slide number-slide3 rounded-md">
         <img src={img2.src} alt="" className="w-full h-full object-cover" />

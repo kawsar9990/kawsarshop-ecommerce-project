@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef  } from 'react';
 import { List, Plus, X, Minus, MapPin} from 'lucide-react';
-import { updateAddressAPI } from '@/src/services/addressService';
+import { updateAddressAPI, addAddressAPI } from '@/src/services/addressService';
 import notify from "../../utils/toast";
 import { useLoader } from '@/src/context/ItemLoaderContext';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -19,16 +19,14 @@ const recaptchaRef = useRef(null);
 
 const defaultAddress = addresses.find(addr => addr.isDefault) || addresses[0];
 
-
 const [formData, setFormData] = useState({
  fullName: '', phone: '', state: '', zip: '', city: '',
  houseNo: '', street: '', country: 'Bangladesh', addressType: 'Home',
  idNumber: '', isDefault: true   
 })
 
-
 useEffect(()=> {
-if (defaultAddress){
+if (defaultAddress && !isAddingNew){
 setFormData({
  fullName: defaultAddress.fullName || '',
  phone: defaultAddress.phone || '',
@@ -42,8 +40,10 @@ setFormData({
  idNumber: defaultAddress.idNumber || '',
  isDefault: true   
 });
+}else if(isAddingNew || addresses.length === 0){
+setFormData(formData);
 }
-},[defaultAddress, isAddingNew])
+},[defaultAddress, isAddingNew, addresses.length])
 
 
 const handleActionClick = (actionType) => {
@@ -67,26 +67,33 @@ setFormData(prev => ({ ...prev, [name]: value }));
 };
 
 
-const handleUpdateAddress = async (e) => {
+const handleSubmit =  async (e) => {
 if (e) e.preventDefault();
-const captchaToken = recaptchaRef.current.getValue();  
-if (!captchaToken) return notify.error("Please verify Your Not A Robot!");
+const captchaToken = recaptchaRef.current.getValue();
+if (!captchaToken) return notify.error("Please verify You Are Not A Robot!");
 showLoader();
 setLoading(true);
+
 try{
-const res = await updateAddressAPI(defaultAddress._id, { ...formData, captchaToken });
-if(res.success){
- notify.success("Address updated successfully!");
- setIsAddingNew(false);  
- if (refreshAddresses) await refreshAddresses();
+let res;
+if (addresses.length === 0){
+res = await addAddressAPI({ ...formData, userId, captchaToken });
+if (res) notify.success("Address added successfully!"); 
+}else{
+res = await updateAddressAPI(defaultAddress._id, { ...formData, captchaToken });
+if (res.success) notify.success("Address updated successfully!");  
 }
+setIsAddingNew(false);
+if (refreshAddresses) await refreshAddresses();
 }catch(error){
-notify.error("Failed to update address");
+notify.error(error.message || "Something went wrong!");
 }finally{
 hideLoader();
-setLoading(false);
+setLoading(false);   
+if (recaptchaRef.current) recaptchaRef.current.reset();
 }
 }
+
 
 
 const handleModalSave = async () => {
@@ -159,33 +166,27 @@ className={`p-2 text-white rounded-md transition-all duration-300 ${isAddingNew 
  {defaultAddress.phone}
 </p>
 </div>   
-): (
-<>
-{userId ? (
+) : (
 <div className="flex flex-col items-center justify-center py-8 border-2 border-dashed border-gray-200 rounded-md bg-gray-50/30">
 <div className="bg-orange-100 p-3 rounded-full mb-3">
     <MapPin className="text-orange-500" size={30} />
 </div>
 <p className="text-gray-500 font-medium mb-4 text-center px-4">
-    You haven't added any shipping address yet.
+    {userId ? "You haven't added any shipping address yet." : "Please login to add or view addresses."}
 </p>
+{userId && (
 <button
-onClick={() => handleActionClick('form')}
+onClick={() => setIsAddingNew(true)}
 className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-md shadow-md transition-all active:scale-95 cursor-pointer border-none">
 <Plus size={18} />
 Add New Address
 </button>
-</div>
-):(
-<p className="text-gray-400 text-center py-4 italic text-[12px]">
-    No shipping address found. Please login to add or view addresses.
-</p>
 )}
-</>
+</div>
 )}
 </div>
 ):(
-<form onSubmit={handleUpdateAddress} className="animate-in fade-in zoom-in-95 duration-500">
+<form onSubmit={handleSubmit} className="animate-in fade-in zoom-in-95 duration-500">
 <div className="flex items-center gap-2 text-amber-600 font-bold mb-6 border-b pb-2">
     <MapPin size={20} />
     <span>Update Shipping Details</span>
@@ -250,7 +251,7 @@ Add New Address
     <ReCAPTCHA ref={recaptchaRef} sitekey="6Lc_gLUsAAAAAPacRhoXuzbh42HcxFmmrgC_Vj4k" className="mb-6" />
    <div className='flex justify-center w-full'>
      <button type="submit" disabled={loading} className="bg-amber-500 hover:bg-amber-600 text-black w-full font-bold py-3 px-10 md:px-2 rounded-sm shadow-md transition-all active:scale-95 text-[10px] md:text-[13px] uppercase tracking-widest cursor-pointer border-none">
-        {loading ? "Saving..." : "Save Address & Continue"}
+       {loading ? "Saving..." : (addresses.length === 0 ? "Save Address & Continue" : "Update Address")}
     </button>
    </div>
 </div>

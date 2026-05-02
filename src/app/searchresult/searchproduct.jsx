@@ -6,7 +6,6 @@ import StarIcon from '@mui/icons-material/Star';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping} from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link'
-import ProductQuickView from "../../Components/Product/ProductQuickView";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleWishlistAction } from "@/src/redux/slices/wishlistSlice";
 import { useLoader } from "@/src/context/ItemLoaderContext";
@@ -20,7 +19,6 @@ const dispatch = useDispatch();
 const { user } = useAuth();
 const { wishlistItems } = useSelector((state) => state.wishlist);
 const [openLogin, setOpenLogin] = useState(false);
-const [quickProduct, setQuickProduct] = useState(null); 
 const {showLoader, hideLoader} = useLoader()
 const products = filterData; 
 if(!products) return <p>No Products Found</p>;
@@ -59,15 +57,6 @@ try{
 return(
 <div>
 <LoginPopup open={openLogin} setOpen={setOpenLogin} />
-
-{quickProduct && (
-  <ProductQuickView 
-product={quickProduct}
-onClose={()=> setQuickProduct(null)}
-
-/>
-)}
-
 
 {
   titlestyle ? (   

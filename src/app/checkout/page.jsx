@@ -16,7 +16,8 @@ import PriceBox from "./PriceBox";
 export default function page(){
 const { user } = useAuth();
 const [addresses, setAddresses] = useState([]);
-
+const [selectedMethod, setSelectedMethod] = useState("card");
+const [shippingMethod, setShippingMethod] = useState(null);
 
  const fetchAddresses = async () =>{
   const userId = user?.id || user?._id;
@@ -63,10 +64,10 @@ refreshAddresses={fetchAddresses}
 userId={user?.id || user?._id}/>
 </div>
 <div>
-<ShippingMethod />
+<ShippingMethod onMethodChange={(method) => setShippingMethod(method)}/>
 </div>
 <div>
-<PaymentMethod />
+<PaymentMethod  selectedMethod={selectedMethod} setSelectedMethod={setSelectedMethod}/>
 </div>
 <div>
 <CheckoutFooter />
@@ -80,7 +81,10 @@ userId={user?.id || user?._id}/>
 <OrderReview />
 </div>
 <div>
-<PriceBox />
+<PriceBox 
+selectedMethod={selectedMethod}
+shippingMethod={shippingMethod}
+addresses={addresses}/>
 </div>
 
 </div>

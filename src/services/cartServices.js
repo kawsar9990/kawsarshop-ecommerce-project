@@ -17,20 +17,21 @@ throw error.response.data || { message: "Error fetching cart" };
 }
 
 
-export const syncCartAPI = async (userId, cartItems, appliedVoucher, voucherValue) => {
-try{
-const response = await api.post('/cart/sync', { 
-  userId, 
-  cartItems,
-  appliedVoucher, 
-  voucherValue
-});
-return response.data;
-}catch(error){
- throw error.response.data || { message: "Error syncing cart" };   
-}
-}
-
+export const syncCartAPI = async (userId, cartItems, appliedVoucher, voucherValue, voucherType) => {
+  try {
+    const response = await api.post(`cart/sync`, {
+     userId, 
+     cartItems,
+     appliedVoucher, 
+     voucherValue,
+     voucherType
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Cart API Error Detail:", error.response.data || error.message);
+    throw error;
+  }
+};
 
 
 export const addToCartAPI = async (userId, product) => {
@@ -43,12 +44,12 @@ throw error.response.data || { message: "Error adding to cart" };
 }
 
 
-export const removeFromCartAPI = async (userId, product) => {
+export const removeFromCartAPI = async (userId, productId) => {
 try{
-const response = await api.post('/cart/remove', { data: { userId, productId } });
+const response = await api.post('/cart/remove',{ userId, productId });
 return response.data;
 }catch(error){
-throw error.response.data || { message: "Error removing item" }; 
+throw error.response.data || { message: "Error removing item" };
 }
 }
 

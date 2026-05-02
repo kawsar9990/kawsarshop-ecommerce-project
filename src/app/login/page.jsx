@@ -72,15 +72,19 @@ const handleSubmit = async (e) => {
 
 try{
 const result = await loginUser(email, password);
-notify.success(result.message || "Login Successful!");
 
 if (result.user){
- login(result.user);   
+const loggedInUser = {
+...result.user,
+token: result.token
+}; 
+login(loggedInUser);
 }
 
 const storage = remember ? localStorage : sessionStorage
 storage.setItem("token", result.token)
 storage.setItem("user", JSON.stringify(result.user))
+notify.success(result.message || "Login Successful!");
 
 setLoading(false);
 showLoader();

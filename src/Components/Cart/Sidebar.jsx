@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { X, ShoppingBag } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity, removeFromCart} from "@/src/redux/slices/cartSlice";
@@ -10,17 +10,18 @@ import { useRouter } from "next/navigation";
 import { useLoader } from "@/src/context/ItemLoaderContext";
 import { syncCartAPI } from "@/src/services/cartServices";
 import { useAuth } from "@/src/context/AuthContext";
-
+import notify from "@/src/utils/toast";
 
 export default function CartSidebar({ cartSidebar, setCartSidebar }) {
 
 const { user } = useAuth();
 const dispatch = useDispatch();
-const { totalQuantity, cartItems, totalSavings, totalAmount} = useSelector((state) => state.cart);
+const { totalQuantity, cartItems, totalSavings, totalAmount, appliedVoucher} = useSelector((state) => state.cart);
 let router = useRouter();
 const {showLoader, hideLoader} = useLoader();
 const [changedItems, setChangedItems] = useState({});
 const [loading, setLoading] = useState(false);
+const userId = useMemo(() => user?._id || user?.id || null, [user]);
 
 useEffect(() => {
   if (cartSidebar) {
@@ -42,6 +43,17 @@ const handleQuantityChange = (itemId, action) => {
  }
  setChangedItems(prev => ({ ...prev, [itemId]: true }));
 };
+
+
+
+const handleRemoveItem = async (itemId) => {
+  dispatch(removeFromCart(itemId));
+  if(userId){
+    const updatedCart = cartItems.filter(item => item._id !== itemId);
+    await syncCartAPI(userId, updatedCart, appliedVoucher);
+    notify.success("Item removed from Successfully");
+  }
+}
 
 
 const handleUpdateItem = async (itemId) => {
@@ -170,7 +182,7 @@ className="flex items-center cursor-pointer gap-1 bg-orange-400 text-white px-2 
  <span>{loading ? "Updating..." : "Update"}</span> 
 </button>
 ): (
-<button onClick={() => dispatch(removeFromCart(item._id))}
+<button onClick={() => handleRemoveItem(item._id)}
 className="text-red-500 cursor-pointer hover:scale-110 transition-transform p-1">
  <Trash2 size={18} /> 
 </button>
@@ -194,7 +206,7 @@ className="text-red-500 cursor-pointer hover:scale-110 transition-transform p-1"
 )}
 <div className="flex justify-between items-center gap-4">
   <span className="text-xl font-bold flex-shrink-0">Total</span>
-  <span className="text-2xl font-black text-[#E2136E] truncate max-w-[200px]" title={`$${totalAmount}`}>${totalAmount}</span>
+  <span className="text-2xl font-black text-[#E2136E] truncate max-w-[200px]" title={`$${totalAmount.toLocaleString()}`}>${totalAmount.toLocaleString()}</span>
 </div>
 <button onClick={handlecheckout} className="w-full cursor-pointer bg-[#E2136E] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#ac0c51] transition-all">
   Proceed to Checkout

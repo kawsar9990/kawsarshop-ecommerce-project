@@ -1,39 +1,67 @@
 'use client'
 
-import Link from "next/link"
+import TabSlider from "./tabs"
+import { useState, useEffect } from "react"
+import { useAuth } from "@/src/context/AuthContext"
+import { getOrdersByUserIdAPI } from "@/src/services/ordersServics"
+
 
 export default function page(){
+const { user, token } = useAuth();
+const [orders, setOrders] = useState([]);
+const [loading, setLoading] = useState(true);
+
+
+useEffect(()=> {
+window.scrollTo(0,0)
+},[])
+
+useEffect(() => {
+const fetchUserOrders = async () => {
+const userId = user?.id || user?._id; 
+if (!userId || !token) return;
+try{
+    const res = await getOrdersByUserIdAPI(userId, token); 
+    if (res) {
+      setOrders(res.orders || res.data || res);
+}
+} catch (err) {
+    console.error("Orders load failed");
+} finally {
+    setLoading(false);
+}
+};
+fetchUserOrders();
+}, [user, token]);
+
+
+
 
 return(
 <div style={{userSelect: "none"}}>
-<div className="p-5">
+<div className="lg:px-5 lg:py-5">
 
-<div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
-
-<div className="xl:col-span-8 lg:p-10 space-y-8 xl:border-r xl:p-2 xl:border-r-gray-400">
-<div className="flex flex-col gap-2">
-<p className="font-bold text-gray-700">My Orders</p>
-<div className="bg-white shadow-2xl rounded-md p-6 mt-5 border border-gray-100">
-<div  className="p-5">
-<p className="text-center">You have placed no orders yet.</p>
-</div>
-</div>
-</div>
+<div className="bg-white shadow-md rounded-md px-5 py-5">
+<div className="font-semibold py-3">
+    <h1>My Orders</h1>
 </div>
 
+<hr className="text-gray-300"/>
 
-
-<div className="xl:col-span-3 space-y-4 xl:p-0">
-<div className="flex flex-col gap-2">
 <div>
-    <h1 className="font-bold">Default Payment</h1>
+{loading ? (
+<div className="text-center py-10">Loading orders...</div>
+): orders.length === 0 ? (
+<div className="flex flex-col gap-2">
+<div  className="px-5 py-10">
+<p className="text-center text-[12px] md:text-[15px]">You have placed no orders yet.</p>
 </div>
-<div className="w-full">
-<Link href={`/profile/payment-method`}
-className="bg-amber-400 text-[12px] w-full block text-center p-2 rounded-md cursor-pointer shadow-lg font-bold hover:bg-amber-500 transition-colors">
-+ Add Payments Methods</Link>
- </div>
 </div>
+) : (
+<div>
+    <TabSlider orders={orders}/>
+</div>
+)}
 </div>
 
 </div>

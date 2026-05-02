@@ -158,9 +158,8 @@ className="hover:bg-gray-100 p-1 rounded cursor-pointer">
 </div>
 ))}
 <div>
-{cartItems.map((item) => (
-<div key={item._id}>
-{changedItems[item._id] ? (
+<div>
+{Object.keys(changedItems).length > 0 ? (
 <button onClick={() => handleUpdateItem(item._id)} disabled={loading}
 className="mt-2 w-full bg-orange-400 text-white text-[10px] font-bold py-2 cursor-pointer hover:bg-orange-600 rounded shadow-sm"
 >
@@ -173,7 +172,6 @@ className="mt-2 w-full bg-orange-400 text-white text-[10px] font-bold py-2 curso
 </div>
 )}
   </div>
-))}
 </div>
 </div>
 )}

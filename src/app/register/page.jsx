@@ -128,6 +128,9 @@ const loggedInUser = {
 };
 login(loggedInUser);
 
+localStorage.setItem("token", result.token);
+localStorage.setItem("user", JSON.stringify(result.user));
+
 showLoader(); 
 setTimeout(() => {
     hideLoader();

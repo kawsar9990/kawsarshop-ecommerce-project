@@ -66,11 +66,15 @@ const handleSubmit = async (e) => {
 
 try{
 const result = await loginUser(email, password);
+
+
+if (result.user && result.token){
+ const userDataWithToken = {
+...result.user,
+token: result.token
+};
+login(userDataWithToken);
 notify.success(result.message || "Login Successful!");
-
-
-if (result.user){
- login(result.user);   
 }
 
 const storage = remember ? localStorage : sessionStorage;

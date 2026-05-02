@@ -10,14 +10,13 @@ import { useLoader } from "../../../context/ItemLoaderContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import Quickview from "../../../Components/Product/ProductQuickView";
 
 
 export default function OtherProducts({product}){
 
 const { products, dataloading } = useProducts();
 const {showLoader, hideLoader} = useLoader()
-const [quickProduct, setQuickProduct] = useState(null);
+
 
 const related = products
     .filter(item => item._id !== product._id) 
@@ -33,23 +32,8 @@ const handleloading  =() => {
 }
 
 
-const handleQuickView  = (item) => {
-   showLoader();
-   setQuickProduct(item);
-   setTimeout(() => {
-    hideLoader();
-   }, 500);
-}
-
 return(
 <div className="relative pt-5">
-
-{quickProduct && (
-  <Quickview 
-product={quickProduct}
-onClose={()=> setQuickProduct(null)}
-/>
-)}
 
 
 <div className="p-5">
@@ -90,18 +74,6 @@ onClick={()=> handleloading(item._id)}
 
 <div className={`absolute top-2 right-3 transition-all duration-500 opacity-0 group-hover:opacity-100`}>
 <div className="hidden xl:flex flex-col gap-1">
-
-  <div className="bg-white rounded-full hover:text-white hover:bg-red-600 font-black p-1 flex justify-center items-center">
-    <button className="cursor-pointer"
-    onClick={()=> handleQuickView(item)}>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-</svg>
-    </button>
-  </div>
-
-
-  
 
   <div className="bg-white hover:text-white hover:bg-red-600 rounded-full font-black p-1 flex justify-center items-center">
     <button className="cursor-pointer">

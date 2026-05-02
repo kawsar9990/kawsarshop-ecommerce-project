@@ -37,13 +37,14 @@ useEffect(() => {
 
 
 if (status === "authenticated" && session?.user) {
-if (localUser && localUser.email === session.user.email) {
+if (localUser && localUser.email === session.user.email && localUser.token) {
     setUser(localUser);
   } else {
     const userData = {
       ...session.user,
       id: session.user.id || session.user._id,
-      profilePic: session.user.profilePic || session.user.image || ""
+      profilePic: session.user.profilePic || session.user.image || "",
+      token: session.user.token || ""
     };
     setUser(userData);
     localStorage.setItem("kawsarshop_auth", JSON.stringify(userData));
@@ -81,7 +82,8 @@ const logout = async () => {
 };
 
   return (
-    <AuthContext.Provider value={{ login, user, setUser, loading, logout }}>
+    <AuthContext.Provider 
+    value={{ login, user, setUser, loading, logout, token: user?.token || "" }}>
       {children}
     </AuthContext.Provider>
   );

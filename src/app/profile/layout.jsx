@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { useAuth } from "../../context/AuthContext"
 import { 
 LayoutDashboard,User,NotebookTabs,FolderKanban,Cuboid,MessageSquareDot,Bell,Coins,
-HatGlasses,Notebook,ChevronDown,HelpCircle,LogOut,Bot,Gift
+HatGlasses,Notebook,ChevronDown,HelpCircle,LogOut,Bot,Gift,Heart,ShieldX,Undo2
 } from 'lucide-react';
 
 
@@ -50,6 +50,9 @@ icon: <NotebookTabs size={15} className="text-yellow-500"/> },
 
 { name: "My Product Review", path: "/profile/review", icon: <FolderKanban size={15} className="text-yellow-500"/> },
 { name: "My Orders", path: "/profile/order", icon: <Cuboid size={15} className="text-yellow-500"/> },
+{ name: "My Cancellation", path: "/profile/order-cancel", icon: <ShieldX size={15} className="text-yellow-500"/> },
+{ name: "My Return", path: "/profile/order-return", icon: <Undo2 size={15} className="text-yellow-500"/> },
+{ name: "My Wishlist", path: "/profile/wishlist", icon: <Heart size={15} className="text-yellow-500"/> },
 { name: "Newsletter Subscription", path: "/profile/newsletter", icon: <MessageSquareDot size={15} className="text-yellow-500"/> },
 { name: "Manage Notification", path: "/profile/manage-notification", icon: <Bell size={15} className="text-yellow-500"/> },
 { name: "Payment Method", path: "/profile/payment-method", icon: <Coins size={15} className="text-yellow-500"/> },

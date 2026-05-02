@@ -179,7 +179,7 @@ setCartSidebar={setCartSidebar}
 </li>
 
 <li className="border-b border-b-gray-200">
-  <Link href="/profile" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
+  <Link href="/profile/order" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
    <Cuboid  className="w-4 text-yellow-300"/>
     My Orders
   </Link>
@@ -194,7 +194,7 @@ setCartSidebar={setCartSidebar}
 </li>
 
 <li className="border-b border-b-gray-200">
-  <Link href="/profile" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
+  <Link href="/profile/wishlist" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
    <Heart  className="w-4 text-yellow-300"/>
     My Wishlist
   </Link>
@@ -475,7 +475,7 @@ onError={(e) => e.target.src = defaultAvatar}
 </li>
 
 <li className="border-b border-b-gray-200">
-  <Link href="/wishlist" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
+  <Link href="/profile/wishlist" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
    <Heart  className="w-4 text-yellow-300"/>
     My Wishlist
   </Link>

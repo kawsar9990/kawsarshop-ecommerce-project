@@ -160,8 +160,10 @@ setLoading(false);
   
 const handlecheckout = () => {
   showLoader();
+  setLoading(true);
   router.push("/checkout");
-  hideLoader()
+  hideLoader();
+  setLoading(false); 
 }
 
 
