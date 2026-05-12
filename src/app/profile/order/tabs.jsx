@@ -14,9 +14,25 @@ export default function TabSlider({ orders = [] }) {
   };
 
   const filterOrders = (status) => {
+    if (!orders) return [];
     if (status === 'All') return orders;
-    return orders.filter(order => order.status.toLowerCase() === status.toLowerCase());
+    if (status === 'Unpaid'){
+      return orders.filter(order => 
+         order.paymentMethod !== "Cash on Delivery" &&
+         order.isPaid === false &&
+         order.orderStatus !== 'Cancelled' &&
+         order.orderStatus !== 'Delivered'
+      )}
+      return orders.filter(order => {
+      const currentStatus = order.orderStatus || order.status;
+      return currentStatus && currentStatus.toLowerCase() === status.toLowerCase();
+  });
   };
+
+  const getCount = (status) => {
+    return filterOrders(status).length;
+  };
+
 
   const tabs = [
     { label: "All", status: "All" },
@@ -27,6 +43,7 @@ export default function TabSlider({ orders = [] }) {
     { label: "Shipped", status: "Shipped" },
     { label: "Out For Delivery", status: "Out For Delivery" },
     { label: "Delivered", status: "Delivered" },
+    { label: "Cancelled", status: "Cancelled" }
   ];
 
 return (
@@ -51,9 +68,13 @@ sx={{
     '&.Mui-selected': { color: '#E2136E' },
   },
 }}>
-{tabs.map((tab, idx) => (
-<MuiTab key={idx} label={tab.label} />
-))}
+{tabs.map((tab, idx) => {
+const count = getCount(tab.status);
+return(
+<MuiTab key={idx} 
+label={count > 0 ? `${tab.label} (${count})` : tab.label} />
+)
+})}
 </Tabs>
 
 <Box sx={{ py: 3 }}>

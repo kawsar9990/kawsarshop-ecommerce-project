@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: 'https://kawsarshop-ecommerce-backend.onrender.com/api',
-//   baseURL: 'http://localhost:5000/api',
+  // baseURL: 'http://localhost:5000/api',
   withCredentials: true,
 })
 
@@ -54,6 +54,39 @@ catch(error){
 }
 }
 
+
+
+export const cancelOrderAPI = async (orderId, token) => {
+try{
+const response = await api.put(`/orders/${orderId}/cancel`, {}, {
+  headers: {
+    Authorization: `Bearer ${token}`
+  }  
+});
+return response.data;
+}
+catch(error){
+const message = error.response.data.message || "Failed to cancel order!";
+throw new Error(message);
+}
+}
+
+
+
+export const updateOrderStatusAPI = async (orderId, status, token) => {
+try{
+const response = await api.put(`/orders/${orderId}/status`, { status }, {
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
+});
+return response.data;
+}
+catch(error){
+const message = error.response.data.message || "Failed to update order status!";
+throw new Error(message);   
+}
+}
 
 
 export default api;

@@ -49,8 +49,11 @@ const handleOrderClick = async () => {
    try{
       const defaultAddress = addresses.find(addr => addr.isDefault) || addresses[0];
       const shippingPrice = shippingMethod.price || 13;
+      const totalDeliveryCharge = cartItems.reduce((acc, item) => {
+        return acc + shippingPrice * item.quantity;
+      }, 0)
       const shippingThreshold = 5000;
-      const finalShippingPrice = totalAmount >= shippingThreshold ? 0 : shippingPrice;
+      const finalShippingPrice = totalAmount >= shippingThreshold ? 0 : totalDeliveryCharge;
       const grandTotal = totalAmount + finalShippingPrice;
 
       const orderData = {
@@ -81,13 +84,15 @@ const handleOrderClick = async () => {
           city: defaultAddress.city,
           country: defaultAddress.country,
           address: `${defaultAddress.houseNo}, ${defaultAddress.street}`,
+          addressType: defaultAddress.addressType
         },
         
         paymentMethod: selectedMethod === 'cashin' ? 'Cash on Delivery' : selectedMethod,
         itemsPrice: totalAmount,
         taxPrice: 0,
+        shippingMethodName: shippingMethod?.title,
         shippingPrice: finalShippingPrice,
-        totalAmount: grandTotal,
+        totalAmount: grandTotal
       };
       const response = await createOrderAPI(orderData, token);
       if(response.success){
@@ -121,7 +126,10 @@ const handleOrderClick = async () => {
 const getButtonText = () =>{
 if (loading) return "Processing...";
 const shippingPrice = shippingMethod?.price || 13;
-const finalShipping = totalAmount >= 5000 ? 0 : shippingPrice;
+const totalDeliveryCharge = cartItems.reduce((acc, item) => {
+  return acc + shippingPrice * item.quantity;
+}, 0)
+const finalShipping = totalAmount >= 5000 ? 0 : totalDeliveryCharge;
 const grandTotal = totalAmount + finalShipping;
 const formattedPrice = `$${grandTotal.toLocaleString()}`;
     switch (selectedMethod) {

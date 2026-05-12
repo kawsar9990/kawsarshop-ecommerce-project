@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Box, Tabs, Tab, Button } from '@mui/material';
 import Description from './Description';
 import Specifications from './Specifications';
-import CustomerReview from './CustomerReview';
+import ReviewSaved from './ReviewSaved';
 
 
 
@@ -32,7 +32,7 @@ function CustomTabPanel(props) {
     >
   {value === index && (
   <Box sx={{ py: 3 }}>
-    {isEmpty ? (
+    {isEmpty && index !== 2 ? (
       <Box sx={{ textAlign: 'center', color: 'gray', py: 1 }}>
         Not Found
       </Box>
@@ -83,7 +83,8 @@ function CustomTabPanel(props) {
 export default function TabsBox({ product }){
     
 const [value, setValue] = React.useState(0);
-const [reviewsData] = React.useState([{id:1}, {id:2}]);
+
+const reviewsList = product?.reviewsMutual || [];
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -104,9 +105,10 @@ const [reviewsData] = React.useState([{id:1}, {id:2}]);
       hasBorder: true,
     },
     { 
-      label: `Customer Review (${reviewsData.length})`, 
-      component: <CustomerReview  product={product}/> ,
-      isEmpty: reviewsData.length === 0
+      label: `Customer Review (${reviewsList.length})`, 
+      component: <ReviewSaved reviews={reviewsList} productId={product?._id} /> ,
+      isEmpty: reviewsList.length === 0,
+      hasBorder: false
     },
   ];
     

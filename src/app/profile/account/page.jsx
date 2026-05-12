@@ -6,10 +6,14 @@ import { Loader2,CheckCircle2 } from 'lucide-react';
 import Image from "next/image";
 import Link from 'next/link';
 import { getAddressesAPI } from "@/src/services/addressService";
+import { getOrdersByUserIdAPI } from "@/src/services/ordersServics";
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+
 
 export default function page(){
 
-const { user, loading } = useAuth();
+const { user, loading, token } = useAuth();
 const [orders, setOrders] = useState([]);
 const [defaultAddress, setDefaultAddress] = useState(null);
 const [addressLoading, setAddressLoading] = useState(true);
@@ -28,13 +32,46 @@ setDefaultAddress(def);
 }
 }
 catch(error){
-throw error
+console.error("Address fetch error:", error);
 }
 finally{
 setAddressLoading(false);
 }}};
 fetchAddress()
 },[user])
+
+
+useEffect(()=> {
+const fetchOrders = async () => {
+const userId = user?.id || user?._id;
+if (userId && token){
+try{
+const res = await getOrdersByUserIdAPI(userId, token);
+if (res.success){
+const orderData = Array.isArray(res.data) ? res.data : (Array.isArray(res.orders) ? res.orders : []);
+setOrders(orderData.slice(0, 3));
+}
+}
+catch(error){
+console.error("Order fetch error:", error);
+}}
+};
+fetchOrders()
+},[user, token])
+
+
+const [currentSlide, setCurrentSlide] = useState(0); 
+const [sliderRef, instanceRef] = useKeenSlider({
+   initial: 0,
+   loop: false,
+   mode: "free-snap",
+   slideChanged(slider){
+    setCurrentSlide(slider.track.details.rel)
+   },
+    slides: {
+      perView: 1,
+      spacing: 15,
+    } });
 
 
 if (loading) {
@@ -132,15 +169,100 @@ className="object-cover rounded-full"
 
 
 
-<div>
-    <h1 className="font-bold pt-3">Recent Orders</h1>
-   
-    <div className="bg-white shadow-sm w-full rounded-md p-3">
 
-{orders.length > 0 ? (
-    <div className="flex flex-col gap-3">
-    <p>....</p>
+
+<div>
+<h1 className="font-bold pt-3">Recent Orders</h1>
+   
+<div className="bg-white shadow-sm w-full rounded-md p-3">
+
+
+{orders && orders.length > 0 ? (
+<div>
+
+<div className="hidden md:block overflow-x-auto">
+<table className="w-full text-left border-collapse">
+    <thead>
+        <tr className="border-b border-gray-100">
+            <th className="py-4 px-2 text-[13px] text-gray-700">Order No</th>
+            <th className="py-4 px-2 text-[13px] text-gray-700">Order Date</th>
+            <th className="py-4 px-2 text-[13px] text-gray-700">Shop Name</th>
+            <th className="py-4 px-2 text-[13px] text-gray-700">Item(s)</th>
+            <th className="py-4 px-2 text-[13px] text-gray-700">Amount</th>
+            <th className="py-4 px-2 text-[13px] text-gray-700">Actions</th>
+        </tr>
+    </thead>
+    <tbody className="divide-y divide-gray-50">
+        {orders.map((order) => (
+            <tr key={order._id} className="hover:bg-gray-50/50 transition-colors">
+                <td className="py-4 px-2 text-[8px] text-blue-600 font-bold ">#{order._id.slice(-10)}</td>
+                <td className="py-4 px-2 text-[8px] text-gray-600 font-medium">{new Date(order.createdAt).toLocaleDateString('en-GB')}</td>
+                <td className="py-4 px-2 text-[8px] text-blue-600 font-bold">{order.catetitle || "KawsarShop"}</td>
+                <td className="py-4 px-2">
+                    <div className="w-10 h-10 border border-gray-100 rounded relative">
+                        <Image src={order.orderItems?.[0].image} alt="item" fill className="object-contain p-1" />
+                    </div>
+                </td>
+                <td className="py-4 px-2 font-black text-[10px]">${order.totalAmount}</td>
+                <td className="py-4 px-2">
+                    <Link href={`/profile/order-details/${order._id}`} className="text-blue-600 hover:underline font-bold text-[10px]">View Details</Link>
+                </td>
+            </tr>
+        ))}
+    </tbody>
+</table>
+</div>
+
+<div className="md:hidden">
+<div ref={sliderRef} className="keen-slider">
+{orders.map((order) => (
+<div key={order._id} className="keen-slider__slide bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+<div className="flex justify-between items-center border-b pb-2 mb-3">
+<span className="text-[8px] font-bold text-gray-500 ">Order No: #{order._id}</span>
+<Link href={`/profile/order-details/${order._id}`} className="text-blue-500 text-[8px] font-bold">View Details</Link>
+</div>
+        
+<div className="flex gap-3">
+    <div className="w-16 h-16 relative flex-shrink-0 border border-gray-200 rounded overflow-hidden">
+        <Image src={order.orderItems?.[0].image} alt="item" fill className="object-cover" />
     </div>
+<div className="flex-1">
+    <h3 className="text-[10px] font-bold text-slate-800 line-clamp-1 leading-tight">
+        {order.orderItems?.[0].name}
+    </h3>
+<p className="text-[10px] text-gray-400 mt-1">${order.orderItems?.[0]?.price} x {order.orderItems?.[0]?.quantity} (qty)</p>
+<p className="text-[10px] font-black text-slate-900">${order.totalAmount}</p>
+</div>
+</div>
+<div className="mt-4 flex justify-between items-center">
+<p className="text-[11px] text-gray-500">Seller: <span className="text-blue-500 font-bold text-[10px]">{order.orderItems?.[0].catetitle || "KawsarShop"}</span></p>
+  <span className={`py-1 px-1 rounded font-bold border ${
+  order.orderStatus === 'Pending' ? 'bg-blue-50 text-[7px] text-blue-600 border-orange-100' : 
+  order.orderStatus === 'Confirmed' ? 'bg-cyan-50 text-[7px] text-cyan-600 border-cyan-100' : 
+  order.orderStatus === 'Processing' || order.orderStatus === 'To Ship' ? 'bg-purple-50 text-[7px] text-purple-600 border-purple-100' :
+  order.orderStatus === 'Shipped' ? 'bg-orange-50 text-[7px] text-orange-500 border-blue-100' :
+  order.orderStatus === 'Out for Delivery' ? 'bg-yellow-50 text-[5px] text-yellow-700 border-yellow-200' :
+  order.orderStatus === 'Delivered' ? 'bg-green-50 text-[7px] text-green-600 border-green-100' :
+  order.orderStatus === 'Cancelled' ? 'bg-pink-50 text-[7px] text-pink-500 border-rose-100' : 
+  'bg-gray-50 text-gray-600'
+}`}>
+  {order.orderStatus}
+</span>
+</div>
+</div>
+    ))}
+</div>
+<div className="flex justify-center gap-1.5 mt-4">
+{orders.map((_, idx) => (
+<button
+    key={idx}
+    onClick={() => instanceRef.current.moveToIdx(idx)}
+    className={`h-1.5 rounded-full transition-all ${currentSlide === idx ? "w-6 bg-[#BC105C]" : "w-2 bg-gray-300"}`}
+></button>
+))}
+</div>
+</div>
+</div>
 ):(
 <div className="flex flex-col items-center justify-center py-4 gap-2 text-center">
 <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center">
@@ -164,9 +286,11 @@ View All Orders →
 )}
 </div>
 
+</div>
+</div>
 
-</div>
-</div>
+
+
 
 
 <div className="xl:col-span-4 space-y-4">

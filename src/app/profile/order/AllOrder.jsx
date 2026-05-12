@@ -1,14 +1,15 @@
 'use client'
 
-import Link from "next/link";
+import OrderTableView from './OrderTableView';
+import OrderCardView from './OrderCardView';
 
-export default function AllOrders({ orders = [] }) {
-  
+export default function AllOrders({ orders }) {
 
+return (
+<>
+      <OrderTableView orders={orders} />
 
-return(
-<div>
-  
-</div>
-);
+      <OrderCardView orders={orders} />
+</>
+  );
 }

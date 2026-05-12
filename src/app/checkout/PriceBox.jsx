@@ -13,7 +13,16 @@ const [agreed, setAgreed] = useState(false);
 
 const shippingThreshold = 5000;
 const baseDeliveryCharge = shippingMethod?.price ?? 13;
-  const deliveryCharge = totalAmount >= shippingThreshold ? 0 : baseDeliveryCharge;
+const itemDeliveryBreakdown = cartItems.map(item => ({
+  name: item.name,
+  quantity: item.quantity,
+  chargePerItem: baseDeliveryCharge,
+  totalCharge: baseDeliveryCharge * item.quantity,
+}));
+const totalDeliveryCharge = cartItems.reduce((acc, item) => {
+  return acc + baseDeliveryCharge * item.quantity;
+}, 0)
+const deliveryCharge = totalAmount >= shippingThreshold ? 0 : totalDeliveryCharge;
 const grandTotal = totalAmount + deliveryCharge;
 
 return(

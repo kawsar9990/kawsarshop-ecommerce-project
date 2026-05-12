@@ -63,10 +63,10 @@ const handleQuantityChange = (itemId, action) => {
 }
 
 
-const handleUpdateItem = async (itemId) => {
+const handleUpdateItem = async () => {
 const userId = user?._id || user?.id;
 if (!userId){
- setChangedItems(prev => ({ ...prev, [itemId]: false }));
+ setChangedItems({});
  return; 
 }
 try{
@@ -160,7 +160,7 @@ className="hover:bg-gray-100 p-1 rounded cursor-pointer">
 <div>
 <div>
 {Object.keys(changedItems).length > 0 ? (
-<button onClick={() => handleUpdateItem(item._id)} disabled={loading}
+<button onClick={handleUpdateItem} disabled={loading}
 className="mt-2 w-full bg-orange-400 text-white text-[10px] font-bold py-2 cursor-pointer hover:bg-orange-600 rounded shadow-sm"
 >
    <span>{loading ? "Updating..." : "Update"}</span> 
