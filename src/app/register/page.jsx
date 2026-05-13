@@ -30,7 +30,6 @@ const [dob, setDob] = useState({ day: "", month: "", year: "" });
 const [show, setShow] = useState(false)
 const [confrshow, setConfrShow] = useState(false)
 const [errortext, setErrorText] = useState({});
-
 const [captchaToken, setCaptchaToken] = useState(null);
 
 
@@ -128,9 +127,6 @@ const loggedInUser = {
 };
 login(loggedInUser);
 
-localStorage.setItem("token", result.token);
-localStorage.setItem("user", JSON.stringify(result.user));
-
 showLoader(); 
 setTimeout(() => {
     hideLoader();
@@ -142,7 +138,7 @@ setTimeout(() => {
 }
 catch(err){
 setLoading(false);
-notify.warning("Connection Error. Please try again.");
+notify.warning(err.message || "Connection Error. Please try again.");
 window.scrollTo({ top: 0, behavior: "smooth" });
 }
 };
