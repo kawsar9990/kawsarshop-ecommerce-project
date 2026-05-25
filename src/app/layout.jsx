@@ -1,75 +1,50 @@
-'use client';
-
 import { Suspense } from 'react';
-import { usePathname } from 'next/navigation';
-import { useDynamicTitle } from '../hooks/useDynamicTitle';
 import '../style/globals.css'
-import { ScrollRestorer } from 'next-scroll-restorer';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { SessionProvider } from "next-auth/react";
-import { ReduxProvider } from '../redux/Providers';
-import FloatingCart from '../Components/Cart/FloatingCartBtn';
+import ClientLayout from './ClientLayout';
 
-import { AuthProvider } from '../context/AuthContext';
-import { LoaderProvider } from '../context/ItemLoaderContext';
-import { MainProduct } from '../context/ProductRender';
+export const metadata = {
+title: "KawsarShop: Best Premium Online Shopping Site in Bangladesh",
+description: "Kawsar Shop is Bangladesh's ultimate premium e-commerce marketplace. Discover genuine global brands, trendy fashion, elite lifestyle products, and daily essentials. Enjoy exclusive VIP discounts, lightning-fast delivery, and trusted COD countrywide.",
+keywords: ["Kawsar Shop", "KawsarShop", "Online Shopping BD", "E-commerce Bangladesh", "Shopping Website", "Kawsar", "Website", "Kawsar Website", "Kawsarshop"],
+icons: {
+  icon: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1779723789/Gemini_Generated_Image_vvkj70vvkj70vvkj-removebg-preview_jdlcrw.png",
+  shortcut: "https://res.cloudinary.com/dkmzakgx2/image/upload/v1779723789/Gemini_Generated_Image_vvkj70vvkj70vvkj-removebg-preview_jdlcrw.png",
+},
 
-import Header from '../Components/Header/Header';
-import Footer from "../Components/Footer/Footer";
+openGraph: {
+ title: "KawsarShop || Bangladesh's No.One Premium E-commerce",
+ description: "Experience luxury online shopping at Kawsar Shop. Get exclusive discounts, premium quality, and super-fast delivery across Bangladesh.",
+ url: "https://kawsarshop-ecommerce-web.netlify.app",
+ siteName: "KawsarShop",
+ images: [
+  {
+    url: "https://kawsarshop-ecommerce-web.netlify.app/icon/KawsarShop.png",
+    width: 1200,
+    height: 630,
+    alt: "KawsarShop Banner",
+  },
+ ],
+ type: "website"
+},
+
+twitter: {
+    card: "summary_large_image",
+    title: "KawsarShop || Bangladesh's No.One Premium E-commerce",
+    description: "Experience luxury online shopping at Kawsar Shop. Get exclusive discounts and fast delivery.",
+    images: ["https://res.cloudinary.com/dkmzakgx2/image/upload/v1779723789/Gemini_Generated_Image_vvkj70vvkj70vvkj-removebg-preview_jdlcrw.png"],
+  },
+
+};
+
+
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  const hideHeaderFooter = pathname === "/searchpage"
-
-  useDynamicTitle();
- 
-  return (
-   <html lang="en">
-      <title>KawsarShop: Online Shopping Site</title>
-      <meta name="description" content="Best online shopping site in Bangladesh" />
-      <meta name="keywords" content="https://www.kawsarshop.com/bd" />
-      <link rel="shortcut icon" href="/icon/titleicon.png" type="image/x-icon" />
-     
-    <body className={`antialiased`} cz-shortcut-listen="true">
-     <SessionProvider>
-     <ReduxProvider>
-       <AuthProvider>
-     <MainProduct>
-      <LoaderProvider>  
-      {!hideHeaderFooter && <Header /> }
-
-
-      <Suspense  fallback={null}>
-        <ScrollRestorer /> 
-      </Suspense>
-      
-         {children}
-
-          <FloatingCart />
-
-         <ToastContainer
-            position="top-right"
-            autoClose={3000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-            className={`p-3 md:p-0 rounded-md`}
-            style={{ top: '20px', right: '20px', zIndex: "88888888888888" }}
-          />
-          
-     {!hideHeaderFooter && <Footer /> }
-       </LoaderProvider>
-     </MainProduct>
-     </AuthProvider>
-     </ReduxProvider>
-     </SessionProvider>
-      </body>
-    </html>
-  );
+return (
+<html lang="en">     
+<body className={`antialiased`} cz-shortcut-listen="true">
+<ClientLayout>{children}</ClientLayout>
+</body>
+</html>
+);
 }
