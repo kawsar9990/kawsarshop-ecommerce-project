@@ -35,6 +35,10 @@ twitter: {
     images: ["https://res.cloudinary.com/dkmzakgx2/image/upload/v1779723789/Gemini_Generated_Image_vvkj70vvkj70vvkj-removebg-preview_jdlcrw.png"],
   },
 
+  verification: {
+    google: "uVznFPVoj_jjWBzzrLls0F87qJ8zglJA7I46RHpDAG4",
+  },
+
 };
 
 
