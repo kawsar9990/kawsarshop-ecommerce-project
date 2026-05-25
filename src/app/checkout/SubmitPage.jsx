@@ -11,7 +11,7 @@ import { clearCart } from '@/src/redux/slices/cartSlice';
 import { useLoader } from '@/src/context/ItemLoaderContext';
 
 
-export default function ShippingConfram({ agreed, selectedMethod, addresses, shippingMethod }){
+export default function ShippingConfram({ agreed, selectedMethod, addresses, shippingMethod, walletUsed, deliveryCharge, grandTotal  }){
 const router = useRouter();
 const dispatch = useDispatch();
 const { user, token } = useAuth();
@@ -47,14 +47,11 @@ const handleOrderClick = async () => {
     showLoader()
     setLoading(true);
    try{
-      const defaultAddress = addresses.find(addr => addr.isDefault) || addresses[0];
-      const shippingPrice = shippingMethod.price || 13;
-      const totalDeliveryCharge = cartItems.reduce((acc, item) => {
-        return acc + shippingPrice * item.quantity;
-      }, 0)
-      const shippingThreshold = 5000;
-      const finalShippingPrice = totalAmount >= shippingThreshold ? 0 : totalDeliveryCharge;
-      const grandTotal = totalAmount + finalShippingPrice;
+    const defaultAddress = addresses.find(addr => addr.isDefault) || addresses[0]; 
+
+      const shippingPrice = shippingMethod?.price || 13;
+      const totalDeliveryCharge = cartItems.reduce((acc, item) => acc + shippingPrice * item.quantity, 0);
+      const finalShippingPrice = totalAmount >= 5000 ? 0 : totalDeliveryCharge;
 
       const orderData = {
         userId: user?.id || user?._id,
@@ -92,7 +89,8 @@ const handleOrderClick = async () => {
         taxPrice: 0,
         shippingMethodName: shippingMethod?.title,
         shippingPrice: finalShippingPrice,
-        totalAmount: grandTotal
+        walletUsed: walletUsed || 0,
+        totalAmount: grandTotal,
       };
       const response = await createOrderAPI(orderData, token);
       if(response.success){

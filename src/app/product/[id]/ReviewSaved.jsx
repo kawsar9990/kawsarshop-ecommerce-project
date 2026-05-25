@@ -8,6 +8,7 @@ import { IconButton, Menu, MenuItem, Modal, Box, Typography, TextField, Button, 
 import { X } from 'lucide-react';
 import { updateProductReview, deleteProductReview } from '@/src/services/reviewServics';
 import notify from '@/src/utils/toast';
+import FsLightbox from 'fslightbox-react';
 import { useAuth } from '@/src/context/AuthContext';
 
 const modalStyle = {
@@ -26,8 +27,10 @@ const [editRating, setEditRating] = React.useState(5);
 const [editComment, setEditComment] = React.useState("");
 const [isDeleting, setIsDeleting] = React.useState(false);
 const [isReporting, setIsReporting] = React.useState(false);
+const [toggler, setToggler] = React.useState(false);
+  const [lightboxSource, setLightboxSource] = React.useState([]);
+  const [lightboxIndex, setLightboxIndex] = React.useState(0);
 const open = Boolean(anchorEl);
-
 const currentUserId = user?._id || user?.id || null;
 
 const isOwnReview = selectedReview?.userId && currentUserId 
@@ -52,6 +55,13 @@ const openReasonModal = () => {
       handleClose();
     }
 };
+
+
+const openLightbox = (images, index) => {
+    setLightboxSource(images);
+    setLightboxIndex(index);
+    setToggler(!toggler);
+  };
 
 const openDeleteModal = () => {
     if (selectedReview) {
@@ -218,6 +228,25 @@ return (
   }) : "Just now"}
 </p>
 </div>
+
+{review.images && review.images.length > 0 && (
+ <div className="flex flex-wrap gap-2 mb-2">
+  {review.images.map((img,imgIdx) => (
+  <div 
+    key={imgIdx} 
+    className="cursor-pointer hover:opacity-80 transition-opacity"
+    onClick={() => openLightbox(review.images, imgIdx)}
+  >
+    <img 
+      src={img} 
+      className="w-14 h-14 object-cover rounded-md border border-gray-200 shadow-sm" 
+      alt="review thumbnail" 
+    />
+  </div>  
+  ))}
+  </div> 
+)}
+
 <div className="mt-1 bg-gray-50 p-3 rounded-lg border-l-2 border-[#E2136E]">
   <p className="text-gray-600 text-sm">{review.comment}</p>
 </div>
@@ -372,6 +401,15 @@ return (
   </div>
 </Box>
 </Modal>
+
+{lightboxSource && lightboxSource.length > 0 && (
+<FsLightbox
+  toggler={toggler}
+  sources={lightboxSource}
+  sourceIndex={lightboxIndex}
+/>  
+)}
+
 </div>
   );
 }

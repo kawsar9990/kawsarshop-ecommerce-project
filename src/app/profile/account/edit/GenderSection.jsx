@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { updateProfileGender } from "@/src/services/apiService"; // নিশ্চিত হোন এই ফাংশনটি আপনার এপিআই ফাইলে আছে
+import { updateProfileGender } from "@/src/services/apiService";
 import { successAlert, errorAlert } from "@/src/lib/sweetAlert/confirmAlert";
 
 export default function GenderSection({ user, setUser }) {

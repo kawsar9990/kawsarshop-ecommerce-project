@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://kawsarshop-ecommerce-backend.onrender.com/api',
-    // baseURL: 'http://localhost:5000/api',
-    withCredentials: true,
-});
+  baseURL: 'https://kawsarshop-ecommerce-backend.onrender.com/api',
+  // baseURL: 'http://localhost:5000/api',
+  withCredentials: true,
+})
 
 
 export const addAddressAPI = async (addressData) => {

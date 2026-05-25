@@ -15,7 +15,7 @@ const response = await api.post('/vouchers/verify-voucher', {
 });
 return response.data;
 }catch(error){
-  throw error.response.data || { message: "Server error occurred" };  
+  throw error?.response?.data || { message: "Server error occurred" };  
 }
 }
 

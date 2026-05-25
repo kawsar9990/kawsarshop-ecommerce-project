@@ -25,6 +25,7 @@ const initialState = {
  voucherDetails: null,
  cashback: 0,
  totalAmount: 0,
+ walletBalance: 0,
  loading: false,
 }
 
@@ -185,6 +186,8 @@ extraReducers: (builder) => {
     
     const payloadData = action.payload || {};
     state.cartItems = Array.isArray(payloadData) ? payloadData : (payloadData.items || []);
+
+    state.walletBalance = payloadData.walletBalance || 0;
 
     if (payloadData.appliedVoucher){
       state.appliedVoucher = payloadData.appliedVoucher;

@@ -4,26 +4,25 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ShippingConfram from './SubmitPage';
+import { useAuth } from '@/src/context/AuthContext';
 
 export default function PriceBox({ selectedMethod, shippingMethod, addresses }){
-
+const { user, token } = useAuth();
 const dispatch = useDispatch();
-const { totalQuantity, cartItems, totalSavings, totalAmount, subtotal, appliedVoucher, discount, cashback, voucherDetails } = useSelector((state) => state.cart);
+const { totalQuantity, cartItems, totalSavings, totalAmount, subtotal, appliedVoucher, discount, cashback, voucherDetails, walletBalance } = useSelector((state) => state.cart);
 const [agreed, setAgreed] = useState(false);
+const [useWallet, setUseWallet] = useState(false);
 
 const shippingThreshold = 5000;
 const baseDeliveryCharge = shippingMethod?.price ?? 13;
-const itemDeliveryBreakdown = cartItems.map(item => ({
-  name: item.name,
-  quantity: item.quantity,
-  chargePerItem: baseDeliveryCharge,
-  totalCharge: baseDeliveryCharge * item.quantity,
-}));
 const totalDeliveryCharge = cartItems.reduce((acc, item) => {
   return acc + baseDeliveryCharge * item.quantity;
 }, 0)
 const deliveryCharge = totalAmount >= shippingThreshold ? 0 : totalDeliveryCharge;
-const grandTotal = totalAmount + deliveryCharge;
+const totalBillBeforeWallet = totalAmount + deliveryCharge;
+const walletDeduction = useWallet ? Math.min(walletBalance, totalBillBeforeWallet) : 0;
+const grandTotal = Math.max(0, totalBillBeforeWallet - walletDeduction);
+
 
 return(
 <div>
@@ -66,6 +65,37 @@ return(
     <span>Customs/import Duties, Taxes</span>
     <span className="text-amber-600 text-[13px] font-bold italic text-base">On Delivery</span>
   </div>
+
+
+
+{walletBalance > 0 && (
+<div className="border border-emerald-200 bg-emerald-50 rounded-lg p-3">
+<div className="flex justify-between items-center">
+  <div>
+    <p className="text-[13px] font-bold text-emerald-700">KawsarShop Wallet</p>
+    <p className="text-[11px] text-emerald-600">Available: ${walletBalance.toLocaleString()}</p>
+  </div>
+  <label className="flex items-center gap-2 cursor-pointer">
+    <input 
+      type="checkbox"
+      checked={useWallet}
+      onChange={() => setUseWallet(!useWallet)}
+      className="w-4 h-4 accent-emerald-500 cursor-pointer"
+    />
+    <span className="text-[12px] font-semibold text-emerald-700">Use</span>
+  </label>
+</div>
+{useWallet && (
+  <div className="flex justify-between items-center mt-2 text-emerald-600">
+    <span className="text-[12px] font-medium">Wallet Deduction</span>
+    <span className="text-[12px] font-black">-${walletDeduction.toLocaleString()}</span>
+  </div>
+)}
+</div>
+)}
+
+
+
 </div>
 <div className="h-[1px] bg-gray-200 w-full my-6"></div>
 
@@ -106,7 +136,11 @@ ${grandTotal.toLocaleString()}
 agreed={agreed}
 selectedMethod={selectedMethod}
 addresses={addresses}
-shippingMethod={shippingMethod}/>
+shippingMethod={shippingMethod}
+walletUsed={walletDeduction}
+deliveryCharge={deliveryCharge}
+grandTotal={grandTotal}
+/>
 </div>
 
 </div>

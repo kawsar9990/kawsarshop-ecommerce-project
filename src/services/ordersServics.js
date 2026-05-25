@@ -16,7 +16,7 @@ headers: {
 });
 return response.data
 }catch(error){
-const message = error.response.data.message || "Order placement failed!";
+const message = error.response?.data?.message || "Order placement failed!";
 throw new Error(message);
 }
 }
@@ -32,7 +32,7 @@ const response = await api.get(`/orders/${id}`, {
 return response.data
 }
 catch(error){
-const message = error.response.data.message || "Failed to load order details!";
+const message = error.response?.data?.message || "Failed to load order details!";
 throw new Error(message);  
 }
 }
@@ -49,7 +49,7 @@ Authorization: `Bearer ${token}`
 return response.data;
 }
 catch(error){
- const message = error.response.data.message || "Failed to load orders!";
+ const message = error.response?.data?.message || "Failed to load orders!";
  throw new Error(message);  
 }
 }
@@ -66,7 +66,7 @@ const response = await api.put(`/orders/${orderId}/cancel`, {}, {
 return response.data;
 }
 catch(error){
-const message = error.response.data.message || "Failed to cancel order!";
+const message = error.response?.data?.message || "Failed to cancel order!";
 throw new Error(message);
 }
 }
@@ -83,10 +83,26 @@ const response = await api.put(`/orders/${orderId}/status`, { status }, {
 return response.data;
 }
 catch(error){
-const message = error.response.data.message || "Failed to update order status!";
+const message = error.response?.data?.message || "Failed to update order status!";
 throw new Error(message);   
 }
 }
+
+
+
+export const trackOrderPublicAPI = async (orderId, phone) => {
+try{
+const cleanId = orderId.toString().trim();
+const cleanPhone = phone.toString().trim();
+const response = await api.get(`/orders/track/${cleanId}?phone=${cleanPhone}`);
+return response.data;  
+}
+catch(error){
+const message = error.response?.data?.message || "Order not found!";
+throw new Error(message);
+}
+}
+
 
 
 export default api;

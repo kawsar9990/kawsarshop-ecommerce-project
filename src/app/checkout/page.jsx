@@ -3,8 +3,10 @@
 import notify from "@/src/utils/toast"
 import { useState,useEffect } from "react"
 import { useAuth } from "@/src/context/AuthContext";
+import { useDispatch } from "react-redux";
 import { getAddressesAPI } from "@/src/services/addressService";
 import Link from "next/link"
+import { fetchCartFromServer } from "@/src/redux/slices/cartSlice";
 import {ArrowRight} from "lucide-react";
 import ShippingAddress from "./ShippingAddress";
 import ShippingMethod from "./ShippingMethod";
@@ -15,6 +17,7 @@ import PriceBox from "./PriceBox";
 
 export default function page(){
 const { user } = useAuth();
+const dispatch = useDispatch();
 const [addresses, setAddresses] = useState([]);
 const [selectedMethod, setSelectedMethod] = useState("card");
 const [shippingMethod, setShippingMethod] = useState(null);
@@ -35,6 +38,10 @@ const [shippingMethod, setShippingMethod] = useState(null);
  useEffect(() => {
     if(user){
        fetchAddresses(); 
+       const userId = user?.id || user?._id;
+       if(userId){
+        dispatch(fetchCartFromServer(userId));
+       }
     }
  },[user]);
 

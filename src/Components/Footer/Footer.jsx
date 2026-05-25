@@ -12,15 +12,29 @@ import { useAuth } from "../../context/AuthContext";
 import { useLoader } from "@/src/context/ItemLoaderContext"
 import LoginPopup from "@/src/features/auth/Login"
 import { updateProfileNewsletter } from "@/src/services/apiService"
+import { useRouter } from "next/navigation"
 
 export default function Footer(){
   
   const { user, setUser } = useAuth();
+  const router = useRouter();
   const [emailInput, setEmailInput] = useState("");
   const [isAgreed, setIsAgreed] = useState(false);
   const { showLoader, hideLoader } = useLoader();
   const [openLogin, setOpenLogin] = useState(false);
   const [loaded, setLoaded] = useState(false);
+
+
+  const handleProtectedLink = (e, path) => {
+    e.preventDefault();
+    if (!user) {
+      setOpenLogin(true);
+    } else {
+      router.push(path);
+    }
+  }
+
+
 
   const handleSubscribe = async () => {
     if(!user){
@@ -179,8 +193,12 @@ const [sliderRef] = useKeenSlider({
     <Link href={`/cart`} className="text-gray-500 hover:text-red-500">Cart</Link>
     <Link href={`/wishlist`} className="text-gray-500 hover:text-red-500">Wishlist</Link>
     <Link href={`/checkout`} className="text-gray-500 hover:text-red-500">Checkout</Link>
-    <Link href={`/returnorder`} className="text-gray-500 hover:text-red-500">Return</Link>
-     <Link href={`/ordertracking`} className="text-gray-500 hover:text-red-500">Order Tracking</Link>
+    
+    <Link href={`/profile/order-return`} 
+    onClick={(e) => handleProtectedLink(e, "/profile/order-return")}
+    className="text-gray-500 hover:text-red-500">Return</Link>
+    
+    <Link href={`/ordertracking`} className="text-gray-500 hover:text-red-500">Order Tracking</Link>
     {user ? (
       <Link href={`/profile`} className="text-gray-500 hover:text-red-500">Profile</Link>
     ): (
@@ -266,42 +284,42 @@ const [sliderRef] = useKeenSlider({
   <Link href={`https://www.facebook.com/profile.php?id=61576560495361`} 
   rel="noopener noreferrer"
   target="_blank"
-  className="border border-gray-400 rounded-full p-1 cursor-pointer hover:text-red-600 shadow-lg">
+  className="border border-gray-400 rounded-full px-2 py-2 cursor-pointer hover:text-red-600 shadow-lg">
  <FontAwesomeIcon icon={faFacebookF} />
   </Link>
 
   <Link href={`https://m.me/profile.php?id=61576560495361`} 
   rel="noopener noreferrer"
   target="_blank"
-  className="border border-gray-400 rounded-full p-1 cursor-pointer hover:text-red-600 shadow-lg">
+  className="border border-gray-400 rounded-full px-2 py-2 cursor-pointer hover:text-red-600 shadow-lg">
   <FontAwesomeIcon icon={faFacebookMessenger} />
   </Link>
 
   <Link href={`https://wa.me/8801602084187`} 
   rel="noopener noreferrer"
   target="_blank"
-  className="border border-gray-400 rounded-full p-1 cursor-pointer hover:text-red-600 shadow-lg">
+  className="border border-gray-400 rounded-full px-2 py-2 cursor-pointer hover:text-red-600 shadow-lg">
   <FontAwesomeIcon icon={faWhatsapp} />
   </Link>
 
   <Link href={`https://t.me/8801602084187`}
   rel="noopener noreferrer"
   target="_blank"
-  className="border border-gray-400 rounded-full p-1 cursor-pointer hover:text-red-600 shadow-lg">
+  className="border border-gray-400 rounded-full px-2 py-2 cursor-pointer hover:text-red-600 shadow-lg">
   <FontAwesomeIcon icon={faTelegram} />
   </Link>
 
   <Link href={`https://instagram.com/tmr_kawsar`} 
   rel="noopener noreferrer"
   target="_blank"
-  className="border border-gray-400 rounded-full p-1 cursor-pointer hover:text-red-600 shadow-lg">
+  className="border border-gray-400 rounded-full px-2 py-2 cursor-pointer hover:text-red-600 shadow-lg">
   <FontAwesomeIcon icon={faInstagram} />
   </Link>
 
   <Link href={`https://github.com/kawsar9990`} 
   rel="noopener noreferrer"
   target="_blank"
-  className="border border-gray-400 rounded-full p-1 cursor-pointer hover:text-red-600 shadow-lg">
+  className="border border-gray-400 rounded-full px-2 py-2 cursor-pointer hover:text-red-600 shadow-lg">
   <FontAwesomeIcon icon={faGithub} />
   </Link>
 </div>

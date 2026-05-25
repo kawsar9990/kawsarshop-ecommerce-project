@@ -54,8 +54,8 @@ return true;
 async jwt({ token, user }) {
   if (user) {
     token.user = user.backendData || user;
-    token.sub = user._id || user.id;
     token.backendToken = user.backendToken || "";
+    token.sub = user._id || user.id;
 }
 return token;
 },

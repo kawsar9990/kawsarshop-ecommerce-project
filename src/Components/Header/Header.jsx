@@ -187,7 +187,7 @@ setCartSidebar={setCartSidebar}
 
 
 <li className="border-b border-b-gray-200">
-  <Link href="/profile" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
+  <Link href="/trackorder" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
    <Truck  className="w-4 text-yellow-300"/>
     Track Order
   </Link>
@@ -460,7 +460,7 @@ onError={(e) => e.target.src = defaultAvatar}
 </li>
 
 <li className="border-b border-b-gray-200">
-  <Link href="/profile" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
+  <Link href="/profile/order" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
    <Cuboid  className="w-4 text-yellow-300"/>
     My Orders
   </Link>
@@ -468,7 +468,7 @@ onError={(e) => e.target.src = defaultAvatar}
 
 
 <li className="border-b border-b-gray-200">
-  <Link href="/profile" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
+  <Link href="/trackorder" className="flex items-center gap-2 px-4 py-2 hover:bg-[#BC105C] hover:text-white transition-colors text-sm">
    <Truck  className="w-4 text-yellow-300"/>
     Track Order
   </Link>
