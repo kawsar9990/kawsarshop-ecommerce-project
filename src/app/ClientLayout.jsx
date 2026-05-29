@@ -14,18 +14,23 @@ import { Suspense } from 'react';
 
 import Header from '../Components/Header/Header';
 import Footer from "../Components/Footer/Footer";
+import CookieConsent from '../Components/ui/CookieConsent/CookieConsent';
+import InternetStatus from '../Components/ui/notifications/InternetStatus';
+import ChatBadge from '../Components/ui/ChatBadge/ChatBadge';
 
 
 export default function ClientLayout({ children }){
     
 const pathname = usePathname();
-const hideHeaderFooter = pathname === "/searchpage"
+const hideHeaderFooter = ['/searchpage', '/chat'].includes(pathname);
+const hideChatBadge = pathname === '/chat';
+
 
 useDynamicTitle();
 
 return(
 <SessionProvider>
- <ReduxProvider>
+<ReduxProvider>
 <AuthProvider>
 <MainProduct>
 <LoaderProvider>  
@@ -38,7 +43,11 @@ return(
       
 {children}
 
-  <FloatingCart />
+  {!hideChatBadge && <FloatingCart />}
+
+  <CookieConsent />
+  <InternetStatus />
+  {!hideChatBadge && <ChatBadge />}
 
 <ToastContainer
   position="top-right"

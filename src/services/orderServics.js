@@ -1,11 +1,4 @@
-import axios from 'axios';
-
-const api = axios.create({
-  baseURL: 'https://kawsarshop-ecommerce-backend.onrender.com/api',
-  // baseURL: 'http://localhost:5000/api',
-  withCredentials: true,
-})
-
+import api from './apiInstance'
 
 export const verifyVoucherAPI = async (code, subtotal) => {
 try{
@@ -18,5 +11,3 @@ return response.data;
   throw error?.response?.data || { message: "Server error occurred" };  
 }
 }
-
-export default api;

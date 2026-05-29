@@ -14,7 +14,7 @@ import Register from "../../features/auth/Register"
 import { useAuth } from "../../context/AuthContext"
 import { useDispatch, useSelector } from "react-redux";
 import CartSidebar from "../Cart/Sidebar"
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { fetchWishlist } from "@/src/redux/slices/wishlistSlice"
 import { fetchCartFromServer } from "@/src/redux/slices/cartSlice"
 
@@ -23,7 +23,8 @@ export default function Header(){
     const dispatch = useDispatch();
     const { user, logout } = useAuth();
     const router = useRouter();
-    const {setCategory} = useMainProduct();
+    const pathname = usePathname();
+    const {category, setCategory} = useMainProduct();
     const [openLogin, setOpenLogin] = useState(false)
     const [openRegister, setOpenRegister] = useState(false)
     const [sidebarcl, setsidebarcl] = useState(false)
@@ -69,6 +70,23 @@ export default function Header(){
          setsideDropdown(menu)
        }
      }
+
+
+    const getLinkClass = (targetCategory) => {
+      const isProductPage = pathname === '/products';
+
+      const activeClass = 'text-[#FFB300] font-bold';
+      const inactiveClass = 'text-white hover:text-[#FFB300] transition-all duration-200';
+
+      if(targetCategory === 'Home') {
+           return pathname === '/' ? activeClass : inactiveClass;
+       }
+       return isProductPage && category === targetCategory 
+           ? activeClass 
+           : inactiveClass;
+    } 
+
+
 
 return(
    <div className={`antialiased xl:pb-30`} style={{userSelect: "none", zIndex: "9999999"}}>
@@ -275,7 +293,7 @@ setCartSidebar={setCartSidebar}
 </div>
 {/* sidebar  */}
 
-<Link href={`/`} className="cursor-pointer">Home</Link>
+<Link href={`/`} className={`${getLinkClass('Home')} cursor-pointer`}>Home</Link>
 
 <div className="relative group"
 onMouseEnter={()=> {
@@ -285,7 +303,7 @@ onMouseEnter={()=> {
 onMouseLeave={()=> {
 fashionTimer.current = setTimeout(()=> setFashionOpen(false), 100)
 }}>
-   <Link href={`/products`} onClick={()=> setCategory("Fashion")} className="cursor-pointer">Fashion</Link>
+<Link href={`/products`} onClick={()=> setCategory("Fashion")} className={`${getLinkClass('Fashion')} cursor-pointer`}>Fashion</Link>
    
 {FashionOpen && (
    <ul 
@@ -306,7 +324,7 @@ onMouseEnter={()=> {
 onMouseLeave={()=> {
 ElectronicsTimer.current = setTimeout(()=> setElecOpen(false), 100)
 }}>
-   <Link  href={`/products`} onClick={()=> setCategory("Electronics")} className="cursor-pointer">Electronics</Link>
+   <Link  href={`/products`} onClick={()=> setCategory("Electronics")} className={`${getLinkClass('Electronics')} cursor-pointer`}>Electronics</Link>
    
 {ElecOpen && (
    <ul 
@@ -329,7 +347,7 @@ onMouseEnter={()=> {
 onMouseLeave={()=> {
 BagsTimer.current = setTimeout(()=> setBagOpen(false), 400)
 }}>
-  <Link  href={`/products`} onClick={()=> setCategory("Bags")} className="cursor-pointer">Bags</Link>
+  <Link  href={`/products`} onClick={()=> setCategory("Bags")} className={`${getLinkClass('Bags')} cursor-pointer`}>Bags</Link>
   
 {BagOpen && (
      
@@ -352,7 +370,7 @@ onMouseEnter={()=> {
 onMouseLeave={()=> {
 FootwearTimer.current = setTimeout(()=> setfootOpen(false), 100)
 }}>
-   <Link href={`/products`} onClick={()=> setCategory("Footwear")} className="cursor-pointer">Footwear</Link>
+   <Link href={`/products`} onClick={()=> setCategory("Footwear")} className={`${getLinkClass('Footwear')} cursor-pointer`}>Footwear</Link>
    
 {footOpen && (
      <ul 
@@ -364,19 +382,19 @@ FootwearTimer.current = setTimeout(()=> setfootOpen(false), 100)
 </div>
 
 
-<Link   href={`/products`} onClick={()=> setCategory("Groceries")} className="cursor-pointer ">
+<Link   href={`/products`} onClick={()=> setCategory("Groceries")} className={`${getLinkClass('Groceries')} cursor-pointer `}>
 Groceries
 </Link>
 
-<Link  href={`/products`} onClick={()=> setCategory("Beauty")} className="cursor-pointer">
+<Link  href={`/products`} onClick={()=> setCategory("Beauty")} className={`${getLinkClass('Beauty')} cursor-pointer`}>
 Beauty
 </Link>
 
-<Link href={`/products`} onClick={()=> setCategory("Wellness")} className="cursor-pointer ">
+<Link href={`/products`} onClick={()=> setCategory("Wellness")} className={`${getLinkClass('Wellness')} cursor-pointer `}>
 Wellness
 </Link>
 
-<Link  href={`/products`} onClick={()=> setCategory("Jewellery")} className="cursor-pointer ">
+<Link  href={`/products`} onClick={()=> setCategory("Jewellery")} className={`${getLinkClass('Jewellery')} cursor-pointer `}>
 Jewellery
 </Link>
 
@@ -528,15 +546,15 @@ className="text-white cursor-pointer font-black relative flex items-center justi
 
 <div className="w-full overflow-x-auto scrollbar-hide" style={{userSelect: "text"}}>
     <div className="flex flex-row justify-between p-2 gap-3">
-     <Link href={`/`} className="cursor-pointer">Home</Link>
-     <Link href={`/products`} onClick={()=> setCategory("Fashion")} className="cursor-pointer">Fashion</Link>
-     <Link href={`/products`} onClick={()=> setCategory("Electronics")} className="cursor-pointer">Electronics</Link>
-     <Link href={`/products`} onClick={()=> setCategory("Bags")} className="cursor-pointer">Bags</Link>
-     <Link href={`/products`} onClick={()=> setCategory("Footwear")} className="cursor-pointer">Footwear</Link>
-      <Link href={`/products`} onClick={()=> setCategory("Groceries")} className="cursor-pointer">Groceries</Link>
-      <Link href={`/products`} onClick={()=> setCategory("Beauty")} className="cursor-pointer">Beauty</Link>
-      <Link href={`/products`} onClick={()=> setCategory("Wellness")} className="cursor-pointer">Wellness</Link>
-      <Link href={`/products`} onClick={()=> setCategory("Jewellery")} className="cursor-pointer">Jewellery</Link>
+     <Link href={`/`} className={`${getLinkClass('Home')} cursor-pointer`}>Home</Link>
+     <Link href={`/products`} onClick={()=> setCategory("Fashion")} className={`${getLinkClass('Fashion')} cursor-pointer`}>Fashion</Link>
+     <Link href={`/products`} onClick={()=> setCategory("Electronics")} className={`${getLinkClass('Electronics')} cursor-pointer`}>Electronics</Link>
+     <Link href={`/products`} onClick={()=> setCategory("Bags")} className={`${getLinkClass('Bags')} cursor-pointer`}>Bags</Link>
+     <Link href={`/products`} onClick={()=> setCategory("Footwear")} className={`${getLinkClass('Footwear')} cursor-pointer`}>Footwear</Link>
+      <Link href={`/products`} onClick={()=> setCategory("Groceries")} className={`${getLinkClass('Groceries')} cursor-pointer `}>Groceries</Link>
+      <Link href={`/products`} onClick={()=> setCategory("Beauty")} className={`${getLinkClass('Beauty')} cursor-pointer`}>Beauty</Link>
+      <Link href={`/products`} onClick={()=> setCategory("Wellness")} className={`${getLinkClass('Wellness')} cursor-pointer `}>Wellness</Link>
+      <Link href={`/products`} onClick={()=> setCategory("Jewellery")} className={`${getLinkClass('Jewellery')} cursor-pointer `}>Jewellery</Link>
 
 </div>
 

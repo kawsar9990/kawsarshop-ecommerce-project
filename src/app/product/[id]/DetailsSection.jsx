@@ -407,12 +407,12 @@ ${selectedSize === size
 </svg>
 </p>
     <p className="font-bold text-[10px] md:text-[13px] lg:text-[18px]">Return : </p>
-    <p className="text-[#E4297B] font-semibold text-[10px] md:text-[13px] lg:text-[18px]">3 Days</p>
+    <p className="text-[#E4297B] font-semibold text-[10px] md:text-[13px] lg:text-[18px]">7 Days</p>
 </div>
 <div className="flex flex-row gap-3 items-center text-[10px] md:text-[13px] lg:text-[18px]">
     <p className="text-[10px] md:text-[13px] lg:text-[18px]"><FontAwesomeIcon icon={faArrowRightArrowLeft} /></p>
     <p className="font-bold text-[10px] md:text-[13px] lg:text-[18px]">Exchange : </p>
-    <p className="text-[#E4297B] font-semibold text-[10px] md:text-[13px] lg:text-[18px]">3 Days</p>
+    <p className="text-[#E4297B] font-semibold text-[10px] md:text-[13px] lg:text-[18px]">7 Days</p>
 </div>
 <div className="flex flex-row gap-3 items-center text-[10px] md:text-[13px] lg:text-[18px]">
   <p className="text-[10px] md:text-[13px] lg:text-[18px]">
@@ -421,7 +421,7 @@ ${selectedSize === size
 </svg>
     </p>
     <p className="font-bold text-[10px] md:text-[13px] lg:text-[18px]">Delivery Time : </p>
-    <p className="text-[#E4297B] font-semibold text-[10px] md:text-[13px] lg:text-[18px]">3 Days</p>
+    <p className="text-[#E4297B] font-semibold text-[10px] md:text-[13px] lg:text-[18px]">3 - 6 Days</p>
 </div>
 <div className="flex flex-row gap-3 items-center text-[10px] md:text-[13px] lg:text-[18px]">
     <p className="text-[10px] md:text-[13px] lg:text-[18px]">
@@ -487,10 +487,10 @@ ${selectedSize === size
     <div className="w-1/2 h-2 mx-4 bg-[#F9C6DC] rounded-full overflow-hidden">
       <div
         className="h-full bg-[#E2136E] rounded-full"
-        style={{ width: "80%" }}
+        style={{ width: "70%" }}
       />
     </div>
-    <span className="text-sm font-bold">80%</span>
+    <span className="text-sm font-bold">70%</span>
   </div>
 
   <div className="flex items-center mt-1">
@@ -526,9 +526,9 @@ ${selectedSize === size
     </span>
     <div className="w-1/2 h-2 mx-4 bg-[#F9C6DC] rounded-full overflow-hidden">
       <div className="h-full bg-[#E2136E] rounded-full" 
-      style={{ width: "0%" }} />
+      style={{ width: "10%" }} />
     </div>
-    <span className="text-sm font-bold">0%</span>
+    <span className="text-sm font-bold">10%</span>
   </div>
 
   <div className="flex items-center mt-1">
@@ -544,9 +544,9 @@ ${selectedSize === size
         />
     </span>
     <div className="w-1/2 h-2 mx-4 bg-[#F9C6DC] rounded-full overflow-hidden">
-      <div className="h-full bg-[#E2136E] rounded-full" style={{ width: "0%" }} />
+      <div className="h-full bg-[#E2136E] rounded-full" style={{ width: "10%" }} />
     </div>
-    <span className="text-sm font-bold">0%</span>
+    <span className="text-sm font-bold">10%</span>
   </div>
 
   <div className="flex items-center mt-1">

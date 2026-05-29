@@ -1,10 +1,5 @@
-import axios from 'axios';
+import api from './apiInstance'
 
-const api = axios.create({
-  baseURL: 'https://kawsarshop-ecommerce-backend.onrender.com/api',
-  // baseURL: 'http://localhost:5000/api',
-  withCredentials: true,
-})
 
 
 export const getWishlistAPI = async (userId) => {
@@ -28,5 +23,3 @@ return response.data;
 }
 
 
-
-export default api;
