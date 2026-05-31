@@ -18,9 +18,13 @@ const { totalQuantity, totalAmount, subtotal } = useSelector((state) => state.ca
 const [cartSidebar, setCartSidebar] = useState(false)
 const [openLogin, setOpenLogin] = useState(false);
 
-const hiddenPages = ['/login', '/register', '/not-found', '/searchpage'];
-const isHidden = hiddenPages.includes(pathname);
-if (isHidden) return null;
+const allowedPages = 
+[
+'/', '/home', '/', '/searchresult', 
+'/product', '/products', '/speacial-offer-products'
+]
+const isAllowed = allowedPages.includes(pathname);
+if (!isAllowed) return null;
 
 
 const handleCartOpen = () => {
