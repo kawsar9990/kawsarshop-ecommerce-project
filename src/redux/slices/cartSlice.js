@@ -51,14 +51,14 @@ reducers: {
             selected: true
          });
         }
-     cartSlice.caseReducers.calculateTotals(state)
+     cartSlice.caseReducers.calculateTotals(state, { payload: {} });
     },
 
     incrementQuantity: (state, action) => {
       const item = state.cartItems.find(i => i._id === action.payload);
       if(item && item.quantity < item.stock){
           item.quantity++;
-          cartSlice.caseReducers.calculateTotals(state);
+          cartSlice.caseReducers.calculateTotals(state, { payload: state.lastUserStatus || {} });
       }
     },
 
@@ -66,7 +66,7 @@ reducers: {
       const item = state.cartItems.find(i => i._id === action.payload);
       if (item && item.quantity > 1) {
       item.quantity--;  
-      cartSlice.caseReducers.calculateTotals(state);
+      cartSlice.caseReducers.calculateTotals(state, { payload: state.lastUserStatus || {} });
       }
      },
 
@@ -74,7 +74,7 @@ reducers: {
         const item = state.cartItems.find(i => i._id === action.payload);
         if(item){
           item.selected = !item.selected;
-          cartSlice.caseReducers.calculateTotals(state); 
+          cartSlice.caseReducers.calculateTotals(state, { payload: state.lastUserStatus || {} }); 
         }
      },
      applyVoucher: (state, action) => {
@@ -84,31 +84,31 @@ reducers: {
          state.appliedVoucher = voucher.code;
          state.voucherDetails = { value: voucher.value, type: voucher.type };
        }
-       cartSlice.caseReducers.calculateTotals(state);
+       cartSlice.caseReducers.calculateTotals(state, { payload: state.lastUserStatus || {} });
      },
 
      removeVoucher: (state) => {
       state.appliedVoucher = null;
       state.voucherDetails = null;
       state.discount = 0;
-      cartSlice.caseReducers.calculateTotals(state);
+      cartSlice.caseReducers.calculateTotals(state, { payload: state.lastUserStatus || {} });
      },
 
      setDeliveryCharge: (state, action) => {
         state.deliveryCharge = action.payload;
-        cartSlice.caseReducers.calculateTotals(state)
+        cartSlice.caseReducers.calculateTotals(state, { payload: state.lastUserStatus || {} });
      },
 
     removeFromCart: (state, action) => {
       state.cartItems = state.cartItems.filter(item => item._id !== action.payload);
-      cartSlice.caseReducers.calculateTotals(state);
+      cartSlice.caseReducers.calculateTotals(state, { payload: state.lastUserStatus || {} });
     },
     
     clearCart: (state) => {
       return initialState;
     },
 
-    calculateTotals: (state) => {
+    calculateTotals: (state, action) => {
       let sub = 0;
       let qty = 0;
       let savings = 0;
@@ -125,6 +125,13 @@ reducers: {
       state.subtotal = sub;
       state.totalQuantity = qty;
       state.totalSavings = savings;
+
+
+    if (action && action.payload && typeof action.payload.isPremium !== 'undefined'){
+      state.lastUserStatus = { isPremium: action.payload.isPremium };
+    }
+
+    const isPremiumUser = state.lastUserStatus?.isPremium === true;
 
 
       if(state.voucherDetails){
@@ -160,7 +167,11 @@ reducers: {
       .sort((a,b) => b.minAmount - a.minAmount)
       .find(rule => sub >= rule.minAmount);
 
-      state.cashback = applicableRule ? applicableRule.reward : 0;
+      if (isPremiumUser){
+       state.cashback = (sub * 10) / 100; 
+      }else{
+       state.cashback = applicableRule ? applicableRule.reward : 0; 
+      }
 
      if (sub === 0) {
         state.discount = 0;
@@ -200,7 +211,7 @@ extraReducers: (builder) => {
       state.voucherDetails = null;
       state.discount = 0;
     }
-    cartSlice.caseReducers.calculateTotals(state);
+    cartSlice.caseReducers.calculateTotals(state, { payload: state.lastUserStatus || {} });
   })
   .addCase(fetchCartFromServer.pending, (state) => {
     state.loading = true;

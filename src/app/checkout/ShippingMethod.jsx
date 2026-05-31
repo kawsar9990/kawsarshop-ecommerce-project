@@ -1,39 +1,66 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { ChevronDown, Info } from "lucide-react";
 
-export default function ShippingMethod({ onMethodChange }){
+export default function ShippingMethod({ onMethodChange, isPremium }){
 
 const [isOpen, setIsOpen] = useState(true);
 const [selectedMethod, setSelectedMethod] = useState("standard");
 
-  const methods = [
-    {
-      id: "express",
-      title: "Express Shipping",
-      days: "(3-6 Business days)",
-      note: "Customs delay might occur",
-      price: 16.00,
-      oldPrice: 19.00,
-    },
-    {
-      id: "standard",
-      title: "Standard Shipping",
-      days: "(5-9 Business days)",
-      note: "Customs delay might occur",
-      price: 13.00,
-      oldPrice: null,
-    },
-  ];
 
+useEffect(() => {
+    if (isPremium) {
+      setSelectedMethod("express");
+    } else {
+      setSelectedMethod("standard");
+    }
+  }, [isPremium]);
+
+
+ const methods = useMemo(() => {
+    const baseMethods = [
+      {
+        id: "express",
+        title: "Express Shipping",
+        days: "(3-6 Business days)",
+        note: "Customs delay might occur",
+        basePrice: 16.00,
+        baseOldPrice: 19.00,
+      },
+      {
+        id: "standard",
+        title: "Standard Shipping",
+        days: "(5-9 Business days)",
+        note: "Customs delay might occur",
+        basePrice: 13.00,
+        baseOldPrice: null,
+      },
+    ];
+
+    return baseMethods.map(m => {
+      if (isPremium) {
+        return {
+          ...m,
+          price: 0, 
+          oldPrice: m.basePrice,
+        };
+      }
+      return {
+        ...m,
+        price: m.basePrice,
+        oldPrice: m.baseOldPrice,
+      };
+    });
+  }, [isPremium]);
 
   useEffect(()=> {
     const currentMethod = methods.find(m => m.id === selectedMethod)
-    if(onMethodChange){
+    if(onMethodChange && currentMethod){
       onMethodChange(currentMethod)
     }
-  },[selectedMethod])
+  }, [selectedMethod, methods, onMethodChange])
+
 
 
 return(

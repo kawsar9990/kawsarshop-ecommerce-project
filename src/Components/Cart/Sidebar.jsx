@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, useMemo } from "react";
-import { X, ShoppingBag } from "lucide-react";
+import { X, ShoppingBag , Crown } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity, removeFromCart} from "@/src/redux/slices/cartSlice";
 import Link from "next/link";
@@ -16,7 +16,7 @@ export default function CartSidebar({ cartSidebar, setCartSidebar }) {
 
 const { user } = useAuth();
 const dispatch = useDispatch();
-const { totalQuantity, cartItems, totalSavings, totalAmount, appliedVoucher} = useSelector((state) => state.cart);
+const { totalQuantity, cartItems, totalSavings, totalAmount, subtotal, appliedVoucher} = useSelector((state) => state.cart);
 let router = useRouter();
 const {showLoader, hideLoader} = useLoader();
 const [changedItems, setChangedItems] = useState({});
@@ -33,6 +33,12 @@ useEffect(() => {
     document.body.style.overflow = "auto";
   };
 }, [cartSidebar]);
+
+
+const isPremiumActive = useMemo(() => {
+  return user?.isPremium === true && new Date(user?.premiumExpiresAt?.$date || user?.premiumExpiresAt) > new Date();
+}, [user]);
+
 
 
 const handleQuantityChange = (itemId, action) => {
@@ -95,11 +101,14 @@ return(
 
 <div className="flex items-center justify-between p-4 border-b bg-[#BC105C] text-white">
 <div className="flex items-center gap-2">
-    <div className="bg-blue-500 p-3 rounded-lg">
-    <ShoppingBag className="w-5 text-white"/>
+    <div className={`${isPremiumActive ? 'bg-amber-500' : 'bg-blue-500'} p-3 rounded-lg flex items-center justify-center`}>
+    {isPremiumActive ? <Crown className="w-5 h-5 text-white animate-pulse" /> : <ShoppingBag className="w-5 text-white"/>}
     </div>
     <div>
-        <h2 className="text-lg font-bold">Shopping Cart</h2>
+        <h2 className="text-lg font-bold flex items-center gap-1.5">
+          Shopping Cart 
+          {isPremiumActive && <span className="text-[10px] bg-amber-400 text-slate-900 px-2 py-0.5 rounded-full font-black tracking-wide uppercase">Premium</span>}
+        </h2>
         <p>{totalQuantity} {totalQuantity > 1 ? "items" : "item"}</p>
     </div>
 </div>
@@ -204,9 +213,13 @@ className="text-red-500 cursor-pointer hover:scale-110 transition-transform p-1"
   <span>-${totalSavings.toFixed(0)}</span>
 </div>
 )}
+
+
 <div className="flex justify-between items-center gap-4">
   <span className="text-xl font-bold flex-shrink-0">Total</span>
-  <span className="text-2xl font-black text-[#E2136E] truncate max-w-[200px]" title={`$${totalAmount.toLocaleString()}`}>${totalAmount.toLocaleString()}</span>
+ <span className="text-2xl font-black text-[#E2136E] truncate max-w-[200px]" title={`$${Math.max(0, totalAmount).toLocaleString()}`}>
+    ${Math.max(0, totalAmount).toLocaleString()}
+  </span>
 </div>
 <button onClick={handlecheckout} className="w-full cursor-pointer bg-[#E2136E] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#ac0c51] transition-all">
   Proceed to Checkout

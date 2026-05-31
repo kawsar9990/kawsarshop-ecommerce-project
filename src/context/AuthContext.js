@@ -69,6 +69,12 @@ const login = (userData) => {
 };
 
 
+const updateUser = (updatedFields) => {
+  const updatedUser = { ...user, ...updatedFields };
+  setUser(updatedUser);
+  localStorage.setItem("kawsarshop_auth", JSON.stringify(updatedUser));
+};
+
 
 const logout = async () => {
   try {
@@ -83,7 +89,7 @@ const logout = async () => {
 
   return (
     <AuthContext.Provider 
-    value={{ login, user, setUser, loading, logout, token: user?.token || "" }}>
+    value={{ login, user, setUser, loading, logout, token: user?.token || "", updateUser }}>
       {children}
     </AuthContext.Provider>
   );

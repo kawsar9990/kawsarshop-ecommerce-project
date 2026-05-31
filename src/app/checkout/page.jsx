@@ -1,7 +1,7 @@
 'use client'
 
 import notify from "@/src/utils/toast"
-import { useState,useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { useAuth } from "@/src/context/AuthContext";
 import { useDispatch } from "react-redux";
 import { getAddressesAPI } from "@/src/services/addressService";
@@ -21,6 +21,15 @@ const dispatch = useDispatch();
 const [addresses, setAddresses] = useState([]);
 const [selectedMethod, setSelectedMethod] = useState("card");
 const [shippingMethod, setShippingMethod] = useState(null);
+
+
+const isPremiumActive = useMemo(() => {
+    if (!user?.isPremium) return false;
+    const expiryDate = user?.premiumExpiresAt?.$date ? new Date(user.premiumExpiresAt.$date) : new Date(user.premiumExpiresAt);
+    return expiryDate > new Date();
+  }, [user]);
+
+
 
  const fetchAddresses = async () =>{
   const userId = user?.id || user?._id;
@@ -71,7 +80,7 @@ refreshAddresses={fetchAddresses}
 userId={user?.id || user?._id}/>
 </div>
 <div>
-<ShippingMethod onMethodChange={(method) => setShippingMethod(method)}/>
+<ShippingMethod isPremium={isPremiumActive} onMethodChange={(method) => setShippingMethod(method)}/>
 </div>
 <div>
 <PaymentMethod  selectedMethod={selectedMethod} setSelectedMethod={setSelectedMethod}/>
@@ -91,7 +100,8 @@ userId={user?.id || user?._id}/>
 <PriceBox 
 selectedMethod={selectedMethod}
 shippingMethod={shippingMethod}
-addresses={addresses}/>
+addresses={addresses}
+isPremium={isPremiumActive}/>
 </div>
 
 </div>

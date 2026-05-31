@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity, removeFromCart, removeVoucher, applyVoucher, fetchCartFromServer } from "@/src/redux/slices/cartSlice";
 import Link from "next/link";
-import { Trash2, Minus, Plus, ArrowRight, ShoppingBag, Truck } from "lucide-react";
+import { Trash2, Minus, Crown, Plus, ArrowRight, ShoppingBag, Truck } from "lucide-react";
 import notify from '@/src/utils/toast';
 import { verifyVoucherAPI } from "@/src/services/orderServics";
 import { syncCartAPI } from "@/src/services/cartServices";
@@ -27,6 +27,16 @@ export default function CartPage() {
   const [localLoading, setLocalLoading] = useState(true);
 
   const userId = useMemo(() => user?._id || user?.id || null, [user]);
+
+
+  const isPremiumActive = useMemo(() => {
+    return user?.isPremium === true && new Date(user?.premiumExpiresAt?.$date || user?.premiumExpiresAt) > new Date();
+  }, [user]);
+
+
+  useEffect(() => {
+    dispatch({ type: 'cart/calculateTotals', payload: { isPremium: isPremiumActive } });
+  }, [cartItems, isPremiumActive, dispatch]);
 
  useEffect(() => {
     if (userId) {
@@ -286,21 +296,30 @@ className="flex items-center cursor-pointer gap-1 bg-orange-400 text-white px-2 
 
 <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100">
 <div className="flex md:items-center gap-3 mb-4">
-<Truck size={22} className="text-[#E2136E]" />
+{isPremiumActive ? <Crown size={22} className="text-amber-500 animate-bounce" /> : <Truck size={22} className="text-[#E2136E]" />}
 <p className="text-[10px] md:text-sm font-bold text-slate-600">
-{amountToFreeShipping > 0 
-  ? <span className="text-slate-500">Add <span className="text-[#E2136E]">${amountToFreeShipping.toLocaleString()}</span> more for FREE shipping</span>
-  : <span className="text-[#E2136E]">FREE shipping applied!</span>}
+{isPremiumActive ? (
+  <span className="text-emerald-600 font-extrabold flex items-center gap-1">
+    Premium Active: FREE shipping applied!
+  </span>
+) : amountToFreeShipping > 0 ? (
+  <span className="text-slate-500">Add <span className="text-[#E2136E]">${amountToFreeShipping.toLocaleString()}</span> more for FREE shipping</span>
+) : (
+  <span className="text-[#E2136E]">FREE shipping applied!</span>
+)}
 </p>
 </div>
 <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-<div className={`h-full transition-all duration-1000 ${amountToFreeShipping === 0 ? 'bg-emerald-500' : 'bg-[#E2136E]'}`} style={{ width: `${progressPercentage}%` }}></div>
+<div 
+  className={`h-full transition-all duration-1000 ${isPremiumActive ? 'bg-amber-500 w-full' : amountToFreeShipping === 0 ? 'bg-emerald-500' : 'bg-[#E2136E]'}`} 
+  style={{ width: isPremiumActive ? '100%' : `${progressPercentage}%` }}
+></div>
 </div>
 <div className="flex justify-between mt-2 text-[10px] font-bold text-slate-400 tracking-wider uppercase">
-    <span className={totalAmount > 0 ? "text-[#E2136E]" : ""}>
-      ${totalAmount.toLocaleString()}
+    <span className={isPremiumActive ? "text-amber-500" : totalAmount > 0 ? "text-[#E2136E]" : ""}>
+      {isPremiumActive ? "PREMIUM" : `$${totalAmount.toLocaleString()}`}
     </span>
-    <span>$5,000.00</span>
+    <span>{isPremiumActive ? "No Limit" : "$5,000.00"}</span>
   </div>
 </div>
 
@@ -359,9 +378,11 @@ className="flex items-center cursor-pointer gap-1 bg-orange-400 text-white px-2 
     <span className="font-medium text-sm">Total Savings</span>
     <span className="font-black">-${totalSavings.toLocaleString()}</span>
   </div>
-   <div className="flex justify-between items-center text-emerald-500 border-t border-dashed pt-4">
+ <div className="flex justify-between items-center text-emerald-500 border-t border-dashed pt-4">
     <span className="font-medium text-sm">Shipping Fee</span>
-    <span className="font-black text-[12px]">Calculating at checkout</span>
+    <span className={`font-black text-sm ${isPremiumActive ? "text-emerald-500" : "text-[12px] text-slate-800"}`}>
+      {isPremiumActive ? "FREE" : "Calculating at checkout"}
+    </span>
   </div>
   <div>
     {discount > 0 && (
@@ -379,12 +400,13 @@ className="flex items-center cursor-pointer gap-1 bg-orange-400 text-white px-2 
     </div>
   )}
   </div>
+
 <div className="pt-6 border-t border-slate-100">
     <div className="mb-3 flex flex-col gap-3">
         <div className='flex justify-between items-center'>
             <span className="text-2xl font-black text-slate-800">Total</span>
             <span className="text-2xl font-black text-[#E2136E]">
-            ${totalAmount.toLocaleString()}
+            ${Math.max(0, totalAmount).toLocaleString()}
             </span>
         </div>
          <p className="text-[10px] text-center text-slate-400 italic">Tax calculated at checkout</p>

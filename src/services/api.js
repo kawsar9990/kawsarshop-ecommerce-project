@@ -64,5 +64,29 @@ export const resetPasswordWithDOB = async (payload) => {
         const message = err.response.data.message || "Verification failed!";
         throw new Error(message);
     }
+};
+
+
+
+export const activateMembershipAPI = async (userId, plan) =>{
+    try{
+        const response = await api.post('/auth/activate-membership', {userId, plan});
+        return response.data;
+    }
+    catch(err){
+      const message = err.response?.data?.message || "Could not activate membership!";
+      throw new Error(message);  
+    }
 }
 
+
+
+export const cancelMembershipAPI = async (userId) => {
+  try {
+    const response = await api.post('/auth/cancel-membership', { userId });
+    return response.data;
+  } catch (err) {
+    const message = err.response?.data?.message || "Could not cancel membership!";
+    throw new Error(message);
+  }
+};

@@ -23,8 +23,7 @@ export default function ClientLayout({ children }){
     
 const pathname = usePathname();
 const hideHeaderFooter = ['/searchpage', '/chat'].includes(pathname);
-const hideChatBadge = pathname === '/chat';
-
+const isHomePage = pathname === '/';
 
 useDynamicTitle();
 
@@ -43,11 +42,11 @@ return(
       
 {children}
 
-  {!hideChatBadge && <FloatingCart />}
+  <FloatingCart />
 
   <CookieConsent />
   <InternetStatus />
-  {!hideChatBadge && <ChatBadge />}
+  {isHomePage && <ChatBadge />}
 
 <ToastContainer
   position="top-right"

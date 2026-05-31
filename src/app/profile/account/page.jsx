@@ -1,24 +1,36 @@
 'use client'
 
 import { useState, useEffect } from "react";
+import notify from "@/src/utils/toast";
 import { useAuth } from "../../../context/AuthContext"
-import { Loader2,CheckCircle2 } from 'lucide-react';
+import { Loader2,CheckCircle2, Crown, X } from 'lucide-react';
 import Image from "next/image";
 import Link from 'next/link';
+import { cancelMembershipAPI } from "@/src/services/api";
 import { getAddressesAPI } from "@/src/services/addressService";
 import { getOrdersByUserIdAPI } from "@/src/services/ordersServics";
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 
+import { Modal, Box, Typography, TextField, Button, Select, MenuItem, FormControl, IconButton } from '@mui/material';
+
+const modalStyle = {
+  position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+  width: '90%', bgcolor: 'background.paper', borderRadius: '12px', boxShadow: 24, p: 4, outline: 'none', maxWidth: '450px'
+};
 
 export default function page(){
 
-const { user, loading, token } = useAuth();
+const { user, loading, token, updateUser } = useAuth();
 const [orders, setOrders] = useState([]);
 const [defaultAddress, setDefaultAddress] = useState(null);
 const [addressLoading, setAddressLoading] = useState(true);
 const defaultAvatar = "https://res.cloudinary.com/dkmzakgx2/image/upload/v1773324319/5_d3ytz1.jpg";
+const [cancelling, setCancelling] = useState(false);
 
+const [isCancelModalOpen, setIsCancelModalOpen] = useState(false);
+const [cancelReason, setCancelReason] = useState('');
+const [cancelDescription, setCancelDescription] = useState('');
 
 useEffect(()=> {
 const fetchAddress = async () => {
@@ -58,6 +70,37 @@ console.error("Order fetch error:", error);
 };
 fetchOrders()
 },[user, token])
+
+
+
+const handleCancelMembership = async () => {
+  if (!cancelReason) return notify.warning("Please select a reason to cancel!");
+  setCancelling(true);
+  try {
+    const userId = user?.id || user?._id;
+    const data = await cancelMembershipAPI(userId);
+    if (data.success) {
+      updateUser(data.user, data.token);
+      closeCancelModal();
+    }
+  } catch (error) {
+    console.error("Cancellation error:", error);
+    notify.error(error.message || "Failed to cancel!");
+  } finally {
+    setCancelling(false);
+  }
+};
+
+
+const openCancelModal = () => {
+  setIsCancelModalOpen(true);
+};
+
+const closeCancelModal = () => {
+  setIsCancelModalOpen(false);
+  setCancelReason('');
+  setCancelDescription('');
+};
 
 
 const [currentSlide, setCurrentSlide] = useState(0); 
@@ -164,6 +207,74 @@ className="object-cover rounded-full"
    <Link href={`/profile/account/edit`}
    className="bg-gray-200 w-10 text-[10px] text-center cursor-pointer p-2 rounded-lg text-black">Edit</Link> 
 </div>
+</div>
+</div>
+
+
+
+
+
+<div className="pt-5 pb-5">
+<h1 className="font-bold pt-3 flex items-center gap-1.5">
+    <Crown className={user?.isPremium ? "text-amber-500 fill-amber-500 animate-bounce" : "text-gray-400"} size={18} />
+    Membership
+</h1>
+
+<div className={`mt-2 rounded-xl p-5 border relative overflow-hidden transition-all duration-500 ${
+    user?.isPremium 
+      ? 'border-amber-400 bg-gradient-to-br from-amber-50/60 via-amber-100/30 to-amber-200/40 shadow-xl shadow-amber-100/80 backdrop-blur-sm' 
+      : 'mt-2 bg-white shadow-md rounded-sm p-4 border border-gray-100'
+}`}>
+
+{user?.isPremium && (
+<div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none select-none">
+  <Crown size={120} className="text-amber-600 fill-amber-500" />
+</div>
+)}
+
+<h2 className="text-[14px] font-bold text-gray-900 mb-1">Membership Plan</h2>
+
+{user?.isPremium ? (
+<div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<div className="flex items-center gap-2 opacity-95 select-none">
+<input 
+  type="checkbox" 
+  checked={true} 
+  disabled={true} 
+  className="w-3 h-3 md:h-4 md:w-4 accent-amber-500 rounded" 
+/>
+<span className="font-extrabold text-[10px] md:text-[13px] text-amber-700 tracking-wider flex items-center gap-1.5 drop-shadow-[0_1px_2px_rgba(245,158,11,0.2)] animate-pulse">
+  {user?.premiumPlan === 'trial' ? 'KAWSARSHOP PLUS+ TRIAL ACTIVE' : 'KAWSARSHOP PLUS+ PREMIUM ACTIVE'}
+</span>
+</div>
+{user?.premiumExpiresAt && (
+<p className="text-[9px] md:text-[12px] text-gray-500 mt-1">
+Your premium benefits are active. Next renewal: {' '}
+<span className="font-bold text-gray-700">
+{new Date(user.premiumExpiresAt).toLocaleDateString('en-GB')}
+</span>
+</p>
+)}
+</div>
+<button
+  onClick={openCancelModal}
+  className="text-[11px] cursor-pointer font-bold text-gray-400 hover:text-red-500 hover:underline self-start sm:self-center transition-all"
+>
+  Cancel Plan
+</button>
+</div>
+) : (
+<div className="text-[10px] md:text-[13px] text-gray-600">
+You don't have an active membership plan. For more info{' '}
+<Link
+href={`/kawsarshop-membership`}
+className="text-amber-500 font-bold hover:underline transition-all"
+>
+Click Here
+</Link>
+</div>    
+)}
 </div>
 </div>
 
@@ -331,9 +442,95 @@ Edit Address
  </div>
 </div>
 
-
 </div>
 
+
+<Modal open={isCancelModalOpen} onClose={closeCancelModal} sx={{ zIndex: 99999 }}>
+  <Box sx={modalStyle}>
+    <div className="flex justify-end">
+      <IconButton onClick={closeCancelModal} size="small">
+        <X size={18} className="text-gray-500 hover:text-gray-800 transition-colors" />
+      </IconButton>
+    </div>
+    
+    <Typography sx={{ fontSize: '18px', fontWeight: 'bold', color: '#1f2937', mb: 1, trackingTight: true }}>
+      Cancel Membership Plan <span className="text-red-500">*</span>
+    </Typography>
+    <Typography sx={{ fontSize: '13px', color: '#6b7280', mb: 3 }}>
+      We are sorry to see you go. Please tell us the reason for cancelling your premium benefits.
+    </Typography>
+          
+    <FormControl fullWidth sx={{ mb: 3 }}>
+      <Select
+        value={cancelReason}
+        onChange={(e) => setCancelReason(e.target.value)}
+        displayEmpty
+        sx={{ 
+          borderRadius: '8px', 
+          height: '45px',
+          '& .MuiSelect-select': { fontSize: '14px', fontWeight: 500 }
+        }}
+        MenuProps={{ style: { zIndex: 1000000 } }}
+      >
+        <MenuItem value="" disabled>Select Reason</MenuItem>
+        <MenuItem value="Too Expensive">Too Expensive / High Cost</MenuItem>
+        <MenuItem value="Not Using It">Not Using the Benefits Frequently</MenuItem>
+        <MenuItem value="Delivery Issues">Delivery Related Service Issues</MenuItem>
+        <MenuItem value="Found Alternatives">Found Better Alternatives</MenuItem>
+        <MenuItem value="Other">Other Reasons</MenuItem>
+      </Select>
+    </FormControl>
+
+    <Typography sx={{ fontSize: '14px', fontWeight: 600, color: '#374151', mb: 1 }}>
+      Additional Description (Optional)
+    </Typography>
+    <TextField 
+      fullWidth 
+      multiline 
+      rows={3} 
+      placeholder="Tell us more about how we can improve..."
+      value={cancelDescription}
+      onChange={(e) => setCancelDescription(e.target.value)}
+      sx={{ mb: 4, '& .MuiOutlinedInput-root': { borderRadius: '8px', fontSize: '13px' } }}
+    />
+
+    <div className="flex gap-3">
+      <Button 
+        fullWidth 
+        variant="outlined" 
+        onClick={closeCancelModal}
+        disabled={cancelling}
+        sx={{ 
+          textTransform: 'none', 
+          color: '#4b5563', 
+          borderColor: '#d1d5db',
+          borderRadius: '8px',
+          fontWeight: 'bold',
+          '&:hover': { borderColor: '#9ca3af', bgcolor: '#f9fafb' }
+        }}
+      >
+        Keep Plan
+      </Button>
+      <Button 
+        fullWidth 
+        variant="contained" 
+        disabled={cancelling || !cancelReason}
+        onClick={handleCancelMembership}
+        sx={{ 
+          bgcolor: '#d32f2f', 
+          textTransform: 'none', 
+          borderRadius: '8px',
+          fontWeight: 'bold',
+          boxShadow: '0 4px 6px -1px rgba(211, 47, 47, 0.2)',
+          '&:hover': { bgcolor: '#b71c1c' },
+          '&:disabled': { bgcolor: '#f3f4f6', color: '#9ca3af' }
+        }}
+      >
+        {cancelling ? "Cancelling..." : "Confirm Cancel"}
+      </Button>
+    </div>
+  </Box>
+</Modal>
 
 </div>
 )

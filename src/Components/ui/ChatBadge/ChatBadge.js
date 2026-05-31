@@ -18,7 +18,7 @@ hideLoader()
 }
 
 return(
-<div className="fixed bottom-[70px] right-0 md:right-6 z-50 font-sans flex items-center bg-transparent select-none" style={{zIndex: "999999999999999"}}>
+<div className="fixed bottom-[70px] right-0 md:right-6 font-sans flex items-center bg-transparent select-none" style={{zIndex: "999999"}}>
 {showBubble && (
 <button 
 onClick={handleNavigation}

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ShippingConfram from './SubmitPage';
 import { useAuth } from '@/src/context/AuthContext';
 
-export default function PriceBox({ selectedMethod, shippingMethod, addresses }){
+export default function PriceBox({ selectedMethod, shippingMethod, addresses, isPremium }){
 const { user, token } = useAuth();
 const dispatch = useDispatch();
 const { totalQuantity, cartItems, totalSavings, totalAmount, subtotal, appliedVoucher, discount, cashback, voucherDetails, walletBalance } = useSelector((state) => state.cart);
@@ -14,15 +14,15 @@ const [agreed, setAgreed] = useState(false);
 const [useWallet, setUseWallet] = useState(false);
 
 const shippingThreshold = 5000;
-const baseDeliveryCharge = shippingMethod?.price ?? 13;
+const baseDeliveryCharge = isPremium ? 0 : (shippingMethod?.price ?? 13);
 const totalDeliveryCharge = cartItems.reduce((acc, item) => {
   return acc + baseDeliveryCharge * item.quantity;
-}, 0)
-const deliveryCharge = totalAmount >= shippingThreshold ? 0 : totalDeliveryCharge;
-const totalBillBeforeWallet = totalAmount + deliveryCharge;
+}, 0);
+const deliveryCharge = (totalAmount >= shippingThreshold || isPremium) ? 0 : totalDeliveryCharge;
+const premiumExtraCashback = isPremium ? (subtotal * 0.10) : 0;
+const totalBillBeforeWallet = Math.max(0, (totalAmount + deliveryCharge) - premiumExtraCashback);
 const walletDeduction = useWallet ? Math.min(walletBalance, totalBillBeforeWallet) : 0;
 const grandTotal = Math.max(0, totalBillBeforeWallet - walletDeduction);
-
 
 return(
 <div>
@@ -54,6 +54,16 @@ return(
       <span className="font-black">-${cashback.toLocaleString()}</span>
     </div>
   )}
+</div>
+<div>
+{isPremium && premiumExtraCashback > 0 && (
+  <div className="flex justify-between items-center text-amber-500 bg-amber-50/60 p-2 rounded-xl border border-amber-100">
+    <span className="font-bold text-xs flex items-center gap-1">
+      Premium Extra 10% Cashback
+    </span>
+    <span className="font-black">-${premiumExtraCashback.toLocaleString()}</span>
+  </div>
+)}
 </div>
 <div className="flex justify-between text-[13px]">
  <span className="font-semibold text-gray-600">Shipping & Handling</span>
@@ -140,6 +150,7 @@ shippingMethod={shippingMethod}
 walletUsed={walletDeduction}
 deliveryCharge={deliveryCharge}
 grandTotal={grandTotal}
+isPremium={isPremium}
 />
 </div>
 
